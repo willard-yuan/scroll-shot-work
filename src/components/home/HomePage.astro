@@ -17,6 +17,7 @@ interface Props {
 
 const { page } = Astro.props;
 const { site, assets, meta, sections } = page;
+const appStoreUrl = page.appStoreUrl;
 ---
 
 <Layout
@@ -32,10 +33,10 @@ const { site, assets, meta, sections } = page;
 	jsonLd={buildJsonLd(page)}
 >
 	<div class="site-shell">
-		<SiteNav icon={assets.appIcon} links={page.navLinks} appStoreUrl={site.appStoreUrl} labels={page.navLabels} />
+		<SiteNav icon={assets.appIcon} links={page.navLinks} appStoreUrl={appStoreUrl} labels={page.navLabels} />
 		<main>
 			<HeroSection
-				appStoreUrl={site.appStoreUrl}
+				appStoreUrl={appStoreUrl}
 				video={assets.video}
 				videoCover={assets.videoCover}
 				content={page.hero}
@@ -46,15 +47,15 @@ const { site, assets, meta, sections } = page;
 			<PricingSection
 				heading={sections.pricing}
 				plans={page.plans}
-				appStoreUrl={site.appStoreUrl}
+				appStoreUrl={appStoreUrl}
 				buttonLabel={page.pricingButtonLabel}
 			/>
 			<FaqSection heading={sections.faq} faqs={page.faqs} />
-			<FinalCTA appStoreUrl={site.appStoreUrl} content={page.finalCta} />
+			<FinalCTA appStoreUrl={appStoreUrl} content={page.finalCta} />
 		</main>
 		<SiteFooter
 			icon={assets.appIcon}
-			appStoreUrl={site.appStoreUrl}
+			appStoreUrl={appStoreUrl}
 			video={assets.video}
 			legalLinks={page.legalLinks}
 			content={page.footer}
