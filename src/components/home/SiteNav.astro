@@ -1,0 +1,27 @@
+---
+import BrandMark from './BrandMark.astro';
+
+interface Props {
+	icon: string;
+	links: Array<{ href: string; label: string }>;
+	appStoreUrl: string;
+	labels: {
+		navAria: string;
+		linksAria: string;
+		install: string;
+		brandHome: string;
+	};
+}
+
+const { icon, links, appStoreUrl, labels } = Astro.props;
+---
+
+<header class="nav-wrap">
+	<nav class="nav" aria-label={labels.navAria}>
+		<BrandMark icon={icon} ariaLabel={labels.brandHome} />
+		<div class="nav-links" aria-label={labels.linksAria}>
+			{links.map((link) => <a href={link.href}>{link.label}</a>)}
+		</div>
+		<a class="nav-button" href={appStoreUrl}>{labels.install}</a>
+	</nav>
+</header>

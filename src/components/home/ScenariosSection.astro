@@ -1,0 +1,45 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+interface Scenario {
+	title: string;
+	text: string;
+	image: string;
+	className: string;
+	cta: {
+		label: string;
+		href: string;
+	};
+}
+
+interface Props {
+	heading: {
+		kicker: string;
+		title: string;
+		description: string;
+	};
+	scenarios: Scenario[];
+}
+
+const { heading, scenarios } = Astro.props;
+---
+
+<section class="section scenes-section" id="scenarios">
+	<SectionHeading
+		kicker={heading.kicker}
+		title={heading.title}
+		description={heading.description}
+	/>
+	<div class="scene-grid">
+		{scenarios.map((item) => (
+			<article class="scene-card">
+				<div class={`scene-media ${item.className}`}>
+					<img src={item.image} width="1320" height="2868" alt={item.title} loading="lazy" />
+				</div>
+				<h3>{item.title}</h3>
+				<p>{item.text}</p>
+				<a href={item.cta.href} aria-label={`${item.cta.label}: ${item.title}`}>{item.cta.label}</a>
+			</article>
+		))}
+	</div>
+</section>

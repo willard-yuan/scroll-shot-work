@@ -1,0 +1,20 @@
+---
+interface Props {
+	appStoreUrl: string;
+	content: {
+		kicker: string;
+		title: string;
+		buttonLabel: string;
+	};
+}
+
+const { appStoreUrl, content } = Astro.props;
+---
+
+<section class="final-cta">
+	<div>
+		<p class="eyebrow gold">{content.kicker}</p>
+		<h2>{content.title}</h2>
+	</div>
+	<a class="button button-light" href={appStoreUrl}>{content.buttonLabel}</a>
+</section>

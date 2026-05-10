@@ -1,0 +1,16 @@
+---
+interface Props {
+	kicker: string;
+	title: string;
+	description?: string;
+	tone?: 'default' | 'gold';
+}
+
+const { kicker, title, description, tone = 'default' } = Astro.props;
+---
+
+<div class="section-heading">
+	<p class:list={['eyebrow', tone === 'gold' && 'gold']}>{kicker}</p>
+	<h2>{title}</h2>
+	{description && <p>{description}</p>}
+</div>

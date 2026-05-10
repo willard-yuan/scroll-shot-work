@@ -1,0 +1,55 @@
+---
+import BrandMark from './BrandMark.astro';
+
+interface LinkItem {
+	label: string;
+	href: string;
+}
+
+interface Props {
+	icon: string;
+	appStoreUrl: string;
+	video: string;
+	legalLinks: LinkItem[];
+	content: {
+		brandHome: string;
+		note: string;
+		productTitle: string;
+		featuresLabel: string;
+		reviewsLabel: string;
+		pricingLabel: string;
+		downloadTitle: string;
+		appStoreLabel: string;
+		videoLabel: string;
+		legalTitle: string;
+	};
+}
+
+const { icon, appStoreUrl, video, legalLinks, content } = Astro.props;
+---
+
+<footer class="footer">
+	<div class="footer-top">
+		<div>
+			<BrandMark icon={icon} ariaLabel={content.brandHome} />
+			<p class="footer-note">{content.note}</p>
+		</div>
+		<div class="footer-columns">
+			<div>
+				<h3>{content.productTitle}</h3>
+				<a href="#features">{content.featuresLabel}</a>
+				<a href="#reviews">{content.reviewsLabel}</a>
+				<a href="#pricing">{content.pricingLabel}</a>
+			</div>
+			<div>
+				<h3>{content.downloadTitle}</h3>
+				<a href={appStoreUrl}>{content.appStoreLabel}</a>
+				<a href={video}>{content.videoLabel}</a>
+			</div>
+			<div>
+				<h3>{content.legalTitle}</h3>
+				{legalLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+			</div>
+		</div>
+	</div>
+</footer>

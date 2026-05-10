@@ -1,0 +1,38 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+interface Review {
+	role: string;
+	quote: string;
+	tone?: string;
+}
+
+interface Props {
+	heading: {
+		kicker: string;
+		title: string;
+		description: string;
+	};
+	reviews: Review[];
+	ratingLabel: string;
+}
+
+const { heading, reviews, ratingLabel } = Astro.props;
+---
+
+<section class="section section-band reviews-section" id="reviews">
+	<SectionHeading
+		kicker={heading.kicker}
+		title={heading.title}
+		description={heading.description}
+	/>
+	<div class="review-grid">
+		{reviews.map((review, index) => (
+			<article class:list={['review-card', index === 0 && 'highlighted']}>
+				<div aria-label={ratingLabel}>★★★★★</div>
+				<h3>{review.role}</h3>
+				<p>{review.quote}</p>
+			</article>
+		))}
+	</div>
+</section>

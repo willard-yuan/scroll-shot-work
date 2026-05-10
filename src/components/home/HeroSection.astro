@@ -1,0 +1,56 @@
+---
+interface Props {
+	appStoreUrl: string;
+	video: string;
+	videoCover: string;
+	content: {
+		eyebrow: string;
+		title: string;
+		subtitle: string;
+		text: string;
+		primaryCta: string;
+		secondaryCta: string;
+		videoAria: string;
+		videoLabel: string;
+		caption: string;
+	};
+}
+
+const { appStoreUrl, video, videoCover, content } = Astro.props;
+---
+
+<section class="hero" id="top">
+	<div class="hero-copy">
+		<p class="eyebrow">{content.eyebrow}</p>
+		<h1>{content.title}</h1>
+		<h2>{content.subtitle}</h2>
+		<p class="hero-text">{content.text}</p>
+		<div class="hero-actions">
+			<a class="button button-light button-lg" href={appStoreUrl}>
+				<span class="apple-mark" aria-hidden="true"></span>
+				{content.primaryCta}
+			</a>
+			<a class="button button-ghost button-lg" href={video}>{content.secondaryCta}</a>
+		</div>
+	</div>
+
+	<a class="hero-device-link" href={video} aria-label={content.videoAria}>
+		<div class="device-shell">
+			<div class="device-screen video-screen">
+				<video
+					src={video}
+					poster={videoCover}
+					width="886"
+					height="1920"
+					autoplay
+					muted
+					loop
+					playsinline
+					preload="metadata"
+					aria-label={content.videoLabel}
+				></video>
+			</div>
+		</div>
+		<span class="device-caption">{content.caption}</span>
+	</a>
+</section>

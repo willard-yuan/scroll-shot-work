@@ -1,0 +1,17 @@
+---
+interface Props {
+	icon: string;
+	label?: string;
+	href?: string;
+	ariaLabel?: string;
+}
+
+const { icon, label = 'ScrollShot', href = '#top', ariaLabel = `${label} home` } = Astro.props;
+---
+
+<a class="brand" href={href} aria-label={ariaLabel}>
+	<span class="brand-icon" aria-hidden="true">
+		<img src={icon} width="36" height="36" alt="" />
+	</span>
+	<span>{label}</span>
+</a>

@@ -1,0 +1,67 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+interface IntroItem {
+	title: string;
+	text: string;
+	icon: string;
+}
+
+interface FeatureCard {
+	kicker: string;
+	title: string;
+	text: string;
+	image: string;
+	alt: string;
+	className: string;
+}
+
+interface Props {
+	heading: {
+		kicker: string;
+		title: string;
+		description: string;
+	};
+	intro: IntroItem[];
+	cards: FeatureCard[];
+}
+
+const { heading, intro, cards } = Astro.props;
+---
+
+<section class="section compact-section" id="features">
+	<SectionHeading
+		kicker={heading.kicker}
+		title={heading.title}
+		description={heading.description}
+	/>
+
+	<div class="feature-intro-grid">
+		{intro.map((item) => (
+			<article>
+				<div class="intro-icon" aria-hidden="true">
+					<svg viewBox="-2 -2 28 28">
+						<path d={item.icon}></path>
+					</svg>
+				</div>
+				<h3>{item.title}</h3>
+				<p>{item.text}</p>
+			</article>
+		))}
+	</div>
+
+	<div class="feature-card-grid">
+		{cards.map((item) => (
+			<article class="feature-card">
+				<div class="feature-card-copy">
+					<p>{item.kicker}</p>
+					<h3>{item.title}</h3>
+					<span>{item.text}</span>
+				</div>
+				<div class={`feature-card-media ${item.className}`}>
+					<img src={item.image} width="1320" height="2868" alt={item.alt} loading="lazy" />
+				</div>
+			</article>
+		))}
+	</div>
+</section>

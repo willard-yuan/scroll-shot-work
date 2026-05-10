@@ -1,12 +1,60 @@
+---
+const {
+	title = 'ScrollShot - One Tap Record, Auto Long Image',
+	description = 'ScrollShot turns screen recordings and screenshots into clean long images on iPhone. Auto stitch, manual stitch, fine tune seams, clean scrollbars, and share as image or PDF.',
+	keywords = [],
+	canonical,
+	image = '/ScrollShot_Preview_Cn_0509_cover.jpg',
+	imageAlt = 'ScrollShot preview',
+	lang = 'en',
+	ogLocale = 'en_US',
+	alternateLinks = [],
+	jsonLd = [],
+} = Astro.props;
+
+const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/AppIcon.appiconset/icon-mac-32x32.png" />
+		<link rel="icon" type="image/png" sizes="128x128" href="/AppIcon.appiconset/icon-ios-64x64@2x.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/AppIcon.appiconset/icon-ios-60x60@3x.png" />
+		<meta name="description" content={description} />
+		{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+		{canonical && <link rel="canonical" href={canonical} />}
+		{
+			alternateLinks.map((link: { lang: string; href: string }) => (
+				<link rel="alternate" hreflang={link.lang} href={link.href} />
+			))
+		}
+		<meta name="theme-color" content="#EB5332" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="ScrollShot" />
+		<meta property="og:locale" content={ogLocale} />
+		{
+			alternateLinks
+				.filter((link: { lang: string }) => link.lang !== 'x-default' && link.lang !== lang)
+				.map((link: { lang: string }) => (
+					<meta property="og:locale:alternate" content={link.lang.replace('-', '_')} />
+				))
+		}
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{canonical && <meta property="og:url" content={canonical} />}
+		<meta property="og:image" content={image} />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image:alt" content={imageAlt} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		{jsonLdItems.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
 	</head>
 	<body>
 		<slot />
@@ -14,10 +62,33 @@
 </html>
 
 <style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
+		scroll-behavior: smooth;
+		background: #080909;
+		color: #f6f4ee;
+		font-family:
+			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+
+	:global(body) {
+		overflow-x: hidden;
+	}
+
+	:global(img),
+	:global(video) {
+		max-width: 100%;
+		display: block;
+	}
+
+	:global(a) {
+		color: inherit;
 	}
 </style>

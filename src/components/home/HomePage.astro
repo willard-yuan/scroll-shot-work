@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from './SiteNav.astro';
+import HeroSection from './HeroSection.astro';
+import FeatureSection from './FeatureSection.astro';
+import ReviewsSection from './ReviewsSection.astro';
+import ScenariosSection from './ScenariosSection.astro';
+import PricingSection from './PricingSection.astro';
+import FaqSection from './FaqSection.astro';
+import FinalCTA from './FinalCTA.astro';
+import SiteFooter from './SiteFooter.astro';
+import { buildJsonLd, type HomeLocale } from '../../data/home';
+
+interface Props {
+	page: HomeLocale;
+}
+
+const { page } = Astro.props;
+const { site, assets, meta, sections } = page;
+---
+
+<Layout
+	title={meta.title}
+	description={meta.description}
+	keywords={meta.keywords}
+	canonical={page.url}
+	image={`${site.url}${assets.ogImage.slice(1)}`}
+	imageAlt={meta.imageAlt}
+	lang={page.lang}
+	ogLocale={page.ogLocale}
+	alternateLinks={page.alternateLinks}
+	jsonLd={buildJsonLd(page)}
+>
+	<div class="site-shell">
+		<SiteNav icon={assets.appIcon} links={page.navLinks} appStoreUrl={site.appStoreUrl} labels={page.navLabels} />
+		<main>
+			<HeroSection
+				appStoreUrl={site.appStoreUrl}
+				video={assets.video}
+				videoCover={assets.videoCover}
+				content={page.hero}
+			/>
+			<FeatureSection heading={sections.features} intro={page.featureIntro} cards={page.featureCards} />
+			<ReviewsSection heading={sections.reviews} reviews={page.reviews} ratingLabel={page.ratingLabel} />
+			<ScenariosSection heading={sections.scenarios} scenarios={page.scenarios} />
+			<PricingSection
+				heading={sections.pricing}
+				plans={page.plans}
+				appStoreUrl={site.appStoreUrl}
+				buttonLabel={page.pricingButtonLabel}
+			/>
+			<FaqSection heading={sections.faq} faqs={page.faqs} />
+			<FinalCTA appStoreUrl={site.appStoreUrl} content={page.finalCta} />
+		</main>
+		<SiteFooter
+			icon={assets.appIcon}
+			appStoreUrl={site.appStoreUrl}
+			video={assets.video}
+			legalLinks={page.legalLinks}
+			content={page.footer}
+		/>
+	</div>
+</Layout>

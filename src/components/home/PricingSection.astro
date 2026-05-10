@@ -1,0 +1,54 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+interface Plan {
+	name: string;
+	price: string;
+	subtitle: string;
+	features: string[];
+	featured?: boolean;
+}
+
+interface Props {
+	heading: {
+		kicker: string;
+		title: string;
+		description: string;
+	};
+	plans: Plan[];
+	appStoreUrl: string;
+	buttonLabel: string;
+}
+
+const { heading, plans, appStoreUrl, buttonLabel } = Astro.props;
+---
+
+<section class="section section-band pricing-section" id="pricing">
+	<SectionHeading
+		kicker={heading.kicker}
+		title={heading.title}
+		description={heading.description}
+		tone="gold"
+	/>
+	<div class="pricing-grid">
+		{plans.map((plan) => (
+			<article class:list={['price-card', plan.featured && 'featured']}>
+				<div>
+					<p>{plan.name}</p>
+					<h3>{plan.price}</h3>
+					<span>{plan.subtitle}</span>
+				</div>
+				<ul>
+					{plan.features.map((feature) => <li>{feature}</li>)}
+				</ul>
+				{
+					plan.featured && (
+						<a class="button button-mint" href={appStoreUrl}>
+							{buttonLabel}
+						</a>
+					)
+				}
+			</article>
+		))}
+	</div>
+</section>

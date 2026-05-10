@@ -1,0 +1,28 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+	heading: {
+		kicker: string;
+		title: string;
+	};
+	faqs: Array<[string, string]>;
+}
+
+const { heading, faqs } = Astro.props;
+---
+
+<section class="section faq-section" id="faq">
+	<SectionHeading kicker={heading.kicker} title={heading.title} />
+	<div class="faq-list">
+		{faqs.map(([q, a], index) => (
+			<details class="faq-item" open={index === 0}>
+				<summary>
+					<span>{String(index + 1).padStart(2, '0')}</span>
+					{q}
+				</summary>
+				<p>{a}</p>
+			</details>
+		))}
+	</div>
+</section>
