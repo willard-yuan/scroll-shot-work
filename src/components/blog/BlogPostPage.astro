@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../home/SiteNav.astro';
+import SiteFooter from '../home/SiteFooter.astro';
+import type { BlogLocale, BlogPost } from '../../data/blog';
+import {
+	buildBlogPostJsonLd,
+	getBlogHomeHref,
+	getBlogNavLinks,
+	getBlogPostAlternates,
+} from '../../data/blog';
+import { site } from '../../data/home';
+
+interface Props {
+	page: BlogLocale;
+	post: BlogPost;
+}
+
+const { page, post } = Astro.props;
+const home = page.home;
+const Content = post.Content;
+const navLinks = getBlogNavLinks(page.locale, 'post');
+const homeHref = getBlogHomeHref(page.locale, 'post');
+const blogHref = '../';
+const formatDate = (date: string) =>
+	new Intl.DateTimeFormat(page.locale === 'zh' ? 'zh-CN' : 'en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	}).format(new Date(`${date}T00:00:00`));
+---
+
+<Layout
+	title={`${post.title} | ScrollShot Blog`}
+	description={post.description}
+	keywords={post.tags}
+	canonical={post.url}
+	image={`${site.url}${post.cover.slice(1)}`}
+	imageAlt={post.coverAlt}
+	lang={page.lang}
+	ogLocale={page.ogLocale}
+	ogType="article"
+	alternateLinks={getBlogPostAlternates(post)}
+	jsonLd={buildBlogPostJsonLd(post, page)}
+>
+	<div class="site-shell blog-shell">
+		<SiteNav
+			icon={home.assets.appIcon}
+			links={navLinks}
+			appStoreUrl={page.appStoreUrl}
+			brandHref={homeHref}
+			labels={home.navLabels}
+		/>
+
+		<main class="blog-main">
+			<article class="blog-post">
+				<header class="blog-post-header">
+					<a class="blog-breadcrumb" href={blogHref}>{page.copy.backToBlog}</a>
+					<p class="eyebrow">{post.category}</p>
+					<h1>{post.title}</h1>
+					<p>{post.description}</p>
+					<div class="blog-post-meta">
+						<span>{post.author || page.copy.articleByline}</span>
+						<span aria-hidden="true">/</span>
+						<time datetime={post.date}>{formatDate(post.date)}</time>
+						<span aria-hidden="true">/</span>
+						<span>{post.readingTime}</span>
+					</div>
+				</header>
+
+				<figure class="blog-post-cover">
+					<img src={post.cover} alt={post.coverAlt} loading="eager" />
+				</figure>
+
+				<div class="blog-prose">
+					<Content />
+				</div>
+
+				<footer class="blog-post-footer">
+					<div class="blog-tags" aria-label="Article tags">
+						{post.tags.map((tag) => <span>{tag}</span>)}
+					</div>
+					<a class="blog-read-link" href={blogHref}>{page.copy.backToBlog}</a>
+				</footer>
+			</article>
+		</main>
+
+		<SiteFooter
+			icon={home.assets.appIcon}
+			appStoreUrl={page.appStoreUrl}
+			video={home.assets.video}
+			homeHref={homeHref}
+			brandHref={homeHref}
+			legalLinks={home.legalLinks}
+			content={home.footer}
+		/>
+	</div>
+</Layout>

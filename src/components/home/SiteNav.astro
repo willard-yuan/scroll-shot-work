@@ -3,8 +3,9 @@ import BrandMark from './BrandMark.astro';
 
 interface Props {
 	icon: string;
-	links: Array<{ href: string; label: string }>;
+	links: Array<{ href: string; label: string; current?: boolean }>;
 	appStoreUrl: string;
+	brandHref?: string;
 	labels: {
 		navAria: string;
 		linksAria: string;
@@ -13,14 +14,14 @@ interface Props {
 	};
 }
 
-const { icon, links, appStoreUrl, labels } = Astro.props;
+const { icon, links, appStoreUrl, brandHref, labels } = Astro.props;
 ---
 
 <header class="nav-wrap">
 	<nav class="nav" aria-label={labels.navAria}>
-		<BrandMark icon={icon} ariaLabel={labels.brandHome} />
+		<BrandMark icon={icon} href={brandHref} ariaLabel={labels.brandHome} />
 		<div class="nav-links" aria-label={labels.linksAria}>
-			{links.map((link) => <a href={link.href}>{link.label}</a>)}
+			{links.map((link) => <a href={link.href} aria-current={link.current ? 'page' : undefined}>{link.label}</a>)}
 		</div>
 		<a class="nav-button" href={appStoreUrl}>{labels.install}</a>
 	</nav>

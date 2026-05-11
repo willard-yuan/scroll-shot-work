@@ -8,6 +8,7 @@ const {
 	imageAlt = 'ScrollShot preview',
 	lang = 'en',
 	ogLocale = 'en_US',
+	ogType = 'website',
 	alternateLinks = [],
 	jsonLd = [],
 } = Astro.props;
@@ -32,7 +33,7 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 			))
 		}
 		<meta name="theme-color" content="#EB5332" />
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:site_name" content="ScrollShot" />
 		<meta property="og:locale" content={ogLocale} />
 		{

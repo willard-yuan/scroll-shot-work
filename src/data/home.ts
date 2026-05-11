@@ -82,6 +82,7 @@ export const homeLocales = {
 			{ href: '#reviews', label: 'Reviews' },
 			{ href: '#pricing', label: 'Pricing' },
 			{ href: '#faq', label: 'FAQ' },
+			{ href: 'blog/', label: 'Blog' },
 			{ href: 'zh/', label: '中文' },
 		],
 		hero: {
@@ -129,14 +130,14 @@ export const homeLocales = {
 				icon: icons.auto,
 			},
 			{
-				title: 'Manual ordered stitching',
-				text: 'Pick images in the exact order you want. The first image becomes the top.',
-				icon: icons.manual,
-			},
-			{
 				title: 'Fine-tune seams',
 				text: 'Inspect the first pass, adjust boundaries, and clean common scrollbar traces.',
 				icon: icons.tune,
+			},
+			{
+				title: 'Manual ordered stitching',
+				text: 'Pick images in the exact order you want. The first image becomes the top.',
+				icon: icons.manual,
 			},
 			{
 				title: 'Image / PDF sharing',
@@ -154,20 +155,20 @@ export const homeLocales = {
 				className: 'auto-shot',
 			},
 			{
-				kicker: 'Manual Stitch',
-				title: 'Stitch images in order',
-				text: 'Select screenshots manually and keep the order you choose. Useful for chats, transactions, tutorials, and pages with partial overlap.',
-				image: localeAssets.en.manual,
-				alt: 'ScrollShot English manual stitching interface',
-				className: 'manual-shot',
-			},
-			{
 				kicker: 'Fine Tune',
 				title: 'Fine tune before saving',
 				text: 'When webpages, documents, or dynamic content need extra care, inspect seams, adjust the result, and clean common scrollbars before saving.',
 				image: localeAssets.en.trim,
 				alt: 'ScrollShot English fine tuning interface',
 				className: 'trim-shot',
+			},
+			{
+				kicker: 'Manual Stitch',
+				title: 'Stitch images in order',
+				text: 'Select screenshots manually and keep the order you choose. Useful for chats, transactions, tutorials, and pages with partial overlap.',
+				image: localeAssets.en.manual,
+				alt: 'ScrollShot English manual stitching interface',
+				className: 'manual-shot',
 			},
 			{
 				kicker: 'Themes',
@@ -291,6 +292,7 @@ export const homeLocales = {
 			{ href: '#reviews', label: '用户评价' },
 			{ href: '#pricing', label: '价格' },
 			{ href: '#faq', label: '常见问题' },
+			{ href: 'blog/', label: '博客' },
 			{ href: '../', label: 'English' },
 		],
 		hero: {
@@ -333,8 +335,8 @@ export const homeLocales = {
 		},
 		featureIntro: [
 			{ title: '录屏自动拼接', text: '滚动一次，自动抽帧、去重、匹配并生成长图。', icon: icons.auto },
-			{ title: '手动按序拼接', text: '按选择顺序合成长图，第一张就是顶部。', icon: icons.manual },
 			{ title: '拼接微调', text: '保存前检查拼接缝，调整边界和滚动条。', icon: icons.tune },
+			{ title: '手动按序拼接', text: '按选择顺序合成长图，第一张就是顶部。', icon: icons.manual },
 			{ title: '图片 / PDF 分享', text: '保存到相册，也可继续分享图片或 PDF。', icon: icons.share },
 		],
 		featureCards: [
@@ -347,20 +349,20 @@ export const homeLocales = {
 				className: 'auto-shot',
 			},
 			{
-				kicker: 'Manual Stitch',
-				title: '按顺序手动拼接',
-				text: '选择多张截图后，按选择顺序合成长图。适合聊天记录、交易记录、教程步骤和只有部分重叠的页面。',
-				image: localeAssets.zh.manual,
-				alt: 'ScrollShot 中文手动拼接界面',
-				className: 'manual-shot',
-			},
-			{
 				kicker: 'Fine Tune',
 				title: '保存前微调检查',
 				text: '面对网页、文档和动态内容时，可在保存前检查结果，微调拼接位置，并清理常见滚动条痕迹。',
 				image: localeAssets.zh.trim,
 				alt: 'ScrollShot 中文智能拼接和微调界面',
 				className: 'trim-shot',
+			},
+			{
+				kicker: 'Manual Stitch',
+				title: '按顺序手动拼接',
+				text: '选择多张截图后，按选择顺序合成长图。适合聊天记录、交易记录、教程步骤和只有部分重叠的页面。',
+				image: localeAssets.zh.manual,
+				alt: 'ScrollShot 中文手动拼接界面',
+				className: 'manual-shot',
 			},
 			{
 				kicker: 'Themes',

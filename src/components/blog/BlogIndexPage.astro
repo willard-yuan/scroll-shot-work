@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteNav from '../home/SiteNav.astro';
+import SiteFooter from '../home/SiteFooter.astro';
+import type { BlogLocale, BlogPost } from '../../data/blog';
+import { buildBlogIndexJsonLd, getBlogHomeHref, getBlogNavLinks } from '../../data/blog';
+import { site } from '../../data/home';
+
+interface Props {
+	page: BlogLocale;
+	posts: BlogPost[];
+}
+
+const { page, posts } = Astro.props;
+const home = page.home;
+const featured = posts.find((post) => post.featured) ?? posts[0];
+const recentPosts = posts.filter((post) => post !== featured);
+const navLinks = getBlogNavLinks(page.locale, 'index');
+const homeHref = getBlogHomeHref(page.locale, 'index');
+
+const formatDate = (date: string) =>
+	new Intl.DateTimeFormat(page.locale === 'zh' ? 'zh-CN' : 'en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	}).format(new Date(`${date}T00:00:00`));
+---
+
+<Layout
+	title={page.meta.title}
+	description={page.meta.description}
+	keywords={page.meta.keywords}
+	canonical={page.url}
+	image={`${site.url}${page.assets.ogImage.slice(1)}`}
+	imageAlt={page.meta.imageAlt}
+	lang={page.lang}
+	ogLocale={page.ogLocale}
+	alternateLinks={page.alternateLinks}
+	jsonLd={buildBlogIndexJsonLd(page, posts)}
+>
+	<div class="site-shell blog-shell">
+		<SiteNav
+			icon={home.assets.appIcon}
+			links={navLinks}
+			appStoreUrl={page.appStoreUrl}
+			brandHref={homeHref}
+			labels={home.navLabels}
+		/>
+
+		<main class="blog-main">
+			<section class="blog-hero">
+				<a class="blog-breadcrumb" href={homeHref}>{page.copy.home}</a>
+				<p class="eyebrow">{page.copy.kicker}</p>
+				<h1>{page.copy.title}</h1>
+				<p>{page.copy.description}</p>
+			</section>
+
+			{
+				featured ? (
+					<section class="blog-featured" aria-labelledby="featured-post-title">
+						<p class="blog-section-label">{page.copy.featured}</p>
+						<a class="blog-featured-card" href={`${featured.slug}/`}>
+							<div class="blog-featured-copy">
+								<div class="blog-meta">
+									<time datetime={featured.date}>{formatDate(featured.date)}</time>
+									<span>{featured.readingTime}</span>
+								</div>
+								<h2 id="featured-post-title">{featured.title}</h2>
+								<p>{featured.description}</p>
+								<span class="blog-read-link">{page.copy.readArticle}</span>
+							</div>
+							<div class="blog-featured-media">
+								<img src={featured.cover} alt={featured.coverAlt} loading="eager" />
+							</div>
+						</a>
+					</section>
+				) : (
+					<p class="blog-empty">{page.copy.noPosts}</p>
+				)
+			}
+
+			{
+				recentPosts.length > 0 && (
+					<section class="blog-recent" aria-labelledby="recent-posts-title">
+						<div class="blog-section-heading">
+							<h2 id="recent-posts-title">{page.copy.recent}</h2>
+						</div>
+						<div class="blog-card-grid">
+							{recentPosts.map((post) => (
+								<a class="blog-card" href={`${post.slug}/`}>
+									<div class="blog-card-media">
+										<img src={post.cover} alt={post.coverAlt} loading="lazy" />
+									</div>
+									<div class="blog-card-copy">
+										<div class="blog-meta">
+											<time datetime={post.date}>{formatDate(post.date)}</time>
+											<span>{post.readingTime}</span>
+										</div>
+										<h3>{post.title}</h3>
+										<p>{post.description}</p>
+										<span class="blog-read-link">{page.copy.readArticle}</span>
+									</div>
+								</a>
+							))}
+						</div>
+					</section>
+				)
+			}
+		</main>
+
+		<SiteFooter
+			icon={home.assets.appIcon}
+			appStoreUrl={page.appStoreUrl}
+			video={home.assets.video}
+			homeHref={homeHref}
+			brandHref={homeHref}
+			legalLinks={home.legalLinks}
+			content={home.footer}
+		/>
+	</div>
+</Layout>
