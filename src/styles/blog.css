@@ -57,7 +57,7 @@
 	max-width: 720px;
 	margin: 22px auto 0;
 	color: #bfb8ad;
-	font-family: var(--serif);
+	font-family: var(--article);
 	font-size: 21px;
 	line-height: 1.58;
 	text-wrap: balance;
@@ -261,7 +261,7 @@
 	max-width: 720px;
 	margin: 20px auto 0;
 	color: #c4bdb2;
-	font-family: var(--serif);
+	font-family: var(--article);
 	font-size: 20px;
 	line-height: 1.6;
 	text-wrap: balance;
@@ -290,7 +290,7 @@
 
 .blog-prose {
 	color: #d6d0c6;
-	font-family: var(--serif);
+	font-family: var(--article);
 	font-size: 20px;
 	line-height: 1.78;
 }

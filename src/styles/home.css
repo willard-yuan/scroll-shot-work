@@ -12,10 +12,27 @@
 	--gold: #f8e36f;
 	--paper: #f2f1ec;
 	--content: 1220px;
-	--serif: ui-serif, "Songti SC", "STSong", Georgia, Cambria, "Times New Roman", Times, serif;
+	--font-system:
+		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+		"Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+	--font-cjk-sans:
+		-apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB",
+		"Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei UI", "Microsoft YaHei",
+		sans-serif;
+	--font-display:
+		ui-serif, "Iowan Old Style", "Palatino Linotype", "Songti SC", "Noto Serif CJK SC",
+		"Source Han Serif SC", Georgia, Cambria, "Times New Roman", Times, serif;
+	--serif: var(--font-display);
+	--article: var(--font-system);
 	--sans:
-		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+		var(--font-system);
+}
+
+:lang(zh-CN) {
+	--sans: var(--font-cjk-sans);
+	--article: var(--font-cjk-sans);
+	--serif:
+		"Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", var(--font-cjk-sans);
 }
 
 .site-shell {
@@ -29,6 +46,9 @@
 	background-size: auto, auto, 32px 32px, 32px 32px, auto;
 	color: var(--ink);
 	font-family: var(--sans);
+	font-synthesis-weight: none;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 .nav-wrap {
@@ -83,7 +103,7 @@
 	display: flex;
 	gap: 34px;
 	color: #d8d2c7;
-	font-family: var(--serif);
+	font-family: var(--sans);
 	font-size: 16px;
 }
 
@@ -119,7 +139,7 @@
 	border: 1px solid rgba(255, 255, 255, 0.72);
 	background: #f2efe8;
 	color: #111;
-	font-family: var(--serif);
+	font-family: var(--sans);
 	font-size: 16px;
 	font-weight: 700;
 	text-decoration: none;
@@ -235,7 +255,7 @@
 	max-width: 650px;
 	margin: 30px 0 0;
 	color: #c8c2b8;
-	font-family: var(--serif);
+	font-family: var(--article);
 	font-size: 21px;
 	line-height: 1.65;
 }
@@ -449,7 +469,7 @@
 .section-heading p:not(.eyebrow) {
 	margin: 16px 0 0;
 	color: var(--muted);
-	font-family: var(--serif);
+	font-family: var(--article);
 	font-size: 19px;
 	line-height: 1.65;
 	text-wrap: balance;
@@ -1072,7 +1092,7 @@
 		align-items: center;
 		padding: 0 18px;
 		color: #e6dfd4;
-		font-family: var(--serif);
+		font-family: var(--sans);
 		font-size: 18px;
 		font-weight: 760;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.07);
