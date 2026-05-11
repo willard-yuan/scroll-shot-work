@@ -1,7 +1,12 @@
+export const appStoreUrls = {
+	en: 'https://apps.apple.com/us/app/scrollshot-long-screenshot/id6760192003',
+	zh: 'https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003',
+};
+
 export const site = {
 	name: 'ScrollShot',
 	url: 'https://yongyuan.name/scrollshot/',
-	appStoreUrl: 'https://apps.apple.com/app/id6760192003',
+	appStoreUrl: appStoreUrls.en,
 };
 
 const zhUrl = `${site.url}zh/`;
@@ -49,6 +54,7 @@ export const homeLocales = {
 		ogLocale: 'en_US',
 		url: site.url,
 		alternateLinks: alternates,
+		appStoreUrl: appStoreUrls.en,
 		site,
 		assets: localeAssets.en,
 		meta: {
@@ -201,7 +207,7 @@ export const homeLocales = {
 				text: 'Use multiple themes and languages, then share as image or PDF for personal and work contexts.',
 				image: localeAssets.en.themes,
 				className: 'theme-scene',
-				cta: { label: 'Install ScrollShot', href: site.appStoreUrl },
+				cta: { label: 'Install ScrollShot', href: appStoreUrls.en },
 			},
 		],
 		plans: [
@@ -264,6 +270,7 @@ export const homeLocales = {
 		ogLocale: 'zh_CN',
 		url: zhUrl,
 		alternateLinks: alternates,
+		appStoreUrl: appStoreUrls.zh,
 		site,
 		assets: localeAssets.zh,
 		meta: {
@@ -393,7 +400,7 @@ export const homeLocales = {
 				text: '多主题、多语言、图片和 PDF 分享，适合日常和工作两种场景。',
 				image: localeAssets.zh.themes,
 				className: 'theme-scene',
-				cta: { label: '立即安装体验', href: site.appStoreUrl },
+				cta: { label: '立即安装体验', href: appStoreUrls.zh },
 			},
 		],
 		plans: [
@@ -470,7 +477,7 @@ export const buildJsonLd = (page: HomeLocale) => [
 		applicationCategory: 'UtilitiesApplication',
 		operatingSystem: 'iOS',
 		url: page.url,
-		downloadUrl: site.appStoreUrl,
+		downloadUrl: page.appStoreUrl,
 		image: `${site.url}${page.assets.ogImage.slice(1)}`,
 		description: page.meta.description,
 		inLanguage: page.lang,
