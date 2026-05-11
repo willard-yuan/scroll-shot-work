@@ -11,6 +11,7 @@ interface Props {
 		linksAria: string;
 		install: string;
 		brandHome: string;
+		menu: string;
 	};
 }
 
@@ -23,6 +24,74 @@ const { icon, links, appStoreUrl, brandHref, labels } = Astro.props;
 		<div class="nav-links" aria-label={labels.linksAria}>
 			{links.map((link) => <a href={link.href} aria-current={link.current ? 'page' : undefined}>{link.label}</a>)}
 		</div>
-		<a class="nav-button" href={appStoreUrl}>{labels.install}</a>
+		<div class="nav-actions">
+			<a class="nav-button" href={appStoreUrl}>{labels.install}</a>
+			<button
+				class="mobile-menu-toggle"
+				type="button"
+				aria-label={labels.menu}
+				aria-expanded="false"
+				aria-controls="mobile-nav-menu"
+			>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</button>
+		</div>
 	</nav>
+	<div class="mobile-menu" id="mobile-nav-menu" hidden>
+		<div class="mobile-menu-panel" aria-label={labels.linksAria}>
+			{links.map((link) => <a href={link.href} aria-current={link.current ? 'page' : undefined}>{link.label}</a>)}
+		</div>
+	</div>
 </header>
+
+<script is:inline>
+	document.querySelectorAll('.nav-wrap').forEach((navWrap) => {
+		const toggle = navWrap.querySelector('.mobile-menu-toggle');
+		const menu = navWrap.querySelector('.mobile-menu');
+
+		if (!toggle || !menu) {
+			return;
+		}
+
+		let closeTimer;
+
+		const setMenu = (open) => {
+			window.clearTimeout(closeTimer);
+			toggle.setAttribute('aria-expanded', String(open));
+
+			if (open) {
+				menu.hidden = false;
+				window.requestAnimationFrame(() => navWrap.classList.add('menu-open'));
+				return;
+			}
+
+			navWrap.classList.remove('menu-open');
+			closeTimer = window.setTimeout(() => {
+				menu.hidden = true;
+			}, 180);
+		};
+
+		toggle.addEventListener('click', () => {
+			setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+		});
+
+		menu.querySelectorAll('a').forEach((link) => {
+			link.addEventListener('click', () => setMenu(false));
+		});
+
+		document.addEventListener('click', (event) => {
+			if (!navWrap.contains(event.target) && toggle.getAttribute('aria-expanded') === 'true') {
+				setMenu(false);
+			}
+		});
+
+		document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+				setMenu(false);
+				toggle.focus();
+			}
+		});
+	});
+</script>

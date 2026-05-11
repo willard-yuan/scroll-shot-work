@@ -76,6 +76,7 @@ export const homeLocales = {
 			linksAria: 'Page navigation',
 			install: 'Install',
 			brandHome: 'ScrollShot home',
+			menu: 'Open navigation menu',
 		},
 		navLinks: [
 			{ href: '#features', label: 'Features' },
@@ -286,6 +287,7 @@ export const homeLocales = {
 			linksAria: '页面导航',
 			install: '安装',
 			brandHome: 'ScrollShot 首页',
+			menu: '打开导航菜单',
 		},
 		navLinks: [
 			{ href: '#features', label: '产品功能' },
