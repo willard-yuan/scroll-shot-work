@@ -5,7 +5,7 @@ export const appStoreUrls = {
 
 export const site = {
 	name: 'ScrollShot',
-	url: 'https://yongyuan.name/scrollshot/',
+	url: 'https://scrollshot.work/',
 	appStoreUrl: appStoreUrls.en,
 };
 
@@ -262,8 +262,8 @@ export const homeLocales = {
 			legalTitle: 'Legal',
 		},
 		legalLinks: [
-			{ label: 'Privacy Policy', href: 'https://yongyuan.name/scrollshot/en/' },
-			{ label: 'Terms of Service', href: 'https://yongyuan.name/scrollshot/tos/en/' },
+			{ label: 'Privacy Policy', href: 'https://scrollshot.work/en/' },
+			{ label: 'Terms of Service', href: 'https://scrollshot.work/tos/en/' },
 			{ label: 'ICP Record', href: 'https://beian.miit.gov.cn' },
 		],
 	},
@@ -457,8 +457,8 @@ export const homeLocales = {
 			legalTitle: '法律',
 		},
 		legalLinks: [
-			{ label: 'Privacy Policy', href: 'https://yongyuan.name/scrollshot/' },
-			{ label: 'Terms of Service', href: 'https://yongyuan.name/scrollshot/tos/' },
+			{ label: 'Privacy Policy', href: 'https://scrollshot.work/' },
+			{ label: 'Terms of Service', href: 'https://scrollshot.work/tos/' },
 			{ label: '京ICP备2026011241号-1A', href: 'https://beian.miit.gov.cn' },
 		],
 	},
