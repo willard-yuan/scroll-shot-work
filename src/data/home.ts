@@ -60,14 +60,8 @@ export const homeLocales = {
 		meta: {
 			title: 'ScrollShot: Long Screenshot & Scroll Capture',
 			description:
-				'ScrollShot makes long screenshots easy: capture scrolling pages, stitch photos, and save crisp full-page images in high quality. Perfect for iPhone users saving chats.',
+				'ScrollShot makes long screenshots easy: capture scrolling pages, stitch photos, and save high-quality full-page images. Ideal for iPhone users saving chats.',
 			keywords: [
-				'ScrollShot',
-				'long screenshot',
-				'scrolling screenshot',
-				'full page screenshot',
-				'iPhone screenshot stitching',
-				'PDF export',
 			],
 			imageAlt: 'ScrollShot English demo cover',
 		},
@@ -279,7 +273,7 @@ export const homeLocales = {
 			title: '苹果长截图工具 ScrollShot：滚动截图与拼接长图',
 			description:
 				'ScrollShot 让 iPhone 长截图更简单：支持自动滚动录屏拼接、多张照片手动拼接、网页截长图与高清长图保存。快速生成清晰完整的长图，是保存聊天记录的理想工具。',
-			keywords: ['ScrollShot', '长截图', '滚动截图', '照片拼接', 'iPhone 长截图', '截图拼接', 'PDF 分享'],
+			keywords: [],
 			imageAlt: 'ScrollShot 中文视频演示封面',
 		},
 		navLabels: {

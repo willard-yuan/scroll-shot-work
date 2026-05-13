@@ -52,7 +52,7 @@ export const blogLocales = {
 		meta: {
 			title: 'ScrollShot Blog - Long Screenshot Guides and Product Updates',
 			description:
-				'Guides, workflows, and product updates for ScrollShot: turn screen recordings and screenshots into clean long images on iPhone. Learn to capture full-page content easily.',
+				'Guides and product updates for ScrollShot: turn screen recordings and screenshots into clean long images on iPhone. Learn to capture full-page content easily.',
 			keywords: ['ScrollShot blog', 'long screenshot guide', 'iPhone scrolling screenshot', 'screenshot stitching'],
 			imageAlt: 'ScrollShot English video demo cover',
 		},
