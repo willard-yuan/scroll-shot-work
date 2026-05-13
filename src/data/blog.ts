@@ -52,7 +52,7 @@ export const blogLocales = {
 		meta: {
 			title: 'ScrollShot Blog - Long Screenshot Guides and Product Updates',
 			description:
-				'Guides, workflows, and product updates for turning screen recordings and screenshots into clean long images on iPhone.',
+				'Guides, workflows, and product updates for ScrollShot: turn screen recordings and screenshots into clean long images on iPhone. Learn to capture full-page content easily.',
 			keywords: ['ScrollShot blog', 'long screenshot guide', 'iPhone scrolling screenshot', 'screenshot stitching'],
 			imageAlt: 'ScrollShot English video demo cover',
 		},
@@ -83,7 +83,7 @@ export const blogLocales = {
 		alternateLinks: indexAlternates,
 		meta: {
 			title: 'ScrollShot 博客 - 长截图教程与产品更新',
-			description: '关于 iPhone 长截图、录屏自动拼接、手动拼接、隐私处理和产品更新的实用文章。',
+			description: 'ScrollShot 博客提供关于 iPhone 长截图、录屏自动拼接、手动照片拼接、隐私处理和产品更新的实用教程。学习如何更轻松地捕捉和整理高清长图内容。',
 			keywords: ['ScrollShot 博客', '长截图教程', 'iPhone 滚动截图', '截图拼接'],
 			imageAlt: 'ScrollShot 中文视频演示封面',
 		},
