@@ -115,7 +115,11 @@ const formatDate = (date: string) =>
 			homeHref={homeHref}
 			brandHref={homeHref}
 			legalLinks={home.legalLinks}
-			content={home.footer}
+			content={{
+				...home.footer,
+				languageHref: page.locale === 'en' ? `${homeHref}zh/blog/` : `${homeHref}blog/`,
+				languageLabel: page.locale === 'en' ? '博客中文版' : 'Blog English',
+			}}
 		/>
 	</div>
 </Layout>

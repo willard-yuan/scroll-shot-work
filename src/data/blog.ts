@@ -173,7 +173,6 @@ export const getBlogNavLinks = (locale: BlogLocaleCode, page: 'index' | 'post') 
 		{ href: `${homePrefix}#pricing`, label: home.navLinks[2].label },
 		{ href: `${homePrefix}#faq`, label: home.navLinks[3].label },
 		{ href: blogHref, label: blog.copy.blogLabel, current: true },
-		{ href: languageHref, label: blog.copy.languageLabel },
 	];
 };
 

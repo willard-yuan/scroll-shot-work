@@ -78,7 +78,6 @@ export const homeLocales = {
 			{ href: '#pricing', label: 'Pricing' },
 			{ href: '#faq', label: 'FAQ' },
 			{ href: 'blog/', label: 'Blog' },
-			{ href: 'zh/', label: '中文' },
 		],
 		hero: {
 			eyebrow: 'iPhone long screenshot tool',
@@ -254,6 +253,8 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: 'English video demo',
 			legalTitle: 'Legal',
+			languageLabel: '中文',
+			languageHref: 'zh/',
 		},
 		legalLinks: [
 			{ label: 'Privacy Policy', href: 'https://scrollshot.work/en/' },
@@ -289,7 +290,6 @@ export const homeLocales = {
 			{ href: '#pricing', label: '价格' },
 			{ href: '#faq', label: '常见问题' },
 			{ href: 'blog/', label: '博客' },
-			{ href: '../', label: 'English' },
 		],
 		hero: {
 			eyebrow: 'iPhone 长截图工具',
@@ -449,6 +449,8 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: '中文视频演示',
 			legalTitle: '法律',
+			languageLabel: 'English',
+			languageHref: '../',
 		},
 		legalLinks: [
 			{ label: 'Privacy Policy', href: 'https://scrollshot.work/' },

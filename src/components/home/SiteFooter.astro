@@ -24,6 +24,8 @@ interface Props {
 		appStoreLabel: string;
 		videoLabel: string;
 		legalTitle: string;
+		languageLabel?: string;
+		languageHref?: string;
 	};
 }
 
@@ -42,6 +44,9 @@ const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content 
 				<a href={`${homeHref}#features`}>{content.featuresLabel}</a>
 				<a href={`${homeHref}#reviews`}>{content.reviewsLabel}</a>
 				<a href={`${homeHref}#pricing`}>{content.pricingLabel}</a>
+				{content.languageHref && content.languageLabel && (
+					<a href={content.languageHref}>{content.languageLabel}</a>
+				)}
 			</div>
 			<div>
 				<h3>{content.downloadTitle}</h3>
