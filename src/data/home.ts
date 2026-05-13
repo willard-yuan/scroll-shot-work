@@ -58,14 +58,14 @@ export const homeLocales = {
 		site,
 		assets: localeAssets.en,
 		meta: {
-			title: 'ScrollShot - Turn Screen Recordings Into Long Screenshots',
+			title: 'ScrollShot: Long Screenshot & Scroll Capture',
 			description:
-				'ScrollShot is an iOS long screenshot tool that turns screen recordings into clean long images, with manual stitching, fine tuning, scrollbar cleanup, image sharing, PDF export, themes, and multilingual UI.',
+				'ScrollShot makes long screenshots easy: capture scrolling pages, stitch photos, and save crisp full-page images in high quality.',
 			keywords: [
 				'ScrollShot',
 				'long screenshot',
 				'scrolling screenshot',
-				'screen recording to screenshot',
+				'full page screenshot',
 				'iPhone screenshot stitching',
 				'PDF export',
 			],
@@ -89,9 +89,9 @@ export const homeLocales = {
 		hero: {
 			eyebrow: 'iPhone long screenshot tool',
 			title: 'ScrollShot',
-			subtitle: 'Turn screen recordings into clean long screenshots',
+			subtitle: 'Long screenshot & scroll capture made easy',
 			text:
-				'Start a system screen recording, scroll through the page, and ScrollShot extracts key frames, removes duplicates, matches overlaps, and generates one clean long image.',
+				'Capture long screenshots of chats, webpages, and articles. ScrollShot helps you stitch photos and save full-page content in high quality.',
 			primaryCta: 'Download for iOS',
 			secondaryCta: 'Watch English demo',
 			videoAria: 'Open ScrollShot English video demo',
@@ -276,10 +276,10 @@ export const homeLocales = {
 		site,
 		assets: localeAssets.zh,
 		meta: {
-			title: 'ScrollShot - 录屏自动生成高清长截图',
+			title: '苹果长截图工具 ScrollShot：滚动截图与拼接长图',
 			description:
-				'ScrollShot 是一款 iOS 长截图工具，可从屏幕录制自动生成长图，也支持手动截图拼接、拼接微调、滚动条清理、图片保存与 PDF 分享。',
-			keywords: ['ScrollShot', '长截图', '滚动截图', '录屏转长图', 'iPhone 长截图', '截图拼接', 'PDF 分享'],
+				'ScrollShot 让 iPhone 长截图更简单，支持滚动截图、照片拼接、网页截长图与高清长图保存，快速生成清晰完整的长截图。',
+			keywords: ['ScrollShot', '长截图', '滚动截图', '照片拼接', 'iPhone 长截图', '截图拼接', 'PDF 分享'],
 			imageAlt: 'ScrollShot 中文视频演示封面',
 		},
 		navLabels: {
@@ -300,9 +300,9 @@ export const homeLocales = {
 		hero: {
 			eyebrow: 'iPhone 长截图工具',
 			title: 'ScrollShot',
-			subtitle: '录屏后，自动生成高清长截图',
+			subtitle: '滚动截图与拼接长图，高清导出',
 			text:
-				'保存聊天记录、网页、App 页面和文档时，不再手动截几十张图。录屏滚动一次，ScrollShot 自动抽帧、去重、匹配并拼成一张干净长图。',
+				'让 iPhone 长截图更简单。无论是滚动截图、照片拼接还是网页截长图，ScrollShot 都能帮你快速生成清晰完整的长图。',
 			primaryCta: 'iOS 版下载',
 			secondaryCta: '观看中文演示',
 			videoAria: '打开 ScrollShot 中文视频演示',
