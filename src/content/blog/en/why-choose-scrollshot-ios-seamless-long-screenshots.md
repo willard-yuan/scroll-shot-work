@@ -7,7 +7,7 @@ category: "Product Story"
 author: "ScrollShot Team"
 tags: ["ScrollShot", "iOS long screenshot", "screen recording", "product story"]
 readingTime: "5 min read"
-cover: "/ScrollShot_Preview_En_0509_cover.jpg"
+cover: "/scrollshot_app_prview_0513.png"
 coverAlt: "ScrollShot English demo cover showing automatic long screenshot stitching"
 translationKey: "why-choose-scrollshot"
 ---
@@ -39,7 +39,7 @@ To solve this problem properly, I spent four months refining ScrollShot. It is m
 Start an iOS screen recording, scroll through the content, and stop when you reach the end. ScrollShot identifies useful frames, matches the overlapping regions, and generates one complete long screenshot.
 
 <div class="blog-demo">
-	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/scrollshot_app_prview_0513.png" controls playsinline preload="metadata"></video>
+	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_Cn_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Auto-Stitch demo: record once, scroll once, and let ScrollShot generate the long screenshot.</p>
 </div>
 
