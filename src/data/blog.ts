@@ -59,9 +59,9 @@ export const blogLocales = {
 		copy: {
 			home: 'Home',
 			kicker: 'ScrollShot Blog',
-			title: 'Long screenshot guides and product updates',
+			title: 'ScrollShot Blog: Latest Updates',
 			description:
-				'Practical notes on stitching screen recordings, preserving long pages, and sharing clean screenshots from iPhone.',
+				'Stay updated with practical long screenshot guides, product notes, and cleaner ways to preserve scrolling content on iPhone.',
 			featured: 'Latest Update',
 			recent: 'Recent Articles',
 			readArticle: 'Read article',
@@ -90,8 +90,8 @@ export const blogLocales = {
 		copy: {
 			home: '首页',
 			kicker: 'ScrollShot 博客',
-			title: '长截图教程与产品更新',
-			description: '记录录屏拼接、网页保存、截图整理和产品更新，让长内容保存更清爽。',
+			title: 'ScrollShot 博客：最新动态',
+			description: '关注 iPhone 长截图教程、产品更新和更清爽的滚动内容保存方法。',
 			featured: '最新文章',
 			recent: '近期文章',
 			readArticle: '阅读全文',

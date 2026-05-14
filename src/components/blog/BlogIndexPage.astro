@@ -47,19 +47,25 @@ const formatDate = (date: string) =>
 			labels={home.navLabels}
 		/>
 
-		<main class="blog-main">
+		<main class="blog-main blog-index-page">
 			<section class="blog-hero">
-				<a class="blog-breadcrumb" href={homeHref}>{page.copy.home}</a>
-				<p class="eyebrow">{page.copy.kicker}</p>
+				<nav class="blog-breadcrumb" aria-label="Breadcrumb">
+					<a href={homeHref}>{page.copy.home}</a>
+					<span aria-hidden="true">›</span>
+					<span>{page.copy.title}</span>
+				</nav>
 				<h1>{page.copy.title}</h1>
+				<span class="blog-title-rule" aria-hidden="true"></span>
 				<p>{page.copy.description}</p>
 			</section>
 
 			{
 				featured ? (
 					<section class="blog-featured" aria-labelledby="featured-post-title">
-						<p class="blog-section-label">{page.copy.featured}</p>
 						<a class="blog-featured-card" href={`${featured.slug}/`}>
+							<div class="blog-featured-media">
+								<img src={featured.cover} alt={featured.coverAlt} loading="eager" />
+							</div>
 							<div class="blog-featured-copy">
 								<div class="blog-meta">
 									<time datetime={featured.date}>{formatDate(featured.date)}</time>
@@ -68,9 +74,6 @@ const formatDate = (date: string) =>
 								<h2 id="featured-post-title">{featured.title}</h2>
 								<p>{featured.description}</p>
 								<span class="blog-read-link">{page.copy.readArticle}</span>
-							</div>
-							<div class="blog-featured-media">
-								<img src={featured.cover} alt={featured.coverAlt} loading="eager" />
 							</div>
 						</a>
 					</section>
