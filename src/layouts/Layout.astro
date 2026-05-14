@@ -54,6 +54,7 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 		<meta name="twitter:image" content={image} />
 		<meta name="twitter:image:alt" content={imageAlt} />
 		<meta name="generator" content={Astro.generator} />
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="f9899ab0-197b-4793-9168-de78a39c8897"></script>
 		<title>{title}</title>
 		{jsonLdItems.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
 	</head>
