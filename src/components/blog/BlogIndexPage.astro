@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SiteNav from '../home/SiteNav.astro';
 import SiteFooter from '../home/SiteFooter.astro';
 import type { BlogLocale, BlogPost } from '../../data/blog';
-import { buildBlogIndexJsonLd, getBlogHomeHref, getBlogNavLinks } from '../../data/blog';
+import { buildBlogIndexJsonLd, getBlogHomeHref, getBlogLanguageLinks, getBlogNavLinks } from '../../data/blog';
 import { site } from '../../data/home';
 
 interface Props {
@@ -17,9 +17,11 @@ const featured = posts.find((post) => post.featured) ?? posts[0];
 const recentPosts = posts.filter((post) => post !== featured);
 const navLinks = getBlogNavLinks(page.locale, 'index');
 const homeHref = getBlogHomeHref(page.locale, 'index');
+const dateLocale =
+	page.locale === 'zh' ? 'zh-CN' : page.locale === 'ja' ? 'ja-JP' : page.locale === 'ko' ? 'ko-KR' : 'en-US';
 
 const formatDate = (date: string) =>
-	new Intl.DateTimeFormat(page.locale === 'zh' ? 'zh-CN' : 'en-US', {
+	new Intl.DateTimeFormat(dateLocale, {
 		year: 'numeric',
 		month: 'long',
 		day: 'numeric',
@@ -120,8 +122,7 @@ const formatDate = (date: string) =>
 			legalLinks={home.legalLinks}
 			content={{
 				...home.footer,
-				languageHref: page.locale === 'en' ? `${homeHref}zh/blog/` : `${homeHref}blog/`,
-				languageLabel: page.locale === 'en' ? '博客中文版' : 'Blog English',
+				languageLinks: getBlogLanguageLinks(page.locale),
 			}}
 		/>
 	</div>

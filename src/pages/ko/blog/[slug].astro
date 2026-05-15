@@ -1,0 +1,18 @@
+---
+import BlogPostPage from '../../../components/blog/BlogPostPage.astro';
+import { blogLocales, getBlogPosts } from '../../../data/blog';
+import '../../../styles/home.css';
+import '../../../styles/blog.css';
+
+export function getStaticPaths() {
+	return getBlogPosts('ko').map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const page = blogLocales.ko;
+---
+
+<BlogPostPage page={page} post={post} />

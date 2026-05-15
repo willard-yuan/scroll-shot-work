@@ -26,6 +26,7 @@ interface Props {
 		legalTitle: string;
 		languageLabel?: string;
 		languageHref?: string;
+		languageLinks?: LinkItem[];
 	};
 }
 
@@ -44,7 +45,8 @@ const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content 
 				<a href={`${homeHref}#features`}>{content.featuresLabel}</a>
 				<a href={`${homeHref}#reviews`}>{content.reviewsLabel}</a>
 				<a href={`${homeHref}#pricing`}>{content.pricingLabel}</a>
-				{content.languageHref && content.languageLabel && (
+				{content.languageLinks?.map((link) => <a href={link.href}>{link.label}</a>)}
+				{!content.languageLinks?.length && content.languageHref && content.languageLabel && (
 					<a href={content.languageHref}>{content.languageLabel}</a>
 				)}
 			</div>

@@ -6,6 +6,7 @@ import type { BlogLocale, BlogPost } from '../../data/blog';
 import {
 	buildBlogPostJsonLd,
 	getBlogHomeHref,
+	getBlogLanguageLinks,
 	getBlogNavLinks,
 	getBlogPostAlternates,
 } from '../../data/blog';
@@ -22,8 +23,10 @@ const Content = post.Content;
 const navLinks = getBlogNavLinks(page.locale, 'post');
 const homeHref = getBlogHomeHref(page.locale, 'post');
 const blogHref = '../';
+const dateLocale =
+	page.locale === 'zh' ? 'zh-CN' : page.locale === 'ja' ? 'ja-JP' : page.locale === 'ko' ? 'ko-KR' : 'en-US';
 const formatDate = (date: string) =>
-	new Intl.DateTimeFormat(page.locale === 'zh' ? 'zh-CN' : 'en-US', {
+	new Intl.DateTimeFormat(dateLocale, {
 		year: 'numeric',
 		month: 'long',
 		day: 'numeric',
@@ -108,8 +111,7 @@ const formatDate = (date: string) =>
 			legalLinks={home.legalLinks}
 			content={{
 				...home.footer,
-				languageHref: page.locale === 'en' ? `${homeHref}zh/blog/` : `${homeHref}blog/`,
-				languageLabel: page.locale === 'en' ? '博客中文版' : 'Blog English',
+				languageLinks: getBlogLanguageLinks(page.locale),
 			}}
 		/>
 	</div>

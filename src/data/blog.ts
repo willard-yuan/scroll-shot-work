@@ -1,6 +1,6 @@
 import { appStoreUrls, homeLocales, localeAssets, site } from './home';
 
-export type BlogLocaleCode = 'en' | 'zh';
+export type BlogLocaleCode = 'en' | 'zh' | 'ja' | 'ko';
 
 export interface BlogFrontmatter {
 	title: string;
@@ -36,8 +36,18 @@ const siteUrl = (path: string) => `${site.url}${path}`;
 const indexAlternates = [
 	{ lang: 'en', href: siteUrl('blog/') },
 	{ lang: 'zh-CN', href: siteUrl('zh/blog/') },
+	{ lang: 'ja', href: siteUrl('ja/blog/') },
+	{ lang: 'ko', href: siteUrl('ko/blog/') },
 	{ lang: 'x-default', href: siteUrl('blog/') },
 ];
+
+const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'ja', 'ko'];
+const hrefLangByLocale: Record<BlogLocaleCode, string> = {
+	en: 'en',
+	zh: 'zh-CN',
+	ja: 'ja',
+	ko: 'ko',
+};
 
 export const blogLocales = {
 	en: {
@@ -102,12 +112,74 @@ export const blogLocales = {
 			noPosts: '暂无文章。',
 		},
 	},
+	ja: {
+		locale: 'ja',
+		lang: 'ja',
+		ogLocale: 'ja_JP',
+		url: siteUrl('ja/blog/'),
+		appStoreUrl: appStoreUrls.ja,
+		home: homeLocales.ja,
+		assets: localeAssets.ja,
+		alternateLinks: indexAlternates,
+		meta: {
+			title: 'ScrollShotブログ - 長いスクリーンショットの使い方と製品アップデート',
+			description:
+				'ScrollShotブログでは、iPhoneで長いスクリーンショットを保存する方法、画面収録からの自動合成、写真の手動結合、プライバシー、製品アップデートを紹介します。',
+			keywords: ['ScrollShot ブログ', '長いスクリーンショット', 'iPhone スクロールスクリーンショット', 'スクショ 結合'],
+			imageAlt: 'ScrollShot デモ動画のカバー画像',
+		},
+		copy: {
+			home: 'ホーム',
+			kicker: 'ScrollShot ブログ',
+			title: 'ScrollShotブログ：最新情報',
+			description: 'iPhoneの長いスクリーンショット、製品アップデート、スクロール内容をきれいに残すための実践的なヒントをお届けします。',
+			featured: '最新記事',
+			recent: '最近の記事',
+			readArticle: '記事を読む',
+			backToBlog: 'ブログへ戻る',
+			articleByline: 'ScrollShotチーム',
+			blogLabel: 'ブログ',
+			languageLabel: 'English',
+			noPosts: '記事はまだ公開されていません。',
+		},
+	},
+	ko: {
+		locale: 'ko',
+		lang: 'ko',
+		ogLocale: 'ko_KR',
+		url: siteUrl('ko/blog/'),
+		appStoreUrl: appStoreUrls.ko,
+		home: homeLocales.ko,
+		assets: localeAssets.ko,
+		alternateLinks: indexAlternates,
+		meta: {
+			title: 'ScrollShot 블로그 - 긴 스크린샷 가이드와 제품 업데이트',
+			description:
+				'ScrollShot 블로그에서는 iPhone에서 긴 스크린샷을 저장하는 방법, 화면 녹화 기반 자동 합성, 사진 수동 결합, 개인정보 보호, 제품 업데이트를 소개합니다.',
+			keywords: ['ScrollShot 블로그', '긴 스크린샷', 'iPhone 스크롤 캡처', '스크린샷 이어붙이기'],
+			imageAlt: 'ScrollShot 데모 영상 커버 이미지',
+		},
+		copy: {
+			home: '홈',
+			kicker: 'ScrollShot 블로그',
+			title: 'ScrollShot 블로그: 최신 소식',
+			description: 'iPhone 긴 스크린샷, 제품 업데이트, 스크롤 콘텐츠를 더 깔끔하게 저장하는 실전 팁을 전합니다.',
+			featured: '최신 글',
+			recent: '최근 글',
+			readArticle: '글 읽기',
+			backToBlog: '블로그로 돌아가기',
+			articleByline: 'ScrollShot 팀',
+			blogLabel: '블로그',
+			languageLabel: 'English',
+			noPosts: '아직 공개된 글이 없습니다.',
+		},
+	},
 } as const;
 
 export type BlogLocale = (typeof blogLocales)[keyof typeof blogLocales];
 
 const normalizePost = ([path, module]: [string, MarkdownModule]): BlogPost | null => {
-	const match = path.match(/\/blog\/(en|zh)\/([^/]+)\.md$/);
+	const match = path.match(/\/blog\/(en|zh|ja|ko)\/([^/]+)\.md$/);
 
 	if (!match) {
 		return null;
@@ -115,7 +187,7 @@ const normalizePost = ([path, module]: [string, MarkdownModule]): BlogPost | nul
 
 	const [, locale, filename] = match as [string, BlogLocaleCode, string];
 	const slug = filename.replace(/\.md$/, '');
-	const urlPath = locale === 'en' ? `blog/${slug}/` : `zh/blog/${slug}/`;
+	const urlPath = locale === 'en' ? `blog/${slug}/` : `${locale}/blog/${slug}/`;
 
 	return {
 		...module.frontmatter,
@@ -136,17 +208,16 @@ export const getBlogPosts = (locale: BlogLocaleCode) => allPosts.filter((post) =
 export const getBlogPost = (locale: BlogLocaleCode, slug: string) =>
 	getBlogPosts(locale).find((post) => post.slug === slug);
 
-const otherLocale = (locale: BlogLocaleCode): BlogLocaleCode => (locale === 'en' ? 'zh' : 'en');
-
-const getTranslatedPost = (post: BlogPost) =>
-	getBlogPosts(otherLocale(post.locale)).find((candidate) => candidate.translationKey === post.translationKey);
-
 export const getBlogPostAlternates = (post: BlogPost) => {
-	const translated = getTranslatedPost(post);
-	const englishPost = post.locale === 'en' ? post : translated;
+	const translations = blogLocaleCodes
+		.map((locale) => getBlogPosts(locale).find((candidate) => candidate.translationKey === post.translationKey))
+		.filter((candidate): candidate is BlogPost => Boolean(candidate));
+	const englishPost = translations.find((candidate) => candidate.locale === 'en') ?? translations[0];
 	const links = [
-		{ lang: post.locale === 'en' ? 'en' : 'zh-CN', href: post.url },
-		translated && { lang: translated.locale === 'en' ? 'en' : 'zh-CN', href: translated.url },
+		...translations.map((candidate) => ({
+			lang: hrefLangByLocale[candidate.locale],
+			href: candidate.url,
+		})),
 		englishPost && { lang: 'x-default', href: englishPost.url },
 	].filter((link): link is { lang: string; href: string } => Boolean(link));
 
@@ -156,14 +227,6 @@ export const getBlogPostAlternates = (post: BlogPost) => {
 export const getBlogNavLinks = (locale: BlogLocaleCode, page: 'index' | 'post') => {
 	const homePrefix = page === 'index' ? '../' : '../../';
 	const blogHref = page === 'index' ? './' : '../';
-	const languageHref =
-		locale === 'en'
-			? page === 'index'
-				? '../zh/blog/'
-				: '../../zh/blog/'
-			: page === 'index'
-				? '../../blog/'
-				: '../../../blog/';
 	const home = homeLocales[locale];
 	const blog = blogLocales[locale];
 
@@ -175,6 +238,14 @@ export const getBlogNavLinks = (locale: BlogLocaleCode, page: 'index' | 'post') 
 		{ href: blogHref, label: blog.copy.blogLabel, current: true },
 	];
 };
+
+export const getBlogLanguageLinks = (locale: BlogLocaleCode) =>
+	[
+		locale !== 'en' && { label: 'Blog English', href: blogLocales.en.url },
+		locale !== 'zh' && { label: '博客中文版', href: blogLocales.zh.url },
+		locale !== 'ja' && { label: '日本語ブログ', href: blogLocales.ja.url },
+		locale !== 'ko' && { label: '한국어 블로그', href: blogLocales.ko.url },
+	].filter((link): link is { label: string; href: string } => Boolean(link));
 
 export const getBlogHomeHref = (_locale: BlogLocaleCode, page: 'index' | 'post') =>
 	page === 'index' ? '../' : '../../';

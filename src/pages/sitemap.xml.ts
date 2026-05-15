@@ -13,7 +13,8 @@ type SitemapEntry = {
 	alternates: AlternateLink[];
 };
 
-const SITE_LASTMOD = '2026-05-14';
+const SITE_LASTMOD = '2026-05-15';
+const localeCodes = ['en', 'zh', 'ja', 'ko'] as const;
 
 const escapeXml = (value: string) =>
 	value
@@ -53,37 +54,21 @@ const renderUrl = (entry: SitemapEntry) => {
 		.join('\n');
 };
 
-const englishPosts = getBlogPosts('en');
-const chinesePosts = getBlogPosts('zh');
-const blogLastmod = latestDate([...englishPosts, ...chinesePosts]);
+const allPosts = localeCodes.flatMap((locale) => getBlogPosts(locale));
+const blogLastmod = latestDate(allPosts);
 
 const entries: SitemapEntry[] = [
-	{
-		loc: homeLocales.en.url,
+	...localeCodes.map((locale) => ({
+		loc: homeLocales[locale].url,
 		lastmod: SITE_LASTMOD,
-		alternates: homeLocales.en.alternateLinks,
-	},
-	{
-		loc: homeLocales.zh.url,
-		lastmod: SITE_LASTMOD,
-		alternates: homeLocales.zh.alternateLinks,
-	},
-	{
-		loc: blogLocales.en.url,
-		lastmod: blogLastmod,
-		alternates: blogLocales.en.alternateLinks,
-	},
-	{
-		loc: blogLocales.zh.url,
-		lastmod: blogLastmod,
-		alternates: blogLocales.zh.alternateLinks,
-	},
-	...englishPosts.map((post) => ({
-		loc: post.url,
-		lastmod: normalizeDate(post.updated ?? post.date),
-		alternates: getBlogPostAlternates(post),
+		alternates: homeLocales[locale].alternateLinks,
 	})),
-	...chinesePosts.map((post) => ({
+	...localeCodes.map((locale) => ({
+		loc: blogLocales[locale].url,
+		lastmod: blogLastmod,
+		alternates: blogLocales[locale].alternateLinks,
+	})),
+	...allPosts.map((post) => ({
 		loc: post.url,
 		lastmod: normalizeDate(post.updated ?? post.date),
 		alternates: getBlogPostAlternates(post),

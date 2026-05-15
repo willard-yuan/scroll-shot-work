@@ -35,6 +35,27 @@
 		"Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", var(--font-cjk-sans);
 }
 
+:lang(ja) {
+	--sans:
+		-apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans",
+		"Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans JP", Meiryo,
+		sans-serif;
+	--article: var(--sans);
+	--serif:
+		"Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP",
+		"Source Han Serif JP", ui-serif, Georgia, serif;
+}
+
+:lang(ko) {
+	--sans:
+		-apple-system, BlinkMacSystemFont, "SF Pro Text", "Apple SD Gothic Neo",
+		"Malgun Gothic", "Noto Sans KR", "Source Han Sans KR", Arial, sans-serif;
+	--article: var(--sans);
+	--serif:
+		"AppleMyungjo", "Nanum Myeongjo", "Noto Serif KR", "Source Han Serif KR",
+		ui-serif, Georgia, serif;
+}
+
 .site-shell {
 	min-height: 100vh;
 	background:
