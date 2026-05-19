@@ -24,7 +24,15 @@ const navLinks = getBlogNavLinks(page.locale, 'post');
 const homeHref = getBlogHomeHref(page.locale, 'post');
 const blogHref = '../';
 const dateLocale =
-	page.locale === 'zh' ? 'zh-CN' : page.locale === 'ja' ? 'ja-JP' : page.locale === 'ko' ? 'ko-KR' : 'en-US';
+	page.locale === 'zh'
+		? 'zh-CN'
+		: page.locale === 'zh-hant'
+			? 'zh-TW'
+			: page.locale === 'ja'
+				? 'ja-JP'
+				: page.locale === 'ko'
+					? 'ko-KR'
+					: 'en-US';
 const formatDate = (date: string) =>
 	new Intl.DateTimeFormat(dateLocale, {
 		year: 'numeric',

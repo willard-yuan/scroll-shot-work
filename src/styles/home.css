@@ -35,6 +35,17 @@
 		"Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", var(--font-cjk-sans);
 }
 
+:lang(zh-Hant) {
+	--sans:
+		-apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC",
+		"Hiragino Sans CNS", "Noto Sans TC", "Source Han Sans TC",
+		"Microsoft JhengHei UI", "Microsoft JhengHei", sans-serif;
+	--article: var(--sans);
+	--serif:
+		"Songti TC", "Noto Serif TC", "Source Han Serif TC", "PMingLiU",
+		"MingLiU", var(--sans);
+}
+
 :lang(ja) {
 	--sans:
 		-apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans",

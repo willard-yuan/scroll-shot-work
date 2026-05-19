@@ -1,6 +1,7 @@
 export const appStoreUrls = {
 	en: 'https://apps.apple.com/us/app/scrollshot-long-screenshot/id6760192003',
 	zh: 'https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003',
+	'zh-hant': 'https://apps.apple.com/tw/app/scrollshot-long-screenshot/id6760192003',
 	ja: 'https://apps.apple.com/jp/app/scrollshot-long-screenshot/id6760192003',
 	ko: 'https://apps.apple.com/kr/app/scrollshot-long-screenshot/id6760192003',
 };
@@ -12,6 +13,7 @@ export const site = {
 };
 
 const zhUrl = `${site.url}zh/`;
+const zhHantUrl = `${site.url}zh-hant/`;
 const jaUrl = `${site.url}ja/`;
 const koUrl = `${site.url}ko/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
@@ -35,6 +37,16 @@ export const localeAssets = {
 		ogImage: '/ScrollShot_Preview_En_0509_cover.jpg',
 	},
 	zh: {
+		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_1.png',
+		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_2.png',
+		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_3.png',
+		themes: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_4.png',
+		video: '/ScrollShot_Preview_Cn_0509.mp4',
+		videoCover: '/ScrollShot_Preview_Cn_0509_cover.jpg',
+		appIcon,
+		ogImage: '/ScrollShot_Preview_Cn_0509_cover.jpg',
+	},
+	'zh-hant': {
 		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_1.png',
 		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_2.png',
 		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_3.png',
@@ -69,6 +81,7 @@ export const localeAssets = {
 const alternates = [
 	{ lang: 'en', href: site.url },
 	{ lang: 'zh-CN', href: zhUrl },
+	{ lang: 'zh-Hant', href: zhHantUrl },
 	{ lang: 'ja', href: jaUrl },
 	{ lang: 'ko', href: koUrl },
 	{ lang: 'x-default', href: site.url },
@@ -283,6 +296,7 @@ export const homeLocales = {
 			languageHref: 'zh/',
 			languageLinks: [
 				{ label: '中文', href: 'zh/' },
+				{ label: '繁體中文', href: 'zh-hant/' },
 				{ label: '日本語', href: 'ja/' },
 				{ label: '한국어', href: 'ko/' },
 			],
@@ -484,6 +498,7 @@ export const homeLocales = {
 			languageHref: '../',
 			languageLinks: [
 				{ label: 'English', href: '../' },
+				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
 			],
@@ -492,6 +507,206 @@ export const homeLocales = {
 			{ label: 'Privacy Policy', href: 'https://scrollshot.work/' },
 			{ label: 'Terms of Service', href: 'https://scrollshot.work/tos/' },
 			{ label: '京ICP备2026011241号-1A', href: 'https://beian.miit.gov.cn' },
+		],
+	},
+	'zh-hant': {
+		lang: 'zh-Hant',
+		ogLocale: 'zh_TW',
+		url: zhHantUrl,
+		alternateLinks: alternates,
+		appStoreUrl: appStoreUrls['zh-hant'],
+		site,
+		assets: localeAssets['zh-hant'],
+		meta: {
+			title: 'iPhone 長截圖工具 ScrollShot：滾動截圖與拼接長圖',
+			description:
+				'ScrollShot 讓 iPhone 長截圖更簡單：支援自動滾動錄影拼接、多張照片手動拼接、網頁長截圖與高畫質長圖儲存。快速產生清晰完整的長圖，是保存聊天紀錄、網頁內容和 App 頁面的理想工具。',
+			keywords: ['ScrollShot', 'iPhone 長截圖', '滾動截圖', '長截圖工具', '拼接長圖'],
+			imageAlt: 'ScrollShot 繁體中文影片示範封面',
+		},
+		navLabels: {
+			navAria: '主導覽',
+			linksAria: '頁面導覽',
+			install: '安裝',
+			brandHome: 'ScrollShot 首頁',
+			menu: '開啟導覽選單',
+		},
+		navLinks: [
+			{ href: '#features', label: '產品功能' },
+			{ href: '#reviews', label: '使用者評價' },
+			{ href: '#pricing', label: '價格' },
+			{ href: '#faq', label: '常見問題' },
+			{ href: 'blog/', label: '部落格' },
+		],
+		hero: {
+			eyebrow: 'iPhone 長截圖工具',
+			title: 'ScrollShot',
+			subtitle: '滾動截圖與拼接長圖，高畫質匯出',
+			text:
+				'讓 iPhone 長截圖更簡單。無論是保存聊天紀錄、網頁內容、文章還是 App 頁面，ScrollShot 都能幫你快速產生清晰完整的長圖。',
+			primaryCta: '下載 iOS 版',
+			secondaryCta: '觀看中文示範',
+			videoAria: '開啟 ScrollShot 中文影片示範',
+			videoLabel: 'ScrollShot 中文影片示範',
+			caption: '30 秒看懂自動拼接',
+		},
+		sections: {
+			features: {
+				kicker: '主要功能',
+				title: '為真實滾動場景設計',
+				description: '把長內容保存得更快、更準確，也更容易分享。',
+			},
+			reviews: {
+				kicker: '使用者評價',
+				title: '讓長截圖少一點苦工',
+				description: '從工作留存到內容收藏，ScrollShot 將繁瑣步驟整理成清爽順手的流程。',
+			},
+			scenarios: {
+				kicker: '使用場景',
+				title: '聊天、網頁、教學內容，都能整理成一張圖',
+				description: '不用切換工具，不用上傳到網頁，一次完成保存、檢查與分享。',
+			},
+			pricing: {
+				kicker: '價格',
+				title: '簡單清楚的價格',
+				description: '手動拼接可免費使用，Pro 解鎖錄影自動拼接與所有主題。實際價格以 App Store 顯示為準。',
+			},
+			faq: {
+				kicker: '常見問題',
+				title: '使用前你可能想確認這些',
+			},
+		},
+		featureIntro: [
+			{ title: '錄影自動拼接', text: '滾動一次，自動擷取影格、去除重複、比對並產生長圖。', icon: icons.auto },
+			{ title: '拼接微調', text: '保存前檢查拼接縫，調整邊界並清理捲動條痕跡。', icon: icons.tune },
+			{ title: '手動依序拼接', text: '依照選取順序合成長圖，第一張就是最上方。', icon: icons.manual },
+			{ title: '圖片 / PDF 分享', text: '保存到相簿，也可以繼續分享圖片或匯出 PDF。', icon: icons.share },
+		],
+		featureCards: [
+			{
+				kicker: 'Auto Stitch',
+				title: '錄影一次，自動生成長圖',
+				text: '開啟系統錄影並滾動頁面，ScrollShot 會自動擷取關鍵影格、過濾重複畫面，並找出穩定的重疊區域產生長截圖。',
+				image: localeAssets['zh-hant'].auto,
+				alt: 'ScrollShot 中文自動錄影拼接介面',
+				className: 'auto-shot',
+			},
+			{
+				kicker: 'Fine Tune',
+				title: '保存前微調檢查',
+				text: '面對網頁、文件與動態內容時，可在保存前檢查結果，微調拼接位置，並清理常見的捲動條痕跡。',
+				image: localeAssets['zh-hant'].trim,
+				alt: 'ScrollShot 中文拼接微調介面',
+				className: 'trim-shot',
+			},
+			{
+				kicker: 'Manual Stitch',
+				title: '依照順序手動拼接',
+				text: '選擇多張截圖後，依照選取順序合成長圖。適合聊天紀錄、交易紀錄、教學步驟，以及只有部分重疊的頁面。',
+				image: localeAssets['zh-hant'].manual,
+				alt: 'ScrollShot 中文手動拼接介面',
+				className: 'manual-shot',
+			},
+			{
+				kicker: 'Themes',
+				title: '工具也可以保持好看',
+				text: '內建多套主題色與語言設定。高頻工具不必冰冷，也可以清爽、克制，保有自己的審美。',
+				image: localeAssets['zh-hant'].themes,
+				alt: 'ScrollShot 中文主題設定介面',
+				className: 'theme-shot-card',
+			},
+		],
+		reviews: [
+			{ role: '產品經理', quote: '保存競品頁面和流程說明時，不用再截十幾張圖，錄影後滾動一次就夠了。', tone: 'warm' },
+			{ role: '設計師', quote: '最喜歡可以微調拼接縫，長頁面分享給別人之前更安心。' },
+			{ role: '客服團隊', quote: '聊天紀錄、訂單頁面、問題重現步驟都能整理成一張圖，溝通成本低很多。' },
+			{ role: '內容創作者', quote: '教學和社群內容經常很長，匯出圖片或 PDF 都很順。' },
+			{ role: '開發者', quote: '本機處理和手動順序控制很實用，不需要把敏感截圖傳到網頁工具。' },
+			{ role: '學生使用者', quote: '長文章、資料頁、學習筆記一次保存，之後查找也方便。' },
+		],
+		ratingLabel: '五星評價',
+		scenarios: [
+			{
+				title: '聊天紀錄與客服溝通',
+				text: '把連續對話、問題脈絡和處理流程整理成一張圖，避免來回翻相簿。',
+				image: localeAssets['zh-hant'].manual,
+				className: 'chat-scene',
+				cta: { label: '觀看影片示範', href: localeAssets['zh-hant'].video },
+			},
+			{
+				title: '網頁、文章與教學',
+				text: '長網頁、部落格文章、產品文件和教學步驟都可以保存為一張清晰長圖。',
+				image: localeAssets['zh-hant'].trim,
+				className: 'web-scene',
+				cta: { label: '查看拼接功能', href: '#features' },
+			},
+			{
+				title: '主題、語言與分享',
+				text: '多主題、多語言、圖片和 PDF 分享，適合日常與工作兩種場景。',
+				image: localeAssets['zh-hant'].themes,
+				className: 'theme-scene',
+				cta: { label: '立即安裝體驗', href: appStoreUrls['zh-hant'] },
+			},
+		],
+		plans: [
+			{
+				name: 'ScrollShot',
+				price: '免費',
+				subtitle: '適合偶爾手動拼接',
+				features: ['手動截圖拼接', '相簿選擇與預覽', '保存長圖到相簿', '基礎主題色'],
+			},
+			{
+				name: 'ScrollShot Pro',
+				price: 'Pro',
+				subtitle: '解鎖最快的長截圖工作流',
+				features: ['錄影自動生成長圖', '選擇影片進行拼接', '全部主題色', '後續進階功能更新'],
+				featured: true,
+			},
+		],
+		pricingButtonLabel: '取得 ScrollShot',
+		faqs: [
+			['ScrollShot 和系統截圖有什麼不同？', '系統截圖適合目前畫面。ScrollShot 面向滾動內容，可以把錄影或多張截圖合成一張長圖，並提供微調、捲動條清理和 PDF 分享。'],
+			['自動拼接如何運作？', '你先開啟系統錄影並滾動頁面，停止錄影後在 ScrollShot 中選擇影片片段。App 會擷取影格、去除重複、比對重疊區域並生成長圖。'],
+			['手動拼接的順序如何決定？', '預設會依照你選擇圖片的先後順序拼接。第一張圖片會出現在長圖最上方，也可以在設定中開啟依建立時間排序。'],
+			['哪些內容適合用 ScrollShot？', '聊天紀錄、網頁、App 頁面、交易紀錄、教學步驟、長文章、產品文件和社群內容都很適合。'],
+			['可以保存為 PDF 嗎？', '可以。保存結果後，你可以繼續分享圖片，也可以匯出為 PDF。'],
+			['我的照片會被上傳嗎？', '目前產品文案與權限說明強調本機拼接流程。照片用於選擇來源圖片、讀取影像和保存結果，不會為了拼接上傳到伺服器。'],
+			['為什麼需要照片權限？', '照片權限用於選擇截圖、讀取來源圖片、保存拼接結果，以及在你確認後整理原圖。'],
+			['為什麼需要通知權限？', '錄影結束後，通知可提醒你回到拼接流程，避免錄完後忘記處理影片。'],
+			['捲動條清理是自動的嗎？', 'ScrollShot 支援清理常見的右側或底部捲動條痕跡，但不承諾所有圖片都能完美移除。'],
+			['拼接失敗時怎麼辦？', '你可以改用手動拼接，或進入微調頁調整拼接位置。複雜動態內容也建議保留一點重疊區域。'],
+			['Pro 解鎖什麼？', 'ScrollShot Pro 解鎖錄影自動拼接、選擇影片拼接、全部主題色，以及後續進階功能。'],
+			['支援哪些語言？', 'App 已支援多語言設定，包括英文、中文、日文、韓文、德文、法文、西班牙文等多種語言。'],
+			['是否支援 Android？', '目前官網展示的是 iOS 版本能力，不承諾 Android 支援。'],
+			['下載連結在哪裡？', '點擊頁面頂部或首屏的安裝按鈕，會跳轉到 App Store 頁面。'],
+		],
+		finalCta: {
+			kicker: 'Download',
+			title: '準備生成更乾淨的長截圖了嗎？',
+			buttonLabel: '前往 App Store 下載',
+		},
+		footer: {
+			brandHome: 'ScrollShot 首頁',
+			note: 'ScrollShot 是 iOS 長截圖工具，支援錄影自動拼接、手動拼接、結果微調、圖片保存與 PDF 分享。',
+			productTitle: '產品',
+			featuresLabel: '主要功能',
+			reviewsLabel: '使用者評價',
+			pricingLabel: '價格',
+			downloadTitle: '下載',
+			appStoreLabel: 'App Store',
+			videoLabel: '中文影片示範',
+			legalTitle: '法律',
+			languageLinks: [
+				{ label: 'English', href: '../' },
+				{ label: '簡體中文', href: '../zh/' },
+				{ label: '日本語', href: '../ja/' },
+				{ label: '한국어', href: '../ko/' },
+			],
+		},
+		legalLinks: [
+			{ label: 'Privacy Policy', href: 'https://scrollshot.work/' },
+			{ label: 'Terms of Service', href: 'https://scrollshot.work/tos/' },
+			{ label: 'ICP Record', href: 'https://beian.miit.gov.cn' },
 		],
 	},
 	ja: {
@@ -684,6 +899,7 @@ export const homeLocales = {
 			languageLinks: [
 				{ label: 'English', href: '../' },
 				{ label: '中文', href: '../zh/' },
+				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '한국어', href: '../ko/' },
 			],
 		},
@@ -883,6 +1099,7 @@ export const homeLocales = {
 			languageLinks: [
 				{ label: 'English', href: '../' },
 				{ label: '中文', href: '../zh/' },
+				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '日本語', href: '../ja/' },
 			],
 		},
