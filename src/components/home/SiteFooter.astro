@@ -24,6 +24,10 @@ interface Props {
 		appStoreLabel: string;
 		videoLabel: string;
 		legalTitle: string;
+		supportedLanguagesTitle?: string;
+		supportedLanguagesText?: string;
+		languageSwitcherTitle?: string;
+		languageSwitcherAria?: string;
 		languageLabel?: string;
 		languageHref?: string;
 		languageLinks?: LinkItem[];
@@ -31,6 +35,12 @@ interface Props {
 }
 
 const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content } = Astro.props;
+const languageLinks =
+	content.languageLinks?.length
+		? content.languageLinks
+		: content.languageHref && content.languageLabel
+			? [{ label: content.languageLabel, href: content.languageHref }]
+			: [];
 ---
 
 <footer class="footer">
@@ -45,10 +55,6 @@ const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content 
 				<a href={`${homeHref}#features`}>{content.featuresLabel}</a>
 				<a href={`${homeHref}#reviews`}>{content.reviewsLabel}</a>
 				<a href={`${homeHref}#pricing`}>{content.pricingLabel}</a>
-				{content.languageLinks?.map((link) => <a href={link.href}>{link.label}</a>)}
-				{!content.languageLinks?.length && content.languageHref && content.languageLabel && (
-					<a href={content.languageHref}>{content.languageLabel}</a>
-				)}
 			</div>
 			<div>
 				<h3>{content.downloadTitle}</h3>
@@ -61,4 +67,27 @@ const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content 
 			</div>
 		</div>
 	</div>
+
+	<div class="footer-language-support">
+		<h3>{content.supportedLanguagesTitle ?? 'Supported Languages'}</h3>
+		<p>
+			{
+				content.supportedLanguagesText ??
+					'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية and more.'
+			}
+		</p>
+	</div>
+
+	{
+		languageLinks.length > 0 && (
+			<div class="footer-bottom">
+				<span>{content.languageSwitcherTitle ?? 'Website Languages'}</span>
+				<nav class="footer-language-nav" aria-label={content.languageSwitcherAria ?? 'Change website language'}>
+					{languageLinks.map((link) => (
+						<a href={link.href}>{link.label}</a>
+					))}
+				</nav>
+			</div>
+		)
+	}
 </footer>

@@ -960,7 +960,7 @@
 
 .footer {
 	padding-top: 56px;
-	padding-bottom: 54px;
+	padding-bottom: 42px;
 	border-top: 1px solid var(--line);
 }
 
@@ -997,6 +997,81 @@
 	color: var(--soft);
 	font-size: 13px;
 	line-height: 1.7;
+}
+
+.footer-language-support {
+	margin-top: 52px;
+	padding-top: 42px;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-language-support h3 {
+	margin-bottom: 18px;
+}
+
+.footer-language-support p {
+	max-width: 1180px;
+	margin: 0;
+	color: #8f8a83;
+	font-family: var(--serif);
+	font-size: 15px;
+	font-weight: 660;
+	line-height: 1.68;
+	letter-spacing: 0.01em;
+}
+
+.footer-bottom {
+	margin-top: 40px;
+	padding-top: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.footer-bottom > span {
+	color: #f0ece5;
+	font-family: var(--serif);
+	font-size: 17px;
+	font-weight: 780;
+}
+
+.footer-language-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 10px 22px;
+}
+
+.footer-language-nav a {
+	position: relative;
+	color: #a7a19a;
+	font-family: var(--serif);
+	font-size: 15px;
+	font-weight: 680;
+	line-height: 1.4;
+}
+
+.footer-language-nav a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -5px;
+	height: 1px;
+	background: currentColor;
+	opacity: 0;
+	transform: scaleX(0.72);
+	transform-origin: left center;
+	transition:
+		opacity 160ms ease,
+		transform 160ms ease;
+}
+
+.footer-language-nav a:hover::after {
+	opacity: 0.45;
+	transform: scaleX(1);
 }
 
 @media (max-width: 1080px) {
@@ -1049,6 +1124,15 @@
 
 	.footer-top {
 		grid-template-columns: 1fr;
+	}
+
+	.footer-bottom {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.footer-language-nav {
+		justify-content: flex-start;
 	}
 }
 
@@ -1230,6 +1314,26 @@
 
 	.feature-card {
 		min-height: 0;
+	}
+
+	.footer-language-support {
+		margin-top: 42px;
+		padding-top: 34px;
+	}
+
+	.footer-language-support p {
+		font-size: 14px;
+		line-height: 1.74;
+	}
+
+	.footer-bottom {
+		margin-top: 30px;
+		padding-top: 22px;
+		gap: 16px;
+	}
+
+	.footer-language-nav {
+		gap: 9px 18px;
 	}
 
 	.feature-card-copy {

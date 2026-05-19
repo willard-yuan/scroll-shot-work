@@ -273,11 +273,11 @@ export const getBlogNavLinks = (locale: BlogLocaleCode, page: 'index' | 'post') 
 
 export const getBlogLanguageLinks = (locale: BlogLocaleCode) =>
 	[
-		locale !== 'en' && { label: 'Blog English', href: blogLocales.en.url },
-		locale !== 'zh' && { label: '博客中文版', href: blogLocales.zh.url },
-		locale !== 'zh-hant' && { label: '繁體中文部落格', href: blogLocales['zh-hant'].url },
-		locale !== 'ja' && { label: '日本語ブログ', href: blogLocales.ja.url },
-		locale !== 'ko' && { label: '한국어 블로그', href: blogLocales.ko.url },
+		locale !== 'en' && { label: 'English', href: blogLocales.en.url },
+		locale !== 'zh' && { label: '简体中文', href: blogLocales.zh.url },
+		locale !== 'zh-hant' && { label: '繁體中文', href: blogLocales['zh-hant'].url },
+		locale !== 'ja' && { label: '日本語', href: blogLocales.ja.url },
+		locale !== 'ko' && { label: '한국어', href: blogLocales.ko.url },
 	].filter((link): link is { label: string; href: string } => Boolean(link));
 
 export const getBlogHomeHref = (_locale: BlogLocaleCode, page: 'index' | 'post') =>

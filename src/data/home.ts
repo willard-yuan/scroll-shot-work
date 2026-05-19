@@ -308,6 +308,11 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: 'English video demo',
 			legalTitle: 'Legal',
+			supportedLanguagesTitle: 'Supported Languages',
+			supportedLanguagesText:
+				'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية and more.',
+			languageSwitcherTitle: 'Website Languages',
+			languageSwitcherAria: 'Change website language',
 			languageLabel: '中文',
 			languageHref: 'zh/',
 			languageLinks: [
@@ -510,6 +515,11 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: '中文视频演示',
 			legalTitle: '法律',
+			supportedLanguagesTitle: '支持语言',
+			supportedLanguagesText:
+				'English、简体中文、繁體中文、日本語、한국어、Deutsch、Français、Español、Italiano、Português、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
+			languageSwitcherTitle: '网站语言',
+			languageSwitcherAria: '切换网站语言',
 			languageLabel: 'English',
 			languageHref: '../',
 			languageLinks: [
@@ -712,6 +722,11 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: '中文影片示範',
 			legalTitle: '法律',
+			supportedLanguagesTitle: '支援語言',
+			supportedLanguagesText:
+				'English、簡體中文、繁體中文、日本語、한국어、Deutsch、Français、Español、Italiano、Português、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
+			languageSwitcherTitle: '網站語言',
+			languageSwitcherAria: '切換網站語言',
 			languageLinks: [
 				{ label: 'English', href: '../' },
 				{ label: '簡體中文', href: '../zh/' },
@@ -912,6 +927,11 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: 'デモ動画',
 			legalTitle: '法務',
+			supportedLanguagesTitle: '対応言語',
+			supportedLanguagesText:
+				'English、簡体中文、繁體中文、日本語、한국어、Deutsch、Français、Español、Italiano、Português、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية など。',
+			languageSwitcherTitle: 'サイト言語',
+			languageSwitcherAria: 'サイトの言語を切り替える',
 			languageLinks: [
 				{ label: 'English', href: '../' },
 				{ label: '中文', href: '../zh/' },
@@ -1112,6 +1132,11 @@ export const homeLocales = {
 			appStoreLabel: 'App Store',
 			videoLabel: '데모 영상',
 			legalTitle: '법적 고지',
+			supportedLanguagesTitle: '지원 언어',
+			supportedLanguagesText:
+				'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية 등.',
+			languageSwitcherTitle: '웹사이트 언어',
+			languageSwitcherAria: '웹사이트 언어 전환',
 			languageLinks: [
 				{ label: 'English', href: '../' },
 				{ label: '中文', href: '../zh/' },
