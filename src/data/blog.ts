@@ -1,6 +1,6 @@
 import { appStoreUrls, homeLocales, localeAssets, site } from './home';
 
-export type BlogLocaleCode = 'en' | 'zh' | 'ja' | 'ko';
+export type BlogLocaleCode = 'en' | 'zh' | 'zh-hant' | 'ja' | 'ko';
 
 export interface BlogFrontmatter {
 	title: string;
@@ -36,15 +36,17 @@ const siteUrl = (path: string) => `${site.url}${path}`;
 const indexAlternates = [
 	{ lang: 'en', href: siteUrl('blog/') },
 	{ lang: 'zh-CN', href: siteUrl('zh/blog/') },
+	{ lang: 'zh-Hant', href: siteUrl('zh-hant/blog/') },
 	{ lang: 'ja', href: siteUrl('ja/blog/') },
 	{ lang: 'ko', href: siteUrl('ko/blog/') },
 	{ lang: 'x-default', href: siteUrl('blog/') },
 ];
 
-const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'ja', 'ko'];
+const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'zh-hant', 'ja', 'ko'];
 const hrefLangByLocale: Record<BlogLocaleCode, string> = {
 	en: 'en',
 	zh: 'zh-CN',
+	'zh-hant': 'zh-Hant',
 	ja: 'ja',
 	ko: 'ko',
 };
@@ -110,6 +112,36 @@ export const blogLocales = {
 			blogLabel: '博客',
 			languageLabel: 'English',
 			noPosts: '暂无文章。',
+		},
+	},
+	'zh-hant': {
+		locale: 'zh-hant',
+		lang: 'zh-Hant',
+		ogLocale: 'zh_TW',
+		url: siteUrl('zh-hant/blog/'),
+		appStoreUrl: appStoreUrls['zh-hant'],
+		home: homeLocales['zh-hant'],
+		assets: localeAssets['zh-hant'],
+		alternateLinks: indexAlternates,
+		meta: {
+			title: 'ScrollShot 部落格 - 長截圖教學與產品更新',
+			description: 'ScrollShot 部落格提供 iPhone 長截圖、錄影自動拼接、手動照片拼接、隱私處理與產品更新的實用教學。學習如何更輕鬆地捕捉與整理高畫質長圖內容。',
+			keywords: ['ScrollShot 部落格', '長截圖教學', 'iPhone 滾動截圖', '截圖拼接'],
+			imageAlt: 'ScrollShot 繁體中文影片示範封面',
+		},
+		copy: {
+			home: '首頁',
+			kicker: 'ScrollShot 部落格',
+			title: 'ScrollShot 部落格：最新動態',
+			description: '關注 iPhone 長截圖教學、產品更新，以及更清爽的滾動內容保存方法。',
+			featured: '最新文章',
+			recent: '近期文章',
+			readArticle: '閱讀全文',
+			backToBlog: '返回部落格',
+			articleByline: 'ScrollShot 團隊',
+			blogLabel: '部落格',
+			languageLabel: 'English',
+			noPosts: '尚無文章。',
 		},
 	},
 	ja: {
@@ -179,7 +211,7 @@ export const blogLocales = {
 export type BlogLocale = (typeof blogLocales)[keyof typeof blogLocales];
 
 const normalizePost = ([path, module]: [string, MarkdownModule]): BlogPost | null => {
-	const match = path.match(/\/blog\/(en|zh|ja|ko)\/([^/]+)\.md$/);
+	const match = path.match(/\/blog\/(en|zh|zh-hant|ja|ko)\/([^/]+)\.md$/);
 
 	if (!match) {
 		return null;
@@ -243,6 +275,7 @@ export const getBlogLanguageLinks = (locale: BlogLocaleCode) =>
 	[
 		locale !== 'en' && { label: 'Blog English', href: blogLocales.en.url },
 		locale !== 'zh' && { label: '博客中文版', href: blogLocales.zh.url },
+		locale !== 'zh-hant' && { label: '繁體中文部落格', href: blogLocales['zh-hant'].url },
 		locale !== 'ja' && { label: '日本語ブログ', href: blogLocales.ja.url },
 		locale !== 'ko' && { label: '한국어 블로그', href: blogLocales.ko.url },
 	].filter((link): link is { label: string; href: string } => Boolean(link));

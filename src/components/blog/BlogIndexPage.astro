@@ -18,7 +18,15 @@ const recentPosts = posts.filter((post) => post !== featured);
 const navLinks = getBlogNavLinks(page.locale, 'index');
 const homeHref = getBlogHomeHref(page.locale, 'index');
 const dateLocale =
-	page.locale === 'zh' ? 'zh-CN' : page.locale === 'ja' ? 'ja-JP' : page.locale === 'ko' ? 'ko-KR' : 'en-US';
+	page.locale === 'zh'
+		? 'zh-CN'
+		: page.locale === 'zh-hant'
+			? 'zh-TW'
+			: page.locale === 'ja'
+				? 'ja-JP'
+				: page.locale === 'ko'
+					? 'ko-KR'
+					: 'en-US';
 
 const formatDate = (date: string) =>
 	new Intl.DateTimeFormat(dateLocale, {
