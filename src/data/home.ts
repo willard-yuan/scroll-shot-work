@@ -18,6 +18,22 @@ const jaUrl = `${site.url}ja/`;
 const koUrl = `${site.url}ko/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
+const enWebpAssets = {
+	auto: '/ai_scrolling_screenshot.webp',
+	trim: '/perfect_every_stitch.webp',
+	manual: '/flexible_image_stitching.webp',
+	themes: '/themes_your_way.webp',
+	ogImage: '/scrollshot_app_prview.webp',
+};
+
+const zhWebpAssets = {
+	auto: '/ai_scrolling_screenshot_zh.webp',
+	trim: '/perfect_every_stitch_zh.webp',
+	manual: '/flexible_image_stitching_zh.webp',
+	themes: '/themes_your_way_zh.webp',
+	ogImage: '/scrollshot_app_prview_cn.webp',
+};
+
 const icons = {
 	auto: 'M8 4.5h8a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z M10.5 9l4 3-4 3V9Z M8.5 17h7',
 	manual: 'M8 5h10v6H8z M6 9h10v6H6z M4 13h10v6H4z M7 16h4',
@@ -27,54 +43,54 @@ const icons = {
 
 export const localeAssets = {
 	en: {
-		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_5.png',
-		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_6.png',
-		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_7.png',
-		themes: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_8.png',
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
 		video: '/ScrollShot_Preview_En_0509.mp4',
 		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
 		appIcon,
-		ogImage: '/ScrollShot_Preview_En_0509_cover.jpg',
+		ogImage: enWebpAssets.ogImage,
 	},
 	zh: {
-		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_1.png',
-		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_2.png',
-		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_3.png',
-		themes: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_4.png',
+		auto: zhWebpAssets.auto,
+		trim: zhWebpAssets.trim,
+		manual: zhWebpAssets.manual,
+		themes: zhWebpAssets.themes,
 		video: '/ScrollShot_Preview_Cn_0509.mp4',
 		videoCover: '/ScrollShot_Preview_Cn_0509_cover.jpg',
 		appIcon,
-		ogImage: '/ScrollShot_Preview_Cn_0509_cover.jpg',
+		ogImage: zhWebpAssets.ogImage,
 	},
 	'zh-hant': {
-		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_1.png',
-		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_2.png',
-		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_3.png',
-		themes: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_cn_4.png',
+		auto: zhWebpAssets.auto,
+		trim: zhWebpAssets.trim,
+		manual: zhWebpAssets.manual,
+		themes: zhWebpAssets.themes,
 		video: '/ScrollShot_Preview_Cn_0509.mp4',
 		videoCover: '/ScrollShot_Preview_Cn_0509_cover.jpg',
 		appIcon,
-		ogImage: '/ScrollShot_Preview_Cn_0509_cover.jpg',
+		ogImage: zhWebpAssets.ogImage,
 	},
 	ja: {
-		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_5.png',
-		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_6.png',
-		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_7.png',
-		themes: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_8.png',
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
 		video: '/ScrollShot_Preview_En_0509.mp4',
 		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
 		appIcon,
-		ogImage: '/ScrollShot_Preview_En_0509_cover.jpg',
+		ogImage: enWebpAssets.ogImage,
 	},
 	ko: {
-		auto: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_5.png',
-		trim: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_6.png',
-		manual: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_7.png',
-		themes: '/Apple%20iPhone%2016%20Pro%20Max%20Screenshot_en_8.png',
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
 		video: '/ScrollShot_Preview_En_0509.mp4',
 		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
 		appIcon,
-		ogImage: '/ScrollShot_Preview_En_0509_cover.jpg',
+		ogImage: enWebpAssets.ogImage,
 	},
 };
 

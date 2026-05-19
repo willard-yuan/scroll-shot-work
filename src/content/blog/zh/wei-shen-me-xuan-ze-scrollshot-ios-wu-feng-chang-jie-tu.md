@@ -7,7 +7,7 @@ category: "产品故事"
 author: "ScrollShot 团队"
 tags: ["ScrollShot", "iOS 长截图", "录屏拼接", "产品故事"]
 readingTime: "5 分钟阅读"
-cover: "/scrollshot_app_prview_0513.png"
+cover: "/scrollshot_app_prview_cn.webp"
 coverAlt: "ScrollShot 预览图显示长截图拼接效果"
 translationKey: "why-choose-scrollshot"
 ---
