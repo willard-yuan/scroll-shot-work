@@ -4,6 +4,7 @@ export const appStoreUrls = {
 	'zh-hant': 'https://apps.apple.com/tw/app/scrollshot-long-screenshot/id6760192003',
 	ja: 'https://apps.apple.com/jp/app/scrollshot-long-screenshot/id6760192003',
 	ko: 'https://apps.apple.com/kr/app/scrollshot-long-screenshot/id6760192003',
+	de: 'https://apps.apple.com/de/app/scrollshot-long-screenshot/id6760192003',
 };
 
 export const site = {
@@ -16,6 +17,7 @@ const zhUrl = `${site.url}zh/`;
 const zhHantUrl = `${site.url}zh-hant/`;
 const jaUrl = `${site.url}ja/`;
 const koUrl = `${site.url}ko/`;
+const deUrl = `${site.url}de/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
 const enWebpAssets = {
@@ -92,6 +94,16 @@ export const localeAssets = {
 		appIcon,
 		ogImage: enWebpAssets.ogImage,
 	},
+	de: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
 };
 
 const alternates = [
@@ -100,6 +112,7 @@ const alternates = [
 	{ lang: 'zh-Hant', href: zhHantUrl },
 	{ lang: 'ja', href: jaUrl },
 	{ lang: 'ko', href: koUrl },
+	{ lang: 'de', href: deUrl },
 	{ lang: 'x-default', href: site.url },
 ];
 
@@ -320,12 +333,235 @@ export const homeLocales = {
 				{ label: '繁體中文', href: 'zh-hant/' },
 				{ label: '日本語', href: 'ja/' },
 				{ label: '한국어', href: 'ko/' },
+				{ label: 'Deutsch', href: 'de/' },
 			],
 		},
 		legalLinks: [
 			{ label: 'Privacy Policy', href: 'https://scrollshot.work/en/' },
 			{ label: 'Terms of Service', href: 'https://scrollshot.work/tos/en/' },
 			{ label: 'ICP Record', href: 'https://beian.miit.gov.cn' },
+		],
+	},
+	de: {
+		lang: 'de',
+		ogLocale: 'de_DE',
+		url: deUrl,
+		alternateLinks: alternates,
+		appStoreUrl: appStoreUrls.de,
+		site,
+		assets: localeAssets.de,
+		meta: {
+			title: 'ScrollShot: Lange Screenshots und Scroll-Capture fürs iPhone',
+			description:
+				'ScrollShot macht lange Screenshots auf dem iPhone einfach: Seiten aufnehmen, Fotos zusammenfügen und vollständige Inhalte in hoher Qualität speichern. Ideal für Chats, Webseiten, Dokumente und App-Ansichten.',
+			keywords: ['ScrollShot', 'iPhone langer Screenshot', 'Scroll Screenshot', 'Screenshot zusammenfügen', 'lange Bildschirmaufnahme'],
+			imageAlt: 'ScrollShot Demo-Cover auf Deutsch',
+		},
+		navLabels: {
+			navAria: 'Hauptnavigation',
+			linksAria: 'Seitennavigation',
+			install: 'Installieren',
+			brandHome: 'ScrollShot Startseite',
+			menu: 'Navigationsmenü öffnen',
+		},
+		navLinks: [
+			{ href: '#features', label: 'Funktionen' },
+			{ href: '#reviews', label: 'Bewertungen' },
+			{ href: '#pricing', label: 'Preise' },
+			{ href: '#faq', label: 'FAQ' },
+			{ href: 'blog/', label: 'Blog' },
+		],
+		hero: {
+			eyebrow: 'iPhone-Tool für lange Screenshots',
+			title: 'ScrollShot',
+			subtitle: 'Lange Screenshots und Scroll-Captures leicht gemacht',
+			text:
+				'Speichere Chats, Webseiten, Artikel und App-Ansichten als saubere lange Screenshots. ScrollShot fügt Aufnahmen und Fotos zusammen und exportiert vollständige Inhalte in hoher Qualität.',
+			primaryCta: 'Für iOS laden',
+			secondaryCta: 'Demo ansehen',
+			videoAria: 'ScrollShot Demo-Video öffnen',
+			videoLabel: 'ScrollShot Demo-Video',
+			caption: 'Demo wird automatisch abgespielt',
+		},
+		sections: {
+			features: {
+				kicker: 'Kernfunktionen',
+				title: 'Für echte Scroll-Workflows entwickelt',
+				description: 'Präzise Stitching-Werkzeuge machen das Speichern langer Inhalte schnell, zuverlässig und einfach teilbar.',
+			},
+			reviews: {
+				kicker: 'Nutzerstimmen',
+				title: 'Weniger Handarbeit bei jedem langen Screenshot',
+				description: 'Von Produktrecherche bis Support-Übergabe: ScrollShot macht aus mühsamer Screenshot-Arbeit einen klaren Ablauf.',
+			},
+			scenarios: {
+				kicker: 'Anwendungsfälle',
+				title: 'Chats, Webseiten und Anleitungen in einem Bild',
+				description: 'Kein Tool-Wechsel, kein Web-Upload. Speichern, prüfen und teilen an einem Ort.',
+			},
+			pricing: {
+				kicker: 'Preise',
+				title: 'Einfach und transparent',
+				description: 'Manuelles Stitching ist kostenlos. Pro schaltet automatisches Stitching aus Bildschirmaufnahmen und alle Designs frei. Der endgültige Preis wird im App Store angezeigt.',
+			},
+			faq: {
+				kicker: 'FAQ',
+				title: 'Was du vorab wissen solltest',
+			},
+		},
+		featureIntro: [
+			{
+				title: 'Automatisches Stitching aus Videos',
+				text: 'Einmal aufnehmen und scrollen. ScrollShot extrahiert, entfernt Duplikate, gleicht Bereiche ab und fügt alles zusammen.',
+				icon: icons.auto,
+			},
+			{
+				title: 'Übergänge fein abstimmen',
+				text: 'Prüfe den ersten Entwurf, passe Schnittstellen an und bereinige typische Scrollleisten-Spuren.',
+				icon: icons.tune,
+			},
+			{
+				title: 'Manuell in Reihenfolge zusammenfügen',
+				text: 'Wähle Bilder genau in der gewünschten Reihenfolge. Das erste Bild wird zum Anfang.',
+				icon: icons.manual,
+			},
+			{
+				title: 'Als Bild oder PDF teilen',
+				text: 'Speichere das Ergebnis in Fotos und teile es als Bild oder exportiere es als PDF.',
+				icon: icons.share,
+			},
+		],
+		featureCards: [
+			{
+				kicker: 'Auto Stitch',
+				title: 'Einmal aufnehmen, automatisch zusammenfügen',
+				text: 'Starte die iOS-Bildschirmaufnahme, scrolle durch den Inhalt und ScrollShot extrahiert wichtige Frames, filtert Duplikate und findet stabile Überlappungen.',
+				image: localeAssets.de.auto,
+				alt: 'ScrollShot Oberfläche für automatisches Aufnehmen und Zusammenfügen',
+				className: 'auto-shot',
+			},
+			{
+				kicker: 'Fine Tune',
+				title: 'Vor dem Speichern fein abstimmen',
+				text: 'Wenn Webseiten, Dokumente oder dynamische Inhalte mehr Kontrolle brauchen, prüfst du Übergänge, passt das Ergebnis an und entfernst typische Scrollleisten.',
+				image: localeAssets.de.trim,
+				alt: 'ScrollShot Oberfläche zum Feinabstimmen von Übergängen',
+				className: 'trim-shot',
+			},
+			{
+				kicker: 'Manual Stitch',
+				title: 'Screenshots in Reihenfolge zusammenfügen',
+				text: 'Wähle Screenshots manuell aus und behalte die Reihenfolge bei. Praktisch für Chats, Transaktionen, Anleitungen und Seiten mit teilweiser Überlappung.',
+				image: localeAssets.de.manual,
+				alt: 'ScrollShot Oberfläche für manuelles Zusammenfügen',
+				className: 'manual-shot',
+			},
+			{
+				kicker: 'Themes',
+				title: 'So passt das Werkzeug zu dir',
+				text: 'Wähle Designs und Sprachen und exportiere hochauflösende Bilder. Ein Utility kann klar, persönlich und hochwertig wirken.',
+				image: localeAssets.de.themes,
+				alt: 'ScrollShot Einstellungen für Designs und Sprache',
+				className: 'theme-shot-card',
+			},
+		],
+		reviews: [
+			{ role: 'Produktmanagement', quote: 'Für Wettbewerbsseiten und Ablaufnotizen brauche ich keine zwölf Screenshots mehr. Einmal aufnehmen und scrollen reicht.', tone: 'warm' },
+			{ role: 'Design', quote: 'Die Feinanpassung der Übergänge gibt mir Sicherheit, bevor ich lange Seiten an andere weitergebe.' },
+			{ role: 'Support-Team', quote: 'Chats, Bestellseiten und Repro-Schritte lassen sich als ein Bild teilen. Das macht Kommunikation deutlich sauberer.' },
+			{ role: 'Content Creation', quote: 'Lange Tutorials und Social-Media-Inhalte lassen sich sauber als Bild oder PDF exportieren.' },
+			{ role: 'Entwicklung', quote: 'Lokale Verarbeitung und manuelle Reihenfolge sind wichtig, wenn Screenshots vertrauliche Produktdetails enthalten.' },
+			{ role: 'Studium', quote: 'Lange Artikel, Quellen und Lernnotizen lassen sich leichter speichern und später wiederfinden.' },
+		],
+		ratingLabel: 'Fünf-Sterne-Bewertung',
+		scenarios: [
+			{
+				title: 'Chats und Support-Übergaben',
+				text: 'Bewahre ganze Verläufe, Kontext und Lösungsschritte in einem Bild auf, statt in Fotos hin und her zu springen.',
+				image: localeAssets.de.manual,
+				className: 'chat-scene',
+				cta: { label: 'Demo ansehen', href: localeAssets.de.video },
+			},
+			{
+				title: 'Webseiten, Artikel, Anleitungen',
+				text: 'Speichere lange Webseiten, Blogbeiträge, Produktdokumente und Schritt-für-Schritt-Anleitungen als gut lesbares langes Bild.',
+				image: localeAssets.de.trim,
+				className: 'web-scene',
+				cta: { label: 'Funktionen ansehen', href: '#features' },
+			},
+			{
+				title: 'Designs, Sprachen, Teilen',
+				text: 'Nutze mehrere Designs und Sprachen und teile Ergebnisse als Bild oder PDF für Alltag und Arbeit.',
+				image: localeAssets.de.themes,
+				className: 'theme-scene',
+				cta: { label: 'ScrollShot installieren', href: appStoreUrls.de },
+			},
+		],
+		plans: [
+			{
+				name: 'ScrollShot',
+				price: 'Kostenlos',
+				subtitle: 'Für gelegentliches manuelles Stitching',
+				features: ['Screenshots manuell zusammenfügen', 'Auswahl und Vorschau aus Fotos', 'Lange Bilder in Fotos speichern', 'Basis-Designfarben'],
+			},
+			{
+				name: 'ScrollShot Pro',
+				price: 'Pro',
+				subtitle: 'Für den schnellsten Workflow für lange Screenshots',
+				features: ['Automatisches Stitching aus Aufnahmen', 'Stitching aus ausgewählten Videos', 'Alle Designfarben', 'Zukünftige Profi-Funktionen'],
+				featured: true,
+			},
+		],
+		pricingButtonLabel: 'ScrollShot laden',
+		faqs: [
+			['Worin unterscheidet sich ScrollShot von iOS-Screenshots?', 'iOS-Screenshots erfassen den sichtbaren Bildschirm. ScrollShot ist für scrollende Inhalte gedacht und macht aus einer Aufnahme oder mehreren Screenshots ein langes Bild mit Feinanpassung, Scrollleisten-Bereinigung und PDF-Teilen.'],
+			['Wie funktioniert automatisches Stitching?', 'Starte eine iOS-Bildschirmaufnahme, scrolle durch den Inhalt und wähle danach das Video in ScrollShot aus. Die App extrahiert Frames, entfernt Duplikate, erkennt Überlappungen und erzeugt ein langes Bild.'],
+			['Wie wird die Reihenfolge beim manuellen Stitching festgelegt?', 'Standardmäßig fügt ScrollShot Bilder in der Reihenfolge zusammen, in der du sie auswählst. Das zuerst ausgewählte Bild steht oben im finalen langen Bild.'],
+			['Welche Inhalte eignen sich besonders?', 'Chats, Webseiten, App-Ansichten, Transaktionen, Anleitungen, lange Artikel, Produktdokumente und Social-Media-Inhalte passen sehr gut.'],
+			['Kann ich als PDF exportieren?', 'Ja. Nach dem Speichern kannst du das Ergebnis als Bild teilen oder als PDF exportieren.'],
+			['Werden meine Fotos hochgeladen?', 'ScrollShot ist auf einen lokalen Stitching-Ablauf ausgelegt. Fotos werden zum Auswählen, Lesen der Bilddaten und Speichern der Ergebnisse genutzt, aber nicht zum Stitching hochgeladen.'],
+			['Warum benötigt ScrollShot Zugriff auf Fotos?', 'Der Zugriff wird benötigt, um Screenshots auszuwählen, Quelldaten zu lesen, Ergebnisse zu speichern und Originale nur nach deiner Bestätigung aufzuräumen.'],
+			['Warum benötigt ScrollShot Benachrichtigungen?', 'Nach dem Ende einer Bildschirmaufnahme können Benachrichtigungen helfen, direkt zum Stitching-Ablauf zurückzukehren, damit das Video nicht vergessen wird.'],
+			['Wird die Scrollleiste automatisch entfernt?', 'ScrollShot kann typische Scrollleisten rechts oder unten bereinigen. Eine perfekte Entfernung bei jedem Bild wird jedoch nicht versprochen.'],
+			['Was kann ich tun, wenn Stitching fehlschlägt?', 'Nutze manuelles Stitching oder öffne die Feinabstimmung, um Übergänge anzupassen. Bei komplexen dynamischen Seiten hilft meist etwas mehr Überlappung beim Scrollen.'],
+			['Was schaltet Pro frei?', 'ScrollShot Pro schaltet automatisches Stitching aus Bildschirmaufnahmen, Stitching aus ausgewählten Videos, alle Designfarben und zukünftige Profi-Funktionen frei.'],
+			['Welche Sprachen werden unterstützt?', 'Die App unterstützt mehrere Sprachen, darunter Englisch, Chinesisch, Japanisch, Koreanisch, Deutsch, Französisch, Spanisch und weitere.'],
+			['Gibt es eine Android-Version?', 'Diese Website beschreibt die iOS-Version und verspricht keine Android-Unterstützung.'],
+			['Wo kann ich ScrollShot herunterladen?', 'Über die Installieren-Schaltflächen auf dieser Seite öffnest du ScrollShot im App Store.'],
+		],
+		finalCta: {
+			kicker: 'Download',
+			title: 'Bereit für sauberere lange Screenshots?',
+			buttonLabel: 'Im App Store laden',
+		},
+		footer: {
+			brandHome: 'ScrollShot Startseite',
+			note: 'ScrollShot ist ein iOS-Tool für lange Screenshots mit automatischem Stitching aus Bildschirmaufnahmen, manuellem Stitching, Feinanpassung, Bildspeicherung und PDF-Teilen.',
+			productTitle: 'Produkt',
+			featuresLabel: 'Funktionen',
+			reviewsLabel: 'Bewertungen',
+			pricingLabel: 'Preise',
+			downloadTitle: 'Download',
+			appStoreLabel: 'App Store',
+			videoLabel: 'Demo-Video',
+			legalTitle: 'Rechtliches',
+			supportedLanguagesTitle: 'Unterstützte Sprachen',
+			supportedLanguagesText:
+				'English, Deutsch, 简体中文, 繁體中文, 日本語, 한국어, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية und weitere.',
+			languageSwitcherTitle: 'Website-Sprachen',
+			languageSwitcherAria: 'Website-Sprache wechseln',
+			languageLinks: [
+				{ label: 'English', href: '../' },
+				{ label: '中文', href: '../zh/' },
+				{ label: '繁體中文', href: '../zh-hant/' },
+				{ label: '日本語', href: '../ja/' },
+				{ label: '한국어', href: '../ko/' },
+			],
+		},
+		legalLinks: [
+			{ label: 'Datenschutz', href: 'https://scrollshot.work/' },
+			{ label: 'Nutzungsbedingungen', href: 'https://scrollshot.work/tos/' },
+			{ label: 'ICP-Eintrag', href: 'https://beian.miit.gov.cn' },
 		],
 	},
 	zh: {
@@ -527,6 +763,7 @@ export const homeLocales = {
 				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
+				{ label: 'Deutsch', href: '../de/' },
 			],
 		},
 		legalLinks: [
@@ -732,6 +969,7 @@ export const homeLocales = {
 				{ label: '簡體中文', href: '../zh/' },
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
+				{ label: 'Deutsch', href: '../de/' },
 			],
 		},
 		legalLinks: [
@@ -937,6 +1175,7 @@ export const homeLocales = {
 				{ label: '中文', href: '../zh/' },
 				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '한국어', href: '../ko/' },
+				{ label: 'Deutsch', href: '../de/' },
 			],
 		},
 		legalLinks: [
@@ -1142,6 +1381,7 @@ export const homeLocales = {
 				{ label: '中文', href: '../zh/' },
 				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '日本語', href: '../ja/' },
+				{ label: 'Deutsch', href: '../de/' },
 			],
 		},
 		legalLinks: [

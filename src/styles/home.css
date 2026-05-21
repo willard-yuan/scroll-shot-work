@@ -67,6 +67,15 @@
 		ui-serif, Georgia, serif;
 }
 
+:lang(de) {
+	--sans: var(--font-system);
+	--article: var(--font-system);
+	--serif:
+		ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, Cambria,
+		"Times New Roman", Times, serif;
+	hyphens: auto;
+}
+
 .site-shell {
 	min-height: 100vh;
 	background:
