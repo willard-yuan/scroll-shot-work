@@ -5,6 +5,7 @@ export const appStoreUrls = {
 	ja: 'https://apps.apple.com/jp/app/scrollshot-long-screenshot/id6760192003',
 	ko: 'https://apps.apple.com/kr/app/scrollshot-long-screenshot/id6760192003',
 	de: 'https://apps.apple.com/de/app/scrollshot-long-screenshot/id6760192003',
+	fr: 'https://apps.apple.com/fr/app/scrollshot-long-screenshot/id6760192003',
 };
 
 export const site = {
@@ -18,6 +19,7 @@ const zhHantUrl = `${site.url}zh-hant/`;
 const jaUrl = `${site.url}ja/`;
 const koUrl = `${site.url}ko/`;
 const deUrl = `${site.url}de/`;
+const frUrl = `${site.url}fr/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
 const enWebpAssets = {
@@ -104,6 +106,16 @@ export const localeAssets = {
 		appIcon,
 		ogImage: enWebpAssets.ogImage,
 	},
+	fr: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
 };
 
 const alternates = [
@@ -113,6 +125,7 @@ const alternates = [
 	{ lang: 'ja', href: jaUrl },
 	{ lang: 'ko', href: koUrl },
 	{ lang: 'de', href: deUrl },
+	{ lang: 'fr', href: frUrl },
 	{ lang: 'x-default', href: site.url },
 ];
 
@@ -334,12 +347,236 @@ export const homeLocales = {
 				{ label: '日本語', href: 'ja/' },
 				{ label: '한국어', href: 'ko/' },
 				{ label: 'Deutsch', href: 'de/' },
+				{ label: 'Français', href: 'fr/' },
 			],
 		},
 		legalLinks: [
 			{ label: 'Privacy Policy', href: 'https://scrollshot.work/en/' },
 			{ label: 'Terms of Service', href: 'https://scrollshot.work/tos/en/' },
 			{ label: 'ICP Record', href: 'https://beian.miit.gov.cn' },
+		],
+	},
+	fr: {
+		lang: 'fr',
+		ogLocale: 'fr_FR',
+		url: frUrl,
+		alternateLinks: alternates,
+		appStoreUrl: appStoreUrls.fr,
+		site,
+		assets: localeAssets.fr,
+		meta: {
+			title: 'ScrollShot : capture d’écran longue et capture par défilement',
+			description:
+				'ScrollShot simplifie les captures d’écran longues sur iPhone : enregistrez une page qui défile, assemblez vos images et exportez un résultat net en haute qualité.',
+			keywords: ['ScrollShot', 'capture d’écran longue iPhone', 'capture par défilement', 'assembler captures écran', 'screenshot long iOS'],
+			imageAlt: 'Aperçu de la démonstration ScrollShot en français',
+		},
+		navLabels: {
+			navAria: 'Navigation principale',
+			linksAria: 'Navigation de la page',
+			install: 'Installer',
+			brandHome: 'Accueil ScrollShot',
+			menu: 'Ouvrir le menu de navigation',
+		},
+		navLinks: [
+			{ href: '#features', label: 'Fonctionnalités' },
+			{ href: '#reviews', label: 'Avis' },
+			{ href: '#pricing', label: 'Tarifs' },
+			{ href: '#faq', label: 'FAQ' },
+			{ href: 'blog/', label: 'Blog' },
+		],
+		hero: {
+			eyebrow: 'Outil iPhone de capture longue',
+			title: 'ScrollShot',
+			subtitle: 'Des captures longues propres, sans effort',
+			text:
+				'Enregistrez des conversations, pages web, articles et écrans d’app sous forme d’images longues nettes. ScrollShot assemble vos enregistrements et vos captures, puis exporte le contenu complet en haute qualité.',
+			primaryCta: 'Télécharger pour iOS',
+			secondaryCta: 'Voir la démo',
+			videoAria: 'Ouvrir la vidéo de démonstration ScrollShot',
+			videoLabel: 'Vidéo de démonstration ScrollShot',
+			caption: 'Démonstration en lecture automatique',
+		},
+		sections: {
+			features: {
+				kicker: 'Fonctionnalités clés',
+				title: 'Pensé pour les vrais contenus qui défilent',
+				description: 'Des outils d’assemblage précis pour capturer, vérifier et partager de longs contenus plus rapidement.',
+			},
+			reviews: {
+				kicker: 'Avis utilisateurs',
+				title: 'Moins de manipulations pour chaque capture longue',
+				description: 'De la veille produit au support client, ScrollShot transforme les captures répétitives en un flux simple et propre.',
+			},
+			scenarios: {
+				kicker: 'Cas d’usage',
+				title: 'Conversations, pages web et tutoriels en une image',
+				description: 'Pas de changement d’outil, pas d’envoi sur le web. Vous enregistrez, vérifiez et partagez au même endroit.',
+			},
+			pricing: {
+				kicker: 'Tarifs',
+				title: 'Une offre simple et transparente',
+				description: 'L’assemblage manuel est gratuit. Pro débloque l’assemblage automatique depuis les enregistrements et tous les thèmes. Le prix final est affiché dans l’App Store.',
+			},
+			faq: {
+				kicker: 'FAQ',
+				title: 'Ce qu’il faut savoir avant de commencer',
+			},
+		},
+		featureIntro: [
+			{
+				title: 'Assemblage automatique depuis une vidéo',
+				text: 'Enregistrez une fois, faites défiler. ScrollShot extrait, déduplique, aligne et assemble.',
+				icon: icons.auto,
+			},
+			{
+				title: 'Ajustement fin des raccords',
+				text: 'Vérifiez le premier résultat, ajustez les limites et nettoyez les traces de barre de défilement.',
+				icon: icons.tune,
+			},
+			{
+				title: 'Assemblage manuel dans l’ordre',
+				text: 'Choisissez les images dans l’ordre voulu. La première image devient le haut du résultat.',
+				icon: icons.manual,
+			},
+			{
+				title: 'Partage en image ou PDF',
+				text: 'Enregistrez dans Photos, puis partagez le résultat en image ou exportez-le en PDF.',
+				icon: icons.share,
+			},
+		],
+		featureCards: [
+			{
+				kicker: 'Auto Stitch',
+				title: 'Enregistrez une fois, assemblez automatiquement',
+				text: 'Lancez l’enregistrement d’écran iOS, faites défiler le contenu, puis ScrollShot extrait les images utiles, filtre les doublons et détecte les zones de recouvrement stables.',
+				image: localeAssets.fr.auto,
+				alt: 'Interface ScrollShot pour l’enregistrement et l’assemblage automatique',
+				className: 'auto-shot',
+			},
+			{
+				kicker: 'Fine Tune',
+				title: 'Ajustez avant d’enregistrer',
+				text: 'Quand une page web, un document ou un contenu dynamique demande plus de contrôle, vérifiez les raccords, ajustez le résultat et supprimez les barres de défilement courantes.',
+				image: localeAssets.fr.trim,
+				alt: 'Interface ScrollShot pour ajuster les raccords',
+				className: 'trim-shot',
+			},
+			{
+				kicker: 'Manual Stitch',
+				title: 'Assemblez vos images dans l’ordre',
+				text: 'Sélectionnez manuellement vos captures et gardez l’ordre choisi. Idéal pour les conversations, transactions, tutoriels et pages avec recouvrement partiel.',
+				image: localeAssets.fr.manual,
+				alt: 'Interface ScrollShot pour l’assemblage manuel',
+				className: 'manual-shot',
+			},
+			{
+				kicker: 'Themes',
+				title: 'Un outil à votre image',
+				text: 'Choisissez les thèmes et les langues, puis exportez des images en haute résolution. Même un utilitaire peut rester clair, personnel et soigné.',
+				image: localeAssets.fr.themes,
+				alt: 'Réglages de thèmes et de langue dans ScrollShot',
+				className: 'theme-shot-card',
+			},
+		],
+		reviews: [
+			{ role: 'Chef de produit', quote: 'Pour les pages concurrentes et les notes de parcours, je n’ai plus besoin de multiplier les captures. Un enregistrement et un défilement suffisent.', tone: 'warm' },
+			{ role: 'Designer', quote: 'L’ajustement des raccords me permet d’envoyer des captures longues plus propres et plus sûres.' },
+			{ role: 'Support client', quote: 'Les conversations, pages de commande et étapes de reproduction tiennent dans une seule image. La communication est beaucoup plus claire.' },
+			{ role: 'Créateur de contenu', quote: 'Les longs tutoriels et contenus sociaux s’exportent facilement en image ou en PDF.' },
+			{ role: 'Développeur', quote: 'Le traitement local et l’ordre manuel sont essentiels quand les captures contiennent des détails produit confidentiels.' },
+			{ role: 'Étudiant', quote: 'Les longs articles, sources et notes de cours sont plus simples à enregistrer et à retrouver.' },
+		],
+		ratingLabel: 'Avis cinq étoiles',
+		scenarios: [
+			{
+				title: 'Conversations et support client',
+				text: 'Conservez tout l’historique, le contexte et les étapes de résolution dans une image unique au lieu de naviguer entre plusieurs photos.',
+				image: localeAssets.fr.manual,
+				className: 'chat-scene',
+				cta: { label: 'Voir la démo vidéo', href: localeAssets.fr.video },
+			},
+			{
+				title: 'Pages web, articles, tutoriels',
+				text: 'Enregistrez de longues pages web, articles, documentations produit et guides étape par étape dans une image longue lisible.',
+				image: localeAssets.fr.trim,
+				className: 'web-scene',
+				cta: { label: 'Voir les fonctionnalités', href: '#features' },
+			},
+			{
+				title: 'Thèmes, langues, partage',
+				text: 'Utilisez plusieurs thèmes et langues, puis partagez le résultat en image ou PDF pour vos usages personnels et professionnels.',
+				image: localeAssets.fr.themes,
+				className: 'theme-scene',
+				cta: { label: 'Installer ScrollShot', href: appStoreUrls.fr },
+			},
+		],
+		plans: [
+			{
+				name: 'ScrollShot',
+				price: 'Gratuit',
+				subtitle: 'Pour l’assemblage manuel occasionnel',
+				features: ['Assembler manuellement des captures', 'Sélection et aperçu depuis Photos', 'Enregistrer les images longues dans Photos', 'Couleurs de thème de base'],
+			},
+			{
+				name: 'ScrollShot Pro',
+				price: 'Pro',
+				subtitle: 'Pour le flux de capture longue le plus rapide',
+				features: ['Assemblage automatique depuis les enregistrements', 'Assemblage depuis des vidéos sélectionnées', 'Tous les thèmes de couleur', 'Futures fonctionnalités avancées'],
+				featured: true,
+			},
+		],
+		pricingButtonLabel: 'Obtenir ScrollShot',
+		faqs: [
+			['En quoi ScrollShot diffère-t-il des captures iOS classiques ?', 'Les captures iOS enregistrent l’écran visible. ScrollShot est conçu pour les contenus qui défilent : il transforme un enregistrement ou plusieurs captures en une image longue avec ajustement, nettoyage des barres de défilement et partage PDF.'],
+			['Comment fonctionne l’assemblage automatique ?', 'Lancez un enregistrement d’écran iOS, faites défiler le contenu, puis choisissez la vidéo dans ScrollShot. L’app extrait les images, supprime les doublons, détecte les recouvrements et génère une image longue.'],
+			['Comment l’ordre est-il défini en assemblage manuel ?', 'Par défaut, ScrollShot assemble les images dans l’ordre où vous les sélectionnez. La première image choisie devient le haut de l’image finale.'],
+			['Quels contenus fonctionnent le mieux ?', 'Les conversations, pages web, écrans d’app, transactions, tutoriels, longs articles, documentations produit et contenus sociaux conviennent très bien.'],
+			['Puis-je exporter en PDF ?', 'Oui. Après l’enregistrement du résultat, vous pouvez le partager comme image ou l’exporter en PDF.'],
+			['Mes photos sont-elles téléversées ?', 'ScrollShot est conçu autour d’un flux d’assemblage local. Les photos servent à sélectionner les sources, lire les données image et enregistrer le résultat ; elles ne sont pas téléversées pour l’assemblage.'],
+			['Pourquoi ScrollShot demande-t-il l’accès aux photos ?', 'Cet accès sert à choisir les captures, lire les images sources, enregistrer le résultat assemblé et nettoyer les originaux uniquement après votre confirmation.'],
+			['Pourquoi ScrollShot demande-t-il les notifications ?', 'Après la fin d’un enregistrement, une notification peut vous aider à revenir directement au flux d’assemblage pour ne pas oublier la vidéo.'],
+			['Le nettoyage de la barre de défilement est-il automatique ?', 'ScrollShot peut nettoyer les traces courantes de barre de défilement à droite ou en bas, sans garantir une suppression parfaite dans tous les cas.'],
+			['Que faire si l’assemblage échoue ?', 'Utilisez l’assemblage manuel ou ouvrez l’ajustement fin pour modifier les raccords. Sur les pages dynamiques complexes, gardez un peu plus de recouvrement pendant le défilement.'],
+			['Que débloque la version Pro ?', 'ScrollShot Pro débloque l’assemblage automatique depuis les enregistrements, l’assemblage depuis les vidéos, tous les thèmes et les futures fonctions avancées.'],
+			['Quelles langues sont prises en charge ?', 'L’app propose plusieurs langues, dont l’anglais, le chinois, le japonais, le coréen, l’allemand, le français, l’espagnol et d’autres.'],
+			['Existe-t-il une version Android ?', 'Ce site présente la version iOS et ne promet pas de prise en charge Android.'],
+			['Où télécharger ScrollShot ?', 'Utilisez les boutons d’installation de cette page pour ouvrir ScrollShot dans l’App Store.'],
+		],
+		finalCta: {
+			kicker: 'Téléchargement',
+			title: 'Prêt pour des captures longues plus propres ?',
+			buttonLabel: 'Télécharger sur l’App Store',
+		},
+		footer: {
+			brandHome: 'Accueil ScrollShot',
+			note: 'ScrollShot est un outil iOS de capture d’écran longue avec assemblage automatique depuis les enregistrements, assemblage manuel, ajustement du résultat, enregistrement d’images et partage PDF.',
+			productTitle: 'Produit',
+			featuresLabel: 'Fonctionnalités',
+			reviewsLabel: 'Avis',
+			pricingLabel: 'Tarifs',
+			downloadTitle: 'Téléchargement',
+			appStoreLabel: 'App Store',
+			videoLabel: 'Vidéo de démonstration',
+			legalTitle: 'Mentions légales',
+			supportedLanguagesTitle: 'Langues prises en charge',
+			supportedLanguagesText:
+				'English, Français, Deutsch, 简体中文, 繁體中文, 日本語, 한국어, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية et d’autres.',
+			languageSwitcherTitle: 'Langues du site',
+			languageSwitcherAria: 'Changer la langue du site',
+			languageLinks: [
+				{ label: 'English', href: '../' },
+				{ label: '中文', href: '../zh/' },
+				{ label: '繁體中文', href: '../zh-hant/' },
+				{ label: '日本語', href: '../ja/' },
+				{ label: '한국어', href: '../ko/' },
+				{ label: 'Deutsch', href: '../de/' },
+			],
+		},
+		legalLinks: [
+			{ label: 'Politique de confidentialité', href: 'https://scrollshot.work/' },
+			{ label: 'Conditions d’utilisation', href: 'https://scrollshot.work/tos/' },
+			{ label: 'Enregistrement ICP', href: 'https://beian.miit.gov.cn' },
 		],
 	},
 	de: {
@@ -556,6 +793,7 @@ export const homeLocales = {
 				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
+				{ label: 'Français', href: '../fr/' },
 			],
 		},
 		legalLinks: [
@@ -764,6 +1002,7 @@ export const homeLocales = {
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
+				{ label: 'Français', href: '../fr/' },
 			],
 		},
 		legalLinks: [
@@ -970,6 +1209,7 @@ export const homeLocales = {
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
+				{ label: 'Français', href: '../fr/' },
 			],
 		},
 		legalLinks: [
@@ -1176,6 +1416,7 @@ export const homeLocales = {
 				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
+				{ label: 'Français', href: '../fr/' },
 			],
 		},
 		legalLinks: [
@@ -1382,6 +1623,7 @@ export const homeLocales = {
 				{ label: '繁體中文', href: '../zh-hant/' },
 				{ label: '日本語', href: '../ja/' },
 				{ label: 'Deutsch', href: '../de/' },
+				{ label: 'Français', href: '../fr/' },
 			],
 		},
 		legalLinks: [

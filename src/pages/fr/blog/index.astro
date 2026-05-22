@@ -1,0 +1,11 @@
+---
+import BlogIndexPage from '../../../components/blog/BlogIndexPage.astro';
+import { blogLocales, getBlogPosts } from '../../../data/blog';
+import '../../../styles/home.css';
+import '../../../styles/blog.css';
+
+const page = blogLocales.fr;
+const posts = getBlogPosts('fr');
+---
+
+<BlogIndexPage page={page} posts={posts} />

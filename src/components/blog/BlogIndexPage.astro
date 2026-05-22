@@ -28,7 +28,9 @@ const dateLocale =
 					? 'ko-KR'
 					: page.locale === 'de'
 						? 'de-DE'
-						: 'en-US';
+						: page.locale === 'fr'
+							? 'fr-FR'
+							: 'en-US';
 
 const formatDate = (date: string) =>
 	new Intl.DateTimeFormat(dateLocale, {
