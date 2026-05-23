@@ -14,7 +14,7 @@ type SitemapEntry = {
 };
 
 const SITE_LASTMOD = '2026-05-22';
-const localeCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr'] as const;
+const localeCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'pt-br'] as const;
 
 const escapeXml = (value: string) =>
 	value

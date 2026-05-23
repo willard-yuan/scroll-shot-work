@@ -22,6 +22,7 @@ interface Props {
 }
 
 const { heading, scenarios } = Astro.props;
+const shouldOpenInNewTab = (href: string) => !href.startsWith('#');
 ---
 
 <section class="section scenes-section" id="scenarios">
@@ -38,7 +39,14 @@ const { heading, scenarios } = Astro.props;
 				</div>
 				<h3>{item.title}</h3>
 				<p>{item.text}</p>
-				<a href={item.cta.href} aria-label={`${item.cta.label}: ${item.title}`}>{item.cta.label}</a>
+				<a
+					href={item.cta.href}
+					aria-label={`${item.cta.label}: ${item.title}`}
+					target={shouldOpenInNewTab(item.cta.href) ? '_blank' : undefined}
+					rel={shouldOpenInNewTab(item.cta.href) ? 'noopener noreferrer' : undefined}
+				>
+					{item.cta.label}
+				</a>
 			</article>
 		))}
 	</div>

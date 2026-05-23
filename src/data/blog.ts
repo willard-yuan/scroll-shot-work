@@ -1,6 +1,6 @@
 import { appStoreUrls, homeLocales, localeAssets, site } from './home';
 
-export type BlogLocaleCode = 'en' | 'zh' | 'zh-hant' | 'ja' | 'ko' | 'de' | 'fr';
+export type BlogLocaleCode = 'en' | 'zh' | 'zh-hant' | 'ja' | 'ko' | 'de' | 'fr' | 'pt-br';
 
 export interface BlogFrontmatter {
 	title: string;
@@ -41,10 +41,11 @@ const indexAlternates = [
 	{ lang: 'ko', href: siteUrl('ko/blog/') },
 	{ lang: 'de', href: siteUrl('de/blog/') },
 	{ lang: 'fr', href: siteUrl('fr/blog/') },
+	{ lang: 'pt-BR', href: siteUrl('pt-br/blog/') },
 	{ lang: 'x-default', href: siteUrl('blog/') },
 ];
 
-const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr'];
+const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'pt-br'];
 const hrefLangByLocale: Record<BlogLocaleCode, string> = {
 	en: 'en',
 	zh: 'zh-CN',
@@ -53,6 +54,7 @@ const hrefLangByLocale: Record<BlogLocaleCode, string> = {
 	ko: 'ko',
 	de: 'de',
 	fr: 'fr',
+	'pt-br': 'pt-BR',
 };
 
 export const blogLocales = {
@@ -118,6 +120,38 @@ export const blogLocales = {
 			blogLabel: 'Blog',
 			languageLabel: 'English',
 			noPosts: 'Aucun article publié pour le moment.',
+		},
+	},
+	'pt-br': {
+		locale: 'pt-br',
+		lang: 'pt-BR',
+		ogLocale: 'pt_BR',
+		url: siteUrl('pt-br/blog/'),
+		appStoreUrl: appStoreUrls['pt-br'],
+		home: homeLocales['pt-br'],
+		assets: localeAssets['pt-br'],
+		alternateLinks: indexAlternates,
+		meta: {
+			title: 'Blog do ScrollShot - Guias de prints longos e novidades do produto',
+			description:
+				'Guias e novidades do ScrollShot: transforme gravações de tela e screenshots em imagens longas, limpas e nítidas no iPhone. Aprenda a salvar conteúdos completos com menos esforço.',
+			keywords: ['Blog do ScrollShot', 'print longo', 'captura por rolagem no iPhone', 'juntar screenshots'],
+			imageAlt: 'Capa da demonstração do ScrollShot',
+		},
+		copy: {
+			home: 'Início',
+			kicker: 'Blog do ScrollShot',
+			title: 'Blog do ScrollShot: últimas novidades',
+			description:
+				'Guias práticos, notas de produto e formas mais limpas de guardar conteúdos que rolam no iPhone.',
+			featured: 'Última atualização',
+			recent: 'Artigos recentes',
+			readArticle: 'Ler artigo',
+			backToBlog: 'Voltar ao blog',
+			articleByline: 'Equipe ScrollShot',
+			blogLabel: 'Blog',
+			languageLabel: 'English',
+			noPosts: 'Nenhum artigo publicado ainda.',
 		},
 	},
 	de: {
@@ -279,7 +313,7 @@ export const blogLocales = {
 export type BlogLocale = (typeof blogLocales)[keyof typeof blogLocales];
 
 const normalizePost = ([path, module]: [string, MarkdownModule]): BlogPost | null => {
-	const match = path.match(/\/blog\/(en|zh|zh-hant|ja|ko|de|fr)\/([^/]+)\.md$/);
+	const match = path.match(/\/blog\/(en|zh|zh-hant|ja|ko|de|fr|pt-br)\/([^/]+)\.md$/);
 
 	if (!match) {
 		return null;
@@ -348,6 +382,7 @@ export const getBlogLanguageLinks = (locale: BlogLocaleCode) =>
 		locale !== 'ko' && { label: '한국어', href: blogLocales.ko.url },
 		locale !== 'de' && { label: 'Deutsch', href: blogLocales.de.url },
 		locale !== 'fr' && { label: 'Français', href: blogLocales.fr.url },
+		locale !== 'pt-br' && { label: 'Português (BR)', href: blogLocales['pt-br'].url },
 	].filter((link): link is { label: string; href: string } => Boolean(link));
 
 export const getBlogHomeHref = (_locale: BlogLocaleCode, page: 'index' | 'post') =>

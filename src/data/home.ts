@@ -6,6 +6,7 @@ export const appStoreUrls = {
 	ko: 'https://apps.apple.com/kr/app/scrollshot-long-screenshot/id6760192003',
 	de: 'https://apps.apple.com/de/app/scrollshot-long-screenshot/id6760192003',
 	fr: 'https://apps.apple.com/fr/app/scrollshot-long-screenshot/id6760192003',
+	'pt-br': 'https://apps.apple.com/br/app/scrollshot-long-screenshot/id6760192003',
 };
 
 export const site = {
@@ -20,6 +21,7 @@ const jaUrl = `${site.url}ja/`;
 const koUrl = `${site.url}ko/`;
 const deUrl = `${site.url}de/`;
 const frUrl = `${site.url}fr/`;
+const ptBrUrl = `${site.url}pt-br/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
 const enWebpAssets = {
@@ -116,6 +118,16 @@ export const localeAssets = {
 		appIcon,
 		ogImage: enWebpAssets.ogImage,
 	},
+	'pt-br': {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
 };
 
 const alternates = [
@@ -126,6 +138,7 @@ const alternates = [
 	{ lang: 'ko', href: koUrl },
 	{ lang: 'de', href: deUrl },
 	{ lang: 'fr', href: frUrl },
+	{ lang: 'pt-BR', href: ptBrUrl },
 	{ lang: 'x-default', href: site.url },
 ];
 
@@ -336,7 +349,7 @@ export const homeLocales = {
 			legalTitle: 'Legal',
 			supportedLanguagesTitle: 'Supported Languages',
 			supportedLanguagesText:
-				'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية and more.',
+				'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Português (Brasil), Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية and more.',
 			languageSwitcherTitle: 'Website Languages',
 			languageSwitcherAria: 'Change website language',
 			languageLabel: '中文',
@@ -348,6 +361,7 @@ export const homeLocales = {
 				{ label: '한국어', href: 'ko/' },
 				{ label: 'Deutsch', href: 'de/' },
 				{ label: 'Français', href: 'fr/' },
+				{ label: 'Português (BR)', href: 'pt-br/' },
 			],
 		},
 		legalLinks: [
@@ -561,7 +575,7 @@ export const homeLocales = {
 			legalTitle: 'Mentions légales',
 			supportedLanguagesTitle: 'Langues prises en charge',
 			supportedLanguagesText:
-				'English, Français, Deutsch, 简体中文, 繁體中文, 日本語, 한국어, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية et d’autres.',
+				'English, Français, Deutsch, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية et d’autres.',
 			languageSwitcherTitle: 'Langues du site',
 			languageSwitcherAria: 'Changer la langue du site',
 			languageLinks: [
@@ -571,12 +585,237 @@ export const homeLocales = {
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
+				{ label: 'Português (BR)', href: '../pt-br/' },
 			],
 		},
 		legalLinks: [
 			{ label: 'Politique de confidentialité', href: 'https://scrollshot.work/' },
 			{ label: 'Conditions d’utilisation', href: 'https://scrollshot.work/tos/' },
 			{ label: 'Enregistrement ICP', href: 'https://beian.miit.gov.cn' },
+		],
+	},
+	'pt-br': {
+		lang: 'pt-BR',
+		ogLocale: 'pt_BR',
+		url: ptBrUrl,
+		alternateLinks: alternates,
+		appStoreUrl: appStoreUrls['pt-br'],
+		site,
+		assets: localeAssets['pt-br'],
+		meta: {
+			title: 'ScrollShot: captura de tela longa e captura por rolagem para iPhone',
+			description:
+				'O ScrollShot simplifica prints longos no iPhone: grave a rolagem, junte screenshots e salve páginas completas em alta qualidade. Ideal para conversas, páginas web, documentos e telas de apps.',
+			keywords: ['ScrollShot', 'print longo iPhone', 'captura por rolagem', 'juntar screenshots', 'screenshot longo iOS'],
+			imageAlt: 'Capa da demonstração do ScrollShot em português do Brasil',
+		},
+		navLabels: {
+			navAria: 'Navegação principal',
+			linksAria: 'Navegação da página',
+			install: 'Instalar',
+			brandHome: 'Início do ScrollShot',
+			menu: 'Abrir menu de navegação',
+		},
+		navLinks: [
+			{ href: '#features', label: 'Recursos' },
+			{ href: '#reviews', label: 'Avaliações' },
+			{ href: '#pricing', label: 'Preços' },
+			{ href: '#faq', label: 'FAQ' },
+			{ href: 'blog/', label: 'Blog' },
+		],
+		hero: {
+			eyebrow: 'Ferramenta de print longo para iPhone',
+			title: 'ScrollShot',
+			subtitle: 'Prints longos e capturas por rolagem sem esforço',
+			text:
+				'Salve conversas, páginas web, artigos e telas de apps como imagens longas e nítidas. O ScrollShot junta gravações e screenshots para exportar o conteúdo completo em alta qualidade.',
+			primaryCta: 'Baixar para iOS',
+			secondaryCta: 'Ver demonstração',
+			videoAria: 'Abrir vídeo de demonstração do ScrollShot',
+			videoLabel: 'Vídeo de demonstração do ScrollShot',
+			caption: 'Demonstração em reprodução automática',
+		},
+		sections: {
+			features: {
+				kicker: 'Principais recursos',
+				title: 'Criado para fluxos reais de rolagem',
+				description: 'Controles precisos de montagem tornam a captura de conteúdos longos mais rápida, confiável e fácil de compartilhar.',
+			},
+			reviews: {
+				kicker: 'Avaliações de usuários',
+				title: 'Menos trabalho manual em cada print longo',
+				description: 'De pesquisas de produto a repasses de suporte, o ScrollShot transforma capturas repetitivas em um fluxo limpo e direto.',
+			},
+			scenarios: {
+				kicker: 'Casos de uso',
+				title: 'Conversas, páginas e tutoriais em uma só imagem',
+				description: 'Sem trocar de ferramenta, sem enviar nada para a web. Salve, revise e compartilhe conteúdos longos em um só lugar.',
+			},
+			pricing: {
+				kicker: 'Preços',
+				title: 'Preço simples e transparente',
+				description: 'A montagem manual é gratuita. O Pro desbloqueia a montagem automática por gravação e todos os temas. O preço final aparece na App Store.',
+			},
+			faq: {
+				kicker: 'FAQ',
+				title: 'Tudo o que você precisa saber',
+			},
+		},
+		featureIntro: [
+			{
+				title: 'Montagem automática por vídeo',
+				text: 'Grave e role uma vez. O ScrollShot extrai, remove duplicatas, alinha e monta tudo.',
+				icon: icons.auto,
+			},
+			{
+				title: 'Ajuste fino das emendas',
+				text: 'Revise a primeira versão, ajuste as bordas e limpe marcas comuns de barra de rolagem.',
+				icon: icons.tune,
+			},
+			{
+				title: 'Montagem manual na ordem',
+				text: 'Escolha as imagens exatamente na ordem desejada. A primeira vira o topo do resultado.',
+				icon: icons.manual,
+			},
+			{
+				title: 'Compartilhe como imagem ou PDF',
+				text: 'Salve no app Fotos e compartilhe como imagem, ou exporte o resultado em PDF.',
+				icon: icons.share,
+			},
+		],
+		featureCards: [
+			{
+				kicker: 'Auto Stitch',
+				title: 'Grave uma vez, monte automaticamente',
+				text: 'Inicie a gravação de tela do iOS, role pelo conteúdo e o ScrollShot extrai os frames importantes, filtra duplicatas e encontra áreas de sobreposição estáveis.',
+				image: localeAssets['pt-br'].auto,
+				alt: 'Interface do ScrollShot para gravação e montagem automática',
+				className: 'auto-shot',
+			},
+			{
+				kicker: 'Fine Tune',
+				title: 'Ajuste antes de salvar',
+				text: 'Quando páginas web, documentos ou conteúdos dinâmicos exigem mais cuidado, revise as emendas, ajuste o resultado e remova barras de rolagem comuns.',
+				image: localeAssets['pt-br'].trim,
+				alt: 'Interface do ScrollShot para ajustar emendas',
+				className: 'trim-shot',
+			},
+			{
+				kicker: 'Manual Stitch',
+				title: 'Junte imagens na ordem certa',
+				text: 'Selecione screenshots manualmente e mantenha a ordem escolhida. Útil para conversas, transações, tutoriais e páginas com sobreposição parcial.',
+				image: localeAssets['pt-br'].manual,
+				alt: 'Interface do ScrollShot para montagem manual de imagens',
+				className: 'manual-shot',
+			},
+			{
+				kicker: 'Themes',
+				title: 'Deixe a ferramenta com a sua cara',
+				text: 'Escolha temas e idiomas, depois exporte imagens em alta resolução. Um utilitário também pode ser limpo, pessoal e bem-acabado.',
+				image: localeAssets['pt-br'].themes,
+				alt: 'Configurações de tema e idioma no ScrollShot',
+				className: 'theme-shot-card',
+			},
+		],
+		reviews: [
+			{ role: 'Gerente de produto', quote: 'Para páginas de concorrentes e anotações de fluxo, não preciso mais de uma dúzia de prints. Uma gravação e uma rolagem resolvem.', tone: 'warm' },
+			{ role: 'Designer', quote: 'Poder ajustar as emendas me deixa mais confiante antes de enviar capturas longas para outras pessoas.' },
+			{ role: 'Equipe de suporte', quote: 'Conversas, páginas de pedido e passos para reproduzir um problema viram uma única imagem. A comunicação fica muito mais clara.' },
+			{ role: 'Criador de conteúdo', quote: 'Tutoriais longos e conteúdos de redes sociais saem bem tanto como imagem quanto como PDF.' },
+			{ role: 'Desenvolvedor', quote: 'Processamento no dispositivo e controle manual da ordem fazem diferença quando os screenshots têm dados sensíveis.' },
+			{ role: 'Estudante', quote: 'Artigos longos, páginas de referência e anotações ficam mais fáceis de salvar e encontrar depois.' },
+		],
+		ratingLabel: 'Avaliação de cinco estrelas',
+		scenarios: [
+			{
+				title: 'Conversas e suporte ao cliente',
+				text: 'Guarde conversas completas, contexto e etapas de resolução em uma imagem, sem ficar alternando entre vários prints no Fotos.',
+				image: localeAssets['pt-br'].manual,
+				className: 'chat-scene',
+				cta: { label: 'Ver demonstração em vídeo', href: localeAssets['pt-br'].video },
+			},
+			{
+				title: 'Páginas web, artigos e tutoriais',
+				text: 'Salve páginas longas, posts de blog, documentos de produto e tutoriais passo a passo como uma imagem longa e legível.',
+				image: localeAssets['pt-br'].trim,
+				className: 'web-scene',
+				cta: { label: 'Ver recursos', href: '#features' },
+			},
+			{
+				title: 'Temas, idiomas e compartilhamento',
+				text: 'Use vários temas e idiomas, depois compartilhe como imagem ou PDF em contextos pessoais e profissionais.',
+				image: localeAssets['pt-br'].themes,
+				className: 'theme-scene',
+				cta: { label: 'Instalar o ScrollShot', href: appStoreUrls['pt-br'] },
+			},
+		],
+		plans: [
+			{
+				name: 'ScrollShot',
+				price: 'Grátis',
+				subtitle: 'Para montagens manuais ocasionais',
+				features: ['Montagem manual de screenshots', 'Seleção e prévia no app Fotos', 'Salvar imagens longas no Fotos', 'Cores de tema básicas'],
+			},
+			{
+				name: 'ScrollShot Pro',
+				price: 'Pro',
+				subtitle: 'Desbloqueie o fluxo mais rápido para prints longos',
+				features: ['Montagem automática a partir de gravações', 'Montagem a partir de vídeos selecionados', 'Todos os temas de cor', 'Recursos avançados futuros'],
+				featured: true,
+			},
+		],
+		pricingButtonLabel: 'Obter o ScrollShot',
+		faqs: [
+			['Como o ScrollShot é diferente dos screenshots do sistema?', 'Os screenshots do iOS capturam apenas a tela atual. O ScrollShot foi feito para conteúdos que rolam, transformando uma gravação ou vários screenshots em uma imagem longa com ajuste fino, limpeza de barras de rolagem e compartilhamento em PDF.'],
+			['Como funciona a montagem automática?', 'Inicie uma gravação de tela no iOS, role pelo conteúdo e escolha o vídeo no ScrollShot. O app extrai frames, remove duplicatas, encontra áreas de sobreposição e gera uma imagem longa.'],
+			['Como a ordem da montagem manual é definida?', 'Por padrão, o ScrollShot junta as imagens na ordem em que você as seleciona. A primeira imagem escolhida vira o topo da imagem final.'],
+			['Quais conteúdos funcionam melhor?', 'Conversas, páginas web, telas de apps, transações, tutoriais, artigos longos, documentos de produto e conteúdos de redes sociais funcionam muito bem.'],
+			['Posso exportar em PDF?', 'Sim. Depois de salvar o resultado, você pode compartilhá-lo como imagem ou exportá-lo em PDF.'],
+			['Minhas fotos são enviadas para algum servidor?', 'O ScrollShot foi pensado para um fluxo de montagem no próprio dispositivo. As fotos são usadas para selecionar imagens de origem, ler os dados e salvar resultados; elas não são enviadas para montagem.'],
+			['Por que o ScrollShot precisa de permissão para Fotos?', 'A permissão permite selecionar screenshots, ler as imagens de origem, salvar o resultado montado e limpar originais somente depois da sua confirmação.'],
+			['Por que o ScrollShot pede permissão para notificações?', 'Após o fim da gravação, uma notificação ajuda você a voltar ao fluxo de montagem para não esquecer o vídeo.'],
+			['A limpeza da barra de rolagem é automática?', 'O ScrollShot pode limpar marcas comuns de barras de rolagem laterais ou inferiores, mas não promete remoção perfeita em todas as imagens.'],
+			['O que fazer se a montagem falhar?', 'Use a montagem manual ou abra o ajuste fino para alterar as emendas. Em páginas dinâmicas complexas, deixe um pouco mais de sobreposição durante a rolagem.'],
+			['O que o Pro desbloqueia?', 'O ScrollShot Pro desbloqueia montagem automática por gravação, montagem a partir de vídeos, todos os temas e recursos avançados futuros.'],
+			['Quais idiomas são compatíveis?', 'O app inclui configurações multilíngues, com inglês, chinês, japonês, coreano, alemão, francês, português, espanhol e outros idiomas.'],
+			['Há suporte para Android?', 'Este site apresenta a versão para iOS e não promete suporte para Android.'],
+			['Onde posso baixar?', 'Use os botões de instalação desta página para abrir o ScrollShot na App Store.'],
+		],
+		finalCta: {
+			kicker: 'Download',
+			title: 'Pronto para prints longos mais limpos?',
+			buttonLabel: 'Baixar na App Store',
+		},
+		footer: {
+			brandHome: 'Início do ScrollShot',
+			note: 'O ScrollShot é uma ferramenta de print longo para iOS com montagem automática por gravação, montagem manual, ajuste fino do resultado, salvamento de imagens e compartilhamento em PDF.',
+			productTitle: 'Produto',
+			featuresLabel: 'Recursos',
+			reviewsLabel: 'Avaliações',
+			pricingLabel: 'Preços',
+			downloadTitle: 'Download',
+			appStoreLabel: 'App Store',
+			videoLabel: 'Demonstração em vídeo',
+			legalTitle: 'Legal',
+			supportedLanguagesTitle: 'Idiomas compatíveis',
+			supportedLanguagesText:
+				'English, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية e mais.',
+			languageSwitcherTitle: 'Idiomas do site',
+			languageSwitcherAria: 'Alterar idioma do site',
+			languageLinks: [
+				{ label: 'English', href: '../' },
+				{ label: '中文', href: '../zh/' },
+				{ label: '繁體中文', href: '../zh-hant/' },
+				{ label: '日本語', href: '../ja/' },
+				{ label: '한국어', href: '../ko/' },
+				{ label: 'Deutsch', href: '../de/' },
+				{ label: 'Français', href: '../fr/' },
+			],
+		},
+		legalLinks: [
+			{ label: 'Política de Privacidade', href: 'https://scrollshot.work/' },
+			{ label: 'Termos de Serviço', href: 'https://scrollshot.work/tos/' },
+			{ label: 'Registro ICP', href: 'https://beian.miit.gov.cn' },
 		],
 	},
 	de: {
@@ -784,7 +1023,7 @@ export const homeLocales = {
 			legalTitle: 'Rechtliches',
 			supportedLanguagesTitle: 'Unterstützte Sprachen',
 			supportedLanguagesText:
-				'English, Deutsch, 简体中文, 繁體中文, 日本語, 한국어, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية und weitere.',
+				'English, Deutsch, 简体中文, 繁體中文, 日本語, 한국어, Français, Português (Brasil), Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية und weitere.',
 			languageSwitcherTitle: 'Website-Sprachen',
 			languageSwitcherAria: 'Website-Sprache wechseln',
 			languageLinks: [
@@ -794,6 +1033,7 @@ export const homeLocales = {
 				{ label: '日本語', href: '../ja/' },
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Français', href: '../fr/' },
+				{ label: 'Português (BR)', href: '../pt-br/' },
 			],
 		},
 		legalLinks: [
@@ -991,7 +1231,7 @@ export const homeLocales = {
 			legalTitle: '法律',
 			supportedLanguagesTitle: '支持语言',
 			supportedLanguagesText:
-				'English、简体中文、繁體中文、日本語、한국어、Deutsch、Français、Español、Italiano、Português、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
+				'English、简体中文、繁體中文、日本語、한국어、Deutsch、Français、Português (Brasil)、Español、Italiano、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
 			languageSwitcherTitle: '网站语言',
 			languageSwitcherAria: '切换网站语言',
 			languageLabel: 'English',
@@ -1003,6 +1243,7 @@ export const homeLocales = {
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Français', href: '../fr/' },
+				{ label: 'Português (BR)', href: '../pt-br/' },
 			],
 		},
 		legalLinks: [
@@ -1200,7 +1441,7 @@ export const homeLocales = {
 			legalTitle: '法律',
 			supportedLanguagesTitle: '支援語言',
 			supportedLanguagesText:
-				'English、簡體中文、繁體中文、日本語、한국어、Deutsch、Français、Español、Italiano、Português、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
+				'English、簡體中文、繁體中文、日本語、한국어、Deutsch、Français、Português (Brasil)、Español、Italiano、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
 			languageSwitcherTitle: '網站語言',
 			languageSwitcherAria: '切換網站語言',
 			languageLinks: [
@@ -1210,6 +1451,7 @@ export const homeLocales = {
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Français', href: '../fr/' },
+				{ label: 'Português (BR)', href: '../pt-br/' },
 			],
 		},
 		legalLinks: [
@@ -1407,7 +1649,7 @@ export const homeLocales = {
 			legalTitle: '法務',
 			supportedLanguagesTitle: '対応言語',
 			supportedLanguagesText:
-				'English、簡体中文、繁體中文、日本語、한국어、Deutsch、Français、Español、Italiano、Português、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية など。',
+				'English、簡体中文、繁體中文、日本語、한국어、Deutsch、Français、Português (Brasil)、Español、Italiano、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية など。',
 			languageSwitcherTitle: 'サイト言語',
 			languageSwitcherAria: 'サイトの言語を切り替える',
 			languageLinks: [
@@ -1417,6 +1659,7 @@ export const homeLocales = {
 				{ label: '한국어', href: '../ko/' },
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Français', href: '../fr/' },
+				{ label: 'Português (BR)', href: '../pt-br/' },
 			],
 		},
 		legalLinks: [
@@ -1614,7 +1857,7 @@ export const homeLocales = {
 			legalTitle: '법적 고지',
 			supportedLanguagesTitle: '지원 언어',
 			supportedLanguagesText:
-				'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Português, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية 등.',
+				'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Português (Brasil), Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية 등.',
 			languageSwitcherTitle: '웹사이트 언어',
 			languageSwitcherAria: '웹사이트 언어 전환',
 			languageLinks: [
@@ -1624,6 +1867,7 @@ export const homeLocales = {
 				{ label: '日本語', href: '../ja/' },
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Français', href: '../fr/' },
+				{ label: 'Português (BR)', href: '../pt-br/' },
 			],
 		},
 		legalLinks: [

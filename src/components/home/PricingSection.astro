@@ -43,7 +43,7 @@ const { heading, plans, appStoreUrl, buttonLabel } = Astro.props;
 				</ul>
 				{
 					plan.featured && (
-						<a class="button button-mint" href={appStoreUrl}>
+						<a class="button button-mint" href={appStoreUrl} target="_blank" rel="noopener noreferrer">
 							{buttonLabel}
 						</a>
 					)

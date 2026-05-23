@@ -16,5 +16,5 @@ const { appStoreUrl, content } = Astro.props;
 		<p class="eyebrow gold">{content.kicker}</p>
 		<h2>{content.title}</h2>
 	</div>
-	<a class="button button-light" href={appStoreUrl}>{content.buttonLabel}</a>
+	<a class="button button-light" href={appStoreUrl} target="_blank" rel="noopener noreferrer">{content.buttonLabel}</a>
 </section>
