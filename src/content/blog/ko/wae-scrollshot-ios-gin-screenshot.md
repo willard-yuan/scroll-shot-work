@@ -1,11 +1,11 @@
 ---
-title: "왜 ScrollShot인가? iOS에서 긴 스크린샷을 깔끔하게 남기는 방법"
-description: "ScrollShot이 iPhone에서 화면 녹화 기반 자동 합성, 수동 이어붙이기, 개인정보 보호, 고화질 긴 스크린샷 저장을 어떻게 해결하는지 소개합니다."
+title: "왜 ScrollShot인가? 아이폰 긴 스크린샷을 깔끔하게 저장하는 방법"
+description: "ScrollShot이 한국 iPhone 사용자를 위해 화면 녹화 기반 자동 합성, 수동 이어붙이기, 개인정보 보호, 고화질 긴 스크린샷 저장을 어떻게 해결하는지 소개합니다."
 date: "2026-05-11"
 updated: "2026-05-15"
 category: "제품 이야기"
 author: "ScrollShot 팀"
-tags: ["ScrollShot", "iOS 긴 스크린샷", "화면 녹화", "제품 이야기"]
+tags: ["ScrollShot", "아이폰 긴 스크린샷", "스크롤 캡처", "화면 녹화", "제품 이야기"]
 readingTime: "5분 읽기"
 cover: "/scrollshot_app_prview.webp"
 coverAlt: "ScrollShot 데모 화면. 긴 스크린샷을 자동으로 합성하는 모습"
