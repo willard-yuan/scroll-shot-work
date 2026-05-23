@@ -8,6 +8,7 @@ export const appStoreUrls = {
 	fr: 'https://apps.apple.com/fr/app/scrollshot-long-screenshot/id6760192003',
 	es: 'https://apps.apple.com/es/app/scrollshot-long-screenshot/id6760192003',
 	'pt-br': 'https://apps.apple.com/br/app/scrollshot-long-screenshot/id6760192003',
+	it: 'https://apps.apple.com/it/app/scrollshot-long-screenshot/id6760192003',
 };
 
 export const site = {
@@ -24,6 +25,7 @@ const deUrl = `${site.url}de/`;
 const frUrl = `${site.url}fr/`;
 const esUrl = `${site.url}es/`;
 const ptBrUrl = `${site.url}pt-br/`;
+const itUrl = `${site.url}it/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
 const enWebpAssets = {
@@ -140,6 +142,16 @@ export const localeAssets = {
 		appIcon,
 		ogImage: enWebpAssets.ogImage,
 	},
+	it: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
 };
 
 const alternates = [
@@ -152,10 +164,239 @@ const alternates = [
 	{ lang: 'fr', href: frUrl },
 	{ lang: 'es', href: esUrl },
 	{ lang: 'pt-BR', href: ptBrUrl },
+	{ lang: 'it', href: itUrl },
 	{ lang: 'x-default', href: site.url },
 ];
 
+const italianHomeLocale = {
+	lang: 'it',
+	ogLocale: 'it_IT',
+	url: itUrl,
+	alternateLinks: alternates,
+	appStoreUrl: appStoreUrls.it,
+	site,
+	assets: localeAssets.it,
+	meta: {
+		title: 'ScrollShot: screenshot lunghi e catture con scorrimento per iPhone',
+		description:
+			'ScrollShot semplifica gli screenshot lunghi su iPhone: registra lo scorrimento, unisce gli screenshot e salva pagine complete in alta qualità. Ideale per chat, pagine web, documenti e schermate di app.',
+		keywords: ['ScrollShot', 'screenshot lunghi iPhone', 'cattura con scorrimento', 'unire screenshot', 'screenshot lungo iOS'],
+		imageAlt: 'Anteprima della demo di ScrollShot in italiano',
+	},
+	navLabels: {
+		navAria: 'Navigazione principale',
+		linksAria: 'Navigazione della pagina',
+		install: 'Installa',
+		brandHome: 'Home di ScrollShot',
+		menu: 'Apri il menu di navigazione',
+	},
+	navLinks: [
+		{ href: '#features', label: 'Funzioni' },
+		{ href: '#reviews', label: 'Recensioni' },
+		{ href: '#pricing', label: 'Prezzi' },
+		{ href: '#faq', label: 'FAQ' },
+		{ href: 'blog/', label: 'Blog' },
+	],
+	hero: {
+		eyebrow: 'Strumento per screenshot lunghi su iPhone',
+		title: 'ScrollShot',
+		subtitle: 'Screenshot lunghi e catture con scorrimento, senza complicazioni',
+		text:
+			'Salva chat, pagine web, articoli e schermate di app come immagini lunghe e nitide. ScrollShot unisce registrazioni e screenshot per esportare l’intero contenuto in alta qualità.',
+		primaryCta: 'Scarica per iOS',
+		secondaryCta: 'Guarda la demo',
+		videoAria: 'Apri il video dimostrativo di ScrollShot',
+		videoLabel: 'Video dimostrativo di ScrollShot',
+		caption: 'Demo in riproduzione automatica',
+	},
+	sections: {
+		features: {
+			kicker: 'Funzioni principali',
+			title: 'Progettato per flussi di scorrimento reali',
+			description: 'Controlli di unione precisi per catturare contenuti lunghi in modo rapido, affidabile e facile da condividere.',
+		},
+		reviews: {
+			kicker: 'Recensioni degli utenti',
+			title: 'Meno lavoro manuale per ogni screenshot lungo',
+			description: 'Dalla ricerca di prodotto al supporto clienti, ScrollShot trasforma le catture ripetitive in un flusso chiaro e ordinato.',
+		},
+		scenarios: {
+			kicker: 'Casi d’uso',
+			title: 'Chat, pagine e tutorial in un’unica immagine',
+			description: 'Senza cambiare strumento e senza caricare nulla sul web. Salva, controlla e condividi contenuti lunghi da un solo posto.',
+		},
+		pricing: {
+			kicker: 'Prezzi',
+			title: 'Prezzo semplice e trasparente',
+			description: 'L’unione manuale è gratuita. Pro sblocca l’unione automatica dalle registrazioni e tutti i temi. Il prezzo finale è mostrato sull’App Store.',
+		},
+		faq: {
+			kicker: 'FAQ',
+			title: 'Tutto quello che devi sapere',
+		},
+	},
+	featureIntro: [
+		{
+			title: 'Unione automatica da video',
+			text: 'Registra e scorri una volta. ScrollShot estrae, rimuove i duplicati, allinea e unisce.',
+			icon: icons.auto,
+		},
+		{
+			title: 'Regolazione fine delle giunzioni',
+			text: 'Controlla il primo risultato, regola i bordi e ripulisci le tracce comuni delle barre di scorrimento.',
+			icon: icons.tune,
+		},
+		{
+			title: 'Unione manuale in ordine',
+			text: 'Scegli le immagini esattamente nell’ordine desiderato. La prima diventa la parte superiore.',
+			icon: icons.manual,
+		},
+		{
+			title: 'Condividi come immagine o PDF',
+			text: 'Salva il risultato in Foto e condividilo come immagine, oppure esportalo in PDF.',
+			icon: icons.share,
+		},
+	],
+	featureCards: [
+		{
+			kicker: 'Auto Stitch',
+			title: 'Registra una volta, unisci automaticamente',
+			text: 'Avvia la registrazione schermo di iOS, scorri il contenuto e ScrollShot estrae i fotogrammi utili, filtra i duplicati e rileva aree di sovrapposizione stabili.',
+			image: localeAssets.it.auto,
+			alt: 'Interfaccia di ScrollShot per registrazione e unione automatica',
+			className: 'auto-shot',
+		},
+		{
+			kicker: 'Fine Tune',
+			title: 'Regola prima di salvare',
+			text: 'Quando una pagina web, un documento o un contenuto dinamico richiede più attenzione, controlla le giunzioni, regola il risultato e rimuovi le barre di scorrimento più comuni.',
+			image: localeAssets.it.trim,
+			alt: 'Interfaccia di ScrollShot per regolare le giunzioni',
+			className: 'trim-shot',
+		},
+		{
+			kicker: 'Manual Stitch',
+			title: 'Unisci le immagini nell’ordine giusto',
+			text: 'Seleziona manualmente gli screenshot e mantieni l’ordine scelto. Utile per conversazioni, transazioni, tutorial e pagine con sovrapposizione parziale.',
+			image: localeAssets.it.manual,
+			alt: 'Interfaccia di ScrollShot per unire immagini manualmente',
+			className: 'manual-shot',
+		},
+		{
+			kicker: 'Themes',
+			title: 'Fai sentire lo strumento tuo',
+			text: 'Scegli temi e lingue, poi esporta immagini in alta risoluzione. Anche un’utilità può essere pulita, personale e curata.',
+			image: localeAssets.it.themes,
+			alt: 'Impostazioni di tema e lingua in ScrollShot',
+			className: 'theme-shot-card',
+		},
+	],
+	reviews: [
+		{ role: 'Product Manager', quote: 'Per pagine di competitor e note di flusso non mi servono più dodici screenshot. Una registrazione e uno scorrimento bastano.', tone: 'warm' },
+		{ role: 'Designer', quote: 'Poter regolare le giunzioni mi dà più sicurezza prima di inviare screenshot lunghi ad altre persone.' },
+		{ role: 'Team di supporto', quote: 'Chat, pagine d’ordine e passaggi di riproduzione possono diventare una sola immagine. La comunicazione è molto più chiara.' },
+		{ role: 'Creator', quote: 'Tutorial lunghi e contenuti social si esportano bene sia come immagini sia come PDF.' },
+		{ role: 'Sviluppatore', quote: 'Elaborazione sul dispositivo e controllo manuale dell’ordine contano quando gli screenshot contengono dati sensibili.' },
+		{ role: 'Studente', quote: 'Articoli lunghi, pagine di riferimento e appunti sono più facili da salvare e ritrovare.' },
+	],
+	ratingLabel: 'Recensione a cinque stelle',
+	scenarios: [
+		{
+			title: 'Chat e supporto clienti',
+			text: 'Conserva conversazioni complete, contesto e passaggi di risoluzione in un’unica immagine, senza saltare tra più foto.',
+			image: localeAssets.it.manual,
+			className: 'chat-scene',
+			cta: { label: 'Guarda la demo video', href: localeAssets.it.video },
+		},
+		{
+			title: 'Pagine web, articoli e tutorial',
+			text: 'Salva pagine web lunghe, post di blog, documentazione di prodotto e guide passo passo come una lunga immagine leggibile.',
+			image: localeAssets.it.trim,
+			className: 'web-scene',
+			cta: { label: 'Vedi le funzioni', href: '#features' },
+		},
+		{
+			title: 'Temi, lingue e condivisione',
+			text: 'Usa più temi e lingue, poi condividi come immagine o PDF per contesti personali e professionali.',
+			image: localeAssets.it.themes,
+			className: 'theme-scene',
+			cta: { label: 'Installa ScrollShot', href: appStoreUrls.it },
+		},
+	],
+	plans: [
+		{
+			name: 'ScrollShot',
+			price: 'Gratis',
+			subtitle: 'Per unioni manuali occasionali',
+			features: ['Unione manuale degli screenshot', 'Selezione e anteprima da Foto', 'Salvataggio di immagini lunghe in Foto', 'Colori tema di base'],
+		},
+		{
+			name: 'ScrollShot Pro',
+			price: 'Pro',
+			subtitle: 'Sblocca il flusso più veloce per screenshot lunghi',
+			features: ['Unione automatica dalle registrazioni', 'Unione da video selezionati', 'Tutti i colori tema', 'Funzioni avanzate future'],
+			featured: true,
+		},
+	],
+	pricingButtonLabel: 'Ottieni ScrollShot',
+	faqs: [
+		['In cosa differisce ScrollShot dagli screenshot di sistema?', 'Gli screenshot di iOS salvano la schermata visibile. ScrollShot è pensato per contenuti con scorrimento: trasforma una registrazione o più screenshot in un’immagine lunga con regolazione fine, pulizia delle barre di scorrimento e condivisione in PDF.'],
+		['Come funziona l’unione automatica?', 'Avvia una registrazione schermo su iOS, scorri il contenuto e scegli il video in ScrollShot. L’app estrae i fotogrammi, elimina i duplicati, rileva le aree di sovrapposizione e genera un’immagine lunga.'],
+		['Come viene deciso l’ordine nell’unione manuale?', 'Per impostazione predefinita, ScrollShot unisce le immagini nell’ordine in cui le selezioni. La prima immagine scelta diventa la parte superiore del risultato finale.'],
+		['Quali contenuti funzionano meglio?', 'Chat, pagine web, schermate di app, transazioni, tutorial, articoli lunghi, documentazione di prodotto e contenuti social sono tutti scenari ideali.'],
+		['Posso esportare in PDF?', 'Sì. Dopo aver salvato il risultato, puoi condividerlo come immagine oppure esportarlo in PDF.'],
+		['Le mie foto vengono caricate su un server?', 'ScrollShot è progettato intorno a un flusso di unione sul dispositivo. Le foto vengono usate per selezionare le immagini di origine, leggere i dati e salvare i risultati; non vengono caricate per l’unione.'],
+		['Perché ScrollShot richiede l’accesso a Foto?', 'L’accesso a Foto serve per selezionare gli screenshot, leggere le immagini di origine, salvare il risultato unito e rimuovere gli originali solo dopo la tua conferma.'],
+		['Perché ScrollShot richiede le notifiche?', 'Dopo la fine di una registrazione, una notifica può aiutarti a tornare al flusso di unione per non dimenticare il video appena creato.'],
+		['La pulizia della barra di scorrimento è automatica?', 'ScrollShot può rimuovere le tracce più comuni delle barre laterali o inferiori, ma non promette una rimozione perfetta in ogni immagine.'],
+		['Cosa posso fare se l’unione non riesce?', 'Usa l’unione manuale oppure apri la regolazione fine per modificare le giunzioni. Con pagine dinamiche complesse, lascia un po’ più di sovrapposizione durante lo scorrimento.'],
+		['Che cosa sblocca Pro?', 'ScrollShot Pro sblocca l’unione automatica dalle registrazioni, l’unione da video, tutti i colori tema e le future funzioni avanzate.'],
+		['Quali lingue sono supportate?', 'L’app include impostazioni multilingue, tra cui inglese, cinese, giapponese, coreano, tedesco, francese, spagnolo, portoghese e altre lingue.'],
+		['È disponibile una versione Android?', 'Questo sito presenta la versione iOS e non promette il supporto Android.'],
+		['Dove posso scaricarlo?', 'Usa i pulsanti di installazione in questa pagina per aprire ScrollShot sull’App Store.'],
+	],
+	finalCta: {
+		kicker: 'Download',
+		title: 'Pronto per screenshot lunghi più puliti?',
+		buttonLabel: 'Scarica dall’App Store',
+	},
+	footer: {
+		brandHome: 'Home di ScrollShot',
+		note: 'ScrollShot è uno strumento iOS per screenshot lunghi con unione automatica dalle registrazioni, unione manuale, regolazione fine del risultato, salvataggio immagini e condivisione PDF.',
+		productTitle: 'Prodotto',
+		featuresLabel: 'Funzioni',
+		reviewsLabel: 'Recensioni',
+		pricingLabel: 'Prezzi',
+		downloadTitle: 'Download',
+		appStoreLabel: 'App Store',
+		videoLabel: 'Demo video',
+		legalTitle: 'Legale',
+		supportedLanguagesTitle: 'Lingue supportate',
+		supportedLanguagesText:
+			'English, Italiano, Español, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية e altre.',
+		languageSwitcherTitle: 'Lingue del sito',
+		languageSwitcherAria: 'Cambia lingua del sito',
+		languageLinks: [
+			{ label: 'English', href: '../' },
+			{ label: '中文', href: '../zh/' },
+			{ label: '繁體中文', href: '../zh-hant/' },
+			{ label: '日本語', href: '../ja/' },
+			{ label: '한국어', href: '../ko/' },
+			{ label: 'Deutsch', href: '../de/' },
+			{ label: 'Français', href: '../fr/' },
+			{ label: 'Español', href: '../es/' },
+			{ label: 'Português (BR)', href: '../pt-br/' },
+		],
+	},
+	legalLinks: [
+		{ label: 'Informativa sulla privacy', href: 'https://scrollshot.work/' },
+		{ label: 'Termini di servizio', href: 'https://scrollshot.work/tos/' },
+		{ label: 'Registrazione ICP', href: 'https://beian.miit.gov.cn' },
+	],
+};
+
 export const homeLocales = {
+	it: italianHomeLocale,
 	en: {
 		lang: 'en',
 		ogLocale: 'en_US',
@@ -376,6 +617,7 @@ export const homeLocales = {
 				{ label: 'Français', href: 'fr/' },
 				{ label: 'Español', href: 'es/' },
 				{ label: 'Português (BR)', href: 'pt-br/' },
+				{ label: 'Italiano', href: 'it/' },
 			],
 		},
 		legalLinks: [
@@ -601,6 +843,7 @@ export const homeLocales = {
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -826,6 +1069,7 @@ export const homeLocales = {
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -1051,6 +1295,7 @@ export const homeLocales = {
 				{ label: 'Deutsch', href: '../de/' },
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -1276,6 +1521,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -1487,6 +1733,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -1696,6 +1943,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -1905,6 +2153,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [
@@ -2114,6 +2363,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
+				{ label: 'Italiano', href: '../it/' },
 			],
 		},
 		legalLinks: [

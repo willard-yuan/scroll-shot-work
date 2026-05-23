@@ -40,7 +40,9 @@ const dateLocale =
 								? 'es-ES'
 								: page.locale === 'pt-br'
 									? 'pt-BR'
-									: 'en-US';
+									: page.locale === 'it'
+										? 'it-IT'
+										: 'en-US';
 const formatDate = (date: string) =>
 	new Intl.DateTimeFormat(dateLocale, {
 		year: 'numeric',
