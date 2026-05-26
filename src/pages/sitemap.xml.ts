@@ -13,8 +13,8 @@ type SitemapEntry = {
 	alternates: AlternateLink[];
 };
 
-const SITE_LASTMOD = '2026-05-23';
-const localeCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it'] as const;
+const SITE_LASTMOD = '2026-05-26';
+const localeCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it', 'vi'] as const;
 
 const escapeXml = (value: string) =>
 	value

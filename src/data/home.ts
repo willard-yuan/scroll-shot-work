@@ -9,6 +9,7 @@ export const appStoreUrls = {
 	es: 'https://apps.apple.com/es/app/scrollshot-long-screenshot/id6760192003',
 	'pt-br': 'https://apps.apple.com/br/app/scrollshot-long-screenshot/id6760192003',
 	it: 'https://apps.apple.com/it/app/scrollshot-long-screenshot/id6760192003',
+	vi: 'https://apps.apple.com/vn/app/scrollshot-long-screenshot/id6760192003',
 };
 
 export const site = {
@@ -26,6 +27,7 @@ const frUrl = `${site.url}fr/`;
 const esUrl = `${site.url}es/`;
 const ptBrUrl = `${site.url}pt-br/`;
 const itUrl = `${site.url}it/`;
+const viUrl = `${site.url}vi/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
 const enWebpAssets = {
@@ -152,6 +154,16 @@ export const localeAssets = {
 		appIcon,
 		ogImage: enWebpAssets.ogImage,
 	},
+	vi: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
 };
 
 const alternates = [
@@ -165,6 +177,7 @@ const alternates = [
 	{ lang: 'es', href: esUrl },
 	{ lang: 'pt-BR', href: ptBrUrl },
 	{ lang: 'it', href: itUrl },
+	{ lang: 'vi-VN', href: viUrl },
 	{ lang: 'x-default', href: site.url },
 ];
 
@@ -386,6 +399,7 @@ const italianHomeLocale = {
 			{ label: 'Français', href: '../fr/' },
 			{ label: 'Español', href: '../es/' },
 			{ label: 'Português (BR)', href: '../pt-br/' },
+			{ label: 'Tiếng Việt', href: '../vi/' },
 		],
 	},
 	legalLinks: [
@@ -395,7 +409,236 @@ const italianHomeLocale = {
 	],
 };
 
+const vietnameseHomeLocale = {
+	lang: 'vi',
+	ogLocale: 'vi_VN',
+	url: viUrl,
+	alternateLinks: alternates,
+	appStoreUrl: appStoreUrls.vi,
+	site,
+	assets: localeAssets.vi,
+	meta: {
+		title: 'ScrollShot: chụp màn hình dài và chụp cuộn trên iPhone',
+		description:
+			'ScrollShot giúp tạo ảnh chụp màn hình dài trên iPhone dễ hơn: ghi lại thao tác cuộn, ghép ảnh chụp màn hình và lưu toàn bộ trang ở chất lượng cao. Phù hợp cho chat, trang web, tài liệu và màn hình ứng dụng.',
+		keywords: ['ScrollShot', 'chụp màn hình dài iPhone', 'chụp cuộn iPhone', 'ghép ảnh chụp màn hình', 'ảnh chụp dài iOS'],
+		imageAlt: 'Ảnh xem trước demo ScrollShot bằng tiếng Việt',
+	},
+	navLabels: {
+		navAria: 'Điều hướng chính',
+		linksAria: 'Điều hướng trong trang',
+		install: 'Cài đặt',
+		brandHome: 'Trang chủ ScrollShot',
+		menu: 'Mở menu điều hướng',
+	},
+	navLinks: [
+		{ href: '#features', label: 'Tính năng' },
+		{ href: '#reviews', label: 'Đánh giá' },
+		{ href: '#pricing', label: 'Giá' },
+		{ href: '#faq', label: 'FAQ' },
+		{ href: 'blog/', label: 'Blog' },
+	],
+	hero: {
+		eyebrow: 'Công cụ chụp màn hình dài cho iPhone',
+		title: 'ScrollShot',
+		subtitle: 'Ảnh chụp màn hình dài và chụp cuộn thật dễ dàng',
+		text:
+			'Lưu cuộc trò chuyện, trang web, bài viết và màn hình ứng dụng thành ảnh dài sắc nét. ScrollShot ghép bản ghi màn hình và ảnh chụp để xuất toàn bộ nội dung ở chất lượng cao.',
+		primaryCta: 'Tải cho iOS',
+		secondaryCta: 'Xem demo',
+		videoAria: 'Mở video demo ScrollShot',
+		videoLabel: 'Video demo ScrollShot',
+		caption: 'Demo đang tự động phát',
+	},
+	sections: {
+		features: {
+			kicker: 'Tính năng chính',
+			title: 'Thiết kế cho quy trình cuộn thực tế',
+			description: 'Các công cụ ghép chính xác giúp lưu nội dung dài nhanh, đáng tin cậy và dễ chia sẻ.',
+		},
+		reviews: {
+			kicker: 'Đánh giá từ người dùng',
+			title: 'Ít thao tác thủ công hơn cho mỗi ảnh chụp dài',
+			description: 'Từ nghiên cứu sản phẩm đến hỗ trợ khách hàng, ScrollShot biến việc chụp lặp lại thành một quy trình gọn gàng.',
+		},
+		scenarios: {
+			kicker: 'Trường hợp sử dụng',
+			title: 'Chat, trang web và hướng dẫn trong một ảnh duy nhất',
+			description: 'Không cần đổi công cụ, không cần tải lên web. Lưu, kiểm tra và chia sẻ nội dung dài ở cùng một nơi.',
+		},
+		pricing: {
+			kicker: 'Giá',
+			title: 'Mức giá đơn giản, minh bạch',
+			description: 'Ghép thủ công miễn phí. Pro mở khóa ghép tự động từ bản ghi màn hình và toàn bộ chủ đề. Giá cuối cùng được hiển thị trên App Store.',
+		},
+		faq: {
+			kicker: 'FAQ',
+			title: 'Những điều bạn cần biết',
+		},
+	},
+	featureIntro: [
+		{
+			title: 'Tự động ghép từ video',
+			text: 'Ghi và cuộn một lần. ScrollShot trích xuất, loại bỏ trùng lặp, căn khớp và ghép.',
+			icon: icons.auto,
+		},
+		{
+			title: 'Tinh chỉnh đường ghép',
+			text: 'Kiểm tra bản ghép đầu tiên, chỉnh mép và làm sạch các vết thanh cuộn thường gặp.',
+			icon: icons.tune,
+		},
+		{
+			title: 'Ghép thủ công theo thứ tự',
+			text: 'Chọn ảnh đúng theo thứ tự bạn muốn. Ảnh đầu tiên sẽ nằm ở phần trên cùng.',
+			icon: icons.manual,
+		},
+		{
+			title: 'Chia sẻ ảnh hoặc PDF',
+			text: 'Lưu kết quả vào Ảnh, rồi chia sẻ dưới dạng ảnh hoặc xuất thành PDF.',
+			icon: icons.share,
+		},
+	],
+	featureCards: [
+		{
+			kicker: 'Auto Stitch',
+			title: 'Ghi một lần, tự động ghép',
+			text: 'Bắt đầu ghi màn hình iOS, cuộn qua nội dung và ScrollShot tự động trích xuất khung hình quan trọng, lọc trùng lặp và tìm vùng chồng lấp ổn định.',
+			image: localeAssets.vi.auto,
+			alt: 'Giao diện ScrollShot để ghi màn hình và tự động ghép ảnh dài',
+			className: 'auto-shot',
+		},
+		{
+			kicker: 'Fine Tune',
+			title: 'Tinh chỉnh trước khi lưu',
+			text: 'Khi trang web, tài liệu hoặc nội dung động cần xử lý kỹ hơn, hãy kiểm tra đường ghép, chỉnh kết quả và xóa các thanh cuộn thường gặp.',
+			image: localeAssets.vi.trim,
+			alt: 'Giao diện ScrollShot để tinh chỉnh đường ghép',
+			className: 'trim-shot',
+		},
+		{
+			kicker: 'Manual Stitch',
+			title: 'Ghép ảnh theo đúng thứ tự',
+			text: 'Chọn ảnh chụp màn hình thủ công và giữ nguyên thứ tự bạn chọn. Phù hợp cho hội thoại, giao dịch, hướng dẫn và các trang chỉ chồng lấp một phần.',
+			image: localeAssets.vi.manual,
+			alt: 'Giao diện ScrollShot để ghép ảnh thủ công',
+			className: 'manual-shot',
+		},
+		{
+			kicker: 'Themes',
+			title: 'Cá nhân hóa công cụ theo cách của bạn',
+			text: 'Chọn chủ đề và ngôn ngữ, rồi xuất ảnh độ phân giải cao. Một công cụ tiện ích vẫn có thể gọn gàng, cá nhân và chỉn chu.',
+			image: localeAssets.vi.themes,
+			alt: 'Cài đặt chủ đề và ngôn ngữ trong ScrollShot',
+			className: 'theme-shot-card',
+		},
+	],
+	reviews: [
+		{ role: 'Quản lý sản phẩm', quote: 'Với trang đối thủ và ghi chú quy trình, tôi không còn cần cả chục ảnh chụp nữa. Một lần ghi và cuộn là đủ.', tone: 'warm' },
+		{ role: 'Nhà thiết kế', quote: 'Có thể tinh chỉnh đường ghép giúp tôi yên tâm hơn trước khi gửi ảnh chụp dài cho người khác.' },
+		{ role: 'Đội hỗ trợ', quote: 'Chat, trang đơn hàng và các bước tái hiện lỗi có thể gom thành một ảnh. Việc trao đổi rõ ràng hơn nhiều.' },
+		{ role: 'Nhà sáng tạo nội dung', quote: 'Các hướng dẫn dài và nội dung mạng xã hội xuất ra rất ổn cả dưới dạng ảnh lẫn PDF.' },
+		{ role: 'Nhà phát triển', quote: 'Xử lý trên thiết bị và kiểm soát thứ tự thủ công rất quan trọng khi ảnh chụp có thông tin nhạy cảm.' },
+		{ role: 'Sinh viên', quote: 'Bài viết dài, trang tham khảo và ghi chú học tập dễ lưu lại và tìm lại hơn.' },
+	],
+	ratingLabel: 'Đánh giá năm sao',
+	scenarios: [
+		{
+			title: 'Chat và bàn giao hỗ trợ',
+			text: 'Giữ trọn cuộc trò chuyện, ngữ cảnh và các bước xử lý trong một ảnh duy nhất, thay vì lật qua nhiều ảnh trong thư viện.',
+			image: localeAssets.vi.manual,
+			className: 'chat-scene',
+			cta: { label: 'Xem video demo', href: localeAssets.vi.video },
+		},
+		{
+			title: 'Trang web, bài viết và hướng dẫn',
+			text: 'Lưu trang web dài, bài blog, tài liệu sản phẩm và hướng dẫn từng bước thành một ảnh dài dễ đọc.',
+			image: localeAssets.vi.trim,
+			className: 'web-scene',
+			cta: { label: 'Xem tính năng', href: '#features' },
+		},
+		{
+			title: 'Chủ đề, ngôn ngữ và chia sẻ',
+			text: 'Dùng nhiều chủ đề và ngôn ngữ, rồi chia sẻ dưới dạng ảnh hoặc PDF cho cả nhu cầu cá nhân lẫn công việc.',
+			image: localeAssets.vi.themes,
+			className: 'theme-scene',
+			cta: { label: 'Cài đặt ScrollShot', href: appStoreUrls.vi },
+		},
+	],
+	plans: [
+		{
+			name: 'ScrollShot',
+			price: 'Miễn phí',
+			subtitle: 'Cho nhu cầu ghép thủ công thỉnh thoảng',
+			features: ['Ghép ảnh chụp màn hình thủ công', 'Chọn và xem trước từ Ảnh', 'Lưu ảnh dài vào Ảnh', 'Màu chủ đề cơ bản'],
+		},
+		{
+			name: 'ScrollShot Pro',
+			price: 'Pro',
+			subtitle: 'Mở khóa quy trình chụp màn hình dài nhanh nhất',
+			features: ['Tự động ghép từ bản ghi màn hình', 'Ghép từ video đã chọn', 'Toàn bộ màu chủ đề', 'Các tính năng nâng cao trong tương lai'],
+			featured: true,
+		},
+	],
+	pricingButtonLabel: 'Tải ScrollShot',
+	faqs: [
+		['ScrollShot khác gì so với ảnh chụp màn hình hệ thống?', 'Ảnh chụp màn hình iOS chỉ lưu phần đang hiển thị. ScrollShot được thiết kế cho nội dung có thể cuộn: biến một bản ghi màn hình hoặc nhiều ảnh chụp thành một ảnh dài, có tinh chỉnh đường ghép, làm sạch thanh cuộn và chia sẻ PDF.'],
+		['Tính năng ghép tự động hoạt động như thế nào?', 'Bắt đầu ghi màn hình trên iOS, cuộn qua nội dung rồi chọn video trong ScrollShot. Ứng dụng trích xuất khung hình, loại bỏ trùng lặp, nhận diện vùng chồng lấp và tạo ảnh dài.'],
+		['Thứ tự trong ghép thủ công được quyết định ra sao?', 'Theo mặc định, ScrollShot ghép ảnh theo thứ tự bạn chọn. Ảnh được chọn đầu tiên sẽ nằm ở phần trên cùng của ảnh dài cuối cùng.'],
+		['Nội dung nào phù hợp nhất?', 'Chat, trang web, màn hình ứng dụng, giao dịch, hướng dẫn, bài viết dài, tài liệu sản phẩm và nội dung mạng xã hội đều phù hợp.'],
+		['Tôi có thể xuất PDF không?', 'Có. Sau khi lưu kết quả, bạn có thể chia sẻ dưới dạng ảnh hoặc xuất thành PDF.'],
+		['Ảnh của tôi có bị tải lên máy chủ không?', 'ScrollShot được thiết kế xoay quanh quy trình ghép trên thiết bị. Ảnh chỉ được dùng để chọn nguồn, đọc dữ liệu và lưu kết quả; chúng không được tải lên để ghép.'],
+		['Vì sao ScrollShot cần quyền truy cập Ảnh?', 'Quyền truy cập Ảnh dùng để chọn ảnh chụp màn hình, đọc ảnh nguồn, lưu kết quả đã ghép và chỉ dọn ảnh gốc sau khi bạn xác nhận.'],
+		['Vì sao ScrollShot cần quyền thông báo?', 'Sau khi bản ghi màn hình kết thúc, thông báo có thể giúp bạn quay lại quy trình ghép để không quên video vừa tạo.'],
+		['Việc làm sạch thanh cuộn có tự động không?', 'ScrollShot có thể làm sạch các vết thanh cuộn bên phải hoặc phía dưới thường gặp, nhưng không cam kết xóa hoàn hảo trong mọi ảnh.'],
+		['Tôi nên làm gì nếu ghép không thành công?', 'Hãy dùng ghép thủ công hoặc mở phần tinh chỉnh để điều chỉnh vị trí đường ghép. Với các trang động phức tạp, hãy để vùng chồng lấp nhiều hơn một chút khi cuộn.'],
+		['Pro mở khóa những gì?', 'ScrollShot Pro mở khóa ghép tự động từ bản ghi màn hình, ghép từ video, toàn bộ màu chủ đề và các tính năng nâng cao trong tương lai.'],
+		['Ứng dụng hỗ trợ những ngôn ngữ nào?', 'Ứng dụng có cài đặt đa ngôn ngữ, bao gồm tiếng Anh, tiếng Trung, tiếng Nhật, tiếng Hàn, tiếng Đức, tiếng Pháp, tiếng Tây Ban Nha, tiếng Bồ Đào Nha, tiếng Việt và nhiều ngôn ngữ khác.'],
+		['Có phiên bản Android không?', 'Trang web này giới thiệu phiên bản iOS và không cam kết hỗ trợ Android.'],
+		['Tôi có thể tải ở đâu?', 'Dùng các nút cài đặt trên trang này để mở ScrollShot trong App Store.'],
+	],
+	finalCta: {
+		kicker: 'Tải xuống',
+		title: 'Sẵn sàng có những ảnh chụp dài gọn gàng hơn?',
+		buttonLabel: 'Tải trên App Store',
+	},
+	footer: {
+		brandHome: 'Trang chủ ScrollShot',
+		note: 'ScrollShot là công cụ chụp màn hình dài cho iOS, hỗ trợ tự động ghép từ bản ghi màn hình, ghép thủ công, tinh chỉnh kết quả, lưu ảnh và chia sẻ PDF.',
+		productTitle: 'Sản phẩm',
+		featuresLabel: 'Tính năng',
+		reviewsLabel: 'Đánh giá',
+		pricingLabel: 'Giá',
+		downloadTitle: 'Tải xuống',
+		appStoreLabel: 'App Store',
+		videoLabel: 'Video demo',
+		legalTitle: 'Pháp lý',
+		supportedLanguagesTitle: 'Ngôn ngữ được hỗ trợ',
+		supportedLanguagesText:
+			'English, Tiếng Việt, Italiano, Español, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, ไทย, हिन्दी, العربية và nhiều ngôn ngữ khác.',
+		languageSwitcherTitle: 'Ngôn ngữ trang web',
+		languageSwitcherAria: 'Đổi ngôn ngữ trang web',
+		languageLinks: [
+			{ label: 'English', href: '../' },
+			{ label: '中文', href: '../zh/' },
+			{ label: '繁體中文', href: '../zh-hant/' },
+			{ label: '日本語', href: '../ja/' },
+			{ label: '한국어', href: '../ko/' },
+			{ label: 'Deutsch', href: '../de/' },
+			{ label: 'Français', href: '../fr/' },
+			{ label: 'Español', href: '../es/' },
+			{ label: 'Português (BR)', href: '../pt-br/' },
+			{ label: 'Italiano', href: '../it/' },
+		],
+	},
+	legalLinks: [
+		{ label: 'Chính sách quyền riêng tư', href: 'https://scrollshot.work/' },
+		{ label: 'Điều khoản dịch vụ', href: 'https://scrollshot.work/tos/' },
+		{ label: 'Hồ sơ ICP', href: 'https://beian.miit.gov.cn' },
+	],
+};
+
 export const homeLocales = {
+	vi: vietnameseHomeLocale,
 	it: italianHomeLocale,
 	en: {
 		lang: 'en',
@@ -618,6 +861,7 @@ export const homeLocales = {
 				{ label: 'Español', href: 'es/' },
 				{ label: 'Português (BR)', href: 'pt-br/' },
 				{ label: 'Italiano', href: 'it/' },
+				{ label: 'Tiếng Việt', href: 'vi/' },
 			],
 		},
 		legalLinks: [
@@ -844,6 +1088,7 @@ export const homeLocales = {
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -1070,6 +1315,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -1296,6 +1542,7 @@ export const homeLocales = {
 				{ label: 'Français', href: '../fr/' },
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -1522,6 +1769,7 @@ export const homeLocales = {
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -1734,6 +1982,7 @@ export const homeLocales = {
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -1944,6 +2193,7 @@ export const homeLocales = {
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -2154,6 +2404,7 @@ export const homeLocales = {
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [
@@ -2364,6 +2615,7 @@ export const homeLocales = {
 				{ label: 'Español', href: '../es/' },
 				{ label: 'Português (BR)', href: '../pt-br/' },
 				{ label: 'Italiano', href: '../it/' },
+				{ label: 'Tiếng Việt', href: '../vi/' },
 			],
 		},
 		legalLinks: [

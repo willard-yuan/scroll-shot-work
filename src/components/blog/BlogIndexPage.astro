@@ -36,7 +36,9 @@ const dateLocale =
 									? 'pt-BR'
 									: page.locale === 'it'
 										? 'it-IT'
-										: 'en-US';
+										: page.locale === 'vi'
+											? 'vi-VN'
+											: 'en-US';
 
 const formatDate = (date: string) =>
 	new Intl.DateTimeFormat(dateLocale, {

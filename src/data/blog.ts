@@ -1,6 +1,6 @@
 import { appStoreUrls, homeLocales, localeAssets, site } from './home';
 
-export type BlogLocaleCode = 'en' | 'zh' | 'zh-hant' | 'ja' | 'ko' | 'de' | 'fr' | 'es' | 'pt-br' | 'it';
+export type BlogLocaleCode = 'en' | 'zh' | 'zh-hant' | 'ja' | 'ko' | 'de' | 'fr' | 'es' | 'pt-br' | 'it' | 'vi';
 
 export interface BlogFrontmatter {
 	title: string;
@@ -44,10 +44,11 @@ const indexAlternates = [
 	{ lang: 'es', href: siteUrl('es/blog/') },
 	{ lang: 'pt-BR', href: siteUrl('pt-br/blog/') },
 	{ lang: 'it', href: siteUrl('it/blog/') },
+	{ lang: 'vi-VN', href: siteUrl('vi/blog/') },
 	{ lang: 'x-default', href: siteUrl('blog/') },
 ];
 
-const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it'];
+const blogLocaleCodes: BlogLocaleCode[] = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it', 'vi'];
 const hrefLangByLocale: Record<BlogLocaleCode, string> = {
 	en: 'en',
 	zh: 'zh-CN',
@@ -59,6 +60,7 @@ const hrefLangByLocale: Record<BlogLocaleCode, string> = {
 	es: 'es',
 	'pt-br': 'pt-BR',
 	it: 'it',
+	vi: 'vi-VN',
 };
 
 const italianBlogLocale = {
@@ -94,7 +96,41 @@ const italianBlogLocale = {
 	},
 } as const;
 
+const vietnameseBlogLocale = {
+	locale: 'vi',
+	lang: 'vi',
+	ogLocale: 'vi_VN',
+	url: siteUrl('vi/blog/'),
+	appStoreUrl: appStoreUrls.vi,
+	home: homeLocales.vi,
+	assets: localeAssets.vi,
+	alternateLinks: indexAlternates,
+	meta: {
+		title: 'Blog ScrollShot - Hướng dẫn chụp màn hình dài và cập nhật sản phẩm',
+		description:
+			'Hướng dẫn và cập nhật từ ScrollShot: biến bản ghi màn hình và ảnh chụp thành ảnh dài sạch, rõ nét trên iPhone. Tìm hiểu cách lưu nội dung đầy đủ với ít thao tác hơn.',
+		keywords: ['Blog ScrollShot', 'chụp màn hình dài', 'chụp cuộn trên iPhone', 'ghép ảnh chụp màn hình'],
+		imageAlt: 'Ảnh xem trước demo ScrollShot',
+	},
+	copy: {
+		home: 'Trang chủ',
+		kicker: 'Blog ScrollShot',
+		title: 'Blog ScrollShot: cập nhật mới nhất',
+		description:
+			'Các hướng dẫn thực tế, ghi chú sản phẩm và cách gọn gàng hơn để lưu nội dung cuộn trên iPhone.',
+		featured: 'Cập nhật mới nhất',
+		recent: 'Bài viết gần đây',
+		readArticle: 'Đọc bài viết',
+		backToBlog: 'Quay lại blog',
+		articleByline: 'Đội ngũ ScrollShot',
+		blogLabel: 'Blog',
+		languageLabel: 'English',
+		noPosts: 'Hiện chưa có bài viết nào.',
+	},
+} as const;
+
 export const blogLocales = {
+	vi: vietnameseBlogLocale,
 	it: italianBlogLocale,
 	en: {
 		locale: 'en',
@@ -383,7 +419,7 @@ export const blogLocales = {
 export type BlogLocale = (typeof blogLocales)[keyof typeof blogLocales];
 
 const normalizePost = ([path, module]: [string, MarkdownModule]): BlogPost | null => {
-	const match = path.match(/\/blog\/(en|zh|zh-hant|ja|ko|de|fr|es|pt-br|it)\/([^/]+)\.md$/);
+	const match = path.match(/\/blog\/(en|zh|zh-hant|ja|ko|de|fr|es|pt-br|it|vi)\/([^/]+)\.md$/);
 
 	if (!match) {
 		return null;
@@ -455,6 +491,7 @@ export const getBlogLanguageLinks = (locale: BlogLocaleCode) =>
 		locale !== 'es' && { label: 'Español', href: blogLocales.es.url },
 		locale !== 'pt-br' && { label: 'Português (BR)', href: blogLocales['pt-br'].url },
 		locale !== 'it' && { label: 'Italiano', href: blogLocales.it.url },
+		locale !== 'vi' && { label: 'Tiếng Việt', href: blogLocales.vi.url },
 	].filter((link): link is { label: string; href: string } => Boolean(link));
 
 export const getBlogHomeHref = (_locale: BlogLocaleCode, page: 'index' | 'post') =>
