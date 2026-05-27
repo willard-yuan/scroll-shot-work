@@ -18,9 +18,10 @@ interface Props {
 	plans: Plan[];
 	appStoreUrl: string;
 	buttonLabel: string;
+	note?: string;
 }
 
-const { heading, plans, appStoreUrl, buttonLabel } = Astro.props;
+const { heading, plans, appStoreUrl, buttonLabel, note } = Astro.props;
 ---
 
 <section class="section section-band pricing-section" id="pricing">
@@ -51,4 +52,5 @@ const { heading, plans, appStoreUrl, buttonLabel } = Astro.props;
 			</article>
 		))}
 	</div>
+	{note && <p class="pricing-note">{note}</p>}
 </section>

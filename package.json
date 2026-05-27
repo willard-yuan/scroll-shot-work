@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "update:app-store-rating": "node scripts/update-app-store-rating.mjs",
     "astro": "astro"
   },
   "dependencies": {

@@ -13,6 +13,12 @@ interface Props {
 		videoAria: string;
 		videoLabel: string;
 		caption: string;
+		trustSignals?: Array<{
+			value?: string;
+			label: string;
+			note?: string;
+			tone?: 'rating' | 'privacy' | 'export';
+		}>;
 	};
 }
 
@@ -34,6 +40,19 @@ const { appStoreUrl, video, videoCover, content } = Astro.props;
 				{content.secondaryCta}
 			</a>
 		</div>
+		{
+			content.trustSignals && (
+				<div class="hero-trust-list" aria-label="ScrollShot 信任信号">
+					{content.trustSignals.map((item) => (
+						<div class:list={['hero-trust-item', item.tone && `trust-${item.tone}`]}>
+							{item.value && <strong>{item.value}</strong>}
+							<span>{item.label}</span>
+							{item.note && <small>{item.note}</small>}
+						</div>
+					))}
+				</div>
+			)
+		}
 	</div>
 
 	<a class="hero-device-link" href={video} aria-label={content.videoAria} target="_blank" rel="noopener noreferrer">

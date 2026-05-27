@@ -1,0 +1,41 @@
+---
+interface LinkItem {
+	label: string;
+	href: string;
+	variant?: 'light' | 'mint' | 'ghost';
+}
+
+interface Props {
+	content: {
+		kicker: string;
+		title: string;
+		text: string;
+		links: LinkItem[];
+	};
+}
+
+const { content } = Astro.props;
+const shouldOpenInNewTab = (href: string) => !href.startsWith('#');
+---
+
+<section class="section inline-cta-section">
+	<div class="inline-cta">
+		<div>
+			<p class="eyebrow gold">{content.kicker}</p>
+			<h2>{content.title}</h2>
+			<p>{content.text}</p>
+		</div>
+		<div class="inline-cta-actions">
+			{content.links.map((link) => (
+				<a
+					class:list={['button', link.variant === 'mint' ? 'button-mint' : link.variant === 'ghost' ? 'button-ghost' : 'button-light']}
+					href={link.href}
+					target={shouldOpenInNewTab(link.href) ? '_blank' : undefined}
+					rel={shouldOpenInNewTab(link.href) ? 'noopener noreferrer' : undefined}
+				>
+					{link.label}
+				</a>
+			))}
+		</div>
+	</div>
+</section>

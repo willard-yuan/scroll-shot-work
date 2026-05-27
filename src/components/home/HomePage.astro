@@ -9,6 +9,8 @@ import PricingSection from './PricingSection.astro';
 import FaqSection from './FaqSection.astro';
 import FinalCTA from './FinalCTA.astro';
 import SiteFooter from './SiteFooter.astro';
+import WorkflowSteps from './WorkflowSteps.astro';
+import InlineCta from './InlineCta.astro';
 import { buildJsonLd, type HomeLocale } from '../../data/home';
 
 interface Props {
@@ -18,6 +20,25 @@ interface Props {
 const { page } = Astro.props;
 const { site, assets, meta, sections } = page;
 const appStoreUrl = page.appStoreUrl;
+interface WorkflowContent {
+	kicker: string;
+	title: string;
+	description: string;
+	steps: Array<{ title: string; text: string }>;
+}
+interface InlineCtaContent {
+	kicker: string;
+	title: string;
+	text: string;
+	links: Array<{ label: string; href: string; variant?: 'light' | 'mint' | 'ghost' }>;
+}
+type ConversionPage = HomeLocale & {
+	workflow?: WorkflowContent;
+	featureCta?: InlineCtaContent;
+	scenarioCta?: InlineCtaContent;
+	pricingNote?: string;
+};
+const conversionPage = page as ConversionPage;
 ---
 
 <Layout
@@ -41,14 +62,18 @@ const appStoreUrl = page.appStoreUrl;
 				videoCover={assets.videoCover}
 				content={page.hero}
 			/>
+			{conversionPage.workflow && <WorkflowSteps content={conversionPage.workflow} />}
 			<FeatureSection heading={sections.features} intro={page.featureIntro} cards={page.featureCards} />
+			{conversionPage.featureCta && <InlineCta content={conversionPage.featureCta} />}
 			<ReviewsSection heading={sections.reviews} reviews={page.reviews} ratingLabel={page.ratingLabel} />
 			<ScenariosSection heading={sections.scenarios} scenarios={page.scenarios} />
+			{conversionPage.scenarioCta && <InlineCta content={conversionPage.scenarioCta} />}
 			<PricingSection
 				heading={sections.pricing}
 				plans={page.plans}
 				appStoreUrl={appStoreUrl}
 				buttonLabel={page.pricingButtonLabel}
+				note={conversionPage.pricingNote}
 			/>
 			<FaqSection heading={sections.faq} faqs={page.faqs} />
 			<FinalCTA appStoreUrl={appStoreUrl} content={page.finalCta} />

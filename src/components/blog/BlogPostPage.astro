@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import SiteNav from '../home/SiteNav.astro';
 import SiteFooter from '../home/SiteFooter.astro';
+import BlogConversionBlock from './BlogConversionBlock.astro';
 import type { BlogLocale, BlogPost } from '../../data/blog';
 import {
 	buildBlogPostJsonLd,
@@ -51,6 +52,7 @@ const formatDate = (date: string) =>
 		month: 'long',
 		day: 'numeric',
 	}).format(new Date(`${date}T00:00:00`));
+const blogConversion = 'blogConversion' in home ? home.blogConversion : undefined;
 ---
 
 <Layout
@@ -112,6 +114,8 @@ const formatDate = (date: string) =>
 				<div class="blog-prose">
 					<Content />
 				</div>
+
+				{blogConversion && <BlogConversionBlock content={blogConversion} />}
 
 				<footer class="blog-post-footer">
 					<div class="blog-tags" aria-label="Article tags">

@@ -1,3 +1,5 @@
+import { appStoreRatings } from './appStoreRating';
+
 export const appStoreUrls = {
 	en: 'https://apps.apple.com/us/app/scrollshot-long-screenshot/id6760192003',
 	zh: 'https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003',
@@ -29,6 +31,7 @@ const ptBrUrl = `${site.url}pt-br/`;
 const itUrl = `${site.url}it/`;
 const viUrl = `${site.url}vi/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
+const zhRating = appStoreRatings.zh;
 
 const enWebpAssets = {
 	auto: '/ai_scrolling_screenshot.webp',
@@ -1784,6 +1787,7 @@ export const homeLocales = {
 		url: zhUrl,
 		alternateLinks: alternates,
 		appStoreUrl: appStoreUrls.zh,
+		appStoreRating: zhRating,
 		site,
 		assets: localeAssets.zh,
 		meta: {
@@ -1810,14 +1814,25 @@ export const homeLocales = {
 		hero: {
 			eyebrow: 'iPhone 长截图工具',
 			title: 'ScrollShot',
-			subtitle: '滚动截图与拼接长图，高清导出',
+			subtitle: '录屏滚动一次，自动生成完整长图',
 			text:
-				'让 iPhone 长截图更简单。无论是滚动截图、照片拼接还是网页截长图，ScrollShot 都能帮你快速生成清晰完整的长图。',
+				'无需一张张截图、手动排序和反复裁剪。保存聊天记录、网页、App 页面和文档时，ScrollShot 会自动抽帧、去重、匹配并拼成一张清晰长图。',
 			primaryCta: 'iOS 版下载',
 			secondaryCta: '观看中文演示',
 			videoAria: '打开 ScrollShot 中文视频演示',
 			videoLabel: 'ScrollShot 中文视频演示',
 			caption: '30 秒看懂自动拼接',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'App Store 评分',
+					note: zhRating.countDisplay,
+					tone: 'rating',
+				},
+				{ value: '本地处理', label: '图片不为拼接上传', tone: 'privacy' },
+				{ value: '图片 / PDF', label: '保存后直接分享', tone: 'export' },
+				{ value: '免费可用', label: '手动拼接先体验' },
+			],
 		},
 		sections: {
 			features: {
@@ -1838,12 +1853,22 @@ export const homeLocales = {
 			pricing: {
 				kicker: '价格',
 				title: '简单清晰的价格',
-				description: '手动拼接免费可用，Pro 解锁录屏自动拼接和全部主题。价格以 App Store 实际展示为准。',
+				description: '手动拼接免费可用。Pro 解锁录屏自动拼接、视频拼接、全部主题和后续高级功能。',
 			},
 			faq: {
 				kicker: '常见问题',
 				title: '你可能想先确认这些',
 			},
+		},
+		workflow: {
+			kicker: '三步完成',
+			title: '从录屏到长图，不再来回截图',
+			description: '先用最短路径理解 ScrollShot：录屏滚动一次，检查结果，然后保存或分享。',
+			steps: [
+				{ title: '录屏滚动', text: '打开系统录屏，顺着聊天、网页或文档自然滚动到结尾。' },
+				{ title: '自动拼接', text: 'ScrollShot 自动抽帧、去重、匹配重叠区域，生成完整长图。' },
+				{ title: '保存分享', text: '保存到相册，继续分享图片，或导出 PDF 交给同事和客户。' },
+			],
 		},
 		featureIntro: [
 			{ title: '录屏自动拼接', text: '滚动一次，自动抽帧、去重、匹配并生成长图。', icon: icons.auto },
@@ -1885,6 +1910,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: '先看效果',
+			title: '15 秒确认它是不是你要的长截图方式',
+			text: '不需要先读完整页面。直接看录屏自动拼接流程，再决定是否安装体验。',
+			links: [
+				{ label: '观看中文演示', href: localeAssets.zh.video, variant: 'mint' },
+				{ label: '查看使用场景', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: '产品经理', quote: '保存竞品页面和流程说明时，不用再拼十几张截图，录屏滚一下就够。', tone: 'warm' },
 			{ role: '设计师', quote: '最喜欢可以微调拼接缝，长页面给别人看之前更安心。' },
@@ -1917,21 +1951,31 @@ export const homeLocales = {
 				cta: { label: '立即安装体验', href: appStoreUrls.zh },
 			},
 		],
+		scenarioCta: {
+			kicker: '下一步',
+			title: '如果你的长截图来自聊天、网页或教程，可以直接试',
+			text: '免费版先完成手动拼接；需要更快的录屏自动拼接时，再在 App Store 中查看 Pro 选项。',
+			links: [
+				{ label: '立即安装', href: appStoreUrls.zh, variant: 'light' },
+				{ label: '查看免费与 Pro', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: '免费',
-				subtitle: '适合偶尔手动拼接',
-				features: ['手动截图拼接', '相册选择与预览', '保存长图到相册', '基础主题色'],
+				subtitle: '先完成基础长截图工作流',
+				features: ['手动截图拼接', '相册选择与预览', '保存长图到相册', '本地处理图片'],
 			},
 			{
 				name: 'ScrollShot Pro',
 				price: 'Pro',
-				subtitle: '解锁最快长截图工作流',
+				subtitle: '解锁最快的自动长截图流程',
 				features: ['录屏自动生成长图', '选择视频进行拼接', '全部主题色', '后续高级功能更新'],
 				featured: true,
 			},
 		],
+		pricingNote: 'Pro 的具体价格、订阅或买断形式以 App Store 实际展示为准；你可以先免费使用手动拼接，再决定是否升级。',
 		pricingButtonLabel: '获取 ScrollShot',
 		faqs: [
 			['ScrollShot 和系统截图有什么区别？', '系统截图适合当前屏幕。ScrollShot 面向滚动内容，可以把录屏或多张截图合成一张长图，并提供微调、滚动条清理和 PDF 分享。'],
@@ -1953,6 +1997,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: '准备生成更干净的长截图了吗？',
 			buttonLabel: 'App Store 下载',
+		},
+		blogConversion: {
+			kicker: '读完可以直接试',
+			title: '把这篇文章里的场景跑一遍',
+			text: '录屏滚动一次，看看 ScrollShot 如何把长聊天、网页或教程整理成一张清晰长图。',
+			primary: { label: '安装 ScrollShot', href: appStoreUrls.zh },
+			secondary: { label: '观看中文演示', href: localeAssets.zh.video },
+			cards: [
+				{ label: '查看核心功能', href: `${zhUrl}#features` },
+				{ label: '了解免费与 Pro', href: `${zhUrl}#pricing` },
+				{ label: '查看常见问题', href: `${zhUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'ScrollShot 首页',
@@ -2628,43 +2684,58 @@ export const homeLocales = {
 
 export type HomeLocale = (typeof homeLocales)[keyof typeof homeLocales];
 
-export const buildJsonLd = (page: HomeLocale) => [
-	{
-		'@context': 'https://schema.org',
-		'@type': 'WebSite',
-		name: site.name,
-		url: page.url,
-		inLanguage: page.lang,
-	},
-	{
-		'@context': 'https://schema.org',
-		'@type': 'SoftwareApplication',
-		name: site.name,
-		applicationCategory: 'UtilitiesApplication',
-		operatingSystem: 'iOS',
-		url: page.url,
-		downloadUrl: page.appStoreUrl,
-		image: `${site.url}${page.assets.ogImage.slice(1)}`,
-		description: page.meta.description,
-		inLanguage: page.lang,
-		offers: {
-			'@type': 'Offer',
-			price: '0',
-			priceCurrency: 'USD',
-			category: 'freemium',
+export const buildJsonLd = (page: HomeLocale) => {
+	const appStoreRating = 'appStoreRating' in page ? page.appStoreRating : undefined;
+	const aggregateRating =
+		appStoreRating?.average && appStoreRating.count > 0
+			? {
+					'@type': 'AggregateRating',
+					ratingValue: appStoreRating.average.toFixed(1),
+					ratingCount: appStoreRating.count,
+					bestRating: '5',
+					worstRating: '1',
+				}
+			: undefined;
+
+	return [
+		{
+			'@context': 'https://schema.org',
+			'@type': 'WebSite',
+			name: site.name,
+			url: page.url,
+			inLanguage: page.lang,
 		},
-		featureList: page.featureCards.map((feature) => feature.title),
-	},
-	{
-		'@context': 'https://schema.org',
-		'@type': 'FAQPage',
-		mainEntity: page.faqs.map(([question, answer]) => ({
-			'@type': 'Question',
-			name: question,
-			acceptedAnswer: {
-				'@type': 'Answer',
-				text: answer,
+		{
+			'@context': 'https://schema.org',
+			'@type': 'SoftwareApplication',
+			name: site.name,
+			applicationCategory: 'UtilitiesApplication',
+			operatingSystem: 'iOS',
+			url: page.url,
+			downloadUrl: page.appStoreUrl,
+			image: `${site.url}${page.assets.ogImage.slice(1)}`,
+			description: page.meta.description,
+			inLanguage: page.lang,
+			offers: {
+				'@type': 'Offer',
+				price: '0',
+				priceCurrency: page.lang === 'zh-CN' ? 'CNY' : 'USD',
+				category: 'freemium',
 			},
-		})),
-	},
-];
+			...(aggregateRating ? { aggregateRating } : {}),
+			featureList: page.featureCards.map((feature) => feature.title),
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'FAQPage',
+			mainEntity: page.faqs.map(([question, answer]) => ({
+				'@type': 'Question',
+				name: question,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: answer,
+				},
+			})),
+		},
+	];
+};

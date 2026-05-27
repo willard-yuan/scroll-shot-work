@@ -1,0 +1,45 @@
+---
+interface LinkItem {
+	label: string;
+	href: string;
+}
+
+interface Props {
+	content: {
+		kicker: string;
+		title: string;
+		text: string;
+		primary: LinkItem;
+		secondary: LinkItem;
+		cards: LinkItem[];
+	};
+}
+
+const { content } = Astro.props;
+const shouldOpenInNewTab = (href: string) => href.startsWith('http') || href.endsWith('.mp4');
+---
+
+<aside class="blog-conversion" aria-labelledby="blog-conversion-title">
+	<p class="eyebrow gold">{content.kicker}</p>
+	<h2 id="blog-conversion-title">{content.title}</h2>
+	<p>{content.text}</p>
+	<div class="blog-conversion-actions">
+		<a class="button button-mint" href={content.primary.href} target="_blank" rel="noopener noreferrer">
+			{content.primary.label}
+		</a>
+		<a class="button button-ghost" href={content.secondary.href} target="_blank" rel="noopener noreferrer">
+			{content.secondary.label}
+		</a>
+	</div>
+	<nav class="blog-conversion-links" aria-label="相关阅读">
+		{content.cards.map((card) => (
+			<a
+				href={card.href}
+				target={shouldOpenInNewTab(card.href) ? '_blank' : undefined}
+				rel={shouldOpenInNewTab(card.href) ? 'noopener noreferrer' : undefined}
+			>
+				{card.label}
+			</a>
+		))}
+	</nav>
+</aside>

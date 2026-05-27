@@ -1,0 +1,36 @@
+---
+import SectionHeading from './SectionHeading.astro';
+
+interface Step {
+	title: string;
+	text: string;
+}
+
+interface Props {
+	content: {
+		kicker: string;
+		title: string;
+		description: string;
+		steps: Step[];
+	};
+}
+
+const { content } = Astro.props;
+---
+
+<section class="section workflow-section" id="workflow">
+	<SectionHeading
+		kicker={content.kicker}
+		title={content.title}
+		description={content.description}
+	/>
+	<div class="workflow-grid" aria-label={content.title}>
+		{content.steps.map((step, index) => (
+			<article class="workflow-card">
+				<span>{String(index + 1).padStart(2, '0')}</span>
+				<h3>{step.title}</h3>
+				<p>{step.text}</p>
+			</article>
+		))}
+	</div>
+</section>
