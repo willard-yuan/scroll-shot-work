@@ -1,0 +1,111 @@
+<script is:inline>
+	(() => {
+		const selector = 'a[data-download-ios], a[href*="apps.apple.com"]';
+		const seenImpressions = new WeakSet();
+		const wiredClicks = new WeakSet();
+
+		const pageType = () => {
+			if (document.querySelector('.blog-post')) return 'blog_post';
+			if (document.querySelector('.blog-index-page')) return 'blog_index';
+			if (document.querySelector('.hero')) return 'home';
+			return 'site';
+		};
+
+		const placementFor = (link) => {
+			if (link.dataset.downloadPlacement) return link.dataset.downloadPlacement;
+			if (link.closest('.nav-wrap')) return 'nav';
+			if (link.closest('.hero')) return 'hero';
+			if (link.closest('.pricing-section')) return 'pricing';
+			if (link.closest('.final-cta')) return 'final_cta';
+			if (link.closest('.blog-conversion')) return 'blog_conversion';
+			if (link.closest('.inline-cta')) return 'inline_cta';
+			if (link.closest('.scene-card')) return 'scenario_card';
+			if (link.closest('.blog-prose')) return 'blog_article';
+			if (link.closest('.footer')) return 'footer';
+			return 'app_store_link';
+		};
+
+		const payloadFor = (link) => ({
+			locale: link.dataset.downloadLocale || document.documentElement.lang || 'unknown',
+			page: link.dataset.downloadPage || pageType(),
+			placement: placementFor(link),
+			label: link.dataset.downloadLabel || link.textContent.replace(/\s+/g, ' ').trim() || 'Download for iOS',
+			href: link.href,
+			path: window.location.pathname,
+		});
+
+		const track = (name, payload, attempts = 10) => {
+			if (window.umami?.track) {
+				window.umami.track(name, payload);
+				return;
+			}
+
+			if (attempts > 0) {
+				window.setTimeout(() => track(name, payload, attempts - 1), 250);
+			}
+		};
+
+		const trackImpression = (link) => {
+			if (seenImpressions.has(link)) return;
+			seenImpressions.add(link);
+			track('download_ios_impression', payloadFor(link));
+		};
+
+		const normalizeLink = (link) => {
+			if (!link.target) link.target = '_blank';
+			const rel = new Set((link.rel || '').split(/\s+/).filter(Boolean));
+			rel.add('noopener');
+			rel.add('noreferrer');
+			link.rel = Array.from(rel).join(' ');
+		};
+
+		const links = () =>
+			Array.from(document.querySelectorAll(selector)).filter((link) => link.href.includes('apps.apple.com'));
+
+		const wireClicks = () => {
+			links().forEach((link) => {
+				normalizeLink(link);
+				if (wiredClicks.has(link)) return;
+				wiredClicks.add(link);
+				link.addEventListener('click', () => {
+					track('download_ios_click', payloadFor(link));
+				});
+			});
+		};
+
+		const observeImpressions = () => {
+			const candidates = links().filter((link) => !seenImpressions.has(link));
+
+			if (!('IntersectionObserver' in window)) {
+				candidates.forEach(trackImpression);
+				return;
+			}
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+						trackImpression(entry.target);
+						observer.unobserve(entry.target);
+					});
+				},
+				{ threshold: [0.5] },
+			);
+
+			candidates.forEach((link) => observer.observe(link));
+		};
+
+		const refresh = () => {
+			wireClicks();
+			observeImpressions();
+		};
+
+		window.__scrollShotDownloadAnalytics = { refresh };
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', refresh, { once: true });
+		} else {
+			refresh();
+		}
+	})();
+</script>

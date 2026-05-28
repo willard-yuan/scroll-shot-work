@@ -1,4 +1,6 @@
 ---
+import DownloadAnalytics from '../components/analytics/DownloadAnalytics.astro';
+
 const {
 	title = 'ScrollShot - One Tap Record, Auto Long Image',
 	description = 'ScrollShot turns screen recordings and screenshots into clean long images on iPhone. Auto stitch, manual stitch, fine tune seams, clean scrollbars, and share as image or PDF.',
@@ -61,6 +63,7 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 	</head>
 	<body>
 		<slot />
+		<DownloadAnalytics />
 	</body>
 </html>
 
