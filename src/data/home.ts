@@ -32,6 +32,7 @@ const itUrl = `${site.url}it/`;
 const viUrl = `${site.url}vi/`;
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 const zhRating = appStoreRatings.zh;
+const zhRatingCountEn = zhRating.count > 0 ? `${zhRating.count.toLocaleString('en-US')} ratings` : 'China App Store';
 
 const enWebpAssets = {
 	auto: '/ai_scrolling_screenshot.webp',
@@ -676,14 +677,25 @@ export const homeLocales = {
 		hero: {
 			eyebrow: 'iPhone long screenshot tool',
 			title: 'ScrollShot',
-			subtitle: 'Long screenshot & scroll capture made easy',
+			subtitle: 'Record one scroll. Get one complete long screenshot.',
 			text:
-				'Capture long screenshots of chats, webpages, and articles. ScrollShot helps you stitch photos and save full-page content in high quality.',
+				'Stop taking, sorting, and cropping dozens of screenshots. For chats, webpages, app screens, and documents, ScrollShot extracts frames from a recording, removes duplicates, matches overlaps, and turns everything into one clean long image.',
 			primaryCta: 'Download for iOS',
 			secondaryCta: 'Watch English demo',
 			videoAria: 'Open ScrollShot English video demo',
 			videoLabel: 'ScrollShot English video demo',
 			caption: 'Auto-playing English demo',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'China App Store rating',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: 'On-device', label: 'No upload for stitching', tone: 'privacy' },
+				{ value: 'Image / PDF', label: 'Export and share fast', tone: 'export' },
+				{ value: 'Free to try', label: 'Start with manual stitching' },
+			],
 		},
 		sections: {
 			features: {
@@ -704,12 +716,22 @@ export const homeLocales = {
 			pricing: {
 				kicker: 'Pricing',
 				title: 'Simple, transparent pricing',
-				description: 'Manual stitching is free. Pro unlocks automatic recording-based stitching and all themes. Final pricing is shown in the App Store.',
+				description: 'Manual stitching is free. Pro unlocks automatic recording-based stitching, video stitching, all themes, and future advanced features.',
 			},
 			faq: {
 				kicker: 'FAQ',
 				title: 'Everything you need to know',
 			},
+		},
+		workflow: {
+			kicker: 'Three steps',
+			title: 'From screen recording to long image',
+			description: 'The shortest way to understand ScrollShot: record a scroll, review the result, then save or share.',
+			steps: [
+				{ title: 'Record the scroll', text: 'Start iOS screen recording and scroll naturally through the chat, webpage, or document.' },
+				{ title: 'Auto stitch', text: 'ScrollShot extracts frames, removes duplicates, detects overlaps, and builds the complete long image.' },
+				{ title: 'Save or share', text: 'Save to Photos, share the image, or export a PDF for teammates, clients, and archives.' },
+			],
 		},
 		featureIntro: [
 			{
@@ -767,6 +789,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: 'See it first',
+			title: 'Watch the 15-second flow before you install',
+			text: 'You do not need to read the entire page first. See how recording-based stitching works, then decide if it fits your workflow.',
+			links: [
+				{ label: 'Watch English demo', href: localeAssets.en.video, variant: 'mint' },
+				{ label: 'View use cases', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: 'Product Manager', quote: 'For competitor pages and flow notes, I no longer need a dozen screenshots. One recording and scroll is enough.' },
 			{ role: 'Designer', quote: 'Fine-tuning seams makes me more confident before sending long page captures to others.' },
@@ -799,21 +830,31 @@ export const homeLocales = {
 				cta: { label: 'Install ScrollShot', href: appStoreUrls.en },
 			},
 		],
+		scenarioCta: {
+			kicker: 'Next step',
+			title: 'If your long screenshots come from chats, webpages, or tutorials, try it now',
+			text: 'Use the free manual workflow first. When you need faster recording-based stitching, check the Pro options in the App Store.',
+			links: [
+				{ label: 'Install ScrollShot', href: appStoreUrls.en, variant: 'light' },
+				{ label: 'Compare Free and Pro', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: 'Free',
-				subtitle: 'For occasional manual stitching',
-				features: ['Manual screenshot stitching', 'Album selection and preview', 'Save long images to Photos', 'Basic theme colors'],
+				subtitle: 'Start with the core long screenshot flow',
+				features: ['Manual screenshot stitching', 'Album selection and preview', 'Save long images to Photos', 'On-device image processing'],
 			},
 			{
 				name: 'ScrollShot Pro',
 				price: 'Pro',
-				subtitle: 'Unlock the fastest long screenshot workflow',
+				subtitle: 'Unlock the fastest automatic workflow',
 				features: ['Automatic stitching from recordings', 'Stitch from selected videos', 'All theme colors', 'Future advanced features'],
 				featured: true,
 			},
 		],
+		pricingNote: 'Exact Pro pricing, subscription, or lifetime purchase options are shown in the App Store. You can start with free manual stitching before upgrading.',
 		pricingButtonLabel: 'Get ScrollShot',
 		faqs: [
 			['How is ScrollShot different from system screenshots?', 'System screenshots capture the current screen. ScrollShot is designed for scrolling content, turning a recording or multiple screenshots into one long image with fine tuning, scrollbar cleanup, and PDF sharing.'],
@@ -835,6 +876,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: 'Ready for cleaner long screenshots?',
 			buttonLabel: 'Download on the App Store',
+		},
+		blogConversion: {
+			kicker: 'Try it after reading',
+			title: 'Run the workflow from this article',
+			text: 'Record one scroll and see how ScrollShot turns a long chat, webpage, or tutorial into one clean image.',
+			primary: { label: 'Install ScrollShot', href: appStoreUrls.en },
+			secondary: { label: 'Watch English demo', href: localeAssets.en.video },
+			cards: [
+				{ label: 'View core features', href: `${site.url}#features` },
+				{ label: 'Compare Free and Pro', href: `${site.url}#pricing` },
+				{ label: 'Read the FAQ', href: `${site.url}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'ScrollShot home',
