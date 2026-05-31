@@ -7,7 +7,7 @@ category: "História do produto"
 author: "Equipe ScrollShot"
 tags: ["ScrollShot", "print longo no iOS", "gravação de tela", "história do produto"]
 readingTime: "5 min de leitura"
-cover: "/scrollshot_app_prview.webp"
+cover: "/br_scrollshot_app_store_preview/5.webp"
 coverAlt: "Capa da demonstração do ScrollShot mostrando montagem automática de print longo"
 translationKey: "why-choose-scrollshot"
 ---
