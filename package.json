@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:fresh-ratings": "pnpm update:app-store-rating && astro build",
     "preview": "astro preview",
     "update:app-store-rating": "node scripts/update-app-store-rating.mjs",
     "astro": "astro"
