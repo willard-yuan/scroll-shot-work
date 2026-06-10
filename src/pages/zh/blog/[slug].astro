@@ -3,6 +3,7 @@ import BlogPostPage from '../../../components/blog/BlogPostPage.astro';
 import { blogLocales, getBlogPosts } from '../../../data/blog';
 import '../../../styles/home.css';
 import '../../../styles/blog.css';
+import 'katex/dist/katex.min.css';
 
 export function getStaticPaths() {
 	return getBlogPosts('zh').map((post) => ({

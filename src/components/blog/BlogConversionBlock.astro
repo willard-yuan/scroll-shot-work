@@ -11,12 +11,10 @@ interface Props {
 		text: string;
 		primary: LinkItem;
 		secondary: LinkItem;
-		cards: LinkItem[];
 	};
 }
 
 const { content } = Astro.props;
-const shouldOpenInNewTab = (href: string) => href.startsWith('http') || href.endsWith('.mp4');
 ---
 
 <aside class="blog-conversion" aria-labelledby="blog-conversion-title">
@@ -31,15 +29,4 @@ const shouldOpenInNewTab = (href: string) => href.startsWith('http') || href.end
 			{content.secondary.label}
 		</a>
 	</div>
-	<nav class="blog-conversion-links" aria-label="相关阅读">
-		{content.cards.map((card) => (
-			<a
-				href={card.href}
-				target={shouldOpenInNewTab(card.href) ? '_blank' : undefined}
-				rel={shouldOpenInNewTab(card.href) ? 'noopener noreferrer' : undefined}
-			>
-				{card.label}
-			</a>
-		))}
-	</nav>
 </aside>
