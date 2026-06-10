@@ -110,7 +110,7 @@ const formatDate = (date: string) =>
 						<div class="blog-section-heading">
 							<h2 id="recent-posts-title">{page.copy.recent}</h2>
 						</div>
-						<div class="blog-card-grid">
+						<div class={`blog-card-grid${recentPosts.length === 1 ? ' blog-card-grid--single' : ''}`}>
 							{recentPosts.map((post) => (
 								<a class="blog-card" href={`${post.slug}/`}>
 									<div class="blog-card-media">

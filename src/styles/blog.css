@@ -112,7 +112,7 @@
 	flex-wrap: wrap;
 	gap: 10px;
 	color: #958f86;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 720;
 }
 
@@ -122,6 +122,23 @@
 	line-height: 1.04;
 	font-weight: 790;
 	text-wrap: balance;
+}
+
+.blog-featured .blog-meta {
+	position: relative;
+	padding-bottom: 16px;
+}
+
+.blog-featured .blog-meta::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 36px;
+	height: 2px;
+	border-radius: 1px;
+	background: var(--mint);
+	opacity: 0.6;
 }
 
 .blog-featured-copy > p,
@@ -146,13 +163,24 @@
 	font-size: 15px;
 	font-weight: 850;
 	text-decoration: none;
+	transition: gap 220ms ease;
 }
 
 .blog-read-link::after {
 	content: "";
 	width: 42px;
-	height: 1px;
+	height: 1.5px;
 	background: currentColor;
+	border-radius: 1px;
+	transition: width 220ms ease;
+}
+
+.blog-read-link:hover {
+	gap: 18px;
+}
+
+.blog-read-link:hover::after {
+	width: 64px;
 }
 
 .blog-featured-media,
@@ -413,6 +441,26 @@
 	gap: 44px;
 }
 
+.blog-index-page .blog-card-grid.blog-card-grid--single {
+	grid-template-columns: 1fr;
+	max-width: 720px;
+}
+
+.blog-index-page .blog-card-grid.blog-card-grid--single .blog-card {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+	gap: 36px;
+	align-items: center;
+}
+
+.blog-index-page .blog-card-grid.blog-card-grid--single .blog-card-media {
+	aspect-ratio: 1.42 / 1;
+}
+
+.blog-index-page .blog-card-grid.blog-card-grid--single .blog-card-copy {
+	padding: 0;
+}
+
 .blog-index-page .blog-card {
 	overflow: visible;
 	border: 0;
@@ -450,6 +498,23 @@
 	font-size: clamp(25px, 1.95vw, 32px);
 	line-height: 1.08;
 	font-weight: 820;
+}
+
+.blog-index-page .blog-card .blog-meta {
+	position: relative;
+	padding-bottom: 14px;
+}
+
+.blog-index-page .blog-card .blog-meta::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 28px;
+	height: 2px;
+	border-radius: 1px;
+	background: var(--mint);
+	opacity: 0.45;
 }
 
 .blog-index-page .blog-card-copy p {
@@ -840,6 +905,10 @@
 	.blog-index-page .blog-card-grid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+
+	.blog-index-page .blog-card-grid.blog-card-grid--single {
+		grid-template-columns: 1fr;
+	}
 }
 
 @media (max-width: 860px) {
@@ -911,6 +980,11 @@
 	.blog-index-page .blog-card-grid {
 		grid-template-columns: 1fr;
 		gap: 42px;
+	}
+
+	.blog-index-page .blog-card-grid.blog-card-grid--single .blog-card {
+		grid-template-columns: 1fr;
+		gap: 24px;
 	}
 
 	.blog-index-page .blog-card-copy {
