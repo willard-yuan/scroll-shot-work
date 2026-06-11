@@ -7,7 +7,7 @@ category: "Product Story"
 author: "ScrollShot Team"
 tags: ["ScrollShot", "iOS long screenshot", "screen recording", "product story"]
 readingTime: "5 min read"
-cover: "/scrollshot_app_prview.webp"
+cover: "/scrollshot_long_screenshots_app_ios_en.webp"
 coverAlt: "ScrollShot English demo cover showing automatic long screenshot stitching"
 translationKey: "why-choose-scrollshot"
 ---

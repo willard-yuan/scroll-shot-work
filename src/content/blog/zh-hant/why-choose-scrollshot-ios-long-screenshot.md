@@ -7,7 +7,7 @@ category: "產品故事"
 author: "ScrollShot 團隊"
 tags: ["ScrollShot", "iOS 長截圖", "錄影拼接", "產品故事"]
 readingTime: "5 分鐘閱讀"
-cover: "/scrollshot_app_prview_cn.webp"
+cover: "/scrollshot_long_screenshots_app_ios_zh_han.webp"
 coverAlt: "ScrollShot 預覽圖，展示長截圖拼接效果"
 translationKey: "why-choose-scrollshot"
 ---

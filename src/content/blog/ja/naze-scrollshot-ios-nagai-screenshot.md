@@ -7,7 +7,7 @@ category: "プロダクトストーリー"
 author: "ScrollShotチーム"
 tags: ["ScrollShot", "iOS 長いスクリーンショット", "画面収録", "プロダクトストーリー"]
 readingTime: "5分で読めます"
-cover: "/jp_scrollshot_app_store_preview/5.webp"
+cover: "/scrollshot_long_screenshots_app_ios_jp.webp"
 coverAlt: "ScrollShotのデモ画面。長いスクリーンショットを自動合成する様子"
 translationKey: "why-choose-scrollshot"
 ---

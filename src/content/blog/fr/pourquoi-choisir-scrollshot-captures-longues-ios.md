@@ -7,7 +7,7 @@ category: "Histoire produit"
 author: "Équipe ScrollShot"
 tags: ["ScrollShot", "capture d’écran longue iOS", "enregistrement d’écran", "histoire produit"]
 readingTime: "5 min de lecture"
-cover: "/fr_scrollshot_app_store_preview/5.webp"
+cover: "/scrollshot_long_screenshots_app_ios_fr.webp"
 coverAlt: "Aperçu ScrollShot montrant l’assemblage automatique d’une capture longue"
 translationKey: "why-choose-scrollshot"
 ---
