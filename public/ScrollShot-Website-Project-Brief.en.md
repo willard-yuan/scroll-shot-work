@@ -72,7 +72,8 @@ From `snap-long-image/AppConfig.swift`:
 | Item | Value |
 | --- | --- |
 | App Store ID | `6760192003` |
-| App Store URL | `https://apps.apple.com/app/id6760192003` |
+| App Store URL, English | `https://apps.apple.com/us/app/scrollshot-long-screenshot/id6760192003` |
+| App Store URL, Chinese | `https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003` |
 | App Store review URL | `itms-apps://itunes.apple.com/app/id6760192003?action=write-review` |
 | Privacy Policy, Simplified/Traditional Chinese | `https://yongyuan.name/scrollshot/` |
 | Privacy Policy, English and other languages | `https://yongyuan.name/scrollshot/en/` |
