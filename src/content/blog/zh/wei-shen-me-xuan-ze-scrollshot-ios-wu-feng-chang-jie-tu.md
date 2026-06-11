@@ -36,7 +36,7 @@ translationKey: "why-choose-scrollshot"
 
 ### Auto Stitch：录屏即得
 
-你只需要开启系统录屏，顺着内容滑到底。ScrollShot 会自动识别关键画面，匹配首尾重叠区域，并拼成一张完整长截图。
+你只需要开启系统录屏，顺着内容滑到底。ScrollShot 会自动识别关键画面，匹配首尾重叠区域，并拼成一张完整长截图。背后的拼接引擎涉及金字塔模板匹配、三层降级策略等一系列工程细节，感兴趣的话可以看看这篇<a href="/zh/blog/blog-ios-stitching-engine-v2/">技术深潜：iOS 长截图拼接引擎的算法与工程实现</a>。
 
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_Cn_0509.mp4" poster="/ScrollShot_Preview_Cn_0509_cover.jpg" controls playsinline preload="metadata"></video>
@@ -85,6 +85,12 @@ ScrollShot 适合的不只是网页。
 作为一名独立开发者，我珍惜每一个用户反馈。自 3 月上线以来，ScrollShot 已完成多次版本迭代。
 
 目标很简单：做一款 iOS 平台上真正好用、稳定、清爽的长截图工具。
+
+---
+
+## 延伸阅读
+
+- <a href="/zh/blog/blog-ios-stitching-engine-v2/">两张截图拼起来有多难？iOS 长截图拼接引擎的技术深潜</a>——深入了解 ScrollShot 拼接引擎背后的算法：从 1800 帧里挑 30 帧、反向模板匹配、金字塔 NCC 搜索、三层降级策略等工程细节。
 
 <div class="blog-callout">
 	<h3>准备体验更丝滑的长截图方式？</h3>

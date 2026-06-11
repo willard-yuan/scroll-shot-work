@@ -18,7 +18,7 @@ translationKey: "ios-stitching-engine-v2"
 
 听起来很简单对吧？两张相邻截图，找到重叠部分，裁一刀粘起来。但如果你真的动手写，很快就会发现——"刚好对齐"这四个字，是一个深不见底的工程深坑。
 
-这篇文章把 ScrollShot 长截图的拼接引擎拆开给你看。不卖产品，不画饼，只聊算法和那些让我反复改方案的工程细节。
+这篇文章把 ScrollShot 长截图的拼接引擎拆开给你看。不卖产品，不画饼，只聊算法和那些让我反复改方案的工程细节。如果你对 ScrollShot 的整体定位和适用场景感兴趣，可以先看看这篇<a href="/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/">产品概览：为什么选择 ScrollShot 作为 iOS 长截图方案</a>。
 
 ---
 
@@ -36,7 +36,7 @@ translationKey: "ios-stitching-engine-v2"
 
 ![ScrollShot 拼接引擎流水线](/scrollshot_video_to_long_screenshot_workflow.webp)
 
-引擎也支持 Apple Vision Framework 做匹配（快但粗糙），不过下文重点聊自研的模板匹配——这才是真正扛活的部分。
+引擎也支持 Apple Vision Framework 做匹配（快但粗糙），不过下文重点聊自研的模板匹配——这才是真正扛活的部分。想了解这套算法最终如何转化为<a href="/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/">录屏一次即得长图</a>的完整体验，可以参看产品功能介绍。
 
 ---
 
@@ -235,7 +235,7 @@ if overlapRatio > 0.8:
 
 ### 算法拼接失败的兜底交互
 
-再好的算法也有翻车的时候。ScrollShot 在每个缝合线上提供了**交互式微调**——用户可以上下拖动调整拼接位置，实时预览。底层的 `FineTuneGeometryEngine` 保证几何约束始终合法（你不可能把一块拖到另一块的上面去）。预览用低分辨率快速渲染，导出时自动切回原始分辨率。
+再好的算法也有翻车的时候。ScrollShot 在每个缝合线上提供了**交互式微调**——用户可以上下拖动调整拼接位置，实时预览。底层的 `FineTuneGeometryEngine` 保证几何约束始终合法（你不可能把一块拖到另一块的上面去）。预览用低分辨率快速渲染，导出时自动切回原始分辨率。这种可控性也是<a href="/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/">手动拼接模式（Manual Stitch）</a>的核心交互之一。
 
 ---
 
@@ -250,3 +250,9 @@ if overlapRatio > 0.8:
 还有一次更离谱。在 B 站首页录屏，有个视频封面是一只在动的猫。封面区域在两帧之间内容完全不同，直接把 NCC 拉低到 0.3。这种 case 靠算法本身是救不了的，最终是 6 模板投票机制把它救了——其他 5 个模板取的是静止区域，投票结果依然正确。
 
 解决这些问题靠的不是更优雅的数学公式，而是一个又一个"先这么兜着"的工程 trick。如果你也在做类似的事情，希望这篇文章能帮你少踩几个坑。
+
+---
+
+## 延伸阅读
+
+- <a href="/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/">为什么选择 ScrollShot？iOS 无缝长截图的终极解决方案</a>——从产品视角看 ScrollShot 如何解决 iOS 长截图的痛点，包括录屏自动拼接、手动拼接、隐私保护和高清导出。

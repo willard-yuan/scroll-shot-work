@@ -1,0 +1,11 @@
+---
+export function getStaticPaths() {
+	return [
+		{ params: { slug: 'ios-stitching-engine-v2' } },
+		{ params: { slug: 'why-choose-scrollshot-ios-seamless-long-screenshots' } },
+	];
+}
+
+const { slug } = Astro.params;
+return Astro.redirect(`/blog/${slug}/`);
+---
