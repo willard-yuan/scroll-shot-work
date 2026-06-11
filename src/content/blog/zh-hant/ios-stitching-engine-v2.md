@@ -7,7 +7,7 @@ author: "ScrollShot 團隊"
 tags: ["iOS 長截圖", "截圖拼接演算法", "模板比對", "NCC", "ScrollShot 引擎", "錄影拼接"]
 readingTime: "15 分鐘閱讀"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_zh_han.webp"
 coverAlt: "ScrollShot 拼接引擎六步處理流程圖：從錄影到長圖"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ translationKey: "ios-stitching-engine-v2"
 
 整體流水線長這樣：
 
-![ScrollShot 拼接引擎流水線](/scrollshot_video_to_long_screenshot_workflow.webp)
+![ScrollShot 拼接引擎流水線](/scrollshot_video_to_long_screenshot_workflow_zh_han.webp)
 
 引擎也支援 Apple Vision Framework 做比對（快但粗糙），不過下文重點聊自研的模板比對——這才是真正扛活的部分。想了解這套演算法最終如何轉化為<a href="/zh-hant/blog/why-choose-scrollshot-ios-long-screenshot/">錄影一次即得長圖</a>的完整體驗，可以參看產品功能介紹。
 
@@ -104,7 +104,7 @@ sharpness = mean((convolve(gray, kernel) - 128)²)
 
 為什麼反向更好？因為新幀頂部是「剛滾出來的新內容」，這些內容在舊幀裡一定存在，而且**只存在一份**（在舊幀的中下部）。反過來，舊幀底部的「即將消失的舊內容」在新幀裡可能只露出一點點，或者已經被新內容擠出了畫面。
 
-![反向比對示意圖](/scrollshot_video_to_long_screenshot_algo.webp)
+![反向比對示意圖](/scrollshot_video_to_long_screenshot_algo_zh_han.webp)
 
 搜尋時會自動跳過狀態列區域（頂部約 250px）和底部 Tab Bar 區域（約 350px）。但這裡又有個坑——有些 App 的底部導覽列高度不一樣，有些頁面有鍵盤，有些有浮動按鈕。
 
