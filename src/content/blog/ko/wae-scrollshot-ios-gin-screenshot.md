@@ -7,7 +7,7 @@ category: "제품 이야기"
 author: "ScrollShot 팀"
 tags: ["ScrollShot", "아이폰 긴 스크린샷", "스크롤 캡처", "화면 녹화", "제품 이야기"]
 readingTime: "5분 읽기"
-cover: "/kr_scrollshot_app_store_preview/5.webp"
+cover: "/scrollshot_long_screenshots_app_ios_kr.webp"
 coverAlt: "ScrollShot 데모 화면. 긴 스크린샷을 자동으로 합성하는 모습"
 translationKey: "why-choose-scrollshot"
 ---
