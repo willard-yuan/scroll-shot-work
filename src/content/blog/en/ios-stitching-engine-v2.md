@@ -114,7 +114,7 @@ The 3.2 threshold is empirical. A static region with a pure white background typ
 
 ### Six templates vote against "they all look the same"
 
-A single template patch is easy to mismatcch. Imagine an e-commerce product listing page — every product card has an almost identical layout, so a single template might match the previous or next product.
+A single template patch is easy to mismatch. Imagine an e-commerce product listing page — every product card has an almost identical layout, so a single template might match the previous or next product.
 
 The engine extracts **6 template patches** simultaneously (each 100px tall, spaced apart from the top of the new frame), searches independently for the best match position in the old frame, and produces 6 offset values. Then it **clusters** those 6 offsets (tolerance: 5px) and takes the median of the largest cluster.
 

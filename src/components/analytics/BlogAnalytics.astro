@@ -1,0 +1,88 @@
+<script is:inline>
+	(() => {
+		const track = (name, payload, attempts = 10) => {
+			if (window.umami?.track) {
+				window.umami.track(name, payload);
+				return;
+			}
+			if (attempts > 0) {
+				window.setTimeout(() => track(name, payload, attempts - 1), 250);
+			}
+		};
+
+		const locale = () => document.documentElement.lang || 'unknown';
+
+		const extractSlug = (href) => {
+			/* Extract blog post slug from href:
+			   '/blog/my-post/'        → 'my-post'
+			   '/zh/blog/my-post/'      → 'my-post'
+			   'my-post/'               → 'my-post'
+			*/
+			const match = href.match(/blog\/([^/]+)\/?$/);
+			return match ? match[1] : href.replace(/\/$/, '').split('/').pop() || href;
+		};
+
+		const wiredLinks = new WeakSet();
+		const wiredCards = new WeakSet();
+
+		/* ── Blog inline link tracking ── */
+		const wireInlineLinks = () => {
+			const prose = document.querySelector('.blog-prose');
+			if (!prose) return;
+
+			prose.querySelectorAll('a[href]').forEach((link) => {
+				if (wiredLinks.has(link)) return;
+				wiredLinks.add(link);
+
+				const href = link.getAttribute('href') || '';
+				/* Skip anchor-only links */
+				if (href.startsWith('#')) return;
+
+				link.addEventListener('click', () => {
+					const isExternal = link.hostname !== window.location.hostname;
+					track('blog_inline_click', {
+						locale: locale(),
+						postSlug: extractSlug(window.location.pathname),
+						linkText: link.textContent?.replace(/\s+/g, ' ').trim() || 'unknown',
+						linkHref: link.href,
+						isExternal: isExternal ? 'true' : 'false',
+						path: window.location.pathname,
+					});
+				});
+			});
+		};
+
+		/* ── Blog card click tracking ── */
+		const wireCards = () => {
+			document.querySelectorAll('.blog-featured-card, .blog-card').forEach((card) => {
+				if (wiredCards.has(card)) return;
+				wiredCards.add(card);
+
+				card.addEventListener('click', () => {
+					const isFeatured = card.classList.contains('blog-featured-card');
+					const heading = card.querySelector('h2, h3');
+					const href = card.getAttribute('href') || card.href || '';
+					track('blog_card_click', {
+						locale: locale(),
+						cardType: isFeatured ? 'featured' : 'recent',
+						postSlug: extractSlug(href),
+						postTitle: heading?.textContent?.replace(/\s+/g, ' ').trim() || 'unknown',
+						path: window.location.pathname,
+					});
+				});
+			});
+		};
+
+		/* ── Init ── */
+		const init = () => {
+			wireInlineLinks();
+			wireCards();
+		};
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init, { once: true });
+		} else {
+			init();
+		}
+	})();
+</script>

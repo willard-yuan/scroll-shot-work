@@ -1,5 +1,8 @@
 ---
 import DownloadAnalytics from '../components/analytics/DownloadAnalytics.astro';
+import EngagementAnalytics from '../components/analytics/EngagementAnalytics.astro';
+import LanguageAnalytics from '../components/analytics/LanguageAnalytics.astro';
+import BlogAnalytics from '../components/analytics/BlogAnalytics.astro';
 
 const {
 	title = 'ScrollShot - One Tap Record, Auto Long Image',
@@ -64,6 +67,9 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 	<body>
 		<slot />
 		<DownloadAnalytics />
+		<EngagementAnalytics />
+		<LanguageAnalytics />
+		<BlogAnalytics />
 	</body>
 </html>
 

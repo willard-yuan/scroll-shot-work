@@ -1,0 +1,111 @@
+<script is:inline>
+	(() => {
+		const track = (name, payload, attempts = 10) => {
+			if (window.umami?.track) {
+				window.umami.track(name, payload);
+				return;
+			}
+			if (attempts > 0) {
+				window.setTimeout(() => track(name, payload, attempts - 1), 250);
+			}
+		};
+
+		const locale = () => document.documentElement.lang || 'unknown';
+
+		const pageType = () => {
+			if (document.querySelector('.blog-post')) return 'blog_post';
+			if (document.querySelector('.blog-index-page')) return 'blog_index';
+			if (document.querySelector('.hero')) return 'home';
+			return 'site';
+		};
+
+		/* ── Video play tracking ── */
+		const wiredVideos = new WeakSet();
+
+		const wireVideos = () => {
+			document.querySelectorAll('video').forEach((video) => {
+				if (wiredVideos.has(video)) return;
+				wiredVideos.add(video);
+				video.addEventListener('play', () => {
+					track('video_play', {
+						locale: locale(),
+						page: pageType(),
+						videoSrc: video.currentSrc || video.src || 'unknown',
+						path: window.location.pathname,
+					});
+				}, { once: true });
+			});
+		};
+
+		/* ── FAQ expand tracking ── */
+		const wiredFaqs = new WeakSet();
+
+		const wireFaqs = () => {
+			document.querySelectorAll('.faq-item').forEach((details) => {
+				if (wiredFaqs.has(details)) return;
+				wiredFaqs.add(details);
+				details.addEventListener('toggle', () => {
+					if (!details.open) return;
+					const summary = details.querySelector('summary');
+					const index = Array.from(details.parentElement?.children || []).indexOf(details);
+					track('faq_expand', {
+						locale: locale(),
+						page: pageType(),
+						questionIndex: String(index),
+						questionText: summary?.textContent?.replace(/\s+/g, ' ').trim() || 'unknown',
+						path: window.location.pathname,
+					});
+				});
+			});
+		};
+
+		/* ── Scroll depth tracking ── */
+		const seenDepths = new Set();
+
+		const initScrollDepth = () => {
+			let ticking = false;
+
+			const checkDepth = () => {
+				ticking = false;
+				const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+				if (docHeight <= 0) return;
+
+				const scrollPercent = Math.round((window.scrollY / docHeight) * 100);
+				const thresholds = [25, 50, 75, 100];
+
+				for (const threshold of thresholds) {
+					const key = String(threshold);
+					if (scrollPercent >= threshold && !seenDepths.has(key)) {
+						seenDepths.add(key);
+						track('scroll_depth', {
+							locale: locale(),
+							page: pageType(),
+							depth: key,
+							path: window.location.pathname,
+						});
+					}
+				}
+			};
+
+			window.addEventListener('scroll', () => {
+				if (!ticking) {
+					ticking = true;
+					window.requestAnimationFrame(checkDepth);
+				}
+			}, { passive: true });
+		};
+
+		/* ── Init ── */
+		const init = () => {
+			wireVideos();
+			wireFaqs();
+			initScrollDepth();
+		};
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init, { once: true });
+		} else {
+			init();
+		}
+	})();
+</script>

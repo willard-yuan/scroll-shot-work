@@ -1,0 +1,63 @@
+<script is:inline>
+	(() => {
+		const track = (name, payload, attempts = 10) => {
+			if (window.umami?.track) {
+				window.umami.track(name, payload);
+				return;
+			}
+			if (attempts > 0) {
+				window.setTimeout(() => track(name, payload, attempts - 1), 250);
+			}
+		};
+
+		const fromLocale = () => document.documentElement.lang || 'unknown';
+
+		const localeFromHref = (href) => {
+			/* Match locale segment from relative or absolute href:
+			   '../'           → 'en'
+			   '../zh/'         → 'zh'
+			   '../zh-hant/'    → 'zh-hant'
+			   '/ja/blog/...'   → 'ja'
+			   '/de/'           → 'de'
+			*/
+			const match = href.match(/(?:^\/|\.\.\/)([a-z]{2}(?:-[a-z]+)?)\//);
+			if (match) return match[1];
+			if (href === '../' || href.endsWith('/blog/') || href === '/') return 'en';
+			return 'unknown';
+		};
+
+		const wiredLinks = new WeakSet();
+
+		const wireLanguageLinks = () => {
+			const selector = '.footer-language-nav a, .language-switcher a';
+			document.querySelectorAll(selector).forEach((link) => {
+				if (wiredLinks.has(link)) return;
+				wiredLinks.add(link);
+				link.addEventListener('click', () => {
+					const toLocale = localeFromHref(link.href);
+					const from = fromLocale();
+					/* Don't track if switching to the same language */
+					if (toLocale === from) return;
+					track('language_switch', {
+						fromLocale: from,
+						toLocale: toLocale,
+						fromPath: window.location.pathname,
+						toPath: link.getAttribute('href') || link.href,
+						placement: link.closest('.footer-language-nav') ? 'footer' : 'nav',
+						label: link.textContent?.replace(/\s+/g, ' ').trim() || 'unknown',
+					});
+				});
+			});
+		};
+
+		const init = () => {
+			wireLanguageLinks();
+		};
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init, { once: true });
+		} else {
+			init();
+		}
+	})();
+</script>
