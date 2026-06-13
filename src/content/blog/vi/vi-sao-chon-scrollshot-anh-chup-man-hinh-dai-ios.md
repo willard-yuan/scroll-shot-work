@@ -7,7 +7,7 @@ category: "Câu chuyện sản phẩm"
 author: "Đội ngũ ScrollShot"
 tags: ["ScrollShot", "chụp màn hình dài trên iOS", "ghi màn hình", "câu chuyện sản phẩm"]
 readingTime: "5 phút đọc"
-cover: "/vn_scrollshot_app_store_preview/5.webp"
+cover: "/scrollshot_long_screenshots_app_ios_vn.webp"
 coverAlt: "Ảnh xem trước ScrollShot minh họa tính năng tự động ghép ảnh chụp màn hình dài"
 translationKey: "why-choose-scrollshot"
 ---

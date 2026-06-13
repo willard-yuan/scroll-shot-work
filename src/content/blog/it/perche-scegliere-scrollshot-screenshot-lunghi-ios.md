@@ -7,7 +7,7 @@ category: "Storia del prodotto"
 author: "Team ScrollShot"
 tags: ["ScrollShot", "screenshot lunghi su iOS", "registrazione schermo", "storia del prodotto"]
 readingTime: "5 min di lettura"
-cover: "/scrollshot_app_prview.webp"
+cover: "/scrollshot_long_screenshots_app_ios_en.webp"
 coverAlt: "Anteprima di ScrollShot che mostra l’unione automatica di uno screenshot lungo"
 translationKey: "why-choose-scrollshot"
 ---
