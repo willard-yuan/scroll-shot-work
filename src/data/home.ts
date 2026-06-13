@@ -805,6 +805,7 @@ export const homeLocales = {
 				image: localeAssets.en.themes,
 				alt: 'ScrollShot English theme settings interface',
 				className: 'theme-shot-card',
+				imagePositionY: '-4%',
 			},
 		],
 		featureCta: {
@@ -1955,6 +1956,7 @@ export const homeLocales = {
 				image: localeAssets.zh.auto,
 				alt: 'ScrollShot 中文自动录屏拼接界面',
 				className: 'auto-shot',
+				imagePositionY: '4%',
 			},
 			{
 				kicker: 'Fine Tune',

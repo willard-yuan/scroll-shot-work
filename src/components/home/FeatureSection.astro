@@ -14,6 +14,7 @@ interface FeatureCard {
 	image: string;
 	alt: string;
 	className: string;
+	imagePositionY?: string;
 }
 
 interface Props {
@@ -58,7 +59,10 @@ const { heading, intro, cards } = Astro.props;
 					<h3>{item.title}</h3>
 					<span>{item.text}</span>
 				</div>
-				<div class={`feature-card-media ${item.className}`}>
+				<div
+					class={`feature-card-media ${item.className}`}
+					style={item.imagePositionY ? `--feature-image-position-y: ${item.imagePositionY};` : undefined}
+				>
 					<img src={item.image} width="1290" height="2796" alt={item.alt} loading="lazy" />
 				</div>
 			</article>
