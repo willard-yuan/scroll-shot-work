@@ -7,7 +7,7 @@ author: "Equipo de ScrollShot"
 tags: ["captura larga iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de grabación de pantalla"]
 readingTime: "15 min de lectura"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_es.webp"
 coverAlt: "Pipeline del motor de stitching de ScrollShot en seis pasos: de la grabación de pantalla a la imagen larga"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ Así que tomé otro camino: escribí la primera línea de un motor de template m
 
 El pipeline general se ve así:
 
-![Pipeline del motor de stitching de ScrollShot](/scrollshot_video_to_long_screenshot_workflow.webp)
+![Pipeline del motor de stitching de ScrollShot](/scrollshot_video_to_long_screenshot_workflow_es.webp)
 
 El motor también soporta Apple Vision Framework para matching (rápido pero impreciso), pero este artículo se centra en el template matching propio — ahí es donde ocurre el trabajo pesado. Para ver cómo este algoritmo se traduce en una experiencia de <a href="/es/blog/por-que-elegir-scrollshot-capturas-largas-ios/">graba una vez y obtén una captura larga</a>, consulta la presentación del producto.
 
@@ -104,7 +104,7 @@ Luego invertí el enfoque: **Reverse Matching**. Tomar el template de la **parte
 
 ¿Por qué el inverso es mejor? La parte superior del nuevo es «contenido recién scrolleado» — este contenido existe seguro en el fotograma antiguo, y **existe exactamente una vez** (en la parte media-inferior). A la inversa, el «contenido antiguo a punto de desaparecer» de la parte inferior del antiguo puede asomar apenas en el nuevo, o ya haber sido empujado fuera de pantalla.
 
-![Diagrama de matching inverso](/scrollshot_video_to_long_screenshot_algo.webp)
+![Diagrama de matching inverso](/scrollshot_video_to_long_screenshot_algo_es.webp)
 
 La búsqueda salta automáticamente la barra de estado (~250 px superiores) y la tab bar inferior (~350 px). Pero aquí hay otra trampa — algunas apps tienen barras de navegación de alturas variables, algunas páginas tienen teclado, otras tienen botones flotantes.
 

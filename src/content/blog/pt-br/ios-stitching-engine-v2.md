@@ -7,7 +7,7 @@ author: "Equipe ScrollShot"
 tags: ["print longo iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de gravação de tela"]
 readingTime: "15 min de leitura"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_pt_br.webp"
 coverAlt: "Pipeline do motor de stitching do ScrollShot em seis etapas: da gravação de tela à imagem longa"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ Então escolhi outro caminho: escrevi a primeira linha de um motor de template m
 
 O pipeline geral é assim:
 
-![Pipeline do motor de stitching do ScrollShot](/scrollshot_video_to_long_screenshot_workflow.webp)
+![Pipeline do motor de stitching do ScrollShot](/scrollshot_video_to_long_screenshot_workflow_pt_br.webp)
 
 O motor também suporta Apple Vision Framework para matching (rápido mas grosseiro), mas este artigo foca no template matching próprio — é onde o trabalho pesado acontece. Para ver como esse algoritmo se traduz em uma experiência de <a href="/pt-br/blog/por-que-escolher-scrollshot-prints-longos-ios/">grave uma vez e tenha um print longo</a>, confira a apresentação do produto.
 
@@ -104,7 +104,7 @@ Depois inverti a abordagem: **Reverse Matching**. Pegar o template do **topo** d
 
 Por que o reverso é melhor? O topo do frame novo é «conteúdo recém-rolado» — esse conteúdo com certeza existe no frame antigo, e **existe exatamente uma vez** (na parte média-inferior). Ao contrário, o «conteúdo antigo prestes a desaparecer» na parte inferior do antigo pode aparecer só um pouquinho no novo, ou já ter sido empurrado para fora da tela.
 
-![Diagrama de matching reverso](/scrollshot_video_to_long_screenshot_algo.webp)
+![Diagrama de matching reverso](/scrollshot_video_to_long_screenshot_algo_pt_br.webp)
 
 A busca pula automaticamente a barra de status (~250 px no topo) e a tab bar inferior (~350 px). Mas aqui tem outra armadilha — alguns apps têm barras de navegação de alturas variáveis, algumas páginas têm teclado, outras têm botões flutuantes.
 

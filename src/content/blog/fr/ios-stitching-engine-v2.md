@@ -7,7 +7,7 @@ author: "Équipe ScrollShot"
 tags: ["capture d'écran longue iOS", "algorithme d'assemblage", "template matching", "NCC", "moteur ScrollShot", "assemblage enregistrement écran"]
 readingTime: "15 min de lecture"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_fr.webp"
 coverAlt: "Pipeline du moteur d'assemblage ScrollShot en six étapes : de l'enregistrement d'écran à l'image longue"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ J'ai donc pris un autre chemin : j'ai écrit la première ligne d'un moteur de t
 
 Le pipeline global ressemble à ceci :
 
-![Pipeline du moteur d'assemblage ScrollShot](/scrollshot_video_to_long_screenshot_workflow.webp)
+![Pipeline du moteur d'assemblage ScrollShot](/scrollshot_video_to_long_screenshot_workflow_fr.webp)
 
 Le moteur supporte aussi Apple Vision Framework pour le matching (rapide mais grossier), mais cet article se concentre sur le template matching maison — c'est là que le vrai travail se fait. Pour voir comment cet algorithme se traduit en une expérience <a href="/fr/blog/pourquoi-choisir-scrollshot-captures-longues-ios/">enregistrez une fois, obtenez une capture longue</a>, consultez la présentation produit.
 
@@ -104,7 +104,7 @@ Puis j'ai inversé l'approche : **Reverse Matching**. Prendre le template en **h
 
 Pourquoi l'inverse est meilleur ? Le haut du nouveau frame est du « contenu fraîchement scrollé » — ce contenu existe forcément dans l'ancien frame, et **une seule fois** (dans la partie médio-inférieure). À l'inverse, le « contenu ancien en voie de disparition » en bas de l'ancien frame peut à peine apparaître dans le nouveau, ou avoir déjà été poussé hors écran.
 
-![Diagramme de matching inversé](/scrollshot_video_to_long_screenshot_algo.webp)
+![Diagramme de matching inversé](/scrollshot_video_to_long_screenshot_algo_fr.webp)
 
 La recherche saute automatiquement la zone de barre d'état (environ 250 px en haut) et la zone de tab bar (environ 350 px en bas). Mais voilà un autre piège — certaines apps ont des barres de navigation de hauteurs variables, certaines pages ont un clavier, d'autres des boutons flottants.
 

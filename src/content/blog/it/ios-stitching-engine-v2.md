@@ -7,7 +7,7 @@ author: "Team ScrollShot"
 tags: ["screenshot lunghi iOS", "algoritmo di stitching", "template matching", "NCC", "motore ScrollShot", "stitching registrazione schermo"]
 readingTime: "15 min di lettura"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_it.webp"
 coverAlt: "Pipeline del motore di stitching di ScrollShot in sei fasi: dalla registrazione schermo all'immagine lunga"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ Così ho scelto un'altra strada: ho scritto la prima riga di un motore di templa
 
 La pipeline complessiva è così:
 
-![Pipeline del motore di stitching ScrollShot](/scrollshot_video_to_long_screenshot_workflow.webp)
+![Pipeline del motore di stitching ScrollShot](/scrollshot_video_to_long_screenshot_workflow_it.webp)
 
 Il motore supporta anche Apple Vision Framework per il matching (veloce ma grossolano), ma questo articolo si concentra sul template matching proprietario — è lì che avviene il vero lavoro. Per vedere come questo algoritmo si traduce in un'esperienza di <a href="/it/blog/perche-scegliere-scrollshot-screenshot-lunghi-ios/">registra una volta, ottieni uno screenshot lungo</a>, consulta la presentazione del prodotto.
 
@@ -104,7 +104,7 @@ Poi ho invertito l'approccio: **Reverse Matching**. Prendere il template dalla *
 
 Perché l'inverso è meglio? La parte superiore del nuovo è «contenuto appena scrollato» — questo contenuto esiste sicuramente nel frame vecchio, e **esiste esattamente una volta** (nella parte medio-bassa). Al contrario, il «contenuto vecchio in via di sparizione» in fondo al frame vecchio potrebbe apparire appena nel nuovo, o essere già stato spinto fuori dallo schermo.
 
-![Diagramma di matching inverso](/scrollshot_video_to_long_screenshot_algo.webp)
+![Diagramma di matching inverso](/scrollshot_video_to_long_screenshot_algo_it.webp)
 
 La ricerca salta automaticamente la barra di stato (~250 px in alto) e la tab bar inferiore (~350 px). Ma qui c'è un'altra insidia — alcune app hanno barre di navigazione di altezze variabili, alcune pagine hanno la tastiera, altre hanno pulsanti flottanti.
 

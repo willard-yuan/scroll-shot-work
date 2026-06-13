@@ -7,7 +7,7 @@ author: "ScrollShot Team"
 tags: ["iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Template Matching", "NCC", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]
 readingTime: "15 Min. Lesezeit"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_de.webp"
 coverAlt: "ScrollShot Stitching-Engine Sechs-Schritte-Pipeline: von der Bildschirmaufnahme zum langen Bild"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ Also wählte ich einen anderen Weg: Ich schrieb die erste Zeile einer Template-M
 
 Die gesamte Pipeline sieht so aus:
 
-![ScrollShot Stitching-Engine Pipeline](/scrollshot_video_to_long_screenshot_workflow.webp)
+![ScrollShot Stitching-Engine Pipeline](/scrollshot_video_to_long_screenshot_workflow_de.webp)
 
 Die Engine unterstützt auch Apple Vision Framework für das Matching (schnell, aber grob). Der Schwerpunkt dieses Artikels liegt aber auf der selbstentwickelten Template-Matching-Methode — dort passiert die eigentliche Arbeit. Wie dieser Algorithmus schließlich in das <a href="/de/blog/warum-scrollshot-ios-lange-screenshots/">Einmal aufnehmen, langen Screenshot erhalten</a>-Erlebnis übersetzt wird, erfährst du in der Produktvorstellung.
 
@@ -104,7 +104,7 @@ Dann drehte ich den Ansatz um: **Reverse Matching**. Template vom **oberen** Ran
 
 Warum ist Reverse besser? Der obere Bereich des neuen Frames ist „frisch hereingescrollter Inhalt" — dieser existiert garantiert im alten Frame, und **genau einmal** (im mittleren bis unteren Teil). Umgekehrt ist der „verschwindende alte Inhalt" am unteren Rand des alten Frames im neuen Frame vielleicht nur noch minimal sichtbar oder schon ganz verschwunden.
 
-![Reverse-Matching-Diagramm](/scrollshot_video_to_long_screenshot_algo.webp)
+![Reverse-Matching-Diagramm](/scrollshot_video_to_long_screenshot_algo_de.webp)
 
 Die Suche überspringt automatisch die Statusleiste (oberste ~250 px) und den unteren Tab-Bar-Bereich (~350 px). Aber hier lauert eine weitere Falle — manche Apps haben unterschiedlich hohe Navigationsleisten, manche Seiten haben eine Tastatur, andere schwebende Buttons.
 

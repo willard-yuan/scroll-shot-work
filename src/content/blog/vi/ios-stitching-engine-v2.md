@@ -7,7 +7,7 @@ author: "Đội ngũ ScrollShot"
 tags: ["ảnh chụp màn hình dài iOS", "thuật toán ghép ảnh", "template matching", "NCC", "engine ScrollShot", "ghép quay màn hình"]
 readingTime: "15 phút đọc"
 featured: true
-cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
+cover: "/scrollshot_video_to_long_screenshot_workflow_vi.webp"
 coverAlt: "Pipeline 6 bước của engine stitching ScrollShot: từ quay màn hình đến ảnh dài"
 translationKey: "ios-stitching-engine-v2"
 ---
@@ -34,7 +34,7 @@ Vì vậy tôi chọn con đường khác: viết dòng code đầu tiên của 
 
 Pipeline tổng thể như sau:
 
-![Pipeline engine stitching ScrollShot](/scrollshot_video_to_long_screenshot_workflow.webp)
+![Pipeline engine stitching ScrollShot](/scrollshot_video_to_long_screenshot_workflow_vi.webp)
 
 Engine cũng hỗ trợ Apple Vision Framework cho matching (nhanh nhưng thô), nhưng bài viết này tập trung vào template matching tự phát triển — đó là nơi công việc thực sự diễn ra. Để xem thuật toán này chuyển thành trải nghiệm <a href="/vi/blog/vi-sao-chon-scrollshot-anh-chup-man-hinh-dai-ios/">quay một lần, có ảnh dài</a> như thế nào, hãy xem phần giới thiệu sản phẩm.
 
@@ -104,7 +104,7 @@ Sau đó tôi đảo hướng: **Reverse Matching**. Lấy template từ **đỉ
 
 Tại sao ngược tốt hơn? Đỉnh khung mới là «nội dung mới cuộn vào» — nội dung này chắc chắn tồn tại trong khung cũ, và **tồn tại đúng một lần** (ở phần giữa-dưới khung cũ). Ngược lại, «nội dung cũ sắp biến mất» ở đáy khung cũ có thể chỉ lộ ra một chút trong khung mới, hoặc đã bị đẩy ra khỏi màn hình.
 
-![Sơ đồ matching ngược](/scrollshot_video_to_long_screenshot_algo.webp)
+![Sơ đồ matching ngược](/scrollshot_video_to_long_screenshot_algo_vi.webp)
 
 Tìm kiếm tự động bỏ qua vùng thanh trạng thái (~250 px trên) và vùng tab bar dưới (~350 px). Nhưng đây lại có bẫy — một số app có thanh điều hướng dưới với chiều cao khác nhau, một số trang có bàn phím, có nút nổi.
 
