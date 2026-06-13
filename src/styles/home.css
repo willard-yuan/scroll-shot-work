@@ -752,7 +752,6 @@
 }
 
 .feature-card {
-	min-height: 548px;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -763,7 +762,7 @@
 }
 
 .feature-card-copy {
-	min-height: 218px;
+	min-height: 220px;
 	padding: 25px 24px 18px;
 }
 
@@ -795,8 +794,8 @@
 
 .feature-card-media {
 	position: relative;
-	margin-top: auto;
-	height: 330px;
+	flex: 1 1 auto;
+	min-height: 380px;
 	overflow: hidden;
 	background:
 		linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 28%),
@@ -807,7 +806,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: center 42%;
+	object-position: center top;
 	filter: saturate(0.9) brightness(1.01);
 }
 
@@ -816,9 +815,9 @@
 	position: absolute;
 	inset: 0 0 auto;
 	z-index: 1;
-	height: 26px;
+	height: 20px;
 	pointer-events: none;
-	background: linear-gradient(180deg, rgba(255, 246, 238, 0.34), rgba(255, 149, 85, 0));
+	background: linear-gradient(180deg, rgba(255, 246, 238, 0.22), rgba(255, 149, 85, 0));
 }
 
 .reviews-section,
@@ -1646,36 +1645,28 @@
 	}
 
 	.feature-card-media {
-		height: clamp(282px, 76vw, 304px);
+		margin-top: auto;
+		min-height: clamp(320px, 76vw, 380px);
 		background:
 			linear-gradient(180deg, rgba(255, 245, 236, 0.28), rgba(255, 245, 236, 0) 18%),
 			linear-gradient(180deg, #ffad77 0%, #fb7d24 36%, #f25f10 100%);
 	}
 
 	.feature-card-media::before {
-		height: 34px;
-		background: linear-gradient(180deg, rgba(255, 245, 236, 0.5), rgba(255, 150, 82, 0));
+		height: 28px;
+		background: linear-gradient(180deg, rgba(255, 245, 236, 0.4), rgba(255, 150, 82, 0));
 	}
 
 	.feature-card-media img {
-		object-position: center 38%;
-		transform: translateY(12px) scale(0.985);
-		transform-origin: center top;
+		object-fit: cover;
+		object-position: center top;
 	}
 
-	.feature-card-media.auto-shot img {
-		object-position: center 36%;
-		transform: translateY(18px) scale(0.98);
-	}
-
-	.feature-card-media.manual-shot img {
-		object-position: center 37%;
-		transform: translateY(14px) scale(0.985);
-	}
-
+	.feature-card-media.auto-shot img,
+	.feature-card-media.manual-shot img,
 	.feature-card-media.trim-shot img,
 	.feature-card-media.theme-shot-card img {
-		object-position: center 39%;
+		object-position: center top;
 	}
 
 	.price-card {
