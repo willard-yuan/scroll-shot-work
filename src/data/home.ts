@@ -59,7 +59,7 @@ const createLocalizedPreviewAssets = (directory: string) => ({
 });
 
 const localizedPreviewAssets = {
-	zh: createLocalizedPreviewAssets('zh_han_scrollshot_app_store_preview'),
+	zh: createLocalizedPreviewAssets('zh_scrollshot_app_store_preview'),
 	ja: createLocalizedPreviewAssets('jp_scrollshot_app_store_preview'),
 	ko: createLocalizedPreviewAssets('kr_scrollshot_app_store_preview'),
 	fr: createLocalizedPreviewAssets('fr_scrollshot_app_store_preview'),
