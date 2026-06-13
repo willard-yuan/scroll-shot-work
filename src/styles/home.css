@@ -762,6 +762,8 @@
 }
 
 .feature-card-copy {
+	flex: 0 0 258px;
+	box-sizing: border-box;
 	min-height: 220px;
 	padding: 25px 24px 18px;
 }
@@ -1625,6 +1627,7 @@
 	}
 
 	.feature-card-copy {
+		flex-basis: auto;
 		min-height: 0;
 		padding: 22px 24px 20px;
 	}
