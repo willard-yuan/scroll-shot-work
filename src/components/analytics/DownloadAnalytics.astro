@@ -1,8 +1,18 @@
 <script is:inline>
 	(() => {
 		const selector = 'a[data-download-ios], a[href*="apps.apple.com"]';
-		const seenImpressions = new WeakSet();
 		const wiredClicks = new WeakSet();
+
+		// Session-level impression dedup: same placement+path fires only once per session
+		const SESSION_KEY = '__ss_dl_impressions';
+		const seenKeys = new Set();
+		try {
+			const stored = sessionStorage.getItem(SESSION_KEY);
+			if (stored) JSON.parse(stored).forEach((k) => seenKeys.add(k));
+		} catch { /* ignore */ }
+		const persistKeys = () => {
+			try { sessionStorage.setItem(SESSION_KEY, JSON.stringify([...seenKeys])); } catch { /* ignore */ }
+		};
 
 		const pageType = () => {
 			if (document.querySelector('.blog-post')) return 'blog_post';
@@ -46,9 +56,12 @@
 		};
 
 		const trackImpression = (link) => {
-			if (seenImpressions.has(link)) return;
-			seenImpressions.add(link);
-			track('download_ios_impression', payloadFor(link));
+			const payload = payloadFor(link);
+			const key = `${payload.placement}|${payload.path}`;
+			if (seenKeys.has(key)) return;
+			seenKeys.add(key);
+			persistKeys();
+			track('download_ios_impression', payload);
 		};
 
 		const normalizeLink = (link) => {
@@ -74,7 +87,7 @@
 		};
 
 		const observeImpressions = () => {
-			const candidates = links().filter((link) => !seenImpressions.has(link));
+			const candidates = links();
 
 			if (!('IntersectionObserver' in window)) {
 				candidates.forEach(trackImpression);

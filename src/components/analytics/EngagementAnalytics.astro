@@ -59,8 +59,16 @@
 			});
 		};
 
-		/* ── Scroll depth tracking ── */
+		/* ── Scroll depth tracking (session-level dedup) ── */
+		const SCROLL_KEY = '__ss_scroll_depths';
 		const seenDepths = new Set();
+		try {
+			const stored = sessionStorage.getItem(SCROLL_KEY);
+			if (stored) JSON.parse(stored).forEach((k) => seenDepths.add(k));
+		} catch { /* ignore */ }
+		const persistDepths = () => {
+			try { sessionStorage.setItem(SCROLL_KEY, JSON.stringify([...seenDepths])); } catch { /* ignore */ }
+		};
 
 		const initScrollDepth = () => {
 			let ticking = false;
@@ -77,6 +85,7 @@
 					const key = String(threshold);
 					if (scrollPercent >= threshold && !seenDepths.has(key)) {
 						seenDepths.add(key);
+						persistDepths();
 						track('scroll_depth', {
 							locale: locale(),
 							page: pageType(),
