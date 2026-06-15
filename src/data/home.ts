@@ -42,14 +42,6 @@ const enWebpAssets = {
 	ogImage: '/scrollshot_app_prview.webp',
 };
 
-const zhWebpAssets = {
-	auto: '/ai_scrolling_screenshot_zh.webp',
-	trim: '/perfect_every_stitch_zh.webp',
-	manual: '/flexible_image_stitching_zh.webp',
-	themes: '/themes_your_way_zh.webp',
-	ogImage: '/scrollshot_app_prview_cn.webp',
-};
-
 const createLocalizedPreviewAssets = (directory: string) => ({
 	auto: `/${directory}/1.webp`,
 	trim: `/${directory}/2.webp`,
@@ -60,6 +52,7 @@ const createLocalizedPreviewAssets = (directory: string) => ({
 
 const localizedPreviewAssets = {
 	zh: createLocalizedPreviewAssets('zh_scrollshot_app_store_preview'),
+	'zh-hant': createLocalizedPreviewAssets('zh_han_scrollshot_app_store_preview'),
 	ja: createLocalizedPreviewAssets('jp_scrollshot_app_store_preview'),
 	ko: createLocalizedPreviewAssets('kr_scrollshot_app_store_preview'),
 	fr: createLocalizedPreviewAssets('fr_scrollshot_app_store_preview'),
@@ -97,14 +90,14 @@ export const localeAssets = {
 		ogImage: localizedPreviewAssets.zh.ogImage,
 	},
 	'zh-hant': {
-		auto: zhWebpAssets.auto,
-		trim: zhWebpAssets.trim,
-		manual: zhWebpAssets.manual,
-		themes: zhWebpAssets.themes,
+		auto: localizedPreviewAssets['zh-hant'].auto,
+		trim: localizedPreviewAssets['zh-hant'].trim,
+		manual: localizedPreviewAssets['zh-hant'].manual,
+		themes: localizedPreviewAssets['zh-hant'].themes,
 		video: '/ScrollShot_Preview_Cn_0509.mp4',
 		videoCover: '/ScrollShot_Preview_Cn_0509_cover.jpg',
 		appIcon,
-		ogImage: zhWebpAssets.ogImage,
+		ogImage: localizedPreviewAssets['zh-hant'].ogImage,
 	},
 	ja: {
 		auto: localizedPreviewAssets.ja.auto,
