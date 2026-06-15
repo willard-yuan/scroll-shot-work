@@ -748,12 +748,14 @@
 .feature-card-grid {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-auto-rows: auto minmax(380px, 1fr);
 	gap: 24px;
 }
 
 .feature-card {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-row: span 2;
+	grid-template-rows: subgrid;
 	overflow: hidden;
 	border-radius: 8px;
 	background: var(--paper);
@@ -762,7 +764,6 @@
 }
 
 .feature-card-copy {
-	flex: 0 1 auto;
 	box-sizing: border-box;
 	min-height: 258px;
 	padding: 25px 24px 18px;
@@ -796,7 +797,6 @@
 
 .feature-card-media {
 	position: relative;
-	flex: 1 1 auto;
 	min-height: 380px;
 	overflow: hidden;
 	background:
