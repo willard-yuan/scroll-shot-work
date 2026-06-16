@@ -236,6 +236,27 @@ const italianHomeLocale = {
 		videoAria: 'Apri il video dimostrativo di ScrollShot',
 		videoLabel: 'Video dimostrativo di ScrollShot',
 		caption: 'Demo in riproduzione automatica',
+		trustSignals: [
+			{
+				value: `${zhRating.averageDisplay} / 5`,
+				label: 'Valutazione App Store',
+				note: zhRatingCountEn,
+				tone: 'rating',
+			},
+			{ value: 'Sul dispositivo', label: 'Nessun caricamento per l\'unione', tone: 'privacy' },
+			{ value: 'Immagine / PDF', label: 'Esporta e condividi velocemente', tone: 'export' },
+			{ value: 'Prova gratis', label: 'Inizia con l\'unione manuale' },
+		],
+	},
+	workflow: {
+		kicker: 'Tre passaggi',
+		title: 'Dalla registrazione dello schermo all\'immagine lunga',
+		description: 'Il modo più rapido per capire ScrollShot: registra uno scorrimento, controlla il risultato, poi salva o condividi.',
+		steps: [
+			{ title: 'Registra lo scorrimento', text: 'Avvia la registrazione schermo di iOS e scorri naturalmente la conversazione, la pagina web o il documento.' },
+			{ title: 'Unione automatica', text: 'ScrollShot estrae i fotogrammi, elimina i duplicati, rileva le sovrapposizioni e crea l\'immagine lunga completa.' },
+			{ title: 'Salva o condividi', text: 'Salva in Foto, condividi l\'immagine o esporta un PDF per colleghi, clienti e archivi.' },
+		],
 	},
 	sections: {
 		features: {
@@ -319,6 +340,15 @@ const italianHomeLocale = {
 			className: 'theme-shot-card',
 		},
 	],
+	featureCta: {
+		kicker: 'Guarda prima',
+		title: 'Guarda il flusso in 15 secondi prima di installare',
+		text: 'Non serve leggere tutta la pagina. Scopri come funziona l\'unione da registrazione, poi decidi se fa al caso tuo.',
+		links: [
+			{ label: 'Guarda la demo', href: localeAssets.it.video, variant: 'mint' },
+			{ label: 'Vedi i casi d\'uso', href: '#scenarios', variant: 'ghost' },
+		],
+	},
 	reviews: [
 		{ role: 'Product Manager', quote: 'Per pagine di competitor e note di flusso non mi servono più dodici screenshot. Una registrazione e uno scorrimento bastano.', tone: 'warm' },
 		{ role: 'Designer', quote: 'Poter regolare le giunzioni mi dà più sicurezza prima di inviare screenshot lunghi ad altre persone.' },
@@ -351,12 +381,21 @@ const italianHomeLocale = {
 			cta: { label: 'Installa ScrollShot', href: appStoreUrls.it },
 		},
 	],
+	scenarioCta: {
+		kicker: 'Prossimo passo',
+		title: 'Se i tuoi screenshot lunghi vengono da chat, pagine web o tutorial, prova ora',
+		text: 'Usa prima il flusso manuale gratuito. Quando ti serve un\'unione più rapida dalle registrazioni, scopri le opzioni Pro sull\'App Store.',
+		links: [
+			{ label: 'Installa ScrollShot', href: appStoreUrls.it, variant: 'light' },
+			{ label: 'Confronta Gratis e Pro', href: '#pricing', variant: 'ghost' },
+		],
+	},
 	plans: [
 		{
 			name: 'ScrollShot',
 			price: 'Gratis',
 			subtitle: 'Per unioni manuali occasionali',
-			features: ['Unione manuale degli screenshot', 'Selezione e anteprima da Foto', 'Salvataggio di immagini lunghe in Foto', 'Colori tema di base'],
+			features: ['Unione manuale degli screenshot', 'Selezione e anteprima da Foto', 'Salvataggio di immagini lunghe in Foto', 'Elaborazione immagini sul dispositivo', 'Colori tema di base'],
 		},
 		{
 			name: 'ScrollShot Pro',
@@ -366,6 +405,7 @@ const italianHomeLocale = {
 			featured: true,
 		},
 	],
+	pricingNote: 'I prezzi esatti di Pro, le opzioni di abbonamento o di acquisto definitivo sono mostrati sull\'App Store. Puoi iniziare con l\'unione manuale gratuita prima di aggiornare.',
 	pricingButtonLabel: 'Ottieni ScrollShot',
 	faqs: [
 		['In cosa differisce ScrollShot dagli screenshot di sistema?', 'Gli screenshot di iOS salvano la schermata visibile. ScrollShot è pensato per contenuti con scorrimento: trasforma una registrazione o più screenshot in un’immagine lunga con regolazione fine, pulizia delle barre di scorrimento e condivisione in PDF.'],
@@ -387,6 +427,18 @@ const italianHomeLocale = {
 		kicker: 'Download',
 		title: 'Pronto per screenshot lunghi più puliti?',
 		buttonLabel: 'Scarica dall’App Store',
+	},
+	blogConversion: {
+		kicker: 'Prova dopo aver letto',
+		title: 'Metti in pratica il flusso descritto in questo articolo',
+		text: 'Registra uno scorrimento e guarda come ScrollShot trasforma una lunga chat, pagina web o tutorial in un\'immagine pulita.',
+		primary: { label: 'Installa ScrollShot', href: appStoreUrls.it },
+		secondary: { label: 'Guarda la demo', href: localeAssets.it.video },
+		cards: [
+			{ label: 'Vedi le funzioni principali', href: `${site.url}#features` },
+			{ label: 'Confronta Gratis e Pro', href: `${site.url}#pricing` },
+			{ label: 'Leggi le FAQ', href: `${site.url}#faq` },
+		],
 	},
 	footer: {
 		brandHome: 'Home di ScrollShot',
@@ -464,6 +516,27 @@ const vietnameseHomeLocale = {
 		videoAria: 'Mở video demo ScrollShot',
 		videoLabel: 'Video demo ScrollShot',
 		caption: 'Demo đang tự động phát',
+		trustSignals: [
+			{
+				value: `${zhRating.averageDisplay} / 5`,
+				label: 'Điểm App Store',
+				note: zhRatingCountEn,
+				tone: 'rating',
+			},
+			{ value: 'Trên thiết bị', label: 'Không tải lên để ghép', tone: 'privacy' },
+			{ value: 'Ảnh / PDF', label: 'Xuất và chia sẻ nhanh', tone: 'export' },
+			{ value: 'Dùng thử miễn phí', label: 'Bắt đầu với ghép thủ công' },
+		],
+	},
+	workflow: {
+		kicker: 'Ba bước',
+		title: 'Từ ghi màn hình đến ảnh dài',
+		description: 'Cách nhanh nhất để hiểu ScrollShot: ghi lại thao tác cuộn, kiểm tra kết quả, rồi lưu hoặc chia sẻ.',
+		steps: [
+			{ title: 'Ghi lại thao tác cuộn', text: 'Bắt đầu ghi màn hình iOS và cuộn tự nhiên qua cuộc trò chuyện, trang web hoặc tài liệu.' },
+			{ title: 'Tự động ghép', text: 'ScrollShot trích xuất khung hình, loại bỏ trùng lặp, nhận diện vùng chồng lấp và tạo ảnh dài hoàn chỉnh.' },
+			{ title: 'Lưu hoặc chia sẻ', text: 'Lưu vào Ảnh, chia sẻ ảnh hoặc xuất PDF cho đồng nghiệp, khách hàng và lưu trữ.' },
+		],
 	},
 	sections: {
 		features: {
@@ -547,6 +620,15 @@ const vietnameseHomeLocale = {
 			className: 'theme-shot-card',
 		},
 	],
+	featureCta: {
+		kicker: 'Xem trước',
+		title: 'Xem quy trình 15 giây trước khi cài đặt',
+		text: 'Bạn không cần đọc hết trang trước. Xem cách ghép từ bản ghi màn hình hoạt động, rồi quyết định có phù hợp với quy trình của bạn không.',
+		links: [
+			{ label: 'Xem demo', href: localeAssets.vi.video, variant: 'mint' },
+			{ label: 'Xem trường hợp sử dụng', href: '#scenarios', variant: 'ghost' },
+		],
+	},
 	reviews: [
 		{ role: 'Quản lý sản phẩm', quote: 'Với trang đối thủ và ghi chú quy trình, tôi không còn cần cả chục ảnh chụp nữa. Một lần ghi và cuộn là đủ.', tone: 'warm' },
 		{ role: 'Nhà thiết kế', quote: 'Có thể tinh chỉnh đường ghép giúp tôi yên tâm hơn trước khi gửi ảnh chụp dài cho người khác.' },
@@ -579,12 +661,21 @@ const vietnameseHomeLocale = {
 			cta: { label: 'Cài đặt ScrollShot', href: appStoreUrls.vi },
 		},
 	],
+	scenarioCta: {
+		kicker: 'Bước tiếp theo',
+		title: 'Nếu ảnh chụp dài của bạn đến từ chat, trang web hoặc hướng dẫn, hãy thử ngay',
+		text: 'Dùng quy trình ghép thủ công miễn phí trước. Khi cần ghép tự động nhanh hơn từ bản ghi màn hình, hãy xem các tùy chọn Pro trên App Store.',
+		links: [
+			{ label: 'Cài đặt ScrollShot', href: appStoreUrls.vi, variant: 'light' },
+			{ label: 'So sánh Miễn phí và Pro', href: '#pricing', variant: 'ghost' },
+		],
+	},
 	plans: [
 		{
 			name: 'ScrollShot',
 			price: 'Miễn phí',
 			subtitle: 'Cho nhu cầu ghép thủ công thỉnh thoảng',
-			features: ['Ghép ảnh chụp màn hình thủ công', 'Chọn và xem trước từ Ảnh', 'Lưu ảnh dài vào Ảnh', 'Màu chủ đề cơ bản'],
+			features: ['Ghép ảnh chụp màn hình thủ công', 'Chọn và xem trước từ Ảnh', 'Lưu ảnh dài vào Ảnh', 'Xử lý ảnh trên thiết bị', 'Màu chủ đề cơ bản'],
 		},
 		{
 			name: 'ScrollShot Pro',
@@ -594,6 +685,7 @@ const vietnameseHomeLocale = {
 			featured: true,
 		},
 	],
+	pricingNote: 'Giá Pro chính xác, các tùy chọn mua theo gói hoặc vĩnh viễn được hiển thị trên App Store. Bạn có thể bắt đầu với ghép thủ công miễn phí trước khi nâng cấp.',
 	pricingButtonLabel: 'Tải ScrollShot',
 	faqs: [
 		['ScrollShot khác gì so với ảnh chụp màn hình hệ thống?', 'Ảnh chụp màn hình iOS chỉ lưu phần đang hiển thị. ScrollShot được thiết kế cho nội dung có thể cuộn: biến một bản ghi màn hình hoặc nhiều ảnh chụp thành một ảnh dài, có tinh chỉnh đường ghép, làm sạch thanh cuộn và chia sẻ PDF.'],
@@ -615,6 +707,18 @@ const vietnameseHomeLocale = {
 		kicker: 'Tải xuống',
 		title: 'Sẵn sàng có những ảnh chụp dài gọn gàng hơn?',
 		buttonLabel: 'Tải trên App Store',
+	},
+	blogConversion: {
+		kicker: 'Thử sau khi đọc',
+		title: 'Thực hành quy trình từ bài viết này',
+		text: 'Ghi lại một lần cuộn và xem cách ScrollShot biến một cuộc trò chuyện, trang web hoặc hướng dẫn dài thành một ảnh gọn gàng.',
+		primary: { label: 'Cài đặt ScrollShot', href: appStoreUrls.vi },
+		secondary: { label: 'Xem demo', href: localeAssets.vi.video },
+		cards: [
+			{ label: 'Xem tính năng chính', href: `${site.url}#features` },
+			{ label: 'So sánh Miễn phí và Pro', href: `${site.url}#pricing` },
+			{ label: 'Đọc FAQ', href: `${site.url}#faq` },
+		],
 	},
 	footer: {
 		brandHome: 'Trang chủ ScrollShot',
@@ -978,6 +1082,27 @@ export const homeLocales = {
 			videoAria: 'Ouvrir la vidéo de démonstration ScrollShot',
 			videoLabel: 'Vidéo de démonstration ScrollShot',
 			caption: 'Démonstration en lecture automatique',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'Note App Store',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: 'Sur appareil', label: 'Aucun envoi pour l\'assemblage', tone: 'privacy' },
+				{ value: 'Image / PDF', label: 'Export et partage rapides', tone: 'export' },
+				{ value: 'Essai gratuit', label: 'Commencez par l\'assemblage manuel' },
+			],
+		},
+		workflow: {
+			kicker: 'Trois étapes',
+			title: 'De l\'enregistrement d\'écran à l\'image longue',
+			description: 'Le chemin le plus court pour comprendre ScrollShot : enregistrez un défilement, vérifiez le résultat, puis enregistrez ou partagez.',
+			steps: [
+				{ title: 'Enregistrez le défilement', text: 'Lancez l\'enregistrement d\'écran iOS et faites défiler naturellement la conversation, la page web ou le document.' },
+				{ title: 'Assemblage automatique', text: 'ScrollShot extrait les images, supprime les doublons, détecte les recouvrements et construit l\'image longue complète.' },
+				{ title: 'Enregistrez ou partagez', text: 'Enregistrez dans Photos, partagez l\'image ou exportez un PDF pour vos collaborateurs, clients et archives.' },
+			],
 		},
 		sections: {
 			features: {
@@ -1061,6 +1186,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: 'Voyez d\'abord',
+			title: 'Regardez le flux en 15 secondes avant d\'installer',
+			text: 'Pas besoin de lire toute la page d\'abord. Découvrez le fonctionnement de l\'assemblage depuis un enregistrement, puis décidez si cela correspond à votre flux.',
+			links: [
+				{ label: 'Voir la démo', href: localeAssets.fr.video, variant: 'mint' },
+				{ label: 'Voir les cas d\'usage', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: 'Chef de produit', quote: 'Pour les pages concurrentes et les notes de parcours, je n’ai plus besoin de multiplier les captures. Un enregistrement et un défilement suffisent.', tone: 'warm' },
 			{ role: 'Designer', quote: 'L’ajustement des raccords me permet d’envoyer des captures longues plus propres et plus sûres.' },
@@ -1093,12 +1227,21 @@ export const homeLocales = {
 				cta: { label: 'Installer ScrollShot', href: appStoreUrls.fr },
 			},
 		],
+		scenarioCta: {
+			kicker: 'Étape suivante',
+			title: 'Si vos captures longues viennent de conversations, pages web ou tutoriels, essayez maintenant',
+			text: 'Utilisez d\'abord le flux manuel gratuit. Quand vous avez besoin d\'un assemblage plus rapide depuis les enregistrements, consultez les options Pro dans l\'App Store.',
+			links: [
+				{ label: 'Installer ScrollShot', href: appStoreUrls.fr, variant: 'light' },
+				{ label: 'Comparer Gratuit et Pro', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: 'Gratuit',
 				subtitle: 'Pour l’assemblage manuel occasionnel',
-				features: ['Assembler manuellement des captures', 'Sélection et aperçu depuis Photos', 'Enregistrer les images longues dans Photos', 'Couleurs de thème de base'],
+				features: ['Assembler manuellement des captures', 'Sélection et aperçu depuis Photos', 'Enregistrer les images longues dans Photos', 'Traitement d\'images sur l\'appareil'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -1108,6 +1251,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Les tarifs exacts de Pro, les options d\'abonnement ou d\'achat unique sont affichés dans l\'App Store. Vous pouvez commencer par l\'assemblage manuel gratuit avant de passer à la version payante.',
 		pricingButtonLabel: 'Obtenir ScrollShot',
 		faqs: [
 			['En quoi ScrollShot diffère-t-il des captures iOS classiques ?', 'Les captures iOS enregistrent l’écran visible. ScrollShot est conçu pour les contenus qui défilent : il transforme un enregistrement ou plusieurs captures en une image longue avec ajustement, nettoyage des barres de défilement et partage PDF.'],
@@ -1129,6 +1273,18 @@ export const homeLocales = {
 			kicker: 'Téléchargement',
 			title: 'Prêt pour des captures longues plus propres ?',
 			buttonLabel: 'Télécharger sur l’App Store',
+		},
+		blogConversion: {
+			kicker: 'Essayez après la lecture',
+			title: 'Testez le flux de cet article',
+			text: 'Enregistrez un défilement et voyez comment ScrollShot transforme une longue conversation, page web ou tutoriel en une image propre.',
+			primary: { label: 'Installer ScrollShot', href: appStoreUrls.fr },
+			secondary: { label: 'Voir la démo', href: localeAssets.fr.video },
+			cards: [
+				{ label: 'Voir les fonctionnalités clés', href: `${frUrl}#features` },
+				{ label: 'Comparer Gratuit et Pro', href: `${frUrl}#pricing` },
+				{ label: 'Lire la FAQ', href: `${frUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'Accueil ScrollShot',
@@ -1205,6 +1361,27 @@ export const homeLocales = {
 			videoAria: 'Abrir la demostración en vídeo de ScrollShot',
 			videoLabel: 'Vídeo de demostración de ScrollShot',
 			caption: 'Demostración en reproducción automática',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'Calificación App Store',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: 'En el dispositivo', label: 'Sin subida para la unión', tone: 'privacy' },
+				{ value: 'Imagen / PDF', label: 'Exporta y comparte rápido', tone: 'export' },
+				{ value: 'Prueba gratis', label: 'Empieza con la unión manual' },
+			],
+		},
+		workflow: {
+			kicker: 'Tres pasos',
+			title: 'De la grabación de pantalla a la imagen larga',
+			description: 'La forma más rápida de entender ScrollShot: graba un desplazamiento, revisa el resultado y guarda o comparte.',
+			steps: [
+				{ title: 'Graba el desplazamiento', text: 'Inicia la grabación de pantalla de iOS y desplázate con naturalidad por la conversación, página web o documento.' },
+				{ title: 'Unión automática', text: 'ScrollShot extrae fotogramas, elimina duplicados, detecta solapamientos y construye la imagen larga completa.' },
+				{ title: 'Guarda o comparte', text: 'Guarda en Fotos, comparte la imagen o exporta un PDF para compañeros, clientes y archivos.' },
+			],
 		},
 		sections: {
 			features: {
@@ -1288,6 +1465,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: 'Mira primero',
+			title: 'Mira el flujo en 15 segundos antes de instalar',
+			text: 'No necesitas leer toda la página primero. Descubre cómo funciona la unión basada en grabación y decide si encaja en tu flujo de trabajo.',
+			links: [
+				{ label: 'Ver demostración', href: localeAssets.es.video, variant: 'mint' },
+				{ label: 'Ver casos de uso', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: 'Product Manager', quote: 'Para páginas de la competencia y notas de flujo, ya no necesito una docena de capturas. Una grabación y un desplazamiento bastan.', tone: 'warm' },
 			{ role: 'Diseñador', quote: 'Poder ajustar las uniones me da más confianza antes de enviar capturas largas a otras personas.' },
@@ -1320,12 +1506,21 @@ export const homeLocales = {
 				cta: { label: 'Instalar ScrollShot', href: appStoreUrls.es },
 			},
 		],
+		scenarioCta: {
+			kicker: 'Siguiente paso',
+			title: 'Si tus capturas largas vienen de chats, páginas web o tutoriales, pruébalo ahora',
+			text: 'Usa primero el flujo manual gratuito. Cuando necesites una unión más rápida desde grabaciones, consulta las opciones Pro en la App Store.',
+			links: [
+				{ label: 'Instalar ScrollShot', href: appStoreUrls.es, variant: 'light' },
+				{ label: 'Comparar Gratis y Pro', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: 'Gratis',
 				subtitle: 'Para uniones manuales ocasionales',
-				features: ['Unión manual de capturas', 'Selección y vista previa desde Fotos', 'Guardar imágenes largas en Fotos', 'Colores de tema básicos'],
+				features: ['Unión manual de capturas', 'Selección y vista previa desde Fotos', 'Guardar imágenes largas en Fotos', 'Procesamiento de imágenes en el dispositivo'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -1335,6 +1530,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Los precios exactos de Pro, las opciones de suscripción o compra definitiva se muestran en la App Store. Puedes empezar con la unión manual gratuita antes de actualizar.',
 		pricingButtonLabel: 'Obtener ScrollShot',
 		faqs: [
 			['¿En qué se diferencia ScrollShot de las capturas del sistema?', 'Las capturas de iOS guardan la pantalla visible. ScrollShot está pensado para contenido con desplazamiento: convierte una grabación o varias capturas en una imagen larga con ajuste fino, limpieza de barras de desplazamiento y opción de compartir en PDF.'],
@@ -1356,6 +1552,18 @@ export const homeLocales = {
 			kicker: 'Descarga',
 			title: '¿Listo para capturas largas más limpias?',
 			buttonLabel: 'Descargar en la App Store',
+		},
+		blogConversion: {
+			kicker: 'Pruébalo después de leer',
+			title: 'Ejecuta el flujo de este artículo',
+			text: 'Graba un desplazamiento y descubre cómo ScrollShot convierte un chat largo, una página web o un tutorial en una imagen limpia.',
+			primary: { label: 'Instalar ScrollShot', href: appStoreUrls.es },
+			secondary: { label: 'Ver demostración', href: localeAssets.es.video },
+			cards: [
+				{ label: 'Ver funciones principales', href: `${esUrl}#features` },
+				{ label: 'Comparar Gratis y Pro', href: `${esUrl}#pricing` },
+				{ label: 'Leer preguntas frecuentes', href: `${esUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'Inicio de ScrollShot',
@@ -1432,6 +1640,27 @@ export const homeLocales = {
 			videoAria: 'Abrir vídeo de demonstração do ScrollShot',
 			videoLabel: 'Vídeo de demonstração do ScrollShot',
 			caption: 'Demonstração em reprodução automática',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'Nota na App Store',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: 'No dispositivo', label: 'Sem upload para montagem', tone: 'privacy' },
+				{ value: 'Imagem / PDF', label: 'Exporte e compartilhe rápido', tone: 'export' },
+				{ value: 'Grátis para testar', label: 'Comece com montagem manual' },
+			],
+		},
+		workflow: {
+			kicker: 'Três passos',
+			title: 'Da gravação de tela à imagem longa',
+			description: 'O caminho mais curto para entender o ScrollShot: grave uma rolagem, revise o resultado e salve ou compartilhe.',
+			steps: [
+				{ title: 'Grave a rolagem', text: 'Inicie a gravação de tela do iOS e role naturalmente pela conversa, página web ou documento.' },
+				{ title: 'Montagem automática', text: 'O ScrollShot extrai frames, remove duplicatas, detecta sobreposições e constrói a imagem longa completa.' },
+				{ title: 'Salve ou compartilhe', text: 'Salve no app Fotos, compartilhe a imagem ou exporte um PDF para colegas, clientes e arquivos.' },
+			],
 		},
 		sections: {
 			features: {
@@ -1515,6 +1744,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: 'Veja primeiro',
+			title: 'Assista ao fluxo em 15 segundos antes de instalar',
+			text: 'Não precisa ler a página inteira primeiro. Veja como funciona a montagem baseada em gravação e decida se encaixa no seu fluxo.',
+			links: [
+				{ label: 'Ver demonstração', href: localeAssets['pt-br'].video, variant: 'mint' },
+				{ label: 'Ver casos de uso', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: 'Gerente de produto', quote: 'Para páginas de concorrentes e anotações de fluxo, não preciso mais de uma dúzia de prints. Uma gravação e uma rolagem resolvem.', tone: 'warm' },
 			{ role: 'Designer', quote: 'Poder ajustar as emendas me deixa mais confiante antes de enviar capturas longas para outras pessoas.' },
@@ -1547,12 +1785,21 @@ export const homeLocales = {
 				cta: { label: 'Instalar o ScrollShot', href: appStoreUrls['pt-br'] },
 			},
 		],
+		scenarioCta: {
+			kicker: 'Próximo passo',
+			title: 'Se seus prints longos vêm de conversas, páginas web ou tutoriais, experimente agora',
+			text: 'Use primeiro o fluxo manual gratuito. Quando precisar de montagem mais rápida por gravação, consulte as opções Pro na App Store.',
+			links: [
+				{ label: 'Instalar o ScrollShot', href: appStoreUrls['pt-br'], variant: 'light' },
+				{ label: 'Comparar Grátis e Pro', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: 'Grátis',
 				subtitle: 'Para montagens manuais ocasionais',
-				features: ['Montagem manual de screenshots', 'Seleção e prévia no app Fotos', 'Salvar imagens longas no Fotos', 'Cores de tema básicas'],
+				features: ['Montagem manual de screenshots', 'Seleção e prévia no app Fotos', 'Salvar imagens longas no Fotos', 'Processamento de imagens no dispositivo'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -1562,6 +1809,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Os preços exatos do Pro, opções de assinatura ou compra definitiva são mostrados na App Store. Você pode começar com a montagem manual gratuita antes de fazer o upgrade.',
 		pricingButtonLabel: 'Obter o ScrollShot',
 		faqs: [
 			['Como o ScrollShot é diferente dos screenshots do sistema?', 'Os screenshots do iOS capturam apenas a tela atual. O ScrollShot foi feito para conteúdos que rolam, transformando uma gravação ou vários screenshots em uma imagem longa com ajuste fino, limpeza de barras de rolagem e compartilhamento em PDF.'],
@@ -1583,6 +1831,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: 'Pronto para prints longos mais limpos?',
 			buttonLabel: 'Baixar na App Store',
+		},
+		blogConversion: {
+			kicker: 'Teste depois de ler',
+			title: 'Execute o fluxo deste artigo',
+			text: 'Grave uma rolagem e veja como o ScrollShot transforma uma conversa longa, página web ou tutorial em uma imagem limpa.',
+			primary: { label: 'Instalar o ScrollShot', href: appStoreUrls['pt-br'] },
+			secondary: { label: 'Ver demonstração', href: localeAssets['pt-br'].video },
+			cards: [
+				{ label: 'Ver recursos principais', href: `${ptBrUrl}#features` },
+				{ label: 'Comparar Grátis e Pro', href: `${ptBrUrl}#pricing` },
+				{ label: 'Ler perguntas frequentes', href: `${ptBrUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'Início do ScrollShot',
@@ -1659,6 +1919,27 @@ export const homeLocales = {
 			videoAria: 'ScrollShot Demo-Video öffnen',
 			videoLabel: 'ScrollShot Demo-Video',
 			caption: 'Demo wird automatisch abgespielt',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'App Store-Bewertung',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: 'Auf dem Gerät', label: 'Kein Upload für Stitching', tone: 'privacy' },
+				{ value: 'Bild / PDF', label: 'Schnell exportieren und teilen', tone: 'export' },
+				{ value: 'Kostenlos testen', label: 'Starte mit manuellem Stitching' },
+			],
+		},
+		workflow: {
+			kicker: 'Drei Schritte',
+			title: 'Von der Bildschirmaufnahme zum langen Bild',
+			description: 'Der schnellste Weg, ScrollShot zu verstehen: Scrolle eine Aufnahme, prüfe das Ergebnis und speichere oder teile es.',
+			steps: [
+				{ title: 'Scroll aufnehmen', text: 'Starte die iOS-Bildschirmaufnahme und scrolle natürlich durch den Chat, die Webseite oder das Dokument.' },
+				{ title: 'Automatisch zusammenfügen', text: 'ScrollShot extrahiert Frames, entfernt Duplikate, erkennt Überlappungen und erstellt das vollständige lange Bild.' },
+				{ title: 'Speichern oder teilen', text: 'Speichere in Fotos, teile das Bild oder exportiere ein PDF für Kollegen, Kunden und Archive.' },
+			],
 		},
 		sections: {
 			features: {
@@ -1742,6 +2023,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: 'Erst mal anschauen',
+			title: 'Sieh dir den Ablauf in 15 Sekunden an, bevor du installierst',
+			text: 'Du musst nicht erst die ganze Seite lesen. Schau dir an, wie das Stitching aus Bildschirmaufnahmen funktioniert, und entscheide dann, ob es zu deinem Workflow passt.',
+			links: [
+				{ label: 'Demo ansehen', href: localeAssets.de.video, variant: 'mint' },
+				{ label: 'Anwendungsfälle ansehen', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: 'Produktmanagement', quote: 'Für Wettbewerbsseiten und Ablaufnotizen brauche ich keine zwölf Screenshots mehr. Einmal aufnehmen und scrollen reicht.', tone: 'warm' },
 			{ role: 'Design', quote: 'Die Feinanpassung der Übergänge gibt mir Sicherheit, bevor ich lange Seiten an andere weitergebe.' },
@@ -1774,12 +2064,21 @@ export const homeLocales = {
 				cta: { label: 'ScrollShot installieren', href: appStoreUrls.de },
 			},
 		],
+		scenarioCta: {
+			kicker: 'Nächster Schritt',
+			title: 'Wenn deine langen Screenshots aus Chats, Webseiten oder Anleitungen kommen, probier es aus',
+			text: 'Nutze zuerst den kostenlosen manuellen Workflow. Wenn du schnelleres Stitching aus Bildschirmaufnahmen brauchst, schau dir die Pro-Optionen im App Store an.',
+			links: [
+				{ label: 'ScrollShot installieren', href: appStoreUrls.de, variant: 'light' },
+				{ label: 'Kostenlos und Pro vergleichen', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: 'Kostenlos',
 				subtitle: 'Für gelegentliches manuelles Stitching',
-				features: ['Screenshots manuell zusammenfügen', 'Auswahl und Vorschau aus Fotos', 'Lange Bilder in Fotos speichern', 'Basis-Designfarben'],
+				features: ['Screenshots manuell zusammenfügen', 'Auswahl und Vorschau aus Fotos', 'Lange Bilder in Fotos speichern', 'Bildverarbeitung auf dem Gerät'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -1789,6 +2088,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Die genauen Pro-Preise, Abo- oder Kaufoptionen werden im App Store angezeigt. Du kannst mit kostenlosem manuellem Stitching beginnen, bevor du ein Upgrade machst.',
 		pricingButtonLabel: 'ScrollShot laden',
 		faqs: [
 			['Worin unterscheidet sich ScrollShot von iOS-Screenshots?', 'iOS-Screenshots erfassen den sichtbaren Bildschirm. ScrollShot ist für scrollende Inhalte gedacht und macht aus einer Aufnahme oder mehreren Screenshots ein langes Bild mit Feinanpassung, Scrollleisten-Bereinigung und PDF-Teilen.'],
@@ -1810,6 +2110,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: 'Bereit für sauberere lange Screenshots?',
 			buttonLabel: 'Im App Store laden',
+		},
+		blogConversion: {
+			kicker: 'Nach dem Lesen testen',
+			title: 'Probiere den Workflow aus diesem Artikel',
+			text: 'Nimm einen Scroll auf und sieh, wie ScrollShot einen langen Chat, eine Webseite oder ein Tutorial in ein sauberes Bild verwandelt.',
+			primary: { label: 'ScrollShot installieren', href: appStoreUrls.de },
+			secondary: { label: 'Demo ansehen', href: localeAssets.de.video },
+			cards: [
+				{ label: 'Kernfunktionen ansehen', href: `${deUrl}#features` },
+				{ label: 'Kostenlos und Pro vergleichen', href: `${deUrl}#pricing` },
+				{ label: 'FAQ lesen', href: `${deUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'ScrollShot Startseite',
@@ -2153,6 +2465,27 @@ export const homeLocales = {
 			videoAria: '開啟 ScrollShot 中文影片示範',
 			videoLabel: 'ScrollShot 中文影片示範',
 			caption: '30 秒看懂自動拼接',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'App Store 評分',
+					note: zhRating.countDisplay,
+					tone: 'rating',
+				},
+				{ value: '本機處理', label: '圖片不為拼接上傳', tone: 'privacy' },
+				{ value: '圖片 / PDF', label: '保存後直接分享', tone: 'export' },
+				{ value: '免費可用', label: '手動拼接先體驗' },
+			],
+		},
+		workflow: {
+			kicker: '三步完成',
+			title: '從錄影到長圖，不再來回截圖',
+			description: '先用最短路徑理解 ScrollShot：錄影滾動一次，檢查結果，然後保存或分享。',
+			steps: [
+				{ title: '錄影滾動', text: '打開系統錄影，順著聊天、網頁或文件自然滾動到結尾。' },
+				{ title: '自動拼接', text: 'ScrollShot 自動擷取影格、去除重複、比對重疊區域，產生完整長圖。' },
+				{ title: '保存分享', text: '保存到相簿，繼續分享圖片，或匯出 PDF 交給同事和客戶。' },
+			],
 		},
 		sections: {
 			features: {
@@ -2220,6 +2553,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: '先看效果',
+			title: '15 秒確認它是不是你要的長截圖方式',
+			text: '不需要先讀完整頁面。直接看錄影自動拼接流程，再決定是否安裝體驗。',
+			links: [
+				{ label: '觀看中文示範', href: localeAssets['zh-hant'].video, variant: 'mint' },
+				{ label: '查看使用場景', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: '產品經理', quote: '保存競品頁面和流程說明時，不用再截十幾張圖，錄影後滾動一次就夠了。', tone: 'warm' },
 			{ role: '設計師', quote: '最喜歡可以微調拼接縫，長頁面分享給別人之前更安心。' },
@@ -2252,12 +2594,21 @@ export const homeLocales = {
 				cta: { label: '立即安裝體驗', href: appStoreUrls['zh-hant'] },
 			},
 		],
+		scenarioCta: {
+			kicker: '下一步',
+			title: '如果你的長截圖來自聊天、網頁或教學，可以直接試',
+			text: '免費版先完成手動拼接；需要更快的錄影自動拼接時，再在 App Store 中查看 Pro 選項。',
+			links: [
+				{ label: '立即安裝', href: appStoreUrls['zh-hant'], variant: 'light' },
+				{ label: '了解免費與 Pro', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: '免費',
-				subtitle: '適合偶爾手動拼接',
-				features: ['手動截圖拼接', '相簿選擇與預覽', '保存長圖到相簿', '基礎主題色'],
+				subtitle: '先完成基礎長截圖工作流',
+				features: ['手動截圖拼接', '相簿選擇與預覽', '保存長圖到相簿', '本機處理圖片'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -2267,6 +2618,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Pro 的具體價格、訂閱或買斷形式以 App Store 實際顯示為準；你可以先免費使用手動拼接，再決定是否升級。',
 		pricingButtonLabel: '取得 ScrollShot',
 		faqs: [
 			['ScrollShot 和系統截圖有什麼不同？', '系統截圖適合目前畫面。ScrollShot 面向滾動內容，可以把錄影或多張截圖合成一張長圖，並提供微調、捲動條清理和 PDF 分享。'],
@@ -2288,6 +2640,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: '準備生成更乾淨的長截圖了嗎？',
 			buttonLabel: '前往 App Store 下載',
+		},
+		blogConversion: {
+			kicker: '讀完可以直接試',
+			title: '把這篇文章裡的場景跑一遍',
+			text: '錄影滾動一次，看看 ScrollShot 如何把長聊天、網頁或教學整理成一張清晰長圖。',
+			primary: { label: '安裝 ScrollShot', href: appStoreUrls['zh-hant'] },
+			secondary: { label: '觀看中文示範', href: localeAssets['zh-hant'].video },
+			cards: [
+				{ label: '查看核心功能', href: `${zhHantUrl}#features` },
+				{ label: '了解免費與 Pro', href: `${zhHantUrl}#pricing` },
+				{ label: '查看常見問題', href: `${zhHantUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'ScrollShot 首頁',
@@ -2364,6 +2728,27 @@ export const homeLocales = {
 			videoAria: 'ScrollShotのデモ動画を開く',
 			videoLabel: 'ScrollShot デモ動画',
 			caption: 'デモを自動再生中',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'App Store評価',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: '端末内処理', label: '合成のためのアップロードなし', tone: 'privacy' },
+				{ value: '画像 / PDF', label: 'すぐに書き出して共有', tone: 'export' },
+				{ value: '無料で試せる', label: '手動結合から始められる' },
+			],
+		},
+		workflow: {
+			kicker: '3ステップ',
+			title: '画面収録から長い画像まで',
+			description: 'ScrollShotを理解する最短ルート：スクロールを録画し、結果を確認して、保存または共有。',
+			steps: [
+				{ title: 'スクロールを録画', text: 'iOSの画面収録を開始し、チャット、Webページ、またはドキュメントを自然にスクロールします。' },
+				{ title: '自動合成', text: 'ScrollShotがフレームを抽出し、重複を除去し、重なりを検出して完全な長い画像を生成します。' },
+				{ title: '保存または共有', text: '写真アプリに保存し、画像を共有、またはPDFを書き出して同僚やクライアント、記録用に。' },
+			],
 		},
 		sections: {
 			features: {
@@ -2431,6 +2816,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: 'まず確認',
+			title: 'インストール前に15秒のフローをご覧ください',
+			text: 'ページ全体を読まなくても大丈夫です。画面収録ベースの合成がどのように動くか確認してから、ワークフローに合うか判断してください。',
+			links: [
+				{ label: 'デモを見る', href: localeAssets.ja.video, variant: 'mint' },
+				{ label: '活用シーンを見る', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: 'プロダクトマネージャー', quote: '競合ページやフローのメモを残すとき、何枚もスクショを撮る必要がなくなりました。録画して一度スクロールするだけで十分です。', tone: 'warm' },
 			{ role: 'デザイナー', quote: 'つなぎ目を微調整できるので、長いページを共有する前に安心して確認できます。' },
@@ -2463,12 +2857,21 @@ export const homeLocales = {
 				cta: { label: 'ScrollShotをインストール', href: appStoreUrls.ja },
 			},
 		],
+		scenarioCta: {
+			kicker: '次のステップ',
+			title: 'チャット、Webページ、手順書の長いスクショが必要な方は今すぐお試しください',
+			text: 'まずは無料の手動ワークフローをお使いください。画面収録ベースのより速い合成が必要な場合は、App StoreでProオプションをご確認ください。',
+			links: [
+				{ label: 'ScrollShotをインストール', href: appStoreUrls.ja, variant: 'light' },
+				{ label: '無料とProを比較', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: '無料',
-				subtitle: 'たまに手動でつなげたい方向け',
-				features: ['手動スクリーンショット結合', '写真の選択とプレビュー', '長い画像を写真アプリに保存', '基本テーマカラー'],
+				subtitle: '基本的な長スクショフローから始める',
+				features: ['手動スクリーンショット結合', '写真の選択とプレビュー', '長い画像を写真アプリに保存', '端末内での画像処理'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -2478,6 +2881,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Proの正確な価格、サブスクリプションまたは買い切りオプションはApp Storeでご確認ください。無料の手動結合で始めてから、アップグレードを検討いただけます。',
 		pricingButtonLabel: 'ScrollShotを入手',
 		faqs: [
 			['ScrollShotはiOS標準のスクリーンショットと何が違いますか？', 'iOS標準のスクリーンショットは表示中の画面を保存するものです。ScrollShotはスクロールする長い内容向けに、画面収録や複数のスクショを1枚の長い画像へまとめ、つなぎ目の調整、スクロールバーの整理、PDF共有まで対応します。'],
@@ -2499,6 +2903,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: 'もっときれいに長スクショを残しませんか？',
 			buttonLabel: 'App Storeでダウンロード',
+		},
+		blogConversion: {
+			kicker: '読んだら試してみる',
+			title: 'この記事のワークフローを実践',
+			text: 'スクロールを一度録画して、ScrollShotが長いチャット、Webページ、手順書をどのように1枚のきれいな画像に変えるか確認しましょう。',
+			primary: { label: 'ScrollShotをインストール', href: appStoreUrls.ja },
+			secondary: { label: 'デモを見る', href: localeAssets.ja.video },
+			cards: [
+				{ label: '主な機能を見る', href: `${jaUrl}#features` },
+				{ label: '無料とProを比較', href: `${jaUrl}#pricing` },
+				{ label: 'FAQを読む', href: `${jaUrl}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'ScrollShot ホーム',
@@ -2575,6 +2991,27 @@ export const homeLocales = {
 			videoAria: 'ScrollShot 데모 영상 열기',
 			videoLabel: 'ScrollShot 데모 영상',
 			caption: '데모 자동 재생 중',
+			trustSignals: [
+				{
+					value: `${zhRating.averageDisplay} / 5`,
+					label: 'App Store 별점',
+					note: zhRatingCountEn,
+					tone: 'rating',
+				},
+				{ value: '기기 내 처리', label: '합성을 위한 업로드 없음', tone: 'privacy' },
+				{ value: '이미지 / PDF', label: '빠른 내보내기 및 공유', tone: 'export' },
+				{ value: '무료 체험', label: '수동 이어붙이기부터 시작' },
+			],
+		},
+		workflow: {
+			kicker: '세 단계',
+			title: '화면 녹화에서 긴 이미지까지',
+			description: 'ScrollShot을 가장 빠르게 이해하는 방법: 스크롤을 녹화하고, 결과를 확인하고, 저장하거나 공유하세요.',
+			steps: [
+				{ title: '스크롤 녹화', text: 'iOS 화면 녹화를 시작하고 채팅, 웹페이지, 문서를 자연스럽게 스크롤하세요.' },
+				{ title: '자동 합성', text: 'ScrollShot이 프레임을 추출하고 중복을 제거하고 겹침 영역을 감지해 완전한 긴 이미지를 만듭니다.' },
+				{ title: '저장 또는 공유', text: '사진 앱에 저장하고, 이미지로 공유하거나 PDF로 내보내 동료, 고객, 기록용으로 활용하세요.' },
+			],
 		},
 		sections: {
 			features: {
@@ -2642,6 +3079,15 @@ export const homeLocales = {
 				className: 'theme-shot-card',
 			},
 		],
+		featureCta: {
+			kicker: '먼저 확인하세요',
+			title: '설치 전에 15초 흐름을 먼저 보세요',
+			text: '페이지 전체를 먼저 읽을 필요 없습니다. 녹화 기반 합성이 어떻게 작동하는지 확인한 뒤, 내 워크플로우에 맞는지 판단하세요.',
+			links: [
+				{ label: '데모 영상 보기', href: localeAssets.ko.video, variant: 'mint' },
+				{ label: '활용 사례 보기', href: '#scenarios', variant: 'ghost' },
+			],
+		},
 		reviews: [
 			{ role: '프로덕트 매니저', quote: '경쟁사 페이지나 플로우 메모를 남길 때 스크린샷을 여러 장 찍을 필요가 없어졌습니다. 녹화하고 한 번 스크롤하면 충분합니다.', tone: 'warm' },
 			{ role: '디자이너', quote: '이음새를 직접 확인하고 조정할 수 있어서 긴 페이지를 공유하기 전에 더 안심됩니다.' },
@@ -2674,12 +3120,21 @@ export const homeLocales = {
 				cta: { label: 'ScrollShot 설치하기', href: appStoreUrls.ko },
 			},
 		],
+		scenarioCta: {
+			kicker: '다음 단계',
+			title: '채팅, 웹페이지, 튜토리얼의 긴 스크린샷이 필요하다면 지금 시작하세요',
+			text: '무료 수동 워크플로우를 먼저 사용해 보세요. 녹화 기반 자동 합성이 필요해지면 App Store에서 Pro 옵션을 확인하세요.',
+			links: [
+				{ label: 'ScrollShot 설치', href: appStoreUrls.ko, variant: 'light' },
+				{ label: '무료와 Pro 비교', href: '#pricing', variant: 'ghost' },
+			],
+		},
 		plans: [
 			{
 				name: 'ScrollShot',
 				price: '무료',
 				subtitle: '가끔 수동으로 이어붙이는 사용자에게',
-				features: ['수동 스크린샷 이어붙이기', '사진 선택 및 미리보기', '긴 이미지를 사진 앱에 저장', '기본 테마 색상'],
+				features: ['수동 스크린샷 이어붙이기', '사진 선택 및 미리보기', '긴 이미지를 사진 앱에 저장', '기기 내 이미지 처리', '기본 테마 색상'],
 			},
 			{
 				name: 'ScrollShot Pro',
@@ -2689,6 +3144,7 @@ export const homeLocales = {
 				featured: true,
 			},
 		],
+		pricingNote: 'Pro의 정확한 가격, 구독 또는 일괄 구매 옵션은 App Store에서 확인할 수 있습니다. 업그레이드 전에 무료 수동 이어붙이기부터 시작할 수 있습니다.',
 		pricingButtonLabel: 'ScrollShot 받기',
 		faqs: [
 			['ScrollShot은 iOS 기본 스크린샷과 무엇이 다른가요?', 'iOS 기본 스크린샷은 현재 화면만 저장합니다. ScrollShot은 스크롤되는 긴 콘텐츠를 위해 화면 녹화나 여러 장의 스크린샷을 긴 이미지 한 장으로 만들고, 이음새 조정, 스크롤바 정리, PDF 공유까지 지원합니다.'],
@@ -2710,6 +3166,18 @@ export const homeLocales = {
 			kicker: 'Download',
 			title: '더 깔끔한 긴 스크린샷을 남겨보세요',
 			buttonLabel: 'App Store에서 다운로드',
+		},
+		blogConversion: {
+			kicker: '읽은 후 체험해 보세요',
+			title: '이 글에서 소개한 워크플로우를 직접 실행해 보세요',
+			text: '한 번 스크롤을 녹화하면 ScrollShot이 긴 채팅, 웹페이지, 튜토리얼을 한 장의 깔끔한 이미지로 만들어 줍니다.',
+			primary: { label: 'ScrollShot 설치', href: appStoreUrls.ko },
+			secondary: { label: '데모 영상 보기', href: localeAssets.ko.video },
+			cards: [
+				{ label: '주요 기능 보기', href: `${site.url}#features` },
+				{ label: '무료와 Pro 비교', href: `${site.url}#pricing` },
+				{ label: 'FAQ 읽기', href: `${site.url}#faq` },
+			],
 		},
 		footer: {
 			brandHome: 'ScrollShot 홈',
