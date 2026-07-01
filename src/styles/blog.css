@@ -644,6 +644,10 @@
 	margin-right: auto;
 }
 
+.blog-prose > h1:first-child {
+	display: none;
+}
+
 .blog-prose p,
 .blog-prose ul,
 .blog-prose ol,
