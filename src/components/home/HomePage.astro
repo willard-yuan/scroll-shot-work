@@ -12,6 +12,7 @@ import SiteFooter from './SiteFooter.astro';
 import WorkflowSteps from './WorkflowSteps.astro';
 import InlineCta from './InlineCta.astro';
 import { buildJsonLd, type HomeLocale } from '../../data/home';
+import { getSwitcherItems } from '../../data/languages';
 
 interface Props {
 	page: HomeLocale;
@@ -20,6 +21,11 @@ interface Props {
 const { page } = Astro.props;
 const { site, assets, meta, sections } = page;
 const appStoreUrl = page.appStoreUrl;
+const languageSwitcher = getSwitcherItems(page.url, page.alternateLinks);
+const switcherLabels = {
+	triggerAria: page.footer.languageSwitcherAria ?? 'Change language',
+	menuAria: page.footer.languageSwitcherAria ?? 'Choose language',
+};
 interface WorkflowContent {
 	kicker: string;
 	title: string;
@@ -54,7 +60,14 @@ const conversionPage = page as ConversionPage;
 	jsonLd={buildJsonLd(page)}
 >
 	<div class="site-shell">
-		<SiteNav icon={assets.appIcon} links={page.navLinks} appStoreUrl={appStoreUrl} labels={page.navLabels} />
+		<SiteNav
+			icon={assets.appIcon}
+			links={page.navLinks}
+			appStoreUrl={appStoreUrl}
+			labels={page.navLabels}
+			languageSwitcher={languageSwitcher}
+			switcherLabels={switcherLabels}
+		/>
 		<main>
 			<HeroSection
 				appStoreUrl={appStoreUrl}

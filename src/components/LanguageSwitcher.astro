@@ -1,0 +1,115 @@
+---
+export interface SwitcherItem {
+	code: string;
+	label: string;
+	href: string;
+	hreflang: string;
+	current: boolean;
+}
+
+interface Props {
+	items: SwitcherItem[];
+	labels: { triggerAria: string; menuAria: string };
+	class?: string;
+}
+
+const { items, labels, class: className } = Astro.props;
+const current = items.find((item) => item.current);
+const triggerLabel = current?.label ?? items[0]?.label ?? 'Language';
+const menuItems = items.filter((item) => !item.current);
+---
+
+<div class:list={['lang-switcher', className]} data-lang-switcher>
+	<button
+		type="button"
+		class="lang-switcher-trigger"
+		aria-haspopup="true"
+		aria-expanded="false"
+		aria-label={labels.triggerAria}
+	>
+		<span class="lang-switcher-current">{triggerLabel}</span>
+		<svg
+			class="lang-switcher-chevron"
+			width="12"
+			height="12"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2.4"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<polyline points="6 9 12 15 18 9"></polyline>
+		</svg>
+	</button>
+	<ul class="lang-switcher-menu" role="menu" aria-label={labels.menuAria} hidden>
+		{
+			menuItems.map((item) => (
+				<li role="none">
+					<a role="menuitem" href={item.href} hreflang={item.hreflang} lang={item.hreflang}>
+						{item.label}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
+
+<script is:inline>
+	(function initLangSwitchers() {
+		function setup(switcher) {
+			if (switcher.dataset.lsReady) return;
+			const trigger = switcher.querySelector('.lang-switcher-trigger');
+			const menu = switcher.querySelector('.lang-switcher-menu');
+			if (!trigger || !menu) return;
+			switcher.dataset.lsReady = '1';
+
+			const isOpen = () => trigger.getAttribute('aria-expanded') === 'true';
+			const open = () => {
+				trigger.setAttribute('aria-expanded', 'true');
+				menu.hidden = false;
+			};
+			const close = () => {
+				trigger.setAttribute('aria-expanded', 'false');
+				menu.hidden = true;
+			};
+
+			// Toggle on trigger click. stopPropagation prevents the document
+			// click handler (close-on-outside) from closing it on the same click.
+			trigger.addEventListener('click', (event) => {
+				event.stopPropagation();
+				if (isOpen()) close();
+				else open();
+			});
+
+			// Selecting a language closes the panel (navigation still happens).
+			menu.querySelectorAll('a').forEach((link) => {
+				link.addEventListener('click', close);
+			});
+
+			// Close only on an explicit outside click, never on hover/leave —
+			// this is what keeps the menu from collapsing on its own.
+			document.addEventListener('click', (event) => {
+				if (isOpen() && !switcher.contains(event.target)) close();
+			});
+
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape' && isOpen()) {
+					close();
+					trigger.focus();
+				}
+			});
+		}
+
+		function boot() {
+			document.querySelectorAll('[data-lang-switcher]').forEach(setup);
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', boot);
+		} else {
+			boot();
+		}
+	})();
+</script>

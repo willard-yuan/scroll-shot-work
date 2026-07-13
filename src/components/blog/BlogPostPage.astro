@@ -11,6 +11,7 @@ import {
 	getBlogNavLinks,
 	getBlogPostAlternates,
 } from '../../data/blog';
+import { getSwitcherItems } from '../../data/languages';
 import { site } from '../../data/home';
 
 interface Props {
@@ -24,6 +25,11 @@ const Content = post.Content;
 const navLinks = getBlogNavLinks(page.locale, 'post');
 const homeHref = getBlogHomeHref(page.locale, 'post');
 const blogHref = '../';
+const languageSwitcher = getSwitcherItems(post.url, getBlogPostAlternates(post));
+const switcherLabels = {
+	triggerAria: home.footer.languageSwitcherAria ?? 'Change language',
+	menuAria: home.footer.languageSwitcherAria ?? 'Choose language',
+};
 const dateLocale =
 	page.locale === 'zh'
 		? 'zh-CN'
@@ -75,6 +81,8 @@ const blogConversion = 'blogConversion' in home ? home.blogConversion : undefine
 			appStoreUrl={page.appStoreUrl}
 			brandHref={homeHref}
 			labels={home.navLabels}
+			languageSwitcher={languageSwitcher}
+			switcherLabels={switcherLabels}
 		/>
 
 		<main class="blog-main">

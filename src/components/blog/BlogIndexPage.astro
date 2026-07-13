@@ -4,6 +4,7 @@ import SiteNav from '../home/SiteNav.astro';
 import SiteFooter from '../home/SiteFooter.astro';
 import type { BlogLocale, BlogPost } from '../../data/blog';
 import { buildBlogIndexJsonLd, getBlogHomeHref, getBlogLanguageLinks, getBlogNavLinks } from '../../data/blog';
+import { getSwitcherItems } from '../../data/languages';
 import { site } from '../../data/home';
 
 interface Props {
@@ -17,6 +18,11 @@ const featured = posts[0];
 const recentPosts = posts.slice(1);
 const navLinks = getBlogNavLinks(page.locale, 'index');
 const homeHref = getBlogHomeHref(page.locale, 'index');
+const languageSwitcher = getSwitcherItems(page.url, page.alternateLinks);
+const switcherLabels = {
+	triggerAria: home.footer.languageSwitcherAria ?? 'Change language',
+	menuAria: home.footer.languageSwitcherAria ?? 'Choose language',
+};
 const dateLocale =
 	page.locale === 'zh'
 		? 'zh-CN'
@@ -72,6 +78,8 @@ const truncateText = (text: string, maxLength: number) => {
 			appStoreUrl={page.appStoreUrl}
 			brandHref={homeHref}
 			labels={home.navLabels}
+			languageSwitcher={languageSwitcher}
+			switcherLabels={switcherLabels}
 		/>
 
 		<main class="blog-main blog-index-page">

@@ -1,5 +1,7 @@
 ---
 import BrandMark from './BrandMark.astro';
+import LanguageSwitcher from '../LanguageSwitcher.astro';
+import type { SwitcherItem } from '../../data/languages';
 
 interface Props {
 	icon: string;
@@ -13,9 +15,12 @@ interface Props {
 		brandHome: string;
 		menu: string;
 	};
+	languageSwitcher?: SwitcherItem[];
+	switcherLabels?: { triggerAria: string; menuAria: string };
 }
 
-const { icon, links, appStoreUrl, brandHref, labels } = Astro.props;
+const { icon, links, appStoreUrl, brandHref, labels, languageSwitcher, switcherLabels } = Astro.props;
+const defaultSwitcherLabels = { triggerAria: 'Change language', menuAria: 'Choose language' };
 ---
 
 <header class="nav-wrap">
@@ -25,6 +30,15 @@ const { icon, links, appStoreUrl, brandHref, labels } = Astro.props;
 			{links.map((link) => <a href={link.href} aria-current={link.current ? 'page' : undefined}>{link.label}</a>)}
 		</div>
 		<div class="nav-actions">
+			{
+				languageSwitcher && languageSwitcher.length > 1 && (
+					<LanguageSwitcher
+						class="lang-switcher--nav"
+						items={languageSwitcher}
+						labels={switcherLabels ?? defaultSwitcherLabels}
+					/>
+				)
+			}
 			<a class="nav-button" href={appStoreUrl} target="_blank" rel="noopener noreferrer">{labels.install}</a>
 			<button
 				class="mobile-menu-toggle"
@@ -42,6 +56,15 @@ const { icon, links, appStoreUrl, brandHref, labels } = Astro.props;
 	<div class="mobile-menu" id="mobile-nav-menu" hidden>
 		<div class="mobile-menu-panel" aria-label={labels.linksAria}>
 			{links.map((link) => <a href={link.href} aria-current={link.current ? 'page' : undefined}>{link.label}</a>)}
+			{
+				languageSwitcher && languageSwitcher.length > 1 && (
+					<LanguageSwitcher
+						class="lang-switcher--mobile"
+						items={languageSwitcher}
+						labels={switcherLabels ?? defaultSwitcherLabels}
+					/>
+				)
+			}
 		</div>
 	</div>
 </header>
