@@ -255,7 +255,7 @@ export const viHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: 'Video demo',
 		legalTitle: 'Pháp lý',
-		supportedLanguagesTitle: 'Ngôn ngữ được hỗ trợ',
+		supportedLanguagesTitle: 'ScrollShot Ngôn ngữ được hỗ trợ',
 		supportedLanguagesText:
 			'English, Tiếng Việt, Italiano, Español, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, ไทย, हिन्दी, العربية và nhiều ngôn ngữ khác.',
 		languageSwitcherTitle: 'Ngôn ngữ trang web',

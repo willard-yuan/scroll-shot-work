@@ -4,6 +4,7 @@ export interface SwitcherItem {
 	label: string;
 	href: string;
 	hreflang: string;
+	flag: string;
 	current: boolean;
 }
 
@@ -15,7 +16,9 @@ interface Props {
 
 const { items, labels, class: className } = Astro.props;
 const current = items.find((item) => item.current);
-const triggerLabel = current?.label ?? items[0]?.label ?? 'Language';
+const triggerItem = current ?? items[0];
+const triggerLabel = triggerItem?.label ?? 'Language';
+const triggerFlag = triggerItem?.flag;
 const menuItems = items.filter((item) => !item.current);
 ---
 
@@ -27,6 +30,9 @@ const menuItems = items.filter((item) => !item.current);
 		aria-expanded="false"
 		aria-label={labels.triggerAria}
 	>
+		{triggerFlag && (
+			<img class="lang-switcher-flag" src={triggerFlag} width="20" height="15" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+		)}
 		<span class="lang-switcher-current">{triggerLabel}</span>
 		<svg
 			class="lang-switcher-chevron"
@@ -48,7 +54,8 @@ const menuItems = items.filter((item) => !item.current);
 			menuItems.map((item) => (
 				<li role="none">
 					<a role="menuitem" href={item.href} hreflang={item.hreflang} lang={item.hreflang}>
-						{item.label}
+						<img class="lang-switcher-flag" src={item.flag} width="20" height="15" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+						<span class="lang-switcher-name">{item.label}</span>
 					</a>
 				</li>
 			))

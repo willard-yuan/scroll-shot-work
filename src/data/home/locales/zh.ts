@@ -241,7 +241,7 @@ export const zhHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: '中文视频演示',
 		legalTitle: '法律',
-		supportedLanguagesTitle: '支持语言',
+		supportedLanguagesTitle: 'ScrollShot 支持语言',
 		supportedLanguagesText:
 			'English、简体中文、繁體中文、日本語、한국어、Deutsch、Français、Português (Brasil)、Español、Italiano、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
 		languageSwitcherTitle: '网站语言',

@@ -255,7 +255,7 @@ export const itHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: 'Demo video',
 		legalTitle: 'Legale',
-		supportedLanguagesTitle: 'Lingue supportate',
+		supportedLanguagesTitle: 'ScrollShot Lingue supportate',
 		supportedLanguagesText:
 			'English, Italiano, Español, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية e altre.',
 		languageSwitcherTitle: 'Lingue del sito',

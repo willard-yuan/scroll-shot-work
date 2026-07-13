@@ -29,7 +29,7 @@
 		const wiredLinks = new WeakSet();
 
 		const wireLanguageLinks = () => {
-			const selector = '.footer-language-nav a, .language-switcher a';
+			const selector = '.language-switcher a';
 			document.querySelectorAll(selector).forEach((link) => {
 				if (wiredLinks.has(link)) return;
 				wiredLinks.add(link);
@@ -43,7 +43,7 @@
 						toLocale: toLocale,
 						fromPath: window.location.pathname,
 						toPath: link.getAttribute('href') || link.href,
-						placement: link.closest('.footer-language-nav') ? 'footer' : 'nav',
+						placement: 'nav',
 						label: link.textContent?.replace(/\s+/g, ' ').trim() || 'unknown',
 					});
 				});

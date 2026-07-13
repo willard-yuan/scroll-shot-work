@@ -239,7 +239,7 @@ export const koHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: '데모 영상',
 		legalTitle: '법적 고지',
-		supportedLanguagesTitle: '지원 언어',
+		supportedLanguagesTitle: 'ScrollShot 지원 언어',
 		supportedLanguagesText:
 			'English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Português (Brasil), Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية 등.',
 		languageSwitcherTitle: '웹사이트 언어',

@@ -35,12 +35,6 @@ interface Props {
 }
 
 const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content } = Astro.props;
-const languageLinks =
-	content.languageLinks?.length
-		? content.languageLinks
-		: content.languageHref && content.languageLabel
-			? [{ label: content.languageLabel, href: content.languageHref }]
-			: [];
 ---
 
 <footer class="footer">
@@ -69,7 +63,7 @@ const languageLinks =
 	</div>
 
 	<div class="footer-language-support">
-		<h3>{content.supportedLanguagesTitle ?? 'Supported Languages'}</h3>
+		<h3>{content.supportedLanguagesTitle ?? 'ScrollShot Supported Languages'}</h3>
 		<p>
 			{
 				content.supportedLanguagesText ??
@@ -77,17 +71,4 @@ const languageLinks =
 			}
 		</p>
 	</div>
-
-	{
-		languageLinks.length > 0 && (
-			<div class="footer-bottom">
-				<span>{content.languageSwitcherTitle ?? 'Website Languages'}</span>
-				<nav class="footer-language-nav" aria-label={content.languageSwitcherAria ?? 'Change website language'}>
-					{languageLinks.map((link) => (
-						<a href={link.href}>{link.label}</a>
-					))}
-				</nav>
-			</div>
-		)
-	}
 </footer>

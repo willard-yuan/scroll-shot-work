@@ -239,7 +239,7 @@ export const zhHantHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: '中文影片示範',
 		legalTitle: '法律',
-		supportedLanguagesTitle: '支援語言',
+		supportedLanguagesTitle: 'ScrollShot 支援語言',
 		supportedLanguagesText:
 			'English、簡體中文、繁體中文、日本語、한국어、Deutsch、Français、Português (Brasil)、Español、Italiano、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية 等。',
 		languageSwitcherTitle: '網站語言',

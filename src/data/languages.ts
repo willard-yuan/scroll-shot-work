@@ -4,6 +4,9 @@ export interface SiteLanguage {
 	code: BlogLocaleCode;
 	label: string;
 	hreflang: string;
+	// Path to the flag image (served from /public). For 繁體中文 we use the
+	// Hong Kong SAR (China) flag to avoid any politically sensitive choice.
+	flag: string;
 }
 
 // Canonical, ordered list of every supported website language.
@@ -12,17 +15,17 @@ export interface SiteLanguage {
 // `getBlogPostAlternates`). Keeping them identical is what guarantees the nav
 // language switcher and the hreflang tags never point at different URLs.
 export const siteLanguages: SiteLanguage[] = [
-	{ code: 'en', label: 'English', hreflang: 'en' },
-	{ code: 'zh', label: '简体中文', hreflang: 'zh-CN' },
-	{ code: 'zh-hant', label: '繁體中文', hreflang: 'zh-Hant' },
-	{ code: 'ja', label: '日本語', hreflang: 'ja' },
-	{ code: 'ko', label: '한국어', hreflang: 'ko-KR' },
-	{ code: 'de', label: 'Deutsch', hreflang: 'de' },
-	{ code: 'fr', label: 'Français', hreflang: 'fr' },
-	{ code: 'es', label: 'Español', hreflang: 'es' },
-	{ code: 'pt-br', label: 'Português (BR)', hreflang: 'pt-BR' },
-	{ code: 'it', label: 'Italiano', hreflang: 'it' },
-	{ code: 'vi', label: 'Tiếng Việt', hreflang: 'vi-VN' },
+	{ code: 'en', label: 'English', hreflang: 'en', flag: '/flags/gb.png' },
+	{ code: 'zh', label: '简体中文', hreflang: 'zh-CN', flag: '/flags/cn.png' },
+	{ code: 'zh-hant', label: '繁體中文', hreflang: 'zh-Hant', flag: '/flags/hk.png' },
+	{ code: 'ja', label: '日本語', hreflang: 'ja', flag: '/flags/jp.png' },
+	{ code: 'ko', label: '한국어', hreflang: 'ko-KR', flag: '/flags/kr.png' },
+	{ code: 'de', label: 'Deutsch', hreflang: 'de', flag: '/flags/de.png' },
+	{ code: 'fr', label: 'Français', hreflang: 'fr', flag: '/flags/fr.png' },
+	{ code: 'es', label: 'Español', hreflang: 'es', flag: '/flags/es.png' },
+	{ code: 'pt-br', label: 'Português (BR)', hreflang: 'pt-BR', flag: '/flags/br.png' },
+	{ code: 'it', label: 'Italiano', hreflang: 'it', flag: '/flags/it.png' },
+	{ code: 'vi', label: 'Tiếng Việt', hreflang: 'vi-VN', flag: '/flags/vn.png' },
 ];
 
 export interface SwitcherItem {
@@ -30,6 +33,7 @@ export interface SwitcherItem {
 	label: string;
 	href: string;
 	hreflang: string;
+	flag: string;
 	current: boolean;
 }
 
@@ -64,6 +68,7 @@ export const getSwitcherItems = (currentUrl: string, alternateLinks: AlternateLi
 				label: lang.label,
 				href,
 				hreflang: lang.hreflang,
+				flag: lang.flag,
 				current: normalize(href) === current,
 			} satisfies SwitcherItem;
 		})

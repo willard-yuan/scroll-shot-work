@@ -239,7 +239,7 @@ export const jaHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: 'デモ動画',
 		legalTitle: '法務',
-		supportedLanguagesTitle: '対応言語',
+		supportedLanguagesTitle: 'ScrollShot 対応言語',
 		supportedLanguagesText:
 			'English、簡体中文、繁體中文、日本語、한국어、Deutsch、Français、Português (Brasil)、Español、Italiano、Nederlands、Русский、Türkçe、Polski、Bahasa Indonesia、Tiếng Việt、ไทย、हिन्दी、العربية など。',
 		languageSwitcherTitle: 'サイト言語',

@@ -255,7 +255,7 @@ export const ptBrHomeLocale = {
 		appStoreLabel: 'App Store',
 		videoLabel: 'Demonstração em vídeo',
 		legalTitle: 'Legal',
-		supportedLanguagesTitle: 'Idiomas compatíveis',
+		supportedLanguagesTitle: 'ScrollShot Idiomas compatíveis',
 		supportedLanguagesText:
 			'English, Português (Brasil), 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Italiano, Nederlands, Русский, Türkçe, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, हिन्दी, العربية e mais.',
 		languageSwitcherTitle: 'Idiomas do site',
