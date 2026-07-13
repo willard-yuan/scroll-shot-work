@@ -6,7 +6,6 @@ category: "Kỹ thuật chuyên sâu"
 author: "Đội ngũ ScrollShot"
 tags: ["ảnh chụp màn hình dài iOS", "thuật toán ghép ảnh", "template matching", "NCC", "engine ScrollShot", "ghép quay màn hình"]
 readingTime: "15 phút đọc"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_vi.webp"
 coverAlt: "Pipeline 6 bước của engine stitching ScrollShot: từ quay màn hình đến ảnh dài"
 translationKey: "ios-stitching-engine-v2"

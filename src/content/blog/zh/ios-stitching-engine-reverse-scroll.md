@@ -6,7 +6,6 @@ category: "技术深潜"
 author: "ScrollShot 团队"
 tags: ["iOS 长截图", "截图拼接算法", "反向滚动", "滚动方向检测", "ScrollShot 引擎", "录屏拼接"]
 readingTime: "6 分钟阅读"
-featured: false
 cover: "/ios_stitching_engine_reverse_scroll_framework_zh.webp"
 coverAlt: "ScrollShot 反向模板匹配示意图：从新帧顶部取模板，去旧帧底部搜索偏移"
 translationKey: "ios-stitching-engine-reverse-scroll"

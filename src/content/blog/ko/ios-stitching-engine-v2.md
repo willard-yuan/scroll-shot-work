@@ -6,7 +6,6 @@ category: "기술 심층 분석"
 author: "ScrollShot 팀"
 tags: ["iOS 긴 스크린샷", "스크린샷 합성 알고리즘", "템플릿 매칭", "NCC", "ScrollShot 엔진", "화면 녹화 합성"]
 readingTime: "15분 읽기"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_kr.webp"
 coverAlt: "ScrollShot 합성 엔진 6단계 파이프라인: 화면 녹화에서 긴 이미지까지"
 translationKey: "ios-stitching-engine-v2"

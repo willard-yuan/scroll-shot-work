@@ -6,7 +6,6 @@ category: "技術深掘り"
 author: "ScrollShotチーム"
 tags: ["iOS 長いスクリーンショット", "スクリーンショット結合アルゴリズム", "テンプレートマッチング", "NCC", "ScrollShotエンジン", "画面収録結合"]
 readingTime: "15分で読めます"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_jp.webp"
 coverAlt: "ScrollShot結合エンジンの6段階パイプライン：画面収録から長い画像まで"
 translationKey: "ios-stitching-engine-v2"

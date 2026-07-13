@@ -13,8 +13,8 @@ interface Props {
 
 const { page, posts } = Astro.props;
 const home = page.home;
-const featured = posts.find((post) => post.featured) ?? posts[0];
-const recentPosts = posts.filter((post) => post !== featured);
+const featured = posts[0];
+const recentPosts = posts.slice(1);
 const navLinks = getBlogNavLinks(page.locale, 'index');
 const homeHref = getBlogHomeHref(page.locale, 'index');
 const dateLocale =
@@ -46,6 +46,11 @@ const formatDate = (date: string) =>
 		month: 'long',
 		day: 'numeric',
 	}).format(new Date(`${date}T00:00:00`));
+
+const truncateText = (text: string, maxLength: number) => {
+	if (text.length <= maxLength) return text;
+	return text.slice(0, maxLength) + '…';
+};
 ---
 
 <Layout
@@ -121,9 +126,9 @@ const formatDate = (date: string) =>
 											<time datetime={post.date}>{formatDate(post.date)}</time>
 											<span>{post.readingTime}</span>
 										</div>
-										<h3>{post.title}</h3>
-										<p>{post.description}</p>
-										<span class="blog-read-link">{page.copy.readArticle}</span>
+									<h3>{post.title}</h3>
+									<p>{truncateText(post.description, 60)}</p>
+									<span class="blog-read-link">{page.copy.readArticle}</span>
 									</div>
 								</a>
 							))}

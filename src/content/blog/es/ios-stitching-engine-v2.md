@@ -6,7 +6,6 @@ category: "Técnica"
 author: "Equipo de ScrollShot"
 tags: ["captura larga iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de grabación de pantalla"]
 readingTime: "15 min de lectura"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_es.webp"
 coverAlt: "Pipeline del motor de stitching de ScrollShot en seis pasos: de la grabación de pantalla a la imagen larga"
 translationKey: "ios-stitching-engine-v2"

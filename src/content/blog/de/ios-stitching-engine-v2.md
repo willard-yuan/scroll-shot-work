@@ -6,7 +6,6 @@ category: "Technik"
 author: "ScrollShot Team"
 tags: ["iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Template Matching", "NCC", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]
 readingTime: "15 Min. Lesezeit"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_de.webp"
 coverAlt: "ScrollShot Stitching-Engine Sechs-Schritte-Pipeline: von der Bildschirmaufnahme zum langen Bild"
 translationKey: "ios-stitching-engine-v2"

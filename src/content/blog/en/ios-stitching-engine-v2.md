@@ -6,7 +6,6 @@ category: "Deep Dive"
 author: "ScrollShot Team"
 tags: ["iOS long screenshot", "screenshot stitching algorithm", "template matching", "NCC", "ScrollShot engine", "screen recording stitching"]
 readingTime: "15 min read"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_en.webp"
 coverAlt: "ScrollShot stitching engine six-step pipeline: from screen recording to long image"
 translationKey: "ios-stitching-engine-v2"

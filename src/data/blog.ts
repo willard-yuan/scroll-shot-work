@@ -13,7 +13,6 @@ export interface BlogFrontmatter {
 	readingTime: string;
 	cover: string;
 	coverAlt: string;
-	featured?: boolean;
 	translationKey: string;
 }
 

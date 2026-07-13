@@ -6,7 +6,6 @@ category: "Technique"
 author: "Équipe ScrollShot"
 tags: ["capture d'écran longue iOS", "algorithme d'assemblage", "template matching", "NCC", "moteur ScrollShot", "assemblage enregistrement écran"]
 readingTime: "15 min de lecture"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_fr.webp"
 coverAlt: "Pipeline du moteur d'assemblage ScrollShot en six étapes : de l'enregistrement d'écran à l'image longue"
 translationKey: "ios-stitching-engine-v2"

@@ -6,7 +6,6 @@ category: "技術深潛"
 author: "ScrollShot 團隊"
 tags: ["iOS 長截圖", "截圖拼接演算法", "模板比對", "NCC", "ScrollShot 引擎", "錄影拼接"]
 readingTime: "15 分鐘閱讀"
-featured: true
 cover: "/scrollshot_video_to_long_screenshot_workflow_zh_han.webp"
 coverAlt: "ScrollShot 拼接引擎六步處理流程圖：從錄影到長圖"
 translationKey: "ios-stitching-engine-v2"
