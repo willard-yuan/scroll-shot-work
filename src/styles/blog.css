@@ -143,10 +143,9 @@
 	left: 0;
 	bottom: 0;
 	width: 36px;
-	height: 2px;
+	height: 1px;
 	border-radius: 1px;
-	background: var(--mint);
-	opacity: 0.6;
+	background: rgba(255, 255, 255, 0.14);
 }
 
 .blog-featured-copy > p,
@@ -271,7 +270,7 @@
 }
 
 .blog-card-copy p {
-	margin: 14px 0 0;
+	margin: 20px 0 0;
 }
 
 .blog-index-page .blog-hero {
@@ -284,14 +283,14 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	gap: 12px;
-	margin: 0 0 42px;
-	color: #918b95;
-	font-family: var(--serif);
-	font-size: 18px;
-	font-weight: 780;
-	letter-spacing: 0;
+	justify-content: center;
+	gap: 10px;
+	margin: 0 0 30px;
+	color: #9a948a;
+	font-family: var(--sans);
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.01em;
 }
 
 .blog-index-page .blog-breadcrumb a,
@@ -309,14 +308,14 @@
 }
 
 .blog-index-page .blog-hero h1 {
-	max-width: 1320px;
+	max-width: 1160px;
 	margin: 0 auto;
-	font-size: clamp(50px, 4.2vw, 74px);
-	line-height: 1.02;
+	font-size: clamp(44px, 3.8vw, 64px);
+	line-height: 1.12;
 	font-weight: 850;
 	text-align: center;
 	text-wrap: balance;
-	text-shadow: 0 18px 70px rgba(0, 0, 0, 0.46);
+	text-shadow: 0 18px 70px rgba(0, 0, 0, 0.4);
 }
 
 .blog-title-rule {
@@ -328,13 +327,13 @@
 }
 
 .blog-index-page .blog-hero > p:not(.eyebrow) {
-	max-width: 880px;
+	max-width: 680px;
 	margin-top: 0;
-	color: #c4bec9;
-	font-family: var(--serif);
-	font-size: clamp(21px, 1.36vw, 25px);
-	font-weight: 720;
-	line-height: 1.58;
+	color: #a9a39a;
+	font-family: var(--sans);
+	font-size: clamp(16px, 1.05vw, 19px);
+	font-weight: 450;
+	line-height: 1.64;
 }
 
 .blog-index-page .blog-featured {
@@ -414,10 +413,10 @@
 }
 
 .blog-index-page .blog-featured h2 {
-	margin-top: 20px;
-	font-size: clamp(34px, 2.45vw, 44px);
-	line-height: 1.13;
-	font-weight: 840;
+	margin-top: 18px;
+	font-size: clamp(30px, 2.1vw, 38px);
+	line-height: 1.18;
+	font-weight: 820;
 }
 
 .blog-index-page .blog-featured-copy > p {
@@ -431,17 +430,21 @@
 }
 
 .blog-index-page .blog-section-heading {
-	margin-bottom: 40px;
+	margin-bottom: 28px;
 }
 
 .blog-index-page .blog-section-heading h2 {
-	font-size: clamp(34px, 3vw, 46px);
-	font-weight: 830;
+	font-family: var(--sans);
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	color: var(--mint);
 }
 
 .blog-index-page .blog-card-grid {
 	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 44px;
+	gap: 52px;
 }
 
 .blog-index-page .blog-card-grid.blog-card-grid--single {
@@ -495,14 +498,14 @@
 }
 
 .blog-index-page .blog-card-copy {
-	padding: 24px 0 0;
+	padding: 28px 0 0;
 }
 
 .blog-index-page .blog-card h3 {
-	margin-top: 14px;
-	font-size: clamp(25px, 1.95vw, 32px);
-	line-height: 1.08;
-	font-weight: 820;
+	margin-top: 16px;
+	font-size: clamp(20px, 1.45vw, 24px);
+	line-height: 1.22;
+	font-weight: 760;
 }
 
 .blog-index-page .blog-card .blog-meta {
@@ -516,22 +519,33 @@
 	left: 0;
 	bottom: 0;
 	width: 28px;
-	height: 2px;
+	height: 1px;
 	border-radius: 1px;
-	background: var(--mint);
-	opacity: 0.45;
+	background: rgba(255, 255, 255, 0.14);
 }
 
 .blog-index-page .blog-card-copy p {
-	color: #9f99a5;
+	color: #a39ea8;
 	font-family: var(--serif);
 	font-size: 18px;
-	font-weight: 650;
-	line-height: 1.58;
+	font-weight: 620;
+	line-height: 1.68;
 }
 
 .blog-index-page .blog-card .blog-read-link {
-	margin-top: 20px;
+	margin-top: 22px;
+}
+
+.blog-index-page .blog-read-link {
+	color: rgba(230, 223, 212, 0.62);
+	transition:
+		gap 300ms ease-in-out,
+		color 220ms ease;
+}
+
+.blog-index-page .blog-featured-card:hover .blog-read-link,
+.blog-index-page .blog-card:hover .blog-read-link {
+	color: var(--mint);
 }
 
 .blog-empty {
@@ -542,7 +556,7 @@
 }
 
 .blog-post {
-	max-width: 880px;
+	max-width: 720px;
 	margin: 0 auto;
 }
 
@@ -594,7 +608,8 @@
 .blog-post-meta {
 	justify-content: flex-start;
 	margin-top: 0;
-	color: #777268;
+	color: #a39d92;
+	font-size: 14px;
 }
 
 .blog-post-meta .meta-item {
@@ -635,8 +650,10 @@
 .blog-prose {
 	color: #d6d0c6;
 	font-family: var(--article);
-	font-size: 20px;
-	line-height: 1.78;
+	font-size: 18px;
+	line-height: 1.8;
+	overflow-wrap: break-word;
+	word-break: break-word;
 }
 
 .blog-prose > * {
@@ -657,17 +674,19 @@
 }
 
 .blog-prose h2 {
-	margin-top: 56px;
-	margin-bottom: 16px;
-	font-size: 38px;
-	line-height: 1.12;
+	margin-top: 44px;
+	margin-bottom: 14px;
+	font-size: 32px;
+	line-height: 1.2;
+	text-wrap: balance;
 }
 
 .blog-prose h3 {
-	margin-top: 38px;
-	margin-bottom: 12px;
-	font-size: 28px;
-	line-height: 1.18;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 24px;
+	line-height: 1.26;
+	text-wrap: balance;
 }
 
 .blog-prose a {
@@ -686,7 +705,7 @@
 }
 
 .blog-prose li + li {
-	margin-top: 10px;
+	margin-top: 14px;
 }
 
 .blog-prose blockquote {
@@ -694,6 +713,32 @@
 	padding: 10px 0 10px 24px;
 	color: #f1eee8;
 	background: linear-gradient(90deg, rgba(104, 217, 139, 0.075), transparent 62%);
+}
+
+.blog-prose pre {
+	margin: 0 0 28px;
+	padding: 18px 20px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.04);
+	overflow-x: auto;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.blog-prose pre code {
+	border: 0;
+	padding: 0;
+	background: none;
+	color: #e8e2d6;
+	font-size: inherit;
+}
+
+.blog-prose > p:first-of-type {
+	font-size: 1.12em;
+	line-height: 1.74;
+	color: #e6e0d6;
 }
 
 .blog-prose .blog-demo,
@@ -866,16 +911,18 @@
 	}
 
 	.blog-prose {
-		font-size: 18px;
-		line-height: 1.72;
+		font-size: 17px;
+		line-height: 1.74;
 	}
 
 	.blog-prose h2 {
-		font-size: 31px;
+		font-size: 27px;
+		line-height: 1.2;
 	}
 
 	.blog-prose h3 {
-		font-size: 24px;
+		font-size: 21px;
+		line-height: 1.26;
 	}
 
 	.blog-post-footer {
@@ -922,8 +969,9 @@
 	}
 
 	.blog-index-page .blog-breadcrumb {
-		margin-bottom: 30px;
-		font-size: 15px;
+		justify-content: center;
+		margin-bottom: 26px;
+		font-size: 13px;
 	}
 
 	.blog-index-page .blog-breadcrumb span:last-child {
@@ -992,7 +1040,7 @@
 	}
 
 	.blog-index-page .blog-card h3 {
-		font-size: 30px;
+		font-size: 26px;
 	}
 
 	.blog-index-page .blog-card-copy p {
