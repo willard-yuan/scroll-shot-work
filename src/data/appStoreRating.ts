@@ -4,21 +4,21 @@ export const appStoreRatings = {
 	"zh": {
 		"appId": "6760192003",
 		"country": "cn",
-		"average": 4.59755,
+		"average": 4.60606,
 		"averageDisplay": "4.6",
-		"count": 82,
-		"countDisplay": "82 个评分",
+		"count": 99,
+		"countDisplay": "99 个评分",
 		"source": "https://itunes.apple.com/lookup?id=6760192003&country=cn",
-		"updatedAt": "2026-06-04T02:19:45.535Z"
+		"updatedAt": "2026-07-16T14:18:23.262Z"
 	},
 	"ja": {
 		"appId": "6760192003",
 		"country": "jp",
-		"average": 5,
-		"averageDisplay": "5.0",
-		"count": 1,
-		"countDisplay": "1件の評価",
+		"average": 3,
+		"averageDisplay": "3.0",
+		"count": 2,
+		"countDisplay": "2件の評価",
 		"source": "https://itunes.apple.com/lookup?id=6760192003&country=jp",
-		"updatedAt": "2026-06-04T02:19:45.692Z"
+		"updatedAt": "2026-07-16T14:18:23.486Z"
 	}
 } as const;
