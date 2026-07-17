@@ -1275,6 +1275,60 @@
 	letter-spacing: 0.01em;
 }
 
+.footer-contact {
+	margin-top: 52px;
+	padding-top: 42px;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-contact h3 {
+	position: relative;
+	margin-bottom: 22px;
+	padding-bottom: 12px;
+}
+
+.footer-contact h3::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 48px;
+	height: 3px;
+	border-radius: 2px;
+	background: var(--mint);
+}
+
+.footer-contact-lines {
+	display: grid;
+	gap: 10px;
+}
+
+.footer-contact-lines p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.footer-contact-lines span {
+	color: var(--soft);
+}
+
+.footer-contact-lines a {
+	color: var(--ink);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-color: rgba(255, 255, 255, 0.2);
+	transition:
+		color 160ms ease,
+		text-decoration-color 160ms ease;
+}
+
+.footer-contact-lines a:hover {
+	color: var(--mint);
+	text-decoration-color: var(--mint);
+}
+
 @media (max-width: 1080px) {
 	.hero {
 		grid-template-columns: 1fr;

@@ -229,6 +229,9 @@ export const jaHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'お問い合わせ',
+		contactEmailLabel: 'メール：',
+		contactSupportHoursLabel: '対応時間：',
 		brandHome: 'ScrollShot ホーム',
 		note: 'ScrollShotは、画面収録からの自動合成、手動結合、結果の微調整、画像保存、PDF共有に対応したiOS向け長いスクリーンショットツールです。',
 		productTitle: 'プロダクト',

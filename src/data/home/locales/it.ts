@@ -245,6 +245,9 @@ export const itHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'Contatto',
+		contactEmailLabel: 'Email:',
+		contactSupportHoursLabel: 'Orari di assistenza:',
 		brandHome: 'Home di ScrollShot',
 		note: 'ScrollShot è uno strumento iOS per screenshot lunghi con unione automatica dalle registrazioni, unione manuale, regolazione fine del risultato, salvataggio immagini e condivisione PDF.',
 		productTitle: 'Prodotto',

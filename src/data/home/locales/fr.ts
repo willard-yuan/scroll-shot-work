@@ -245,6 +245,9 @@ export const frHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'Contact',
+		contactEmailLabel: 'E-mail :',
+		contactSupportHoursLabel: "Heures d'assistance :",
 		brandHome: 'Accueil ScrollShot',
 		note: 'ScrollShot est un outil iOS de capture d’écran longue avec assemblage automatique depuis les enregistrements, assemblage manuel, ajustement du résultat, enregistrement d’images et partage PDF.',
 		productTitle: 'Produit',

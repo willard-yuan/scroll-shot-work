@@ -245,6 +245,9 @@ export const ptBrHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'Contato',
+		contactEmailLabel: 'E-mail:',
+		contactSupportHoursLabel: 'Horário de atendimento:',
 		brandHome: 'Início do ScrollShot',
 		note: 'O ScrollShot é uma ferramenta de print longo para iOS com montagem automática por gravação, montagem manual, ajuste fino do resultado, salvamento de imagens e compartilhamento em PDF.',
 		productTitle: 'Produto',

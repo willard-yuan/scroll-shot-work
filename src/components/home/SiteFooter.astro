@@ -24,6 +24,9 @@ interface Props {
 		appStoreLabel: string;
 		videoLabel: string;
 		legalTitle: string;
+		contactTitle: string;
+		contactEmailLabel: string;
+		contactSupportHoursLabel: string;
 		supportedLanguagesTitle?: string;
 		supportedLanguagesText?: string;
 		languageSwitcherTitle?: string;
@@ -59,6 +62,20 @@ const { icon, appStoreUrl, video, homeHref = '', brandHref, legalLinks, content 
 				<h3>{content.legalTitle}</h3>
 				{legalLinks.map((link) => <a href={link.href}>{link.label}</a>)}
 			</div>
+		</div>
+	</div>
+
+	<div class="footer-contact">
+		<h3>{content.contactTitle}</h3>
+		<div class="footer-contact-lines">
+			<p>
+				<span>{content.contactEmailLabel}</span>
+				<a href="mailto:aiflow1024@gmail.com">aiflow1024@gmail.com</a>
+			</p>
+			<p>
+				<span>{content.contactSupportHoursLabel}</span>
+				Mon-Fri, 9AM-5PM EST
+			</p>
 		</div>
 	</div>
 

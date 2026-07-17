@@ -247,6 +247,9 @@ export const enHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'Contact',
+		contactEmailLabel: 'Email:',
+		contactSupportHoursLabel: 'Support Hours:',
 		brandHome: 'ScrollShot home',
 		note: 'ScrollShot is an iOS long screenshot tool with automatic recording-based stitching, manual stitching, result fine tuning, image saving, and PDF sharing.',
 		productTitle: 'Product',

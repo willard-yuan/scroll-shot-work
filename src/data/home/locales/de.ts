@@ -245,6 +245,9 @@ export const deHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'Kontakt',
+		contactEmailLabel: 'E-Mail:',
+		contactSupportHoursLabel: 'Support-Zeiten:',
 		brandHome: 'ScrollShot Startseite',
 		note: 'ScrollShot ist ein iOS-Tool für lange Screenshots mit automatischem Stitching aus Bildschirmaufnahmen, manuellem Stitching, Feinanpassung, Bildspeicherung und PDF-Teilen.',
 		productTitle: 'Produkt',

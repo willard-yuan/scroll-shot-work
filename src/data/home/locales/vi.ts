@@ -245,6 +245,9 @@ export const viHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: 'Liên hệ',
+		contactEmailLabel: 'Email:',
+		contactSupportHoursLabel: 'Giờ hỗ trợ:',
 		brandHome: 'Trang chủ ScrollShot',
 		note: 'ScrollShot là công cụ chụp màn hình dài cho iOS, hỗ trợ tự động ghép từ bản ghi màn hình, ghép thủ công, tinh chỉnh kết quả, lưu ảnh và chia sẻ PDF.',
 		productTitle: 'Sản phẩm',

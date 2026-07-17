@@ -229,6 +229,9 @@ export const koHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: '문의',
+		contactEmailLabel: '이메일：',
+		contactSupportHoursLabel: '운영 시간：',
 		brandHome: 'ScrollShot 홈',
 		note: 'ScrollShot은 화면 녹화 기반 자동 합성, 수동 이어붙이기, 결과 미세 조정, 이미지 저장, PDF 공유를 지원하는 iOS용 긴 스크린샷 도구입니다.',
 		productTitle: '제품',

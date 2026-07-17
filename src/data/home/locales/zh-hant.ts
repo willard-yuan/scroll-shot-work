@@ -229,6 +229,9 @@ export const zhHantHomeLocale = {
 		],
 	},
 	footer: {
+		contactTitle: '聯絡我們',
+		contactEmailLabel: '電郵：',
+		contactSupportHoursLabel: '服務時間：',
 		brandHome: 'ScrollShot 首頁',
 		note: 'ScrollShot 是 iOS 長截圖工具，支援錄影自動拼接、手動拼接、結果微調、圖片保存與 PDF 分享。',
 		productTitle: '產品',
