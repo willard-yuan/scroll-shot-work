@@ -1,0 +1,255 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="Costura com rolagem inversa" id="reverse-scroll-stitching">
+    <mxGraphModel dx="1170" dy="883" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1019" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b style=&quot;font-size: 26px;&quot;&gt;Algoritmo de costura com rolagem inversa&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=26;" parent="1" vertex="1">
+          <mxGeometry x="469" y="21" width="322" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="sec1" value="&lt;b style=&quot;font-size:15px;color:#1a73e8;&quot;&gt;① Detecção de direção: detectar que o usuário está rolando para cima&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="62" width="420" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_top" value="&lt;b&gt;Frames capturados brutos (rolagem para cima · o conteúdo flui para trás)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="67" y="92" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_top" value="&lt;b&gt;Fluxo de detecção de direção&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="470" y="96" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="f1_box" value="&lt;div style=&quot;display:flex;align-items:center;gap:8px;&quot;&gt;&lt;b&gt;🎞️ F₁&lt;/b&gt; &lt;span style=&quot;color:#888;font-size:11px;&quot;&gt;Final da página&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="128" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="f2_box" value="&lt;div style=&quot;display:flex;align-items:center;gap:8px;&quot;&gt;&lt;b&gt;🎞️ F₂&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="184" width="280" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="f3_box" value="&lt;div style=&quot;display:flex;align-items:center;gap:8px;&quot;&gt;&lt;b&gt;🎞️ F₃&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="236" width="280" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="dots_up" value="⋮ ⋮ ⋮" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="282" width="60" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="fn_box" value="&lt;div style=&quot;display:flex;align-items:center;gap:8px;&quot;&gt;&lt;b&gt;🎞️ Fₙ&lt;/b&gt; &lt;span style=&quot;color:#e65100;font-size:11px;&quot;&gt;Início da página&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e65100;arcSize=16;shadow=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="314" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_frames_down" value="O conteúdo flui para trás ↑" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#e65100;strokeWidth=1.5;dashed=1;labelBackgroundColor=none;fontColor=#e65100;fontSize=10;" parent="1" source="fn_box" target="f1_box" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="338" y="337" />
+              <mxPoint x="338" y="151" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sample_para" value="Amostragem da seção média ~7 pares de frames adjacentes&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#666;&quot;&gt;(intervalo de amostragem 0,18–0,82, pular início/fim)&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;size=12;arcSize=6;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="458" y="126" width="215" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_to_sample" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1.2;" parent="1" source="f3_box" target="sample_para" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="397" y="257" />
+              <mxPoint x="397" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="matcher_twice" value="&lt;b&gt;Executar o mesmo matcher duas vezes com parâmetros trocados&lt;/b&gt;&lt;br&gt;&lt;div style=&quot;font-size:11px;margin-top:4px;text-align:left;&quot;&gt;down = score(prev→curr) → offset &gt; 0 ? ✅ / ❌&lt;br&gt;up   = score(curr→prev) → offset &gt; 0 ? ✅ / ❌&lt;br&gt;&lt;span style=&quot;color:#888;&quot;&gt;(o critério é qual chamada é válida, não a simetria da pontuação)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;arcSize=10;shadow=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="425" y="206" width="265" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_sample_matcher" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1.2;" parent="1" source="sample_para" target="matcher_twice" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="557" y="200" />
+              <mxPoint x="557" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vote_para" value="Decisão por votação&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#444;&quot;&gt;upVotes ≥ downVotes + 2&lt;br&gt;e upScore ≥ downScore × 1,25&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;size=12;arcSize=6;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="786" y="122" width="195" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_matcher_vote" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=1.2;" parent="1" source="matcher_twice" target="vote_para" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="verdict_label" value="✅ Veredito: rolando para cima" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;arcSize=20;shadow=1;fontStyle=1;fontSize=13;fontColor=#155724;" parent="1" vertex="1">
+          <mxGeometry x="455" y="322" width="185" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_vote_verdict" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#28a745;strokeWidth=1.5;" parent="1" source="vote_para" target="verdict_label" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="993" y="153" />
+              <mxPoint x="993" y="337" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conf_note" value="&lt;span style=&quot;font-size:10px;color:#888;&quot;&gt;Confirmar somente se confiança ≥ 0,72 e amostras válidas ≥ 3; caso contrário, perguntar ao usuário&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=0;strokeColor=none;fillColor=none;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="430" y="369" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="reverse_op" value="&lt;b&gt;🔄 reversedForStitching()&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#555;&quot;&gt;inverter ordem + renumerar&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe0b2;strokeColor=#e65100;size=14;arcSize=6;shadow=1;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="423" y="416" width="250" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_verdict_reverse" value="Se rola para cima → inverter" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#e65100;strokeWidth=1.8;labelBackgroundColor=#fff3e0;fontColor=#e65100;fontSize=10;" parent="1" source="verdict_label" target="reverse_op" edge="1">
+          <mxGeometry x="-0.5714" y="16" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sec2" value="&lt;b style=&quot;font-size:15px;color:#1a73e8;&quot;&gt;② Reutilizar o mesmo motor (idêntico ao modo de cima para baixo)&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="439" width="520" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="col1_bot" value="&lt;b&gt;Ordem de frames invertida (o conteúdo flui para frente)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="40" y="498" width="280" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="col2_bot" value="&lt;b&gt;Costura (reutilizar motor v2)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="306" y="490" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="col3_bot" value="&lt;b&gt;Novo frame (img₂)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="897" y="470" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="rfn_box" value="&lt;div style=&quot;display:flex;align-items:center;gap:8px;&quot;&gt;&lt;b&gt;🎞️ Fₙ&#39;&lt;/b&gt; &lt;span style=&quot;color:#2e7d32;font-size:11px;&quot;&gt;← Fₙ original, início da página&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#4caf50;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="527" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="rf3_box" value="&lt;div style=&quot;display: flex ; align-items: center&quot;&gt;&lt;b&gt;🎞️ F₃&#39;&lt;/b&gt; &lt;span style=&quot;font-size: 10px&quot;&gt;← F₃ original&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="588" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rf2_box" value="&lt;div style=&quot;display: flex ; align-items: center&quot;&gt;&lt;b&gt;🎞️ F₂&#39;&lt;/b&gt; &lt;span style=&quot;font-size: 10px&quot;&gt;← F₂ original&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="636" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="rf1_box" value="&lt;div style=&quot;display:flex;align-items:center;gap:8px;&quot;&gt;&lt;b&gt;🎞️ F₁&#39;&lt;/b&gt; &lt;span style=&quot;color:#2e7d32;font-size:11px;&quot;&gt;← F₁ original, final da página&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#4caf50;arcSize=16;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="684" width="280" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_reversed_flow" value="O conteúdo flui para frente ↓" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4caf50;strokeWidth=1.5;labelBackgroundColor=none;fontColor=#4caf50;fontSize=10;" parent="1" source="rfn_box" target="rf1_box" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="338" y="557" />
+              <mxPoint x="338" y="707" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_reverse_to_rfn" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#e65100;strokeWidth=1.8;dashed=1;" parent="1" source="reverse_op" target="rfn_box" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="548" y="497" />
+              <mxPoint x="200" y="497" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="header_ignore" value="headerIgnore" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;size=10;arcSize=8;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="537" y="506" width="130" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="preprocess" value="Amostragem equidistante de frames + refinamento de nitidez" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;arcSize=14;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="527" y="565" width="155" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="match_template" value="Corresponder modelo" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;size=10;arcSize=8;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="477" y="616" width="95" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="search_label" value="Buscar" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;size=10;arcSize=8;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="493" y="678" width="72" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="search_register" value="🔍 Buscar &amp;amp; Registrar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;arcSize=14;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="587" y="614" width="125" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="search_range" value="Intervalo de busca" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;size=10;arcSize=8;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="741" y="616" width="95" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="footer_ignore" value="footerIgnore" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;size=10;arcSize=8;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="469.5" y="742" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="img2_header" value="🎬 Barra de status / Navegação" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="887" y="506" width="180" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="img2_new_content" value="◆ Novo conteúdo A&lt;br&gt;◆ Novo conteúdo B&lt;br&gt;◆ Novo conteúdo C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;arcSize=14;shadow=1;fontSize=11;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="887" y="548" width="180" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="img2_old_content" value="Conteúdo antigo ..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=14;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="887" y="630" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="img2_found" value="Encontrado aqui! ✅" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;dashed=1;arcSize=14;fontSize=11;fontStyle=1;fontColor=#2e7d32;" parent="1" vertex="1">
+          <mxGeometry x="899" y="682" width="156" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="img2_tabbar" value="⊞ Tab Bar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;arcSize=16;shadow=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="887" y="720" width="180" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="offset_result" value="🔍 Deslocamento registrado (offset)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cc0000;arcSize=16;shadow=1;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="637" y="698" width="180" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="stitch_output" value="⚙️ Aplicar costura → Imagem longa correta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;arcSize=16;shadow=1;fontSize=11;fontStyle=1;fontColor=#b71c1c;" parent="1" vertex="1">
+          <mxGeometry x="887" y="764" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_hdr_l" value="Match params" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1;" parent="1" source="header_ignore" target="match_template" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="501" y="522" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_hdr_r" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1;" parent="1" source="header_ignore" target="img2_header" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_preprocess_r" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=1;" parent="1" source="preprocess" target="img2_new_content" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_match_old" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=1.2;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="match_template" target="rf3_box" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="486" y="622" />
+              <mxPoint x="451" y="622" />
+              <mxPoint x="451" y="660" />
+              <mxPoint x="374" y="660" />
+              <mxPoint x="374" y="608" />
+            </Array>
+            <mxPoint x="482" y="620" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_search_reg" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;strokeWidth=1;exitX=0.903;exitY=0.679;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="search_label" target="search_register" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="697" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_search_range" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1;" parent="1" source="search_register" target="search_range" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_range_new" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1;" parent="1" source="search_range" target="img2_old_content" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr_ftr_l" value="Match params" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="footer_ignore" target="match_template" edge="1">
+          <mxGeometry x="-0.2633" y="16" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="469" y="757" />
+              <mxPoint x="469" y="632" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_ftr_r" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#6c8ebf;strokeWidth=1;" parent="1" source="footer_ignore" target="img2_tabbar" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="843" y="757" />
+              <mxPoint x="843" y="737" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_red_out1" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#cc0000;strokeWidth=1.5;" parent="1" source="search_register" target="offset_result" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="649" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_red_out2" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#cc0000;strokeWidth=1.5;" parent="1" source="img2_found" target="stitch_output" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1093" y="697" />
+              <mxPoint x="1093" y="781" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arr_red_out3" value="" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#cc0000;strokeWidth=1.5;" parent="1" source="offset_result" target="stitch_output" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="857" y="716" />
+              <mxPoint x="857" y="781" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
