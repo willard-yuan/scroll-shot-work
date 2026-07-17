@@ -1292,10 +1292,19 @@
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	width: 48px;
+	width: 0;
 	height: 3px;
 	border-radius: 2px;
 	background: var(--mint);
+	opacity: 0;
+	transition:
+		width 220ms ease,
+		opacity 180ms ease;
+}
+
+.footer-contact:hover h3::after {
+	width: 48px;
+	opacity: 1;
 }
 
 .footer-contact-lines {
