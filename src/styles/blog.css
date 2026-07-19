@@ -635,8 +635,8 @@
 	margin: 52px 0 46px;
 	overflow: hidden;
 	border: 1px solid var(--line);
-	border-radius: 8px;
-	padding: 28px;
+	border-radius: 12px;
+	padding: 26px;
 }
 
 .blog-post-cover img {
@@ -694,6 +694,12 @@
 	text-decoration-thickness: 1px;
 	text-underline-offset: 4px;
 }
+
+.blog-prose a:hover {
+	color: var(--mint);
+	text-decoration-color: var(--mint);
+}
+
 
 .blog-prose strong {
 	color: var(--ink);
