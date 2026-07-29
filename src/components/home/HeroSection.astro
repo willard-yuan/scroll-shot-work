@@ -10,6 +10,8 @@ interface Props {
 		text: string;
 		primaryCta: string;
 		secondaryCta: string;
+		secondaryCtaHref?: string;
+		secondaryCtaApple?: boolean;
 		videoAria: string;
 		videoLabel: string;
 		caption: string;
@@ -23,6 +25,8 @@ interface Props {
 }
 
 const { appStoreUrl, video, videoCover, content } = Astro.props;
+const secondaryHref = content.secondaryCtaHref || video;
+const secondaryIsDark = Boolean(content.secondaryCtaApple);
 ---
 
 <section class="hero" id="top">
@@ -36,7 +40,8 @@ const { appStoreUrl, video, videoCover, content } = Astro.props;
 				<span class="apple-mark" aria-hidden="true"></span>
 				{content.primaryCta}
 			</a>
-			<a class="button button-ghost button-lg" href={video} target="_blank" rel="noopener noreferrer">
+			<a class={`button button-lg ${secondaryIsDark ? 'button-dark' : 'button-ghost'}`} href={secondaryHref} target="_blank" rel="noopener noreferrer">
+				{content.secondaryCtaApple && <span class="apple-mark apple-mark-light" aria-hidden="true"></span>}
 				{content.secondaryCta}
 			</a>
 		</div>

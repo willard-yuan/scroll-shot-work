@@ -467,6 +467,12 @@
 	background: rgba(255, 255, 255, 0.02);
 }
 
+.button-dark {
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	color: #f8f8f4;
+	background: rgba(255, 255, 255, 0.05);
+}
+
 .button-mint {
 	background: var(--mint);
 	color: #08120c;
@@ -503,6 +509,10 @@
 	height: 6px;
 	border-radius: 50%;
 	background: #f8f8f4;
+}
+
+.apple-mark-light::after {
+	background: #0c0d0d;
 }
 
 .hero-device-link {
@@ -1079,7 +1089,7 @@
 }
 
 .pricing-grid {
-	max-width: 820px;
+	max-width: 920px;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1087,9 +1097,13 @@
 }
 
 .price-card {
-	min-height: 420px;
-	padding: 36px;
-	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	min-height: 480px;
+	padding: 34px;
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(255, 255, 255, 0.045);
 }
 
 .price-card.featured {
@@ -1097,54 +1111,114 @@
 	box-shadow: 0 0 80px rgba(104, 217, 139, 0.08);
 }
 
-.price-card p {
-	margin: 0 0 26px;
-	color: var(--muted);
-	font-family: var(--serif);
+.price-card-header {
+	margin-bottom: 32px;
 }
 
-.price-card h3 {
+.price-card-device {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 24px;
+}
+
+.price-card-apple {
+	width: 18px;
+	height: 22px;
+	color: var(--ink);
+	flex-shrink: 0;
+}
+
+.price-card-device-name {
+	color: var(--ink);
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.price-card-badge {
+	padding: 4px 10px;
+	border-radius: 999px;
+	border: 1px solid rgba(104, 217, 139, 0.45);
+	color: var(--mint);
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.price-card-price {
 	margin: 0;
 	color: var(--ink);
 	font-family: var(--serif);
-	font-size: 46px;
+	font-size: 52px;
 	line-height: 1.05;
-	letter-spacing: 0;
+	letter-spacing: -0.02em;
 }
 
-.price-card.featured h3 {
+.price-card-price.price-free {
 	color: var(--mint);
 }
 
-.price-card > div > span {
-	display: block;
-	margin-top: 12px;
-	color: #d2ccc1;
+.price-card-subtitle {
+	margin: 14px 0 0;
+	color: #b8b2a8;
+	font-size: 17px;
+	line-height: 1.45;
 }
 
-.price-card ul {
+.price-card-features {
 	display: grid;
 	gap: 18px;
-	margin: 34px 0 0;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 	color: #c9c4bb;
 }
 
-.price-card li {
+.price-card-features li {
 	position: relative;
 	padding-left: 28px;
 }
 
-.price-card li::before {
+.price-card-features li::before {
 	content: "✓";
 	position: absolute;
 	left: 0;
 	color: var(--mint);
 }
 
-.price-card .button {
-	margin-top: 34px;
+.price-card-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	margin-top: auto;
+	padding: 16px 24px;
+	border-radius: 12px;
+	font-size: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.price-card-button:hover {
+	transform: translateY(-1px);
+}
+
+.price-card-button-light {
+	background: #f8f8f4;
+	color: #0c0d0d;
+}
+
+.price-card-button-dark {
+	background: rgba(255, 255, 255, 0.05);
+	color: var(--ink);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.price-card-button-apple {
+	width: 18px;
+	height: 22px;
+	flex-shrink: 0;
 }
 
 .pricing-note {
@@ -1296,6 +1370,17 @@
 	height: 3px;
 	border-radius: 2px;
 	background: var(--mint);
+	opacity: 0;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition:
+		opacity 220ms ease,
+		transform 220ms ease;
+}
+
+.footer-contact:hover h3::after {
+	opacity: 1;
+	transform: scaleX(1);
 }
 
 .footer-contact-lines {
@@ -1667,6 +1752,12 @@
 
 	.price-card {
 		min-height: 0;
+		padding: 26px;
+		border-radius: 16px;
+	}
+
+	.price-card-price {
+		font-size: 42px;
 	}
 
 	.scene-card {
