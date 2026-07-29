@@ -74,7 +74,7 @@ export const enHomeLocale = {
 		pricing: {
 			kicker: 'Pricing',
 			title: 'Simple, transparent pricing',
-			description: 'Manual stitching is free. Pro unlocks automatic recording-based stitching, video stitching, all themes, and future advanced features.',
+			description: 'Mac is free to use. Pro unlocks automatic recording-based stitching, video stitching, all themes, and future advanced features.',
 		},
 		faq: {
 			kicker: 'FAQ',

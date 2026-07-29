@@ -36,7 +36,9 @@ export const itHomeLocale = {
 		text:
 			'Salva chat, pagine web, articoli e schermate di app come immagini lunghe e nitide. ScrollShot unisce registrazioni e screenshot per esportare l’intero contenuto in alta qualità.',
 		primaryCta: 'Scarica per iOS',
-		secondaryCta: 'Guarda la demo',
+		secondaryCta: 'Prova gratuita su Mac',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'Apri il video dimostrativo di ScrollShot',
 		videoLabel: 'Video dimostrativo di ScrollShot',
 		caption: 'Demo in riproduzione automatica',
@@ -81,7 +83,7 @@ export const itHomeLocale = {
 		pricing: {
 			kicker: 'Prezzi',
 			title: 'Prezzo semplice e trasparente',
-			description: 'L’unione manuale è gratuita. Pro sblocca l’unione automatica dalle registrazioni e tutti i temi. Il prezzo finale è mostrato sull’App Store.',
+			description: 'Mac è gratuito. Pro sblocca l’unione automatica dalle registrazioni, l’unione video, tutti i temi e le funzioni avanzate future.',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -196,17 +198,39 @@ export const itHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: 'Gratis',
-			subtitle: 'Per unioni manuali occasionali',
-			features: ['Unione manuale degli screenshot', 'Selezione e anteprima da Foto', 'Salvataggio di immagini lunghe in Foto', 'Elaborazione immagini sul dispositivo', 'Colori tema di base'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: 'Cattura un\'intera pagina con un tocco',
+			features: [
+				'Sblocca il flusso automatico più veloce',
+				'Unione automatica dalle registrazioni',
+				'Tutti i colori tema',
+				'Funzioni avanzate future',
+				'Elaborazione immagini sul dispositivo',
+			],
+			featured: true,
+			button: {
+				label: 'Ottieni sull\'App Store',
+				href: appStoreUrls.it,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: 'Sblocca il flusso più veloce per screenshot lunghi',
-			features: ['Unione automatica dalle registrazioni', 'Unione da video selezionati', 'Tutti i colori tema', 'Funzioni avanzate future'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: 'Cattura un\'intera pagina con un tocco',
+			features: [
+				'Cattura scroll auto-assemblata — fino a 30.000 px',
+				'OCR + traduzione in 30+ lingue, sul posto',
+				'19+ strumenti di annotazione, tutti nativi',
+				'Registra e modifica video senza uscire dall\'app',
+			],
+			badge: 'Prova gratuita',
+			button: {
+				label: 'Scarica la versione di prova gratuita',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'I prezzi esatti di Pro, le opzioni di abbonamento o di acquisto definitivo sono mostrati sull\'App Store. Puoi iniziare con l\'unione manuale gratuita prima di aggiornare.',

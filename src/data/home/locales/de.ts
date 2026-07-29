@@ -36,7 +36,9 @@ export const deHomeLocale = {
 		text:
 			'Speichere Chats, Webseiten, Artikel und App-Ansichten als saubere lange Screenshots. ScrollShot fügt Aufnahmen und Fotos zusammen und exportiert vollständige Inhalte in hoher Qualität.',
 		primaryCta: 'Für iOS laden',
-		secondaryCta: 'Demo ansehen',
+		secondaryCta: 'Kostenlos auf Mac testen',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'ScrollShot Demo-Video öffnen',
 		videoLabel: 'ScrollShot Demo-Video',
 		caption: 'Demo wird automatisch abgespielt',
@@ -81,7 +83,7 @@ export const deHomeLocale = {
 		pricing: {
 			kicker: 'Preise',
 			title: 'Einfach und transparent',
-			description: 'Manuelles Stitching ist kostenlos. Pro schaltet automatisches Stitching aus Bildschirmaufnahmen und alle Designs frei. Der endgültige Preis wird im App Store angezeigt.',
+			description: 'Mac ist kostenlos. Pro schaltet automatisches Stitching aus Bildschirmaufnahmen, Video-Stitching, alle Designs und zukünftige Profi-Funktionen frei.',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -196,17 +198,39 @@ export const deHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: 'Kostenlos',
-			subtitle: 'Für gelegentliches manuelles Stitching',
-			features: ['Screenshots manuell zusammenfügen', 'Auswahl und Vorschau aus Fotos', 'Lange Bilder in Fotos speichern', 'Bildverarbeitung auf dem Gerät'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: 'Eine ganze Seite mit einem Tastendruck erfassen',
+			features: [
+				'Schnellsten automatischen Workflow freischalten',
+				'Automatisches Stitching aus Aufnahmen',
+				'Alle Designfarben',
+				'Künftige Profi-Funktionen',
+				'Bildverarbeitung auf dem Gerät',
+			],
+			featured: true,
+			button: {
+				label: 'Im App Store erhältlich',
+				href: appStoreUrls.de,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: 'Für den schnellsten Workflow für lange Screenshots',
-			features: ['Automatisches Stitching aus Aufnahmen', 'Stitching aus ausgewählten Videos', 'Alle Designfarben', 'Zukünftige Profi-Funktionen'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: 'Eine ganze Seite mit einem Tastendruck erfassen',
+			features: [
+				'Automatisch gestitchte Scroll-Captures — bis 30.000px',
+				'OCR + Übersetzung in 30+ Sprachen, direkt vor Ort',
+				'19+ Anmerkungswerkzeuge, alle nativ',
+				'Video aufnehmen & bearbeiten, ohne die App zu verlassen',
+			],
+			badge: 'Kostenlos testen',
+			button: {
+				label: 'Kostenlose Testversion herunterladen',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Die genauen Pro-Preise, Abo- oder Kaufoptionen werden im App Store angezeigt. Du kannst mit kostenlosem manuellem Stitching beginnen, bevor du ein Upgrade machst.',

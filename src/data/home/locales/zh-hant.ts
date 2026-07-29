@@ -36,7 +36,9 @@ export const zhHantHomeLocale = {
 		text:
 			'讓 iPhone 長截圖更簡單。無論是保存聊天紀錄、網頁內容、文章還是 App 頁面，ScrollShot 都能幫你快速產生清晰完整的長圖。',
 		primaryCta: '下載 iOS 版',
-		secondaryCta: '觀看中文示範',
+		secondaryCta: '免費試用 Mac 版',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: '開啟 ScrollShot 中文影片示範',
 		videoLabel: 'ScrollShot 中文影片示範',
 		caption: '30 秒看懂自動拼接',
@@ -81,7 +83,7 @@ export const zhHantHomeLocale = {
 		pricing: {
 			kicker: '價格',
 			title: '簡單清楚的價格',
-			description: '手動拼接可免費使用，Pro 解鎖錄影自動拼接與所有主題。實際價格以 App Store 顯示為準。',
+			description: 'Mac 免費使用。Pro 解鎖錄影自動拼接、影片拼接、全部主題和後續高級功能。',
 		},
 		faq: {
 			kicker: '常見問題',
@@ -180,17 +182,39 @@ export const zhHantHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: '免費',
-			subtitle: '先完成基礎長截圖工作流',
-			features: ['手動截圖拼接', '相簿選擇與預覽', '保存長圖到相簿', '本機處理圖片'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: '一鍵截取整個頁面',
+			features: [
+				'解鎖最快速的自動工作流',
+				'錄影內容自動拼接',
+				'全部主題色',
+				'後續進階功能',
+				'圖片本機處理',
+			],
+			featured: true,
+			button: {
+				label: '在 App Store 取得',
+				href: appStoreUrls.zhHant,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: '解鎖最快的長截圖工作流',
-			features: ['錄影自動生成長圖', '選擇影片進行拼接', '全部主題色', '後續進階功能更新'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: '一鍵截取整個頁面',
+			features: [
+				'自動拼接長截圖，最長 30,000 像素',
+				'內建 OCR，支援 30+ 語言就地翻譯',
+				'19+ 標註工具，全部原生',
+				'錄製與剪輯影片，無需離開 App',
+			],
+			badge: '免費試用',
+			button: {
+				label: '下載免費試用版',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Pro 的具體價格、訂閱或買斷形式以 App Store 實際顯示為準；你可以先免費使用手動拼接，再決定是否升級。',

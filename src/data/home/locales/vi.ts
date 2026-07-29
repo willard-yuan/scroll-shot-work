@@ -36,7 +36,9 @@ export const viHomeLocale = {
 		text:
 			'Lưu cuộc trò chuyện, trang web, bài viết và màn hình ứng dụng thành ảnh dài sắc nét. ScrollShot ghép bản ghi màn hình và ảnh chụp để xuất toàn bộ nội dung ở chất lượng cao.',
 		primaryCta: 'Tải cho iOS',
-		secondaryCta: 'Xem demo',
+		secondaryCta: 'Dùng thử miễn phí trên Mac',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'Mở video demo ScrollShot',
 		videoLabel: 'Video demo ScrollShot',
 		caption: 'Demo đang tự động phát',
@@ -81,7 +83,7 @@ export const viHomeLocale = {
 		pricing: {
 			kicker: 'Giá',
 			title: 'Mức giá đơn giản, minh bạch',
-			description: 'Ghép thủ công miễn phí. Pro mở khóa ghép tự động từ bản ghi màn hình và toàn bộ chủ đề. Giá cuối cùng được hiển thị trên App Store.',
+			description: 'Mac miễn phí. Pro mở khóa ghép tự động từ bản ghi màn hình, ghép video, toàn bộ chủ đề và các tính năng nâng cao trong tương lai.',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -196,17 +198,39 @@ export const viHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: 'Miễn phí',
-			subtitle: 'Cho nhu cầu ghép thủ công thỉnh thoảng',
-			features: ['Ghép ảnh chụp màn hình thủ công', 'Chọn và xem trước từ Ảnh', 'Lưu ảnh dài vào Ảnh', 'Xử lý ảnh trên thiết bị', 'Màu chủ đề cơ bản'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: 'Chụp toàn bộ trang chỉ với một phím',
+			features: [
+				'Mở khóa quy trình tự động nhanh nhất',
+				'Tự động ghép từ bản ghi màn hình',
+				'Tất cả màu chủ đề',
+				'Các tính năng nâng cao trong tương lai',
+				'Xử lý ảnh trên thiết bị',
+			],
+			featured: true,
+			button: {
+				label: 'Tải trên App Store',
+				href: appStoreUrls.vi,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: 'Mở khóa quy trình chụp màn hình dài nhanh nhất',
-			features: ['Tự động ghép từ bản ghi màn hình', 'Ghép từ video đã chọn', 'Toàn bộ màu chủ đề', 'Các tính năng nâng cao trong tương lai'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: 'Chụp toàn bộ trang chỉ với một phím',
+			features: [
+				'Ảnh cuộn tự động ghép — tối đa 30.000px',
+				'OCR + dịch sang 30+ ngôn ngữ, ngay tại chỗ',
+				'Hơn 19 công cụ chú thích, tất cả nguyên bản',
+				'Quay và chỉnh sửa video không cần rời ứng dụng',
+			],
+			badge: 'Dùng thử miễn phí',
+			button: {
+				label: 'Tải bản dùng thử miễn phí',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Giá Pro chính xác, các tùy chọn mua theo gói hoặc vĩnh viễn được hiển thị trên App Store. Bạn có thể bắt đầu với ghép thủ công miễn phí trước khi nâng cấp.',

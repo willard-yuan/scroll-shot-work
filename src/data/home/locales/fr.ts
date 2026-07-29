@@ -36,7 +36,9 @@ export const frHomeLocale = {
 		text:
 			'Enregistrez des conversations, pages web, articles et écrans d’app sous forme d’images longues nettes. ScrollShot assemble vos enregistrements et vos captures, puis exporte le contenu complet en haute qualité.',
 		primaryCta: 'Télécharger pour iOS',
-		secondaryCta: 'Voir la démo',
+		secondaryCta: 'Essayer gratuitement sur Mac',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'Ouvrir la vidéo de démonstration ScrollShot',
 		videoLabel: 'Vidéo de démonstration ScrollShot',
 		caption: 'Démonstration en lecture automatique',
@@ -81,7 +83,7 @@ export const frHomeLocale = {
 		pricing: {
 			kicker: 'Tarifs',
 			title: 'Une offre simple et transparente',
-			description: 'L’assemblage manuel est gratuit. Pro débloque l’assemblage automatique depuis les enregistrements et tous les thèmes. Le prix final est affiché dans l’App Store.',
+			description: 'Mac est gratuit. Pro débloque l’assemblage automatique depuis les enregistrements, l’assemblage vidéo, tous les thèmes et les fonctionnalités avancées à venir.',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -196,17 +198,39 @@ export const frHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: 'Gratuit',
-			subtitle: 'Pour l’assemblage manuel occasionnel',
-			features: ['Assembler manuellement des captures', 'Sélection et aperçu depuis Photos', 'Enregistrer les images longues dans Photos', 'Traitement d\'images sur l\'appareil'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: 'Capturez une page entière en une touche',
+			features: [
+				'Débloquez le flux automatique le plus rapide',
+				'Assemblage automatique depuis les enregistrements',
+				'Tous les thèmes de couleur',
+				'Fonctionnalités avancées futures',
+				'Traitement d\'images sur l\'appareil',
+			],
+			featured: true,
+			button: {
+				label: 'Obtenir sur l\'App Store',
+				href: appStoreUrls.fr,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: 'Pour le flux de capture longue le plus rapide',
-			features: ['Assemblage automatique depuis les enregistrements', 'Assemblage depuis des vidéos sélectionnées', 'Tous les thèmes de couleur', 'Futures fonctionnalités avancées'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: 'Capturez une page entière en une touche',
+			features: [
+				'Capture défilante auto-assemblée — jusqu\'à 30 000 px',
+				'OCR + traduction vers 30+ langues, sur place',
+				'19+ outils d\'annotation, tous natifs',
+				'Enregistrer et monter la vidéo sans quitter l\'application',
+			],
+			badge: 'Essai gratuit',
+			button: {
+				label: 'Télécharger la version d\'essai gratuite',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Les tarifs exacts de Pro, les options d\'abonnement ou d\'achat unique sont affichés dans l\'App Store. Vous pouvez commencer par l\'assemblage manuel gratuit avant de passer à la version payante.',

@@ -36,7 +36,9 @@ export const jaHomeLocale = {
 		text:
 			'チャット、Webページ、記事などの長い内容をiPhoneでかんたんに保存。ScrollShotは画面収録や複数の写真をつなぎ、読みやすい長いスクリーンショットを高画質で書き出します。',
 		primaryCta: 'iOS版をダウンロード',
-		secondaryCta: 'デモを見る',
+		secondaryCta: 'Mac 版を無料試用',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'ScrollShotのデモ動画を開く',
 		videoLabel: 'ScrollShot デモ動画',
 		caption: 'デモを自動再生中',
@@ -81,7 +83,7 @@ export const jaHomeLocale = {
 		pricing: {
 			kicker: '料金',
 			title: 'わかりやすい料金体系',
-			description: '手動結合は無料。Proでは画面収録からの自動合成と全テーマが使えます。実際の価格はApp Storeでご確認ください。',
+			description: 'Macは無料でご利用いただけます。Proでは画面収録からの自動合成、動画からの合成、全テーマ、今後の高度な機能が使えます。',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -180,17 +182,39 @@ export const jaHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: '無料',
-			subtitle: '基本的な長スクショフローから始める',
-			features: ['手動スクリーンショット結合', '写真の選択とプレビュー', '長い画像を写真アプリに保存', '端末内での画像処理'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: 'ワンキーでページ全体をキャプチャ',
+			features: [
+				'最速の自動ワークフローを解放',
+				'画面収録からの自動合成',
+				'すべてのテーマカラー',
+				'今後の高度な機能',
+				'端末内での画像処理',
+			],
+			featured: true,
+			button: {
+				label: 'App Store で入手',
+				href: appStoreUrls.ja,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: '最速の長スクショワークフローを解放',
-			features: ['画面収録から自動合成', '選択した動画から合成', 'すべてのテーマカラー', '今後の高度な機能アップデート'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: 'ワンキーでページ全体をキャプチャ',
+			features: [
+				'自動合成の長スクショ、最大 30,000px',
+				'内蔵 OCR、30以上の言語をその場で翻訳',
+				'19種以上の注釈ツール、すべてネイティブ',
+				'アプリを離れずに動画の録画と編集',
+			],
+			badge: '無料トライアル',
+			button: {
+				label: '無料試用版をダウンロード',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Proの正確な価格、サブスクリプションまたは買い切りオプションはApp Storeでご確認ください。無料の手動結合で始めてから、アップグレードを検討いただけます。',

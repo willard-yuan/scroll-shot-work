@@ -36,7 +36,9 @@ export const koHomeLocale = {
 		text:
 			'채팅, 웹페이지, 글처럼 긴 내용을 iPhone에서 손쉽게 저장하세요. ScrollShot은 화면 녹화나 여러 장의 사진을 이어 붙여 읽기 좋은 긴 스크린샷을 고화질로 만들어 줍니다.',
 		primaryCta: 'iOS용 다운로드',
-		secondaryCta: '데모 영상 보기',
+		secondaryCta: 'Mac에서 무료 체험',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'ScrollShot 데모 영상 열기',
 		videoLabel: 'ScrollShot 데모 영상',
 		caption: '데모 자동 재생 중',
@@ -81,7 +83,7 @@ export const koHomeLocale = {
 		pricing: {
 			kicker: '요금',
 			title: '단순하고 알기 쉬운 가격',
-			description: '수동 이어붙이기는 무료로 사용할 수 있습니다. Pro에서는 화면 녹화 기반 자동 합성과 모든 테마를 사용할 수 있으며, 실제 가격은 App Store에서 확인할 수 있습니다.',
+			description: 'Mac은 무료로 사용할 수 있습니다. Pro에서는 화면 녹화 기반 자동 합성, 동영상 합성, 모든 테마, 향후 고급 기능을 사용할 수 있습니다. 실제 가격은 App Store에서 확인할 수 있습니다.',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -180,17 +182,39 @@ export const koHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: '무료',
-			subtitle: '가끔 수동으로 이어붙이는 사용자에게',
-			features: ['수동 스크린샷 이어붙이기', '사진 선택 및 미리보기', '긴 이미지를 사진 앱에 저장', '기기 내 이미지 처리', '기본 테마 색상'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: '한 번의 키로 페이지 전체 캡처',
+			features: [
+				'가장 빠른 자동 워크플로우 해제',
+				'화면 녹화에서 자동 합성',
+				'모든 테마 색상',
+				'향후 고급 기능',
+				'기기 내 이미지 처리',
+			],
+			featured: true,
+			button: {
+				label: 'App Store에서 받기',
+				href: appStoreUrls.ko,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: '가장 빠른 긴 스크린샷 워크플로우',
-			features: ['화면 녹화에서 자동 합성', '선택한 영상에서 합성', '모든 테마 색상', '향후 고급 기능 업데이트'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: '한 번의 키로 페이지 전체 캡처',
+			features: [
+				'자동 합성 긴 스크린샷, 최대 30,000px',
+				'내장 OCR, 30개 이상 언어 즉석 번역',
+				'19개 이상의 주석 도구, 모두 네이티브',
+				'앱을 벗어나지 않고 동영상 녹화 및 편집',
+			],
+			badge: '무료 체험',
+			button: {
+				label: '무료 체험판 다운로드',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Pro의 정확한 가격, 구독 또는 일괄 구매 옵션은 App Store에서 확인할 수 있습니다. 업그레이드 전에 무료 수동 이어붙이기부터 시작할 수 있습니다.',

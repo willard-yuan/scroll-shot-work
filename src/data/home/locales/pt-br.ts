@@ -36,7 +36,9 @@ export const ptBrHomeLocale = {
 		text:
 			'Salve conversas, páginas web, artigos e telas de apps como imagens longas e nítidas. O ScrollShot junta gravações e screenshots para exportar o conteúdo completo em alta qualidade.',
 		primaryCta: 'Baixar para iOS',
-		secondaryCta: 'Ver demonstração',
+		secondaryCta: 'Experimentar grátis no Mac',
+		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
+		secondaryCtaApple: true,
 		videoAria: 'Abrir vídeo de demonstração do ScrollShot',
 		videoLabel: 'Vídeo de demonstração do ScrollShot',
 		caption: 'Demonstração em reprodução automática',
@@ -81,7 +83,7 @@ export const ptBrHomeLocale = {
 		pricing: {
 			kicker: 'Preços',
 			title: 'Preço simples e transparente',
-			description: 'A montagem manual é gratuita. O Pro desbloqueia a montagem automática por gravação e todos os temas. O preço final aparece na App Store.',
+			description: 'Mac é grátis. O Pro desbloqueia a montagem automática por gravação, montagem de vídeo, todos os temas e recursos avançados futuros.',
 		},
 		faq: {
 			kicker: 'FAQ',
@@ -196,17 +198,39 @@ export const ptBrHomeLocale = {
 	},
 	plans: [
 		{
-			name: 'ScrollShot',
-			price: 'Grátis',
-			subtitle: 'Para montagens manuais ocasionais',
-			features: ['Montagem manual de screenshots', 'Seleção e prévia no app Fotos', 'Salvar imagens longas no Fotos', 'Processamento de imagens no dispositivo'],
+			name: 'iPhone',
+			price: 'Pro',
+			subtitle: 'Capture uma página inteira com um toque',
+			features: [
+				'Desbloqueie o fluxo automático mais rápido',
+				'Montagem automática a partir de gravações',
+				'Todos os temas de cor',
+				'Recursos avançados futuros',
+				'Processamento de imagens no dispositivo',
+			],
+			featured: true,
+			button: {
+				label: 'Baixar na App Store',
+				href: appStoreUrls.ptBr,
+				style: 'light',
+			},
 		},
 		{
-			name: 'ScrollShot Pro',
-			price: 'Pro',
-			subtitle: 'Desbloqueie o fluxo mais rápido para prints longos',
-			features: ['Montagem automática a partir de gravações', 'Montagem a partir de vídeos selecionados', 'Todos os temas de cor', 'Recursos avançados futuros'],
-			featured: true,
+			name: 'Mac',
+			price: 'Free',
+			subtitle: 'Capture uma página inteira com um toque',
+			features: [
+				'Captura de scroll auto-montada — até 30.000 px',
+				'OCR + tradução para 30+ idiomas, na hora',
+				'19+ ferramentas de anotação, todas nativas',
+				'Gravar e editar vídeo sem sair do aplicativo',
+			],
+			badge: 'Teste grátis',
+			button: {
+				label: 'Baixar versão de teste grátis',
+				href: 'https://mac.scrollshot.work/ScrollShot.dmg',
+				style: 'dark',
+			},
 		},
 	],
 	pricingNote: 'Os preços exatos do Pro, opções de assinatura ou compra definitiva são mostrados na App Store. Você pode começar com a montagem manual gratuita antes de fazer o upgrade.',
