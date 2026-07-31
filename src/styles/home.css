@@ -479,40 +479,16 @@
 }
 
 .apple-mark {
-	position: relative;
-	width: 15px;
-	height: 17px;
+	width: 18px;
+	height: 20px;
 	display: inline-block;
-	background: currentColor;
-	border-radius: 45% 45% 50% 50%;
 	transform: translateY(1px);
 }
 
-.apple-mark::before {
-	content: "";
-	position: absolute;
-	left: 8px;
-	top: -5px;
-	width: 7px;
-	height: 6px;
-	border-radius: 7px 0;
-	background: currentColor;
-	transform: rotate(-28deg);
-}
-
-.apple-mark::after {
-	content: "";
-	position: absolute;
-	right: -2px;
-	top: 6px;
-	width: 5px;
-	height: 6px;
-	border-radius: 50%;
-	background: #f8f8f4;
-}
-
-.apple-mark-light::after {
-	background: #0c0d0d;
+.apple-mark svg {
+	width: 100%;
+	height: 100%;
+	fill: currentColor;
 }
 
 .hero-device-link {
