@@ -14,6 +14,7 @@ export interface BlogFrontmatter {
 	cover: string;
 	coverAlt: string;
 	translationKey: string;
+	faq?: { question: string; answer: string }[];
 }
 
 export interface BlogPost extends BlogFrontmatter {
@@ -540,3 +541,29 @@ export const buildBlogPostJsonLd = (post: BlogPost, page: BlogLocale) => ({
 	mainEntityOfPage: post.url,
 	inLanguage: page.lang,
 });
+
+export const buildFaqJsonLd = (post: BlogPost) => ({
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: (post.faq ?? []).map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer,
+		},
+	})),
+});
+
+export const buildBreadcrumbJsonLd = (post: BlogPost, page: BlogLocale) => {
+	const homeUrl = page.locale === 'en' ? site.url : `${site.url}${page.locale}/`;
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: page.copy.home, item: homeUrl },
+			{ '@type': 'ListItem', position: 2, name: page.copy.kicker, item: page.url },
+			{ '@type': 'ListItem', position: 3, name: post.title, item: post.url },
+		],
+	};
+};

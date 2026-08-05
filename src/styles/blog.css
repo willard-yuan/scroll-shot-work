@@ -741,6 +741,79 @@
 	font-size: inherit;
 }
 
+/* Comparison tables (markdown): clean, scannable, scrollable on mobile */
+.blog-prose table {
+	width: 100%;
+	max-width: 100%;
+	margin: 10px 0 36px;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 15px;
+	line-height: 1.55;
+	color: #d6d0c6;
+	background: rgba(255, 255, 255, 0.02);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	overflow: hidden;
+	table-layout: fixed;
+}
+
+/* Reset aggressive word-break from .blog-prose so cells wrap on spaces, not char-by-char */
+.blog-prose th,
+.blog-prose td {
+	word-break: normal;
+	overflow-wrap: break-word;
+	hyphens: auto;
+}
+
+.blog-prose thead th {
+	position: sticky;
+	top: 0;
+	background: rgba(255, 255, 255, 0.07);
+	color: var(--ink);
+	font-family: var(--sans);
+	font-weight: 600;
+	font-size: 12px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 14px 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+	white-space: nowrap;
+}
+
+.blog-prose tbody td {
+	padding: 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	vertical-align: top;
+}
+
+.blog-prose tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.blog-prose tbody tr:nth-child(even) td {
+	background: rgba(255, 255, 255, 0.025);
+}
+
+.blog-prose tbody tr {
+	transition: background-color 160ms ease;
+}
+
+.blog-prose tbody tr:hover td {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.blog-prose tbody td:first-child {
+	color: var(--ink);
+	font-weight: 600;
+	width: 22%;
+}
+
+.blog-prose tbody td strong {
+	color: var(--ink);
+}
+
 .blog-prose > p:first-of-type {
 	font-size: 1.12em;
 	line-height: 1.74;
@@ -929,6 +1002,18 @@
 	.blog-prose h3 {
 		font-size: 21px;
 		line-height: 1.26;
+	}
+
+	.blog-prose table {
+		display: block;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		font-size: 14px;
+	}
+
+	.blog-prose thead th,
+	.blog-prose tbody td {
+		padding: 12px 14px;
 	}
 
 	.blog-post-footer {

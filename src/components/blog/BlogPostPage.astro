@@ -6,6 +6,8 @@ import BlogConversionBlock from './BlogConversionBlock.astro';
 import type { BlogLocale, BlogPost } from '../../data/blog';
 import {
 	buildBlogPostJsonLd,
+	buildFaqJsonLd,
+	buildBreadcrumbJsonLd,
 	getBlogHomeHref,
 	getBlogLanguageLinks,
 	getBlogNavLinks,
@@ -59,12 +61,16 @@ const formatDate = (date: string) =>
 		day: 'numeric',
 	}).format(new Date(`${date}T00:00:00`));
 const blogConversion = 'blogConversion' in home ? home.blogConversion : undefined;
+const jsonLdItems = [buildBlogPostJsonLd(post, page), buildBreadcrumbJsonLd(post, page)];
+if (post.faq && post.faq.length > 0) {
+	jsonLdItems.push(buildFaqJsonLd(post));
+}
 ---
 
 <Layout
 	title={`${post.title} | ScrollShot Blog`}
 	description={post.description}
-	keywords={post.tags}
+	keywords={[]}
 	canonical={post.url}
 	image={`${site.url}${post.cover.slice(1)}`}
 	imageAlt={post.coverAlt}
@@ -72,7 +78,7 @@ const blogConversion = 'blogConversion' in home ? home.blogConversion : undefine
 	ogLocale={page.ogLocale}
 	ogType="article"
 	alternateLinks={getBlogPostAlternates(post)}
-	jsonLd={buildBlogPostJsonLd(post, page)}
+	jsonLd={jsonLdItems}
 >
 	<div class="site-shell blog-shell">
 		<SiteNav

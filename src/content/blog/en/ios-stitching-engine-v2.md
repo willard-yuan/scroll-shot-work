@@ -17,7 +17,7 @@ I spent several months doing one thing: making long-screenshot stitching on a ph
 
 Sounds easy, doesn't it? Take two adjacent screenshots, find the overlap, cut, and glue. But if you actually sit down and write the code, you quickly discover that "just right" is a bottomless engineering rabbit hole.
 
-This post tears apart ScrollShot's stitching engine. No product pitch, no vaporware promises — just algorithms and the engineering details that made me rewrite the design over and over. If you're curious about ScrollShot's overall positioning and use cases, you might want to start with the <a href="/blog/why-choose-scrollshot-ios-seamless-long-screenshots/">product overview: Why Choose ScrollShot for iOS Long Screenshots</a>.
+This post tears apart ScrollShot's stitching engine. No product pitch, no vaporware promises — just algorithms and the engineering details that made me rewrite the design over and over. If you're curious about ScrollShot's overall positioning and use cases, you might want to start with the <a href="/blog/why-choose-scrollshot-ios-seamless-long-screenshots/">product overview: Why Choose ScrollShot for iOS Long Screenshots</a>. Prefer Mac? Here's the full guide: <a href="/blog/how-to-take-long-scrolling-screenshot-on-mac/">How to Take a Long Scrolling Screenshot on Mac</a>.
 
 ---
 
