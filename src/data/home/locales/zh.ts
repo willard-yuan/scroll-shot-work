@@ -37,7 +37,7 @@ export const zhHomeLocale = {
 		text:
 			'无需一张张截图、手动排序和反复裁剪。保存聊天记录、网页、App 页面和文档时，ScrollShot 会自动抽帧、去重、匹配并拼成一张清晰长图。',
 		primaryCta: 'iOS 版下载',
-		secondaryCta: '免费试用 Mac 版',
+		secondaryCta: '免费使用 Mac 版',
 		secondaryCtaHref: 'https://mac.scrollshot.work/ScrollShot.dmg',
 		secondaryCtaApple: true,
 		videoAria: '打开 ScrollShot 中文视频演示',
