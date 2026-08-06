@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # codex runtime
 .codex-runtime/
+
+# project data (WorkBuddy memory / working files — not source)
+.workbuddy/
