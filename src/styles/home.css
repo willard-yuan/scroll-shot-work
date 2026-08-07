@@ -221,6 +221,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	gap: 8px;
 	border-radius: 999px;
 	border: 1px solid rgba(255, 255, 255, 0.82);
 	background: #f7f5ef;
@@ -228,7 +229,9 @@
 	font-family: var(--sans);
 	font-size: 16px;
 	font-weight: 700;
+	white-space: nowrap;
 	text-decoration: none;
+	padding: 0 18px;
 	box-shadow:
 		0 12px 30px rgba(0, 0, 0, 0.22),
 		inset 0 1px 0 rgba(255, 255, 255, 0.5);
