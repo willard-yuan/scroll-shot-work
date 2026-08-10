@@ -1,0 +1,4 @@
+# Cloudflare Pages / Netlify redirects
+# Any path that does NOT match a real file is served /404.html with a 404 status,
+# instead of falling back to the homepage (which previously caused soft-404s).
+/*    /404.html   404

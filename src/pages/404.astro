@@ -1,0 +1,97 @@
+---
+// Custom 404 page.
+// Intentionally minimal & SEO-safe:
+//  - <meta name="robots" content="noindex"> so it can never be indexed
+//  - NO <link rel="canonical"> (a 404 must not declare a canonical)
+//  - NO AdSense script (Google policy: no ads on error pages)
+// Astro emits this as dist/404.html, which Cloudflare Pages serves with a 404 status.
+const title = '404 — Page Not Found | ScrollShot';
+const description = 'The page you are looking for could not be found.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#EB5332" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="nf">
+      <div class="nf-inner">
+        <p class="nf-code">404</p>
+        <h1>Page not found</h1>
+        <p class="nf-text">
+          The page you’re looking for doesn’t exist or may have been moved.
+        </p>
+        <a class="nf-link" href="/">← Back to ScrollShot home</a>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: #080909;
+    color: #f6f4ee;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .nf {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .nf-inner {
+    text-align: center;
+    max-width: 520px;
+  }
+  .nf-code {
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 0;
+    color: #eb5332;
+    letter-spacing: -0.04em;
+  }
+  .nf-inner h1 {
+    font-size: 1.75rem;
+    margin: 0.5rem 0 1rem;
+  }
+  .nf-text {
+    color: #b9b6ae;
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+  }
+  .nf-link {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid #eb5332;
+    border-radius: 999px;
+    color: #f6f4ee;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .nf-link:hover {
+    background: rgba(235, 83, 50, 0.12);
+  }
+</style>
