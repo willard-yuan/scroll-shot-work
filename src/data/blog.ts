@@ -98,7 +98,7 @@ const italianBlogLocale = {
 
 const vietnameseBlogLocale = {
 	locale: 'vi',
-	lang: 'vi',
+	lang: 'vi-VN',
 	ogLocale: 'vi_VN',
 	url: siteUrl('vi/blog/'),
 	appStoreUrl: appStoreUrls.vi,

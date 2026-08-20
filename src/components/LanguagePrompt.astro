@@ -1,0 +1,463 @@
+---
+/**
+ * LanguagePrompt
+ *
+ * A non-intrusive top banner that asks the visitor to switch to a language
+ * version matching their browser's preferred languages, if the current page
+ * has one. Falls back silently when:
+ *   • the browser's preferred language already matches the current page,
+ *   • no preferred language is supported by this site,
+ *   • the visitor dismissed the prompt for that language within the last
+ *     30 days (localStorage),
+ *   • JavaScript is disabled, or
+ *   • the visitor's browser language is English (no point prompting since
+ *     the site is already in English by default and the visitor is reading
+ *     English content anyway).
+ *
+ * Design intent: a dark frosted bar with a thin mint accent line, matching
+ * scrollshot.work's existing restrained dark theme — not the loud saturated
+ * teal of generic templates. Sticky-positioned at the top of the document,
+ * never overlaps content (it pushes everything down by 44px while visible).
+ *
+ * Data source: reads <link rel="alternate" hreflang> from <head>, so it is
+ * always in lockstep with the page's hreflang cluster with zero prop wiring.
+ */
+---
+
+<aside
+	id="ss-lang-prompt"
+	class="ss-lang-prompt"
+	role="region"
+	aria-live="polite"
+	aria-label="Language suggestion"
+	hidden
+>
+	<div class="ss-lang-prompt__inner">
+		<svg
+			class="ss-lang-prompt__icon"
+			viewBox="0 0 24 24"
+			width="16"
+			height="16"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.8"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<circle cx="12" cy="12" r="9"></circle>
+			<path d="M3 12h18"></path>
+			<path d="M12 3a14 14 0 0 1 0 18"></path>
+			<path d="M12 3a14 14 0 0 0 0 18"></path>
+		</svg>
+		<span class="ss-lang-prompt__msg" data-ss-lp-msg></span>
+		<div class="ss-lang-prompt__actions">
+			<a
+				class="ss-lang-prompt__cta"
+				data-ss-lp-cta
+				href="#"
+				hidden
+			></a>
+			<button
+				class="ss-lang-prompt__dismiss"
+				type="button"
+				data-ss-lp-dismiss
+				aria-label="Dismiss language suggestion"
+			>
+				<svg
+					viewBox="0 0 24 24"
+					width="14"
+					height="14"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.2"
+					stroke-linecap="round"
+					aria-hidden="true"
+				>
+					<line x1="6" y1="6" x2="18" y2="18"></line>
+					<line x1="6" y1="18" x2="18" y2="6"></line>
+				</svg>
+			</button>
+		</div>
+	</div>
+</aside>
+
+<style>
+	.ss-lang-prompt {
+		position: sticky;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 60;
+		background: rgba(8, 9, 9, 0.78);
+		-webkit-backdrop-filter: saturate(140%) blur(14px);
+		backdrop-filter: saturate(140%) blur(14px);
+		color: var(--ink, #f6f4ee);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		transform: translateY(-100%);
+		transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		will-change: transform;
+	}
+	.ss-lang-prompt::before {
+		content: "";
+		position: absolute;
+		inset: 0 0 auto 0;
+		height: 1px;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			var(--mint, #68d98b) 50%,
+			transparent 100%
+		);
+		opacity: 0.75;
+	}
+	.ss-lang-prompt[data-state="show"] {
+		transform: translateY(0);
+	}
+	.ss-lang-prompt__inner {
+		max-width: var(--content, 1220px);
+		margin: 0 auto;
+		padding: 10px 24px;
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		font-size: 13.5px;
+		letter-spacing: 0.01em;
+	}
+	.ss-lang-prompt__icon {
+		flex: 0 0 auto;
+		color: var(--mint, #68d98b);
+		opacity: 0.85;
+	}
+	.ss-lang-prompt__msg {
+		flex: 1 1 auto;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		color: var(--ink, #f6f4ee);
+	}
+	.ss-lang-prompt__msg b {
+		color: var(--mint, #68d98b);
+		font-weight: 600;
+	}
+	.ss-lang-prompt__actions {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.ss-lang-prompt__cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 6px 12px;
+		border-radius: 8px;
+		background: rgba(104, 217, 139, 0.1);
+		color: var(--mint, #68d98b);
+		border: 1px solid rgba(104, 217, 139, 0.32);
+		font-weight: 500;
+		text-decoration: none;
+		font-size: 13px;
+		letter-spacing: 0.005em;
+		white-space: nowrap;
+		transition:
+			background 160ms ease,
+			border-color 160ms ease,
+			color 160ms ease;
+	}
+	.ss-lang-prompt__cta:hover,
+	.ss-lang-prompt__cta:focus-visible {
+		background: var(--mint, #68d98b);
+		color: #080909;
+		border-color: var(--mint, #68d98b);
+		outline: none;
+	}
+	.ss-lang-prompt__dismiss {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		padding: 0;
+		border-radius: 8px;
+		background: transparent;
+		border: 1px solid transparent;
+		color: var(--muted, #a9a49b);
+		cursor: pointer;
+		transition:
+			background 160ms ease,
+			color 160ms ease,
+			border-color 160ms ease;
+	}
+	.ss-lang-prompt__dismiss:hover,
+	.ss-lang-prompt__dismiss:focus-visible {
+		background: rgba(255, 255, 255, 0.08);
+		color: var(--ink, #f6f4ee);
+		border-color: rgba(255, 255, 255, 0.12);
+		outline: none;
+	}
+	@media (max-width: 600px) {
+		.ss-lang-prompt__inner {
+			padding: 8px 16px;
+			gap: 10px;
+			font-size: 12.5px;
+		}
+		.ss-lang-prompt__cta {
+			padding: 5px 10px;
+			font-size: 12.5px;
+		}
+		.ss-lang-prompt__icon {
+			display: none;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.ss-lang-prompt {
+			transition: none;
+		}
+	}
+</style>
+
+<script is:inline>
+	(function () {
+		// Map a raw Accept-Language token to one of scrollshot.work's hreflang
+		// values. The two key non-trivial splits are zh-* (zh-CN vs zh-Hant)
+		// and pt-* (only pt-BR is supported, pt-PT falls back to English).
+		var LANG_MAP = [
+			{ match: /^en([-_].*)?$/i, site: "en" },
+			{ match: /^zh[-_]?(hans|cn|sg|my)$/i, site: "zh-CN" },
+			{ match: /^zh[-_]?(hant|tw|hk|mo)$/i, site: "zh-Hant" },
+			{ match: /^zh$/i, site: "zh-CN" },
+			{ match: /^ja([-_].*)?$/i, site: "ja" },
+			{ match: /^ko([-_].*)?$/i, site: "ko-KR" },
+			{ match: /^de([-_].*)?$/i, site: "de" },
+			{ match: /^fr([-_].*)?$/i, site: "fr" },
+			{ match: /^es([-_].*)?$/i, site: "es" },
+			{ match: /^pt[-_]?br$/i, site: "pt-BR" },
+			{ match: /^it([-_].*)?$/i, site: "it" },
+			{ match: /^vi([-_].*)?$/i, site: "vi-VN" },
+		];
+
+		// Localized copy. Content here is static (no user input) and only the
+		// `msg` may include a <b> tag around the language name. The CTA label
+		// is plain text.
+		var COPY = {
+			en: {
+				msg: "This page is also available in <b>English</b>.",
+				cta: "Switch to English",
+			},
+			"zh-CN": {
+				msg: "检测到您的浏览器语言为<b>简体中文</b>，是否切换？",
+				cta: "切换到简体中文",
+			},
+			"zh-Hant": {
+				msg: "偵測到您的瀏覽器語言為<b>繁體中文</b>，是否切換？",
+				cta: "切換到繁體中文",
+			},
+			ja: {
+				msg: "ブラウザの言語が<b>日本語</b>に検出されました。切り替えますか？",
+				cta: "日本語に切り替え",
+			},
+			"ko-KR": {
+				msg: "브라우저 언어가 <b>한국어</b>(으)로 감지되었습니다. 전환하시겠습니까?",
+				cta: "한국어로 전환",
+			},
+			de: {
+				msg: "Ihre Browsersprache ist <b>Deutsch</b>. Möchten Sie wechseln?",
+				cta: "Zu Deutsch wechseln",
+			},
+			fr: {
+				msg: "Votre navigateur est en <b>français</b>. Basculer ?",
+				cta: "Passer en français",
+			},
+			es: {
+				msg: "Tu navegador está en <b>español</b>. ¿Cambiar?",
+				cta: "Cambiar a español",
+			},
+			"pt-BR": {
+				msg: "Seu navegador está em <b>português (Brasil)</b>. Trocar?",
+				cta: "Mudar para Português",
+			},
+			it: {
+				msg: "Il tuo browser è in <b>italiano</b>. Passare?",
+				cta: "Passa all'italiano",
+			},
+			"vi-VN": {
+				msg: "Trình duyệt của bạn đang ở <b>Tiếng Việt</b>. Chuyển?",
+				cta: "Chuyển sang Tiếng Việt",
+			},
+		};
+
+		var DISMISS_KEY = "ss_lang_prompt_dismissed_v1";
+		var DISMISS_DAYS = 30;
+		var DEFAULT_LANG = "en"; // site is already in English by default
+
+		function pickSiteLang(raw) {
+			if (!raw) return null;
+			var v = String(raw).trim();
+			for (var i = 0; i < LANG_MAP.length; i++) {
+				if (LANG_MAP[i].match.test(v)) return LANG_MAP[i].site;
+			}
+			return null;
+		}
+
+		function getCurrentHreflang() {
+			var html = document.documentElement;
+			if (!html) return null;
+			var v = (html.getAttribute("lang") || "").trim();
+			return v || null;
+		}
+
+		function collectAlternates() {
+			// Read <link rel="alternate" hreflang="..." href="..."> from <head>.
+			// The site's Layout emits exactly one per supported language (plus
+			// x-default), so the resulting map is the page's hreflang cluster.
+			var links = document.querySelectorAll(
+				"link[rel='alternate'][hreflang][href]",
+			);
+			var map = {};
+			for (var i = 0; i < links.length; i++) {
+				var l = links[i];
+				var hl = l.getAttribute("hreflang");
+				if (!hl || hl === "x-default") continue;
+				map[hl] = l.getAttribute("href");
+			}
+			return map;
+		}
+
+		function resolveCurrentSiteLang(current, alternates) {
+			// Some pages emit <html lang="vi"> while the matching alternate is
+			// hreflang="vi-VN" (and similar region mismatches). When the
+			// current <html lang> is not itself a key in the alternates map,
+			// fall back to LANG_MAP to find the canonical site code.
+			if (!current) return null;
+			if (alternates[current]) return current;
+			var site = pickSiteLang(current);
+			if (site && alternates[site]) return site;
+			return null;
+		}
+
+		function dismissedRecently(siteLang) {
+			try {
+				var raw = window.localStorage.getItem(DISMISS_KEY);
+				if (!raw) return false;
+				var data = JSON.parse(raw) || {};
+				var ts = data[siteLang];
+				if (!ts) return false;
+				var ageMs = Date.now() - Number(ts);
+				return ageMs >= 0 && ageMs < DISMISS_DAYS * 24 * 60 * 60 * 1000;
+			} catch (e) {
+				return false;
+			}
+		}
+
+		function markDismissed(siteLang) {
+			try {
+				var raw = window.localStorage.getItem(DISMISS_KEY);
+				var data = {};
+				try {
+					data = raw ? JSON.parse(raw) : {};
+				} catch (e) {
+					data = {};
+				}
+				data[siteLang] = Date.now();
+				window.localStorage.setItem(
+					DISMISS_KEY,
+					JSON.stringify(data),
+				);
+			} catch (e) {
+				/* localStorage unavailable — silently ignore */
+			}
+		}
+
+		function show(el) {
+			if (!el) return;
+			el.hidden = false;
+			// Force reflow so the transform transition runs.
+			void el.offsetWidth;
+			el.setAttribute("data-state", "show");
+		}
+
+		function hide(el) {
+			if (!el) return;
+			el.removeAttribute("data-state");
+			window.setTimeout(function () {
+				el.hidden = true;
+			}, 260);
+		}
+
+		function boot() {
+			var prompt = document.getElementById("ss-lang-prompt");
+			if (!prompt) return;
+
+			var current = getCurrentHreflang();
+			if (!current) return;
+			// If the visitor is already reading English, do not prompt. The
+			// site default is English and there is nothing to "switch to" for
+			// an English reader who lands on the English version.
+			if (current === DEFAULT_LANG) {
+				// We still allow the prompt to appear if the browser explicitly
+				// prefers a non-English site language (handled below).
+			}
+
+			var alternates = collectAlternates();
+			var currentSite = resolveCurrentSiteLang(current, alternates);
+			if (!currentSite) return;
+
+			var browserLangs =
+				navigator.languages && navigator.languages.length
+					? Array.prototype.slice.call(navigator.languages)
+					: [navigator.language || navigator.userLanguage || ""];
+
+			var match = null;
+			for (var i = 0; i < browserLangs.length; i++) {
+				var site = pickSiteLang(browserLangs[i]);
+				if (
+					site &&
+					alternates[site] &&
+					site !== current &&
+					!dismissedRecently(site)
+				) {
+					match = site;
+					break;
+				}
+			}
+			if (!match) return;
+
+			var copy = COPY[match] || { msg: "Switch language?", cta: "Switch" };
+			var cta = prompt.querySelector("[data-ss-lp-cta]");
+			var msg = prompt.querySelector("[data-ss-lp-msg]");
+			if (msg) msg.innerHTML = copy.msg; // static strings only
+			if (cta) {
+				cta.textContent = copy.cta;
+				cta.href = alternates[match];
+				cta.setAttribute("hreflang", match);
+				cta.setAttribute("lang", match);
+				cta.hidden = false;
+			}
+
+			show(prompt);
+
+			var dismissBtn = prompt.querySelector("[data-ss-lp-dismiss]");
+			if (dismissBtn) {
+				dismissBtn.addEventListener("click", function () {
+					markDismissed(match);
+					hide(prompt);
+				});
+			}
+			if (cta) {
+				cta.addEventListener("click", function () {
+					// Remember the visitor's choice so we don't re-prompt on
+					// the destination page.
+					markDismissed(match);
+				});
+			}
+		}
+
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", boot);
+		} else {
+			boot();
+		}
+	})();
+</script>

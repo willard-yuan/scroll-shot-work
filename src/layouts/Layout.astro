@@ -3,6 +3,7 @@ import DownloadAnalytics from '../components/analytics/DownloadAnalytics.astro';
 import EngagementAnalytics from '../components/analytics/EngagementAnalytics.astro';
 import LanguageAnalytics from '../components/analytics/LanguageAnalytics.astro';
 import BlogAnalytics from '../components/analytics/BlogAnalytics.astro';
+import LanguagePrompt from '../components/LanguagePrompt.astro';
 
 const {
 	title = 'ScrollShot - One Tap Record, Auto Long Image',
@@ -66,6 +67,7 @@ const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 		{jsonLdItems.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
 	</head>
 	<body>
+		<LanguagePrompt />
 		<slot />
 		<DownloadAnalytics />
 		<EngagementAnalytics />
