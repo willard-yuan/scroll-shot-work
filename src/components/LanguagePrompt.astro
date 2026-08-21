@@ -404,10 +404,19 @@
 			var currentSite = resolveCurrentSiteLang(current, alternates);
 			if (!currentSite) return;
 
-			var browserLangs =
-				navigator.languages && navigator.languages.length
-					? Array.prototype.slice.call(navigator.languages)
-					: [navigator.language || navigator.userLanguage || ""];
+		var browserLangs =
+			navigator.languages && navigator.languages.length
+				? Array.prototype.slice.call(navigator.languages)
+				: [navigator.language || navigator.userLanguage || ""];
+
+		// Only consider the visitor's TOP preferences (first two entries),
+		// matching how Chrome/Safari translation prompts behave. Deep entries
+		// are near-zero intent: recommending them causes whack-a-mole, where
+		// dismissing one language makes the next one pop up (e.g. a browser
+		// reporting ["zh","zh-CN","en","es","lv","fr",…] would offer Chinese,
+		// then Spanish, then French on consecutive dismissals). Language #3+
+		// should never be offered as a switch target.
+		browserLangs = browserLangs.slice(0, 2);
 
 			var match = null;
 			for (var i = 0; i < browserLangs.length; i++) {
