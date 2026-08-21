@@ -1,7 +1,25 @@
-import type { BlogLocaleCode } from './blog';
+// Decoupled from BlogLocaleCode: the website supports MORE home locales than the
+// blog does. Keeping this union independent means adding a home-only locale
+// (e.g. nl/ar/pl/th) never forces a blog translation or touches blog types.
+export type SiteLangCode =
+	| 'en'
+	| 'zh'
+	| 'zh-hant'
+	| 'ja'
+	| 'ko'
+	| 'de'
+	| 'fr'
+	| 'es'
+	| 'pt-br'
+	| 'it'
+	| 'vi'
+	| 'nl'
+	| 'ar'
+	| 'pl'
+	| 'th';
 
 export interface SiteLanguage {
-	code: BlogLocaleCode;
+	code: SiteLangCode;
 	label: string;
 	hreflang: string;
 	// Path to the flag image (served from /public). For 繁體中文 we use the
@@ -26,6 +44,10 @@ export const siteLanguages: SiteLanguage[] = [
 	{ code: 'pt-br', label: 'Português (BR)', hreflang: 'pt-BR', flag: '/flags/br.png' },
 	{ code: 'it', label: 'Italiano', hreflang: 'it', flag: '/flags/it.png' },
 	{ code: 'vi', label: 'Tiếng Việt', hreflang: 'vi-VN', flag: '/flags/vn.png' },
+	{ code: 'nl', label: 'Nederlands', hreflang: 'nl', flag: '/flags/nl.svg' },
+	{ code: 'ar', label: 'العربية', hreflang: 'ar', flag: '/flags/ar.svg' },
+	{ code: 'pl', label: 'Polski', hreflang: 'pl', flag: '/flags/pl.svg' },
+	{ code: 'th', label: 'ไทย', hreflang: 'th', flag: '/flags/th.svg' },
 ];
 
 export interface SwitcherItem {

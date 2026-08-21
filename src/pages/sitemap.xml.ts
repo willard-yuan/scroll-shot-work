@@ -14,7 +14,11 @@ type SitemapEntry = {
 };
 
 const SITE_LASTMOD = '2026-05-26';
-const localeCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it', 'vi'] as const;
+// Home is localized to 15 languages (incl. nl/ar/pl/th), but the blog is only
+// localized to the original 11. Splitting the lists keeps the sitemap accurate:
+// home entries get all 15 hreflang alternates, blog entries only get 11.
+const homeLocaleCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it', 'vi', 'nl', 'ar', 'pl', 'th'] as const;
+const blogLocaleCodes = ['en', 'zh', 'zh-hant', 'ja', 'ko', 'de', 'fr', 'es', 'pt-br', 'it', 'vi'] as const;
 
 const escapeXml = (value: string) =>
 	value
@@ -54,16 +58,16 @@ const renderUrl = (entry: SitemapEntry) => {
 		.join('\n');
 };
 
-const allPosts = localeCodes.flatMap((locale) => getBlogPosts(locale));
+const allPosts = blogLocaleCodes.flatMap((locale) => getBlogPosts(locale));
 const blogLastmod = latestDate(allPosts);
 
 const entries: SitemapEntry[] = [
-	...localeCodes.map((locale) => ({
+	...homeLocaleCodes.map((locale) => ({
 		loc: homeLocales[locale].url,
 		lastmod: SITE_LASTMOD,
 		alternates: homeLocales[locale].alternateLinks,
 	})),
-	...localeCodes.map((locale) => ({
+	...blogLocaleCodes.map((locale) => ({
 		loc: blogLocales[locale].url,
 		lastmod: blogLastmod,
 		alternates: blogLocales[locale].alternateLinks,

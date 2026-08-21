@@ -10,6 +10,10 @@ import { esHomeLocale } from './locales/es';
 import { ptBrHomeLocale } from './locales/pt-br';
 import { itHomeLocale } from './locales/it';
 import { viHomeLocale } from './locales/vi';
+import { nlHomeLocale } from './locales/nl';
+import { arHomeLocale } from './locales/ar';
+import { plHomeLocale } from './locales/pl';
+import { thHomeLocale } from './locales/th';
 
 export { appStoreUrls, site, localeAssets } from './shared';
 
@@ -25,6 +29,10 @@ export const homeLocales = {
 	'pt-br': ptBrHomeLocale,
 	it: itHomeLocale,
 	vi: viHomeLocale,
+	nl: nlHomeLocale,
+	ar: arHomeLocale,
+	pl: plHomeLocale,
+	th: thHomeLocale,
 };
 
 export type HomeLocale = (typeof homeLocales)[keyof typeof homeLocales];
