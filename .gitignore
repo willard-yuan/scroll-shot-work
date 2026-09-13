@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # project data (WorkBuddy memory / working files — not source)
 .workbuddy/
+
+# editor backup files (drawio auto-saves *.bkp copies of diagrams — not source)
+*.bkp

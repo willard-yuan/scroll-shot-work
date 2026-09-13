@@ -121,6 +121,77 @@
 	hyphens: auto;
 }
 
+:lang(ar) {
+	--sans:
+		"Noto Sans Arabic", "Segoe UI", ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+	--article: var(--sans);
+	--serif:
+		"Noto Serif Arabic", "Noto Sans Arabic", ui-serif, Georgia, serif;
+}
+
+/* RTL mirror rules — applied only when <html dir="rtl"> (Arabic).
+   We mirror the layout-affecting directional properties so the page reads
+   right-to-left without re-authoring every component. */
+[dir="rtl"] {
+	text-align: right;
+}
+
+[dir="rtl"] .hero {
+	direction: rtl;
+}
+
+[dir="rtl"] .hero .eyebrow {
+	text-align: right;
+}
+
+[dir="rtl"] .inline-cta {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .inline-cta-actions {
+	justify-content: flex-start;
+}
+
+[dir="rtl"] .final-cta {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-top {
+	direction: rtl;
+}
+
+[dir="rtl"] .faq-item p {
+	padding-right: 66px;
+	padding-left: 24px;
+}
+
+[dir="rtl"] .price-card-features li {
+	padding-right: 28px;
+	padding-left: 0;
+}
+
+[dir="rtl"] .price-card-features li::before {
+	right: 0;
+	left: auto;
+}
+
+[dir="rtl"] .scene-card a::after {
+	margin-right: 10px;
+	margin-left: 0;
+}
+
+[dir="rtl"] .price-card-device {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .lang-switcher-menu a {
+	flex-direction: row-reverse;
+	text-align: right;
+}
+
+/* The trigger flag/chevron order stays natural (flag first), fine in RTL. */
+
 .site-shell {
 	min-height: 100vh;
 	background:

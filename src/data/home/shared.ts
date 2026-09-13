@@ -12,6 +12,10 @@ export const appStoreUrls = {
 	'pt-br': 'https://apps.apple.com/br/app/scrollshot-long-screenshot/id6760192003',
 	it: 'https://apps.apple.com/it/app/scrollshot-long-screenshot/id6760192003',
 	vi: 'https://apps.apple.com/vn/app/scrollshot-long-screenshot/id6760192003',
+	nl: 'https://apps.apple.com/nl/app/scrollshot-long-screenshot/id6760192003',
+	ar: 'https://apps.apple.com/ae/app/scrollshot-long-screenshot/id6760192003',
+	pl: 'https://apps.apple.com/pl/app/scrollshot-long-screenshot/id6760192003',
+	th: 'https://apps.apple.com/th/app/scrollshot-long-screenshot/id6760192003',
 };
 
 export const site = {
@@ -30,6 +34,10 @@ export const esUrl = `${site.url}es/`;
 export const ptBrUrl = `${site.url}pt-br/`;
 export const itUrl = `${site.url}it/`;
 export const viUrl = `${site.url}vi/`;
+export const nlUrl = `${site.url}nl/`;
+export const arUrl = `${site.url}ar/`;
+export const plUrl = `${site.url}pl/`;
+export const thUrl = `${site.url}th/`;
 
 const appIcon = '/AppIcon.appiconset/icon-ios-60x60@3x.png';
 
@@ -181,6 +189,48 @@ export const localeAssets = {
 		appIcon,
 		ogImage: localizedPreviewAssets.vi.ogImage,
 	},
+	// New locales (nl/ar/pl/th): copy is localized, but visual assets stay
+	// English per product decision — reuse the English webp previews + video.
+	nl: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
+	ar: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
+	pl: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
+	th: {
+		auto: enWebpAssets.auto,
+		trim: enWebpAssets.trim,
+		manual: enWebpAssets.manual,
+		themes: enWebpAssets.themes,
+		video: '/ScrollShot_Preview_En_0509.mp4',
+		videoCover: '/ScrollShot_Preview_En_0509_cover.jpg',
+		appIcon,
+		ogImage: enWebpAssets.ogImage,
+	},
 };
 
 export const alternates = [
@@ -195,5 +245,9 @@ export const alternates = [
 	{ lang: 'pt-BR', href: ptBrUrl },
 	{ lang: 'it', href: itUrl },
 	{ lang: 'vi-VN', href: viUrl },
+	{ lang: 'nl', href: nlUrl },
+	{ lang: 'ar', href: arUrl },
+	{ lang: 'pl', href: plUrl },
+	{ lang: 'th', href: thUrl },
 	{ lang: 'x-default', href: site.url },
 ];
