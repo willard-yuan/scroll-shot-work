@@ -3,6 +3,7 @@ title: "Come Fare uno Screenshot Lungo (a Scorrimento) su Mac nel 2026: Guida Co
 seoTitle: "Screenshot lungo su Mac: guida 2026"
 description: "macOS non ha uno screenshot a scorrimento nativo. Questa guida 2026 spiega il perché, confronta GoFullPage, Shottr, CleanShot X, Xnapper, screensnap e ScrollShot, e mostra come catturare qualsiasi finestra gratis con ScrollShot per Mac."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "Guida"
 author: "Team ScrollShot"
 tags: ["screenshot lungo su Mac", "screenshot a scorrimento Mac", "cattura schermo scorrevole Mac", "ScrollShot per Mac", "strumento screenshot macOS", "scroll and stitch"]

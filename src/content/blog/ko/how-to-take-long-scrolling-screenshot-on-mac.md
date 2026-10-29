@@ -2,6 +2,7 @@
 title: "Mac에서 긴 스크린샷(스크롤 캡처) 찍는 방법: 2026년 완전 가이드"
 description: "macOS에는 기본 스크롤 캡처(긴 스크린샷) 기능이 없습니다. 이 2026년 가이드에서는 그 이유를 설명하고, GoFullPage·Shottr·CleanShot X·Xnapper·screensnap·ScrollShot을 비교합니다. 또한 ScrollShot for Mac을 쓰면 모든 창을 무료로 긴 스크린샷으로 담을 수 있음을 보여줍니다."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "사용 방법 가이드"
 author: "ScrollShot 팀"
 tags: ["Mac 긴 스크린샷", "Mac 스크롤 캡처", "Mac 전체 화면 캡처", "ScrollShot for Mac", "Mac 스크린샷 도구", "스크롤 스티칭"]

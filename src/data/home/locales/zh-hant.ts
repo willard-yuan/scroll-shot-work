@@ -1,6 +1,7 @@
 import { appStoreUrls, site, localeAssets, alternates, icons, zhRating, zhRatingCountEn, zhHantUrl } from '../shared';
 
 export const zhHantHomeLocale = {
+	lastModified: '2026-10-29',
 	lang: 'zh-Hant',
 	ogLocale: 'zh_TW',
 	url: zhHantUrl,

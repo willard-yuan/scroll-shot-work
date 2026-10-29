@@ -2,6 +2,7 @@
 title: "Users Insisted on Scrolling Backward to Capture — and I Dodged Rewriting the Whole Engine with One Line"
 description: "When users want to capture a long screenshot by scrolling up on their iPhone, my first instinct was to build a separate 'upward engine'. In the end, a single line of code was enough. This post breaks down ScrollShot's reverse-scroll stitching design, the technique behind a seamless iPhone scrolling screenshot in apps like Messages and WhatsApp, and shows how we detect the scroll direction, reverse the frame order, and reuse the existing downward pipeline. You'll see how direction detection is nearly free, why we reverse the frame order instead of adding an isReversed flag, and how we hand the decision back to the user when confidence is low, so you can take a scrolling screenshot in iPhone apps without the engine guessing wrong."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Deep Dive"
 author: "ScrollShot Team"
 tags: ["iPhone long screenshot", "iPhone scrolling screenshot", "iOS long screenshot", "screenshot stitching algorithm", "reverse scrolling", "scroll direction detection", "ScrollShot engine", "screen recording stitching"]

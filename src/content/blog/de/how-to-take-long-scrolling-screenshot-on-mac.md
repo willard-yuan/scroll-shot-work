@@ -2,6 +2,7 @@
 title: "Lange Bildschirmfotos auf dem Mac aufnehmen: Die komplette 2026-Anleitung für Scroll-Screenshots"
 description: "macOS kann keine scrollenden Bildschirmfotos nativ. Diese 2026-Anleitung erklärt warum, vergleicht GoFullPage, Shottr, CleanShot X, Xnapper, screensnap und ScrollShot und zeigt, wie du mit ScrollShot für Mac jedes Fenster kostenlos einfängst."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "Anleitung"
 author: "ScrollShot Team"
 tags: ["Langes Bildschirmfoto Mac", "Scroll-Screenshot Mac", "Bildschirmfoto scrollen Mac", "ScrollShot für Mac", "macOS Screenshot-Tool", "Scrollen und Zusammensetzen"]

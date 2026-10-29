@@ -2,6 +2,7 @@
 title: "¿Qué tan difícil es unir dos capturas de pantalla? Un motor de stitching para iOS que me hizo empezar de cero — una y otra vez"
 description: "Desmontamos el motor de stitching de ScrollShot: seleccionar 30 fotogramas clave de entre 1.800, template matching inverso, búsqueda piramidal NCC, estrategia de fallback de tres niveles y los trucos de ingeniería que ningún libro enseña."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Técnica"
 author: "Equipo de ScrollShot"
 tags: ["captura larga iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de grabación de pantalla"]

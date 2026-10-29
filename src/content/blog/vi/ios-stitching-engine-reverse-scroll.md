@@ -2,6 +2,7 @@
 title: "Người dùng cứ khăng khăng lật ngược cuộn để chụp — và tôi đã né được việc viết lại toàn bộ engine chỉ với một dòng"
 description: "Khi người dùng muốn chụp một ảnh màn hình dài iPhone bằng cách cuộn ngược lên, bản năng đầu tiên của tôi là xây một « engine đi lên » riêng. Cuối cùng, chỉ một dòng code là đủ. Bài viết này bóc tách thiết kế ghép ảnh cuộn ngược của ScrollShot, kỹ thuật đằng sau một ảnh chụp màn hình cuộn mượt mà trong các app như Messages và WhatsApp, và chỉ ra cách chúng tôi phát hiện hướng cuộn, đảo ngược thứ tự frame và tái sử dụng pipeline đi xuống hiện có. Bạn sẽ thấy tại sao phát hiện hướng cuộn gần như miễn phí, tại sao chúng tôi đảo ngược thứ tự frame thay vì thêm cờ isReversed, và cách trả quyết định lại cho người dùng khi độ tự tin thấp, để chụp mà engine không đoán sai."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Kỹ thuật chuyên sâu"
 author: "Đội ngũ ScrollShot"
 tags: ["Ảnh chụp màn hình dài iPhone", "Ảnh chụp màn hình cuộn iPhone", "Ảnh chụp màn hình dài iOS", "Thuật toán ghép ảnh chụp", "Cuộn ngược", "Phát hiện hướng cuộn", "Engine ScrollShot", "Ghép bản ghi màn hình"]

@@ -2,6 +2,7 @@
 title: "Les utilisateurs ont exigé de défiler vers le haut pour capturer — et j'ai évité de réécrire tout le moteur avec une seule ligne"
 description: "Quand les utilisateurs veulent capturer un long screenshot iPhone en faisant défiler vers le haut, mon premier réflexe a été de construire un « moteur ascendant » séparé. Au final, une seule ligne de code a suffi. Cet article décortique la conception du stitching à défilement inverse de ScrollShot, la technique derrière une capture défilante iPhone fluide dans des apps comme Messages et WhatsApp, et montre comment nous détectons le sens de défilement, inversons l'ordre des frames et réutilisons le pipeline descendant existant. Vous verrez pourquoi la détection de direction est quasi gratuite, pourquoi nous inversons l'ordre des frames plutôt que d'ajouter un drapeau isReversed, et comment nous rendons la décision à l'utilisateur quand la confiance est faible, pour capturer sans que le moteur ne se trompe."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Technique"
 author: "Équipe ScrollShot"
 tags: ["Capture longue iPhone", "Capture défilante iPhone", "Capture longue iOS", "Algorithme de fusion de captures", "Défilement inverse", "Détection du sens de défilement", "Moteur ScrollShot", "Assemblage d'enregistrement d'écran"]

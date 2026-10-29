@@ -2,6 +2,7 @@
 title: "Gli utenti hanno insistito per scorrere verso l'alto per catturare — e ho evitato di riscrivere tutto il motore con una sola riga"
 description: "Quando gli utenti vogliono catturare uno screenshot lungo iPhone scorrendo verso l'alto, il mio primo istinto è stato costruire un separato « motore ascendente ». Alla fine, è bastata una sola riga di codice. Questo articolo scompone la progettazione dello stitching a scorrimento inverso di ScrollShot, la tecnica dietro uno screenshot che scorre fluido in app come Messages e WhatsApp, e mostra come rileviamo la direzione di scorrimento, invertiamo l'ordine dei frame e riutilizziamo la pipeline discendente esistente. Vedrai perché il rilevamento della direzione è quasi gratuito, perché invertiamo l'ordine dei frame invece di aggiungere un flag isReversed, e come restituiamo la decisione all'utente quando la confidenza è bassa, per catturare senza che il motore sbagli."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Tecnica"
 author: "Team ScrollShot"
 tags: ["Screenshot lungo iPhone", "Screenshot a scorrimento iPhone", "Screenshot lungo iOS", "Algoritmo di cucitura screenshot", "Scorrimento inverso", "Rilevamento direzione di scorrimento", "Motore ScrollShot", "Unione registrazione schermo"]

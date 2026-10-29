@@ -1,6 +1,7 @@
 import { appStoreUrls, site, localeAssets, alternates, icons, zhRating, zhRatingCountEn, zhUrl } from '../shared';
 
 export const zhHomeLocale = {
+	lastModified: '2026-10-29',
 	lang: 'zh-CN',
 	ogLocale: 'zh_CN',
 	url: zhUrl,

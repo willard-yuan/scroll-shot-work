@@ -2,6 +2,7 @@
 title: "Os usuários insistiram em rolar para cima para capturar — e eu evitei reescrever todo o motor com uma única linha"
 description: "Quando os usuários querem capturar um long screenshot iPhone rolando para cima, meu primeiro instinto foi construir um « motor ascendente » separado. No fim, uma única linha de código foi suficiente. Este post detalha o design de stitching com rolagem reversa do ScrollShot, a técnica por trás de uma captura de tela que rola perfeitamente em apps como Messages e WhatsApp, e mostra como detectamos a direção da rolagem, invertemos a ordem dos frames e reutilizamos o pipeline descendente existente. Você verá por que a detecção de direção é quase de graça, por que invertemos a ordem dos frames em vez de adicionar uma flag isReversed, e como devolvemos a decisão ao usuário quando a confiança é baixa, para capturar sem o motor errar."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Técnica"
 author: "Equipe ScrollShot"
 tags: ["Captura longa iPhone", "Captura de rolagem iPhone", "Captura longa iOS", "Algoritmo de costura de capturas", "Rolagem inversa", "Detecção de direção de rolagem", "Motor ScrollShot", "Costura de gravação de tela"]

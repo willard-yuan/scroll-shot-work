@@ -3,6 +3,7 @@ title: "How Hard Is It to Stitch Two Screenshots Together? An iOS Long-Screensho
 seoTitle: "Inside an iOS Screenshot Stitching Engine"
 description: "A deep dive into ScrollShot's stitching engine: picking 30 keyframes from 1,800 frames, reverse template matching, pyramid NCC search, a three-tier fallback strategy, and the engineering tricks no textbook will teach you."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Deep Dive"
 author: "ScrollShot Team"
 tags: ["iOS long screenshot", "screenshot stitching algorithm", "template matching", "NCC", "ScrollShot engine", "screen recording stitching"]

@@ -2,6 +2,7 @@
 title: "Cách Chụp Ảnh Màn Hình Dài (Cuộn) Trên Mac Năm 2026: Hướng Dẫn Đầy Đủ"
 description: "macOS không có tính năng chụp ảnh màn hình cuộn tích hợp. Hướng dẫn 2026 này giải thích lý do, so sánh GoFullPage, Shottr, CleanShot X, Xnapper, screensnap và ScrollShot, đồng thời hướng dẫn cách chụp bất kỳ cửa sổ nào miễn phí với ScrollShot cho Mac."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "Hướng dẫn"
 author: "Đội ngũ ScrollShot"
 tags: ["ảnh màn hình dài trên Mac", "ảnh chụp màn hình cuộn Mac", "chụp màn hình cuộn Mac", "ScrollShot cho Mac", "công cụ chụp màn hình macOS", "scroll and stitch"]

@@ -2,6 +2,7 @@
 title: "À quel point est-ce difficile d'assembler deux captures d'écran ? Un moteur de stitching iOS qui m'a fait tout recommencer — encore et encore"
 description: "Plongée dans le moteur d'assemblage de ScrollShot : sélectionner 30 images clés parmi 1 800, template matching inversé, recherche pyramidale NCC, stratégie de fallback à trois niveaux, et les astuces d'ingénierie qu'aucun manuel n'enseigne."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Technique"
 author: "Équipe ScrollShot"
 tags: ["capture d'écran longue iOS", "algorithme d'assemblage", "template matching", "NCC", "moteur ScrollShot", "assemblage enregistrement écran"]

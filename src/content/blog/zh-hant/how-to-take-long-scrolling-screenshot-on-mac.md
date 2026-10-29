@@ -2,6 +2,7 @@
 title: "Mac 長截圖怎麼截？2026 滾動截圖完全指南"
 description: "macOS 沒有內建的滾動截圖功能。這篇 2026 指南說明原因，比較 GoFullPage、Shottr、CleanShot X、Xnapper、screensnap 與 ScrollShot，並示範如何用 ScrollShot for Mac 免費截取任何視窗。"
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "使用教學"
 author: "ScrollShot 團隊"
 tags: ["Mac 長截圖", "Mac 滾動截圖", "Mac 截圖工具", "ScrollShot for Mac", "macOS 截圖", "滾動拼接"]

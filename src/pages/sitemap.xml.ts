@@ -13,7 +13,10 @@ type SitemapEntry = {
 	alternates: AlternateLink[];
 };
 
-const SITE_LASTMOD = '2026-05-26';
+// Preserve the existing date for pages without a recorded content update.
+// Set home locale `lastModified` or blog frontmatter `updated` when content changes;
+// never use the build date, since rebuilding does not mean the content changed.
+const DEFAULT_LASTMOD = '2026-05-26';
 // Home is localized to 15 languages (incl. nl/ar/pl/th), but the blog is only
 // localized to the original 11. Splitting the lists keeps the sitemap accurate:
 // home entries get all 15 hreflang alternates, blog entries only get 11.
@@ -34,7 +37,7 @@ const latestDate = (posts: BlogPost[]) =>
 	posts.reduce((latest, post) => {
 		const candidate = normalizeDate(post.updated ?? post.date);
 		return candidate > latest ? candidate : latest;
-	}, SITE_LASTMOD);
+	}, DEFAULT_LASTMOD);
 
 const renderAlternateLinks = (alternates: AlternateLink[]) =>
 	alternates
@@ -59,17 +62,19 @@ const renderUrl = (entry: SitemapEntry) => {
 };
 
 const allPosts = blogLocaleCodes.flatMap((locale) => getBlogPosts(locale));
-const blogLastmod = latestDate(allPosts);
 
 const entries: SitemapEntry[] = [
-	...homeLocaleCodes.map((locale) => ({
-		loc: homeLocales[locale].url,
-		lastmod: SITE_LASTMOD,
-		alternates: homeLocales[locale].alternateLinks,
-	})),
+	...homeLocaleCodes.map((locale) => {
+		const home = homeLocales[locale];
+		return {
+			loc: home.url,
+			lastmod: 'lastModified' in home ? normalizeDate(home.lastModified) : DEFAULT_LASTMOD,
+			alternates: home.alternateLinks,
+		};
+	}),
 	...blogLocaleCodes.map((locale) => ({
 		loc: blogLocales[locale].url,
-		lastmod: blogLastmod,
+		lastmod: latestDate(getBlogPosts(locale)),
 		alternates: blogLocales[locale].alternateLinks,
 	})),
 	...allPosts.map((post) => ({

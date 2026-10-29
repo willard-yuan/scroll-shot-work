@@ -1,6 +1,7 @@
 import { appStoreUrls, site, localeAssets, alternates, icons, zhRating, zhRatingCountEn, jaUrl } from '../shared';
 
 export const jaHomeLocale = {
+	lastModified: '2026-10-29',
 	lang: 'ja',
 	ogLocale: 'ja_JP',
 	url: jaUrl,

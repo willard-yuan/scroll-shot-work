@@ -2,6 +2,7 @@
 title: "Nutzer bestanden auf Rückwärts-Scrollen — und ich rettete mich mit einer einzigen Zeile vor dem Umschreiben der ganzen Engine"
 description: "Wenn Nutzer auf dem iPhone einen langen Screenshot machen wollen, indem sie nach oben scrollen, war mein erster Instinkt, eine separate „Aufwärts-Engine” zu bauen. Am Ende reichte eine einzige Codezeile. Dieser Artikel zerlegt ScrollShots Reverse-Scroll-Stitching-Design, die Technik hinter einem nahtlosen iPhone long screenshot in Apps wie Messages und WhatsApp, und zeigt, wie wir die Scrollrichtung erkennen, die Frame-Reihenfolge umkehren und die bestehende Abwärts-Pipeline wiederverwenden — damit du take scrolling screenshot in iPhone problemlos hinbekommst, inklusive iPhone scrolling screenshot in Chats."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Technik"
 author: "ScrollShot Team"
 tags: ["iPhone langer Screenshot", "iPhone Scroll-Screenshot", "iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Rückwärtsscrollen", "Scroll-Richtungserkennung", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]

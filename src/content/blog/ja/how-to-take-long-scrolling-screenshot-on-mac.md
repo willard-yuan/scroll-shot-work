@@ -2,6 +2,7 @@
 title: "Macで長いスクリーンショットを撮る方法：2026年版スクロール撮影完全ガイド"
 description: "macOSには標準のスクロール撮影（長いスクリーンショット）機能がありません。この2026年版ガイドでは、その理由を解説し、GoFullPage・Shottr・CleanShot X・Xnapper・screensnap・ScrollShotを比較。さらに、ScrollShot for Macを使えば、あらゆるウィンドウを無料で長いスクリーンショットに収められることをお見せします。"
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "使い方ガイド"
 author: "ScrollShotチーム"
 tags: ["Mac 長いスクリーンショット", "Mac スクロール撮影", "Mac スクリーンショット 全体", "ScrollShot for Mac", "Mac スクリーンショットツール", "スクロール結合"]

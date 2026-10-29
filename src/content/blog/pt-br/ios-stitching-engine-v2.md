@@ -2,6 +2,7 @@
 title: "Quão difícil é juntar duas capturas de tela? Um motor de stitching para iOS que me fez recomeçar — de novo e de novo"
 description: "Desmontamos o motor de stitching do ScrollShot: selecionar 30 frames-chave de 1.800, template matching reverso, busca piramidal NCC, estratégia de fallback em três níveis e os truques de engenharia que nenhum livro ensina."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Técnica"
 author: "Equipe ScrollShot"
 tags: ["print longo iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de gravação de tela"]
