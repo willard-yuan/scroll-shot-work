@@ -11,8 +11,6 @@ coverAlt: "Pipeline du moteur d'assemblage ScrollShot en six étapes : de l'enre
 translationKey: "ios-stitching-engine-v2"
 ---
 
-# À quel point est-ce difficile d'assembler deux captures d'écran ? Un moteur de stitching iOS qui m'a fait tout recommencer — encore et encore
-
 J'ai passé plusieurs mois à faire une seule chose : faire en sorte que l'assemblage de captures longues sur mobile soit « parfaitement aligné ».
 
 Ça paraît simple, non ? Deux captures adjacentes, trouver le chevauchement, couper, coller. Mais quand on s'y met vraiment, on découvre vite que « parfaitement aligné » est un gouffre d'ingénierie sans fond.

@@ -24,8 +24,6 @@ faq:
     answer: "PNG für Qualität und Transparenz; JPG wenn die Dateigröße wichtig ist und du keine Transparenz brauchst; PDF nur wenn du durchsuchbaren Text benötigst."
 ---
 
-# Lange Bildschirmfotos auf dem Mac aufnehmen: Die komplette 2026-Anleitung für Scroll-Screenshots
-
 Lass mich dir die 20 Minuten ersparen, die ich beim ersten Mal vergeudet habe.
 
 Ich hatte einen 4.000 Pixel langen Slack-Thread, den ich an einen Entwickler senden wollte. Ich drückte `Cmd + Shift + 4`, zog ein Rechteck auf — und bekam … einen Bildschirm. Der Rest der Unterhaltung war unterhalb des sichtbaren Bereichs, und macOS hat ihn fröhlich ignoriert. Es gibt **keine native Möglichkeit, auf dem Mac ein scrollendes Bildschirmfoto zu machen** — weder in `Cmd + Shift + 4`, noch in der Screenshot-App, noch in der Vorschau. Wenn du hier hoffst, einen versteckten Apple-Shortcut zu finden: ich sage es dir direkt — es gibt ihn nicht. Windows hat ihn im Snipping Tool. iPhone hat ihn. Android hat ihn. macOS, im Jahr 2026, bringt ihn immer noch nicht mit.

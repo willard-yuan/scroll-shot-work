@@ -11,8 +11,6 @@ coverAlt: "ScrollShot reverse template matching diagram for an iPhone scrolling 
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
 
-# Users Insisted on Scrolling Backward to Capture — and I Dodged Rewriting the Whole Engine with One Line
-
 Most people who want an iPhone long screenshot — or any iPhone scrolling screenshot inside an app — assume the user scrolls top to bottom. ScrollShot's stitching engine was originally designed that way too — I wrote up the full story in <a href="/blog/ios-stitching-engine-v2/">"How Hard Is It to Stitch Two Screenshots Together? An iOS Long-Screenshot Engine That Made Me Start Over — Again and Again"</a>: record → sample frames at equal intervals → per-frame template matching to compute the offset → find the best seam → crop and stitch. That pipeline is already solid for the top-to-bottom case.
 
 But the real world loves to argue. Users want to capture an iPhone scrolling screenshot of a chat — Messages, WhatsApp, or WeChat — or save the part of a web page they scrolled up to see, exactly the iphone screenshot full page in app scenario people keep asking about — and when recording, their finger slides upward. The content flows backward through the recording: it starts at the bottom of the page and the "end" is actually the earlier content. Feed that straight into the top-to-bottom engine and you get an upside-down image: the visual top is the old content from the end of the recording, and the bottom is the beginning.

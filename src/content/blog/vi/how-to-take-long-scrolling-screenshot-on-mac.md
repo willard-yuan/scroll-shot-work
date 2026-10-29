@@ -24,8 +24,6 @@ faq:
     answer: "PNG cho chất lượng và trong suốt; JPG nếu kích thước tệp quan trọng và bạn không cần trong suốt; PDF chỉ khi cần văn bản có thể tìm kiếm."
 ---
 
-# Cách Chụp Ảnh Màn Hình Dài (Cuộn) Trên Mac Năm 2026: Hướng Dẫn Đầy Đủ
-
 Để tôi giúp bạn tiết kiệm 20 phút mà lần đầu tôi đã lãng phí cho việc này.
 
 Tôi có một chuỗi tin nhắn Slack dài 4.000 pixel cần gửi cho một lập trình viên. Tôi nhấn `Cmd + Shift + 4`, kéo một khung và... nhận được đúng một màn hình. Phần còn lại của cuộc hội thoại nằm bên dưới, và macOS vui vẻ bỏ qua nó. **Không có cách gốc nào để chụp ảnh màn hình cuộn trên Mac** — không trong `Cmd + Shift + 4`, không trong ứng dụng Ảnh chụp màn hình, không trong Xem trước. Nếu bạn đến đây hy vọng có một phím tắt ẩn của Apple, tôi nói thẳng: nó không tồn tại. Windows có trong Công cụ Cắt. iPhone có. Android có. macOS, tính đến 2026, vẫn chưa tích hợp sẵn.

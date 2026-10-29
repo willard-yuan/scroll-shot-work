@@ -24,8 +24,6 @@ faq:
     answer: "PNG pour la qualité et la transparence ; JPG si la taille compte et que tu n'as pas besoin de transparence ; PDF uniquement si tu as besoin de texte consultable."
 ---
 
-# Comment faire une longue capture d'écran défilante sur Mac en 2026 (Guide complet)
-
 Laisse-moi t'épargner les 20 minutes que j'ai perdues la première fois.
 
 J'avais un fil Slack de 4 000 pixels à envoyer à un développeur. J'ai appuyé sur `Cmd + Shift + 4`, tracé une zone — et j'ai obtenu… un écran. Le reste de la conversation était en dessous, et macOS l'a gentiment ignoré. Il **n'existe aucun moyen natif de faire une capture d'écran défilante sur Mac** — ni dans `Cmd + Shift + 4`, ni dans l'app Capture, ni dans Aperçu. Si tu es venu chercher un raccourci Apple caché, je te le dis tout net : il n'existe pas. Windows l'a dans l'Outil Recapture. L'iPhone l'a. Android l'a. macOS, en 2026, ne l'intègre toujours pas.

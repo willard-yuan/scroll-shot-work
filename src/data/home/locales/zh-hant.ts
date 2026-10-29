@@ -11,7 +11,7 @@ export const zhHantHomeLocale = {
 	meta: {
 		title: 'iPhone 長截圖工具 ScrollShot：滾動截圖與拼接長圖',
 		description:
-			'ScrollShot 讓 iPhone 長截圖更簡單：支援自動滾動錄影拼接、多張照片手動拼接、網頁長截圖與高畫質長圖儲存。快速產生清晰完整的長圖，是保存聊天紀錄、網頁內容和 App 頁面的理想工具。',
+			'ScrollShot 是適用於 iPhone 的長截圖工具，將滾動錄影自動拼成清晰長圖，也支援多張截圖手動拼接。輕鬆保存聊天紀錄、網頁、App 頁面與工作文件，調整接縫、清理捲動條，並匯出圖片或 PDF 分享。拼接在裝置本機完成，無需上傳圖片；可先體驗免費手動拼接，再按需選擇 Pro 自動拼接功能，減少重複截圖與裁切。',
 		keywords: ['ScrollShot', 'iPhone 長截圖', '滾動截圖', '長截圖工具', '拼接長圖'],
 		imageAlt: 'ScrollShot 繁體中文影片示範封面',
 	},

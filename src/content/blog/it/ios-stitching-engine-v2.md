@@ -11,8 +11,6 @@ coverAlt: "Pipeline del motore di stitching di ScrollShot in sei fasi: dalla reg
 translationKey: "ios-stitching-engine-v2"
 ---
 
-# Quanto è difficile unire due screenshot? Un motore di stitching iOS che mi ha fatto ricominciare — ancora e ancora
-
 Ho passato diversi mesi a fare una sola cosa: far sì che lo stitching di screenshot lunghi su mobile fosse «perfettamente allineato».
 
 Sembra facile, no? Due screenshot adiacenti, trovare la sovrapposizione, tagliare e incollare. Ma quando ti metti a programmare, scopri che «perfettamente allineato» è un abisso di ingegneria senza fondo.

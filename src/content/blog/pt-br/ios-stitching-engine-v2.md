@@ -11,8 +11,6 @@ coverAlt: "Pipeline do motor de stitching do ScrollShot em seis etapas: da grava
 translationKey: "ios-stitching-engine-v2"
 ---
 
-# Quão difícil é juntar duas capturas de tela? Um motor de stitching para iOS que me fez recomeçar — de novo e de novo
-
 Passei vários meses fazendo uma coisa só: fazer o stitching de prints longos no celular ficar «perfeitamente alinhado».
 
 Parece fácil, né? Duas capturas adjacentes, achar a sobreposição, cortar e colar. Mas quando você senta para programar, descobre que «perfeitamente alinhado» é um buraco de engenharia sem fundo.

@@ -24,8 +24,6 @@ faq:
     answer: "PNG for quality and transparency; JPG if file size matters and you don't need transparency; PDF only if you need searchable text."
 ---
 
-# How to Take a Long Scrolling Screenshot on Mac in 2026 (Complete Guide)
-
 Let me save you the 20 minutes I wasted the first time I needed this.
 
 I had a 4,000-pixel Slack thread to send to a developer. I pressed `Cmd + Shift + 4`, dragged a box, and got… one screen. The rest of the conversation was below the fold, and macOS happily ignored it. There is **no native way to take a scrolling screenshot on Mac** — not in `Cmd + Shift + 4`, not in the Screenshot app, not in Preview. If you came here hoping for a hidden Apple shortcut, I'll tell you straight: it doesn't exist. Windows has it in Snipping Tool. iPhone has it. Android has it. macOS, in 2026, still doesn't ship it.

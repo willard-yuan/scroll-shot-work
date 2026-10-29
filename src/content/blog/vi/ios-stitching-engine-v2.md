@@ -11,8 +11,6 @@ coverAlt: "Pipeline 6 bước của engine stitching ScrollShot: từ quay màn 
 translationKey: "ios-stitching-engine-v2"
 ---
 
-# Ghép hai ảnh chụp màn hình khó đến mức nào? Một engine stitching iOS khiến tôi phải làm lại từ đầu — hết lần này đến lần khác
-
 Tôi đã dành mấy tháng chỉ để làm một việc: giúp tính năng ghép ảnh chụp màn hình dài trên điện thoại «căn chỉnh chính xác».
 
 Nghe đơn giản đúng không? Hai ảnh chụp kề nhau, tìm phần chồng lấp, cắt rồi dán. Nhưng khi thực sự bắt tay vào code, bạn sẽ nhanh chóng nhận ra «chính xác» là một hố sâu kỹ thuật không đáy.

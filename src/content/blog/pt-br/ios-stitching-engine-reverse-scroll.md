@@ -11,8 +11,6 @@ coverAlt: "Diagrama de matching de template reverso do ScrollShot para uma captu
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
 
-# Os usuários insistiram em rolar para cima para capturar — e eu evitei reescrever todo o motor com uma única linha
-
 A maioria de quem quer um long screenshot iPhone — ou qualquer captura de rolagem iPhone dentro de um app — assume que o usuário rola de cima para baixo. O motor de stitching do ScrollShot também foi desenhado assim no começo — escrevi a história completa em <a href="/pt-br/blog/ios-stitching-engine-v2/">« Quão difícil é juntar duas capturas de tela? Um motor de stitching para iOS que me fez recomeçar — de novo e de novo »</a>: gravar → amostrar frames em intervalos iguais → matching de template por frame para calcular o deslocamento → achar a melhor costura → recortar e costurar. Esse pipeline já é sólido para o caso de cima para baixo.
 
 Mas o mundo real adora contestar. Os usuários querem capturar uma captura de rolagem iPhone de um chat — Messages, WhatsApp ou WeChat — ou salvar a parte de uma página web que rolaram para cima para ver, exatamente o caso de « captura de página inteira em app iPhone » que todo mundo pergunta — e ao gravar, o dedo desliza para cima. O conteúdo flui de trás para frente na gravação: começa no final da página e o « fim » é na verdade o conteúdo mais antigo. Jogue isso direto no motor de cima para baixo e você obtém uma imagem de cabeça para baixo: o topo visual é o conteúdo antigo do fim da gravação, e a base é o começo.

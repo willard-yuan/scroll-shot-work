@@ -11,8 +11,6 @@ coverAlt: "ScrollShot Stitching-Engine Sechs-Schritte-Pipeline: von der Bildschi
 translationKey: "ios-stitching-engine-v2"
 ---
 
-# Wie schwer kann es sein, zwei Screenshots zusammenzufügen? Eine iOS-Stitching-Engine, die mich immer wieder von vorne anfangen ließ
-
 Ich habe mehrere Monate lang nur eine Sache gemacht: Das Stitching von langen Screenshots auf dem Smartphone „genau richtig" auszurichten.
 
 Klingt einfach, oder? Zwei benachbarte Screenshots, Überlappung finden, schneiden, zusammenkleben. Aber wenn man wirklich anfängt zu programmieren, merkt man schnell: „Genau richtig" ist ein bodenloses Engineering-Loch.

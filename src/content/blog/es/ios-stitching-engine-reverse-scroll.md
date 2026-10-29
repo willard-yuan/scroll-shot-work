@@ -11,8 +11,6 @@ coverAlt: "Diagrama de matching de plantilla inverso de ScrollShot para una capt
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
 
-# Los usuarios insistieron en desplazar hacia arriba para capturar — y esquivé reescribir todo el motor con una sola línea
-
 La mayoría de los que quieren un long screenshot iPhone — o cualquier captura de desplazamiento iPhone dentro de una app — asumen que el usuario desplaza de arriba abajo. El motor de stitching de ScrollShot también se diseñó así al principio — escribí la historia completa en <a href="/es/blog/ios-stitching-engine-v2/">« ¿Qué tan difícil es unir dos capturas de pantalla? Un motor de stitching para iOS que me hizo empezar de cero — una y otra vez »</a>: grabar → muestrear frames a intervalos iguales → matching de plantilla por frame para calcular el desplazamiento → encontrar la mejor costura → recortar y unir. Esa tubería ya es sólida para el caso de arriba abajo.
 
 Pero el mundo real ama contradecir. Los usuarios quieren capturar una captura de desplazamiento iPhone de un chat — Messages, WhatsApp o WeChat — o guardar la parte de una página web que desplazaron hacia arriba para ver, exactamente el caso de « captura de página completa en app iPhone » que todos preguntan — y al grabar, su dedo se desliza hacia arriba. El contenido fluye hacia atrás en la grabación: empieza en la parte inferior de la página y el « final » es en realidad el contenido anterior. Pásalo directo al motor de arriba abajo y obtienes una imagen invertida: la parte superior visual es el contenido antiguo del final de la grabación, y la inferior es el principio.

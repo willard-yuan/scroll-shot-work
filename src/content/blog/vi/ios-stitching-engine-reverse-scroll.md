@@ -11,8 +11,6 @@ coverAlt: "Sơ đồ khớp template ngược của ScrollShot cho ảnh chụp 
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
 
-# Người dùng cứ khăng khăng lật ngược cuộn để chụp — và tôi đã né được việc viết lại toàn bộ engine chỉ với một dòng
-
 Hầu hết những ai muốn một ảnh chụp màn hình dài iPhone — hay bất kỳ ảnh chụp màn hình cuộn iPhone nào trong một app — đều mặc định người dùng cuộn từ trên xuống. Engine ghép ảnh của ScrollShot ban đầu cũng được thiết kế như vậy — tôi đã viết toàn bộ câu chuyện trong <a href="/vi/blog/ios-stitching-engine-v2/">« Ghép hai ảnh chụp màn hình khó đến mức nào? Một engine stitching iOS khiến tôi phải làm lại từ đầu — hết lần này đến lần khác »</a>: ghi hình → lấy mẫu frame cách đều → khớp template từng frame để tính offset → tìm đường may tốt nhất → cắt và ghép. Pipeline này đã vững cho trường hợp trên xuống.
 
 Nhưng thế giới thực thích phản bác. Người dùng muốn chụp một ảnh chụp màn hình cuộn iPhone của một cuộc trò chuyện — Messages, WhatsApp hay WeChat — hoặc lưu phần trang web họ cuộn ngược lên để xem, đúng trường hợp « ảnh chụp toàn trang trong app iPhone » mà mọi người cứ hỏi — và khi ghi hình, ngón tay họ trượt lên. Nội dung chảy ngược trong bản ghi: bắt đầu ở đáy trang và 「kết thúc」 thực ra là nội dung cũ hơn. Đưa thẳng vào engine trên xuống sẽ cho ra một ảnh bị lộn ngược: đỉnh ảnh là nội dung cũ ở cuối bản ghi, và đáy là đầu.

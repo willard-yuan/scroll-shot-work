@@ -24,8 +24,6 @@ faq:
     answer: "PNG para calidad y transparencia; JPG si el tamaño importa y no necesitas transparencia; PDF solo si necesitas texto consultable."
 ---
 
-# Cómo hacer una captura de pantalla larga y de desplazamiento en Mac en 2026 (Guía completa)
-
 Déjame ahorrarte los 20 minutos que yo perdí la primera vez.
 
 Tenía un hilo de Slack de 4.000 píxeles que enviar a un desarrollador. Pulsé `Cmd + Shift + 4`, arrastré un cuadro y obtuve… una pantalla. El resto de la conversación quedaba debajo, y macOS lo ignoró alegremente. **No existe forma nativa de hacer una captura de pantalla de desplazamiento en Mac** — ni en `Cmd + Shift + 4`, ni en la app de Captura, ni en Vista previa. Si viniste buscando un atajo oculto de Apple, te lo digo claro: no existe. Windows lo tiene en la Herramienta de recorte. iPhone lo tiene. Android lo tiene. macOS, en 2026, todavía no lo trae.

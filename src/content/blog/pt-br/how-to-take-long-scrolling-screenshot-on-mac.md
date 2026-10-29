@@ -24,8 +24,6 @@ faq:
     answer: "PNG para qualidade e transparência; JPG se o tamanho do arquivo importa e você não precisa de transparência; PDF apenas se precisar de texto pesquisável."
 ---
 
-# Como Tirar Screenshot Longo (Captura Rolável) no Mac em 2026: Guia Completo
-
 Deixa eu te poupar os 20 minutos que eu perdi na primeira vez que precisei disso.
 
 Eu tinha um thread de 4.000 pixels no Slack para enviar a um desenvolvedor. Apertei `Cmd + Shift + 4`, arrastei uma caixa e... peguei uma tela só. O resto da conversa estava abaixo da dobra, e o macOS ignorou feliz. **Não existe forma nativa de tirar um screenshot rolável no Mac** — nem no `Cmd + Shift + 4`, nem no app Screenshot, nem no Preview. Se você veio aqui esperando um atalho escondido da Apple, vou ser direto: ele não existe. O Windows tem no Snipping Tool. O iPhone tem. O Android tem. O macOS, em 2026, ainda não traz isso de fábrica.

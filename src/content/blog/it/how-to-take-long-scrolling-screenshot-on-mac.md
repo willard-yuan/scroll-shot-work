@@ -1,5 +1,6 @@
 ---
 title: "Come Fare uno Screenshot Lungo (a Scorrimento) su Mac nel 2026: Guida Completa"
+seoTitle: "Screenshot lungo su Mac: guida 2026"
 description: "macOS non ha uno screenshot a scorrimento nativo. Questa guida 2026 spiega il perché, confronta GoFullPage, Shottr, CleanShot X, Xnapper, screensnap e ScrollShot, e mostra come catturare qualsiasi finestra gratis con ScrollShot per Mac."
 date: "2026-08-05"
 category: "Guida"
@@ -23,8 +24,6 @@ faq:
   - question: "In che formato salvare gli screenshot a scorrimento?"
     answer: "PNG per qualità e trasparenza; JPG se conta la dimensione del file e non ti serve trasparenza; PDF solo se ti serve testo ricercabile."
 ---
-
-# Come Fare uno Screenshot Lungo (a Scorrimento) su Mac nel 2026: Guida Completa
 
 Lasciami risparmiare i 20 minuti che ho perso la prima volta che mi è servito.
 

@@ -11,8 +11,6 @@ coverAlt: "Diagramma di matching di template inverso di ScrollShot per uno scree
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
 
-# Gli utenti hanno insistito per scorrere verso l'alto per catturare — e ho evitato di riscrivere tutto il motore con una sola riga
-
 La maggior parte di chi vuole uno screenshot lungo iPhone — o comunque uno screenshot a scorrimento iPhone dentro un'app — presuppone che l'utente scorra dall'alto verso il basso. Anche il motore di stitching di ScrollShot era stato progettato così all'inizio — ho raccontato tutta la storia in <a href="/it/blog/ios-stitching-engine-v2/">« Quanto è difficile unire due screenshot? Un motore di stitching iOS che mi ha fatto ricominciare — ancora e ancora »</a>: registra → campiona i frame a intervalli regolari → matching di template per frame per calcolare l'offset → trova la migliore cucitura → ritaglia e unisci. Questa pipeline è già solida per il caso dall'alto verso il basso.
 
 Ma il mondo reale ama contraddire. Gli utenti vogliono catturare uno screenshot a scorrimento iPhone di una chat — Messages, WhatsApp o WeChat — o salvare la parte di una pagina web che hanno scorso verso l'alto per vedere, esattamente il caso di « screenshot di pagina intera dentro un'app iPhone » che tutti continuano a chiedere — e durante la registrazione, il dito scivola verso l'alto. Il contenuto scorre al contrario nella registrazione: inizia in fondo alla pagina e la « fine » è in realtà il contenuto precedente. Passalo direttamente nel motore dall'alto verso il basso e ottieni un'immagine capovolta: la parte superiore visiva è il vecchio contenuto della fine della registrazione, e il basso è l'inizio.

@@ -11,8 +11,6 @@ coverAlt: "Diagramme de matching de template inverse ScrollShot pour une capture
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
 
-# Les utilisateurs ont exigé de défiler vers le haut pour capturer — et j'ai évité de réécrire tout le moteur avec une seule ligne
-
 La plupart de ceux qui veulent un long screenshot iPhone — ou n'importe quelle capture défilante iPhone dans une app — partent du principe que l'utilisateur fait défiler de haut en bas. Le moteur de stitching de ScrollShot a été conçu ainsi à l'origine — j'ai raconté toute l'histoire dans <a href="/fr/blog/ios-stitching-engine-v2/">« À quel point est-ce difficile d'assembler deux captures d'écran ? Un moteur de stitching iOS qui m'a fait tout recommencer — encore et encore »</a> : enregistrer → échantillonner les frames à intervalles réguliers → matching de template par frame pour calculer le décalage → trouver la meilleure couture → recadrer et assembler. Ce pipeline est déjà solide pour le cas haut-en-bas.
 
 Mais le monde réel aime contredire. Les utilisateurs veulent capturer une capture défilante iPhone d'une conversation — Messages, WhatsApp ou WeChat — ou sauvegarder la partie d'une page web qu'ils ont fait défiler vers le haut pour voir, exactement le cas de « capture de page entière dans une app iPhone » que tout le monde réclame — et pendant l'enregistrement, leur doigt glisse vers le haut. Le contenu s'écoule à l'envers dans l'enregistrement : il commence en bas de la page et la « fin » est en fait le contenu plus ancien. Envoyez cela tel quel dans le moteur haut-en-bas et vous obtenez une image à l'envers : le haut visuel est l'ancien contenu de la fin de l'enregistrement, et le bas est le début.

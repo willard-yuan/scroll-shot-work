@@ -1,6 +1,6 @@
 ---
 title: "两张截图拼起来有多难？一个让我反复推翻重来的 iOS 长截图拼接引擎"
-description: "把 ScrollShot 的拼接引擎拆开给你看：从 1800 帧里挑 30 帧、反向模板匹配、金字塔 NCC 搜索、三层降级策略，以及那些课本上不会教的工程 trick。"
+description: "深入了解 ScrollShot 的 iOS 长截图拼接引擎：如何从 1800 帧录屏中筛选 30 帧，利用反向模板匹配、多模板投票与金字塔 NCC 搜索对齐画面。文章拆解三层降级策略、接缝选择、滚动条消除和超长图片内存管理，并解释全景拼接为何不适合聊天截图，分享性能数据与失败后的交互兜底，为开发同类工具提供工程参考。"
 date: "2026-06-10"
 category: "技术深潜"
 author: "ScrollShot 团队"
@@ -10,8 +10,6 @@ cover: "/scrollshot_video_to_long_screenshot_workflow.webp"
 coverAlt: "ScrollShot 拼接引擎六步处理流程图：从录屏到长图"
 translationKey: "ios-stitching-engine-v2"
 ---
-
-# 两张截图拼起来有多难？一个让我反复推翻重来的 iOS 长截图拼接引擎
 
 我花了好几个月做一件事：让手机上的长截图拼接"刚好对齐"。
 
