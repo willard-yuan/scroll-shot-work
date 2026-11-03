@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">How to capture a full webpage in Safari on iPhone Duo</title>
+  <desc id="desc">Five steps: open a webpage in Safari; press side and volume up; choose Full Page in the screenshot editor; preview and crop; save an image or PDF using the available options. Conceptual workflow, not an iOS screenshot.</desc>
+  <rect width="1200" height="720" rx="28" fill="#fff8f2"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="64" fill="#c34425" font-size="18" font-weight="700" letter-spacing="2">IPHONE DUO · METHOD 1</text>
+    <text x="64" y="119" fill="#20242c" font-size="42" font-weight="700">Safari: capture the full page</text>
+    <text x="64" y="157" fill="#5d626c" font-size="21">One webpage. One continuous capture.</text>
+    <path d="M88 232V573" stroke="#f2c9ba" stroke-width="3"/>
+    <g fill="#e9502c"><circle cx="88" cy="232" r="23"/><circle cx="88" cy="317" r="23"/><circle cx="88" cy="402" r="23"/><circle cx="88" cy="487" r="23"/><circle cx="88" cy="572" r="23"/></g>
+    <g fill="white" font-size="21" font-weight="700" text-anchor="middle"><text x="88" y="239">1</text><text x="88" y="324">2</text><text x="88" y="409">3</text><text x="88" y="494">4</text><text x="88" y="579">5</text></g>
+    <g fill="#20242c" font-size="25" font-weight="700"><text x="132" y="230">Open Safari</text><text x="132" y="315">Take a screenshot</text><text x="132" y="400">Choose Full Page</text><text x="132" y="485">Preview and crop</text><text x="132" y="570">Save your capture</text></g>
+    <g fill="#5d626c" font-size="19"><text x="132" y="258">Load the webpage you want to keep.</text><text x="132" y="343">Quickly press Side + Volume Up.</text><text x="132" y="428">Use the screenshot editor.</text><text x="132" y="513">Check the beginning and end.</text><text x="132" y="598">Image or PDF, where available.</text></g>
+    <rect x="735" y="208" width="361" height="407" rx="18" fill="#ffffff" stroke="#e8ddd7" stroke-width="2"/>
+    <rect x="759" y="232" width="313" height="37" rx="10" fill="#fff0e8"/>
+    <text x="916" y="257" text-anchor="middle" fill="#b33b20" font-size="18" font-weight="700">FULL PAGE</text>
+    <rect x="770" y="292" width="250" height="273" rx="6" fill="#fafaf9"/>
+    <rect x="787" y="311" width="145" height="13" rx="4" fill="#303744"/>
+    <g fill="#cbd0d7"><rect x="787" y="340" width="211" height="7" rx="3"/><rect x="787" y="357" width="211" height="7" rx="3"/><rect x="787" y="374" width="174" height="7" rx="3"/></g>
+    <rect x="787" y="402" width="211" height="65" rx="7" fill="#ffddcb"/>
+    <g fill="#cbd0d7"><rect x="787" y="489" width="211" height="7" rx="3"/><rect x="787" y="506" width="211" height="7" rx="3"/><rect x="787" y="523" width="174" height="7" rx="3"/></g>
+    <rect x="1038" y="292" width="19" height="273" rx="6" fill="#eee9e5"/>
+    <rect x="1038" y="292" width="19" height="75" rx="6" fill="#e9502c"/>
+    <text x="916" y="592" text-anchor="middle" fill="#777b83" font-size="16">Conceptual page preview</text>
+    <text x="64" y="676" fill="#777b83" font-size="17">Workflow illustration · Controls may vary by iOS version and capture.</text>
+    <text x="1096" y="676" text-anchor="end" fill="#c34425" font-size="18" font-weight="700">ScrollShot</text>
+  </g>
+</svg>
