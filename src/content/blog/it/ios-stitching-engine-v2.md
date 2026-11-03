@@ -2,6 +2,7 @@
 title: "Quanto è difficile unire due screenshot? Un motore di stitching iOS che mi ha fatto ricominciare — ancora e ancora"
 description: "Smontiamo il motore di stitching di ScrollShot: selezionare 30 frame chiave da 1.800, template matching inverso, ricerca piramidale NCC, strategia di fallback a tre livelli e i trucchi di ingegneria che nessun manuale insegna."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Tecnica"
 author: "Team ScrollShot"
 tags: ["screenshot lunghi iOS", "algoritmo di stitching", "template matching", "NCC", "motore ScrollShot", "stitching registrazione schermo"]
@@ -10,8 +11,6 @@ cover: "/scrollshot_video_to_long_screenshot_workflow_it.webp"
 coverAlt: "Pipeline del motore di stitching di ScrollShot in sei fasi: dalla registrazione schermo all'immagine lunga"
 translationKey: "ios-stitching-engine-v2"
 ---
-
-# Quanto è difficile unire due screenshot? Un motore di stitching iOS che mi ha fatto ricominciare — ancora e ancora
 
 Ho passato diversi mesi a fare una sola cosa: far sì che lo stitching di screenshot lunghi su mobile fosse «perfettamente allineato».
 

@@ -68,7 +68,7 @@ if (post.faq && post.faq.length > 0) {
 ---
 
 <Layout
-	title={`${post.title} | ScrollShot Blog`}
+	title={`${post.seoTitle ?? post.title} | ScrollShot Blog`}
 	description={post.description}
 	keywords={[]}
 	canonical={post.url}

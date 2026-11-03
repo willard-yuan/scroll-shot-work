@@ -2,6 +2,7 @@
 title: "Cómo hacer una captura de pantalla larga y de desplazamiento en Mac en 2026 (Guía completa)"
 description: "macOS no tiene captura de pantalla de desplazamiento nativa. Esta guía 2026 explica por qué, compara GoFullPage, Shottr, CleanShot X, Xnapper, screensnap y ScrollShot, y muestra cómo capturar cualquier ventana gratis con ScrollShot para Mac."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "Guía"
 author: "Equipo de ScrollShot"
 tags: ["Captura de pantalla larga Mac", "Captura de desplazamiento Mac", "Captura de scroll Mac", "ScrollShot para Mac", "Herramienta de captura macOS", "Desplazar y unir"]
@@ -23,8 +24,6 @@ faq:
   - question: "¿En qué formato guardar las capturas de desplazamiento?"
     answer: "PNG para calidad y transparencia; JPG si el tamaño importa y no necesitas transparencia; PDF solo si necesitas texto consultable."
 ---
-
-# Cómo hacer una captura de pantalla larga y de desplazamiento en Mac en 2026 (Guía completa)
 
 Déjame ahorrarte los 20 minutos que yo perdí la primera vez.
 

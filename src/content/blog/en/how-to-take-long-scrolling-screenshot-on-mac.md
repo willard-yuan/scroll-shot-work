@@ -2,6 +2,7 @@
 title: "How to Take a Long Scrolling Screenshot on Mac in 2026 (Complete Guide)"
 description: "macOS has no built-in scrolling screenshot. This 2026 guide explains why, compares GoFullPage, Shottr, CleanShot X, Xnapper, screensnap and ScrollShot, and shows how to capture any window for free with ScrollShot for Mac."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "How-To Guide"
 author: "ScrollShot Team"
 tags: ["Mac scrolling screenshot", "long screenshot on Mac", "scrolling screenshot Mac", "ScrollShot for Mac", "macOS screenshot tool", "scroll and stitch"]
@@ -23,8 +24,6 @@ faq:
   - question: "What format should I save scrolling screenshots in?"
     answer: "PNG for quality and transparency; JPG if file size matters and you don't need transparency; PDF only if you need searchable text."
 ---
-
-# How to Take a Long Scrolling Screenshot on Mac in 2026 (Complete Guide)
 
 Let me save you the 20 minutes I wasted the first time I needed this.
 

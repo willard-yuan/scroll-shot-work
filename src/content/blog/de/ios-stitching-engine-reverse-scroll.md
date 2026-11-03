@@ -2,6 +2,7 @@
 title: "Nutzer bestanden auf Rückwärts-Scrollen — und ich rettete mich mit einer einzigen Zeile vor dem Umschreiben der ganzen Engine"
 description: "Wenn Nutzer auf dem iPhone einen langen Screenshot machen wollen, indem sie nach oben scrollen, war mein erster Instinkt, eine separate „Aufwärts-Engine” zu bauen. Am Ende reichte eine einzige Codezeile. Dieser Artikel zerlegt ScrollShots Reverse-Scroll-Stitching-Design, die Technik hinter einem nahtlosen iPhone long screenshot in Apps wie Messages und WhatsApp, und zeigt, wie wir die Scrollrichtung erkennen, die Frame-Reihenfolge umkehren und die bestehende Abwärts-Pipeline wiederverwenden — damit du take scrolling screenshot in iPhone problemlos hinbekommst, inklusive iPhone scrolling screenshot in Chats."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Technik"
 author: "ScrollShot Team"
 tags: ["iPhone langer Screenshot", "iPhone Scroll-Screenshot", "iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Rückwärtsscrollen", "Scroll-Richtungserkennung", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]
@@ -10,8 +11,6 @@ cover: "/ios_stitching_engine_reverse_scroll_framework_de.webp"
 coverAlt: "ScrollShot Reverse-Template-Matching-Diagramm für einen iPhone scrolling screenshot: Template vom oberen Rand des neuen Frames nehmen, Offset im unteren Rand des alten Frames suchen"
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
-
-# Nutzer bestanden auf Rückwärts-Scrollen — und ich rettete mich mit einer einzigen Zeile vor dem Umschreiben der ganzen Engine
 
 Die meisten, die einen iPhone langer Screenshot wollen — oder irgendeinen iPhone-Scroll-Screenshot innerhalb einer App —, gehen davon aus, dass der Nutzer von oben nach unten scrollt. Auch ScrollShots Stitching-Engine war ursprünglich so gebaut — ich habe die ganze Geschichte in <a href="/de/blog/ios-stitching-engine-v2/">„Wie schwer kann es sein, zwei Screenshots zusammenzufügen? Eine iOS-Stitching-Engine, die mich immer wieder von vorne anfangen ließ”</a> aufgeschrieben: aufnehmen → Frames in gleichen Abständen sampeln → pro Frame Template-Matching, um den Offset zu berechnen → beste Naht finden → zuschneiden und zusammenfügen. Diese Pipeline ist für den Fall von oben nach unten bereits solide.
 

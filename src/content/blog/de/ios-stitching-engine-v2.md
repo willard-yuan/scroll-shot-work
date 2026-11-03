@@ -2,6 +2,7 @@
 title: "Wie schwer kann es sein, zwei Screenshots zusammenzufügen? Eine iOS-Stitching-Engine, die mich immer wieder von vorne anfangen ließ"
 description: "Ein tiefer Blick in die Stitching-Engine von ScrollShot: 30 Frames aus 1.800 auswählen, Reverse Template Matching, Pyramid-NCC-Suche, dreistufige Fallback-Strategie und Engineering-Tricks, die in keinem Lehrbuch stehen."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Technik"
 author: "ScrollShot Team"
 tags: ["iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Template Matching", "NCC", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]
@@ -10,8 +11,6 @@ cover: "/scrollshot_video_to_long_screenshot_workflow_de.webp"
 coverAlt: "ScrollShot Stitching-Engine Sechs-Schritte-Pipeline: von der Bildschirmaufnahme zum langen Bild"
 translationKey: "ios-stitching-engine-v2"
 ---
-
-# Wie schwer kann es sein, zwei Screenshots zusammenzufügen? Eine iOS-Stitching-Engine, die mich immer wieder von vorne anfangen ließ
 
 Ich habe mehrere Monate lang nur eine Sache gemacht: Das Stitching von langen Screenshots auf dem Smartphone „genau richtig" auszurichten.
 

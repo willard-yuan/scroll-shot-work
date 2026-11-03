@@ -2,6 +2,7 @@
 title: "Mac 长截图怎么截？2026 滚动截图完全指南"
 description: "macOS 没有自带的滚动截图功能。这篇 2026 完全指南讲清原因，横向对比 GoFullPage、Shottr、CleanShot X、Xnapper、screensnap 与 ScrollShot，并教你用免费的 ScrollShot for Mac 截取任意窗口的长图。"
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "使用教程"
 author: "ScrollShot 团队"
 tags: ["Mac 长截图", "Mac 滚动截图", "macOS 截图工具", "ScrollShot for Mac", "滚动拼接", "长图截取"]
@@ -23,8 +24,6 @@ faq:
   - question: "长截图保存成什么格式好？"
     answer: "要质量和透明背景用 PNG；文件体积优先、不需要透明用 JPG；只有需要可搜索文字时才用 PDF。"
 ---
-
-# Mac 长截图怎么截？2026 滚动截图完全指南
 
 先把我自己第一次折腾时浪费的 20 分钟省给你。
 

@@ -2,6 +2,7 @@
 title: "Los usuarios insistieron en desplazar hacia arriba para capturar — y esquivé reescribir todo el motor con una sola línea"
 description: "Cuando los usuarios quieren capturar un long screenshot iPhone desplazando hacia arriba, mi primer instinto fue construir un « motor ascendente » separado. Al final, bastó una sola línea de código. Este artículo desglosa el diseño de stitching con desplazamiento inverso de ScrollShot, la técnica tras una captura de pantalla que se desplaza sin costuras en apps como Messages y WhatsApp, y muestra cómo detectamos la dirección del desplazamiento, invertimos el orden de los frames y reutilizamos la tubería descendente existente. Verás por qué la detección de dirección es casi gratuita, por qué invertimos el orden de los frames en lugar de añadir una bandera isReversed, y cómo devolvemos la decisión al usuario cuando la confianza es baja, para capturar sin que el motor se equivoque."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Técnica"
 author: "Equipo de ScrollShot"
 tags: ["Captura larga iPhone", "Captura de desplazamiento iPhone", "Captura larga iOS", "Algoritmo de unión de capturas", "Desplazamiento inverso", "Detección de dirección de desplazamiento", "Motor ScrollShot", "Ensamblaje de grabación de pantalla"]
@@ -10,8 +11,6 @@ cover: "/ios_stitching_engine_reverse_scroll_framework_es.webp"
 coverAlt: "Diagrama de matching de plantilla inverso de ScrollShot para una captura de pantalla que se desplaza iPhone: toma la plantilla de la parte superior del nuevo frame, busca el desplazamiento en la parte inferior del frame anterior"
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
-
-# Los usuarios insistieron en desplazar hacia arriba para capturar — y esquivé reescribir todo el motor con una sola línea
 
 La mayoría de los que quieren un long screenshot iPhone — o cualquier captura de desplazamiento iPhone dentro de una app — asumen que el usuario desplaza de arriba abajo. El motor de stitching de ScrollShot también se diseñó así al principio — escribí la historia completa en <a href="/es/blog/ios-stitching-engine-v2/">« ¿Qué tan difícil es unir dos capturas de pantalla? Un motor de stitching para iOS que me hizo empezar de cero — una y otra vez »</a>: grabar → muestrear frames a intervalos iguales → matching de plantilla por frame para calcular el desplazamiento → encontrar la mejor costura → recortar y unir. Esa tubería ya es sólida para el caso de arriba abajo.
 

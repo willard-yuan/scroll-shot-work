@@ -2,6 +2,7 @@
 title: "Mac에서 긴 스크린샷(스크롤 캡처) 찍는 방법: 2026년 완전 가이드"
 description: "macOS에는 기본 스크롤 캡처(긴 스크린샷) 기능이 없습니다. 이 2026년 가이드에서는 그 이유를 설명하고, GoFullPage·Shottr·CleanShot X·Xnapper·screensnap·ScrollShot을 비교합니다. 또한 ScrollShot for Mac을 쓰면 모든 창을 무료로 긴 스크린샷으로 담을 수 있음을 보여줍니다."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "사용 방법 가이드"
 author: "ScrollShot 팀"
 tags: ["Mac 긴 스크린샷", "Mac 스크롤 캡처", "Mac 전체 화면 캡처", "ScrollShot for Mac", "Mac 스크린샷 도구", "스크롤 스티칭"]
@@ -23,8 +24,6 @@ faq:
   - question: "스크롤 캡처는 어떤 형식으로 저장해야 하나요?"
     answer: "품질과 투명성이 필요하면 PNG. 파일 크기가 중요하고 투명성이 필요 없으면 JPG. 검색 가능한 텍스트가 필요한 경우에만 PDF."
 ---
-
-# Mac에서 긴 스크린샷(스크롤 캡처) 찍는 방법: 2026년 완전 가이드
 
 처음 이 작업이 필요했을 때, 내가 허비했던 20분을 당신에게 돌려주겠다.
 

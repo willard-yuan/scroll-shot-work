@@ -2,6 +2,7 @@
 title: "Gli utenti hanno insistito per scorrere verso l'alto per catturare — e ho evitato di riscrivere tutto il motore con una sola riga"
 description: "Quando gli utenti vogliono catturare uno screenshot lungo iPhone scorrendo verso l'alto, il mio primo istinto è stato costruire un separato « motore ascendente ». Alla fine, è bastata una sola riga di codice. Questo articolo scompone la progettazione dello stitching a scorrimento inverso di ScrollShot, la tecnica dietro uno screenshot che scorre fluido in app come Messages e WhatsApp, e mostra come rileviamo la direzione di scorrimento, invertiamo l'ordine dei frame e riutilizziamo la pipeline discendente esistente. Vedrai perché il rilevamento della direzione è quasi gratuito, perché invertiamo l'ordine dei frame invece di aggiungere un flag isReversed, e come restituiamo la decisione all'utente quando la confidenza è bassa, per catturare senza che il motore sbagli."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "Tecnica"
 author: "Team ScrollShot"
 tags: ["Screenshot lungo iPhone", "Screenshot a scorrimento iPhone", "Screenshot lungo iOS", "Algoritmo di cucitura screenshot", "Scorrimento inverso", "Rilevamento direzione di scorrimento", "Motore ScrollShot", "Unione registrazione schermo"]
@@ -10,8 +11,6 @@ cover: "/ios_stitching_engine_reverse_scroll_framework_en.webp"
 coverAlt: "Diagramma di matching di template inverso di ScrollShot per uno screenshot che scorre iPhone: prendi il template dall'alto del nuovo frame, cerca l'offset in basso nel frame vecchio"
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
-
-# Gli utenti hanno insistito per scorrere verso l'alto per catturare — e ho evitato di riscrivere tutto il motore con una sola riga
 
 La maggior parte di chi vuole uno screenshot lungo iPhone — o comunque uno screenshot a scorrimento iPhone dentro un'app — presuppone che l'utente scorra dall'alto verso il basso. Anche il motore di stitching di ScrollShot era stato progettato così all'inizio — ho raccontato tutta la storia in <a href="/it/blog/ios-stitching-engine-v2/">« Quanto è difficile unire due screenshot? Un motore di stitching iOS che mi ha fatto ricominciare — ancora e ancora »</a>: registra → campiona i frame a intervalli regolari → matching di template per frame per calcolare l'offset → trova la migliore cucitura → ritaglia e unisci. Questa pipeline è già solida per il caso dall'alto verso il basso.
 

@@ -2,6 +2,7 @@
 title: "用户非要往回翻着截图，我却用一行代码躲过了重写整个引擎"
 description: "用户偏要往回翻着录屏截一张苹果长截图，我第一反应是再写一套“向上引擎”，最后却只用一行代码躲了过去。本文拆开 ScrollShot 反向滚动拼接这个省到极致的设计：先检测滚动方向、再把帧序整体反转，直接复用现成的向下拼接管线——方向检测如何近乎免费、为什么用“反转帧序”而非“加个 isReversed 标志”，以及置信度不足时如何把决定权交回用户。"
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "技术深潜"
 author: "ScrollShot 团队"
 tags: ["iOS 长截图", "iPhone 长截图", "截图拼接算法", "反向滚动", "滚动方向检测", "ScrollShot 引擎", "录屏拼接"]
@@ -10,8 +11,6 @@ cover: "/ios_stitching_engine_reverse_scroll_framework_zh.webp"
 coverAlt: "ScrollShot iOS 长截图反向模板匹配示意图：从新帧顶部取模板，去旧帧底部搜索偏移"
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
-
-# 用户非要往回翻着截图，我却用一行代码躲过了重写整个引擎
 
 做 iOS 长截图的人，大多默认用户是从上往下滑的。ScrollShot 的拼接引擎最初也是这样设计的，完整原理我写在了<a href="/zh/blog/blog-ios-stitching-engine-v2/">《一个让我反复推翻重来的 iOS 长截图拼接引擎》</a>里：录屏 → 等距抽帧 → 逐帧模板匹配算偏移 → 找最佳缝合线 → 裁剪拼接。这条流水线在从上往下的场景里已经足够稳。
 

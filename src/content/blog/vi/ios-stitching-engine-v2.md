@@ -2,6 +2,7 @@
 title: "Ghép hai ảnh chụp màn hình khó đến mức nào? Một engine stitching iOS khiến tôi phải làm lại từ đầu — hết lần này đến lần khác"
 description: "Mổ xẻ engine stitching của ScrollShot: chọn 30 khung hình quan trọng từ 1.800 khung, template matching ngược, tìm kiếm kim tự tháp NCC, chiến lược fallback ba tầng và những thủ thuật kỹ thuật mà không sách giáo khoa nào dạy."
 date: "2026-06-10"
+updated: "2026-10-29"
 category: "Kỹ thuật chuyên sâu"
 author: "Đội ngũ ScrollShot"
 tags: ["ảnh chụp màn hình dài iOS", "thuật toán ghép ảnh", "template matching", "NCC", "engine ScrollShot", "ghép quay màn hình"]
@@ -10,8 +11,6 @@ cover: "/scrollshot_video_to_long_screenshot_workflow_vi.webp"
 coverAlt: "Pipeline 6 bước của engine stitching ScrollShot: từ quay màn hình đến ảnh dài"
 translationKey: "ios-stitching-engine-v2"
 ---
-
-# Ghép hai ảnh chụp màn hình khó đến mức nào? Một engine stitching iOS khiến tôi phải làm lại từ đầu — hết lần này đến lần khác
 
 Tôi đã dành mấy tháng chỉ để làm một việc: giúp tính năng ghép ảnh chụp màn hình dài trên điện thoại «căn chỉnh chính xác».
 

@@ -2,6 +2,7 @@
 title: "사용자가 굳이 역방향으로 스크롤하며 캡처하려 해서 — 나는 한 줄로 엔진 전체 재작성을 피했다"
 description: "사용자가 iPhone에서 위로 스크롤하며 긴 스크린샷을 찍고 싶어 할 때, 나의 첫 본능은 별도의 '위로 향하는 엔진'을 만드는 것이었다. 결국 코드 한 줄이면 충분했다. 이 글은 ScrollShot의 역방향 스크롤 스티칭 설계를 분해하고, Messages·WhatsApp 같은 앱에서 매끄러운 iPhone scrolling screenshot을 만드는 기술을 보여준다. 스크롤 방향을 감지하고 프레임 순서를 뒤집어 기존 아래로 향하는 파이프라인을 재사용하는 방법, 방향 감지가 거의 공짜인 이유, 프레임 순서를 뒤집는 이유(isReversed 플래그 대신), 그리고 신뢰도가 낮을 때 결정을 사용자에게 넘기는 방식을 다룬다."
 date: "2026-07-12"
+updated: "2026-10-29"
 category: "기술 심층 분석"
 author: "ScrollShot 팀"
 tags: ["iPhone 긴 스크린샷", "iPhone 스크롤 스크린샷", "iOS 긴 스크린샷", "스크린샷 합성 알고리즘", "역방향 스크롤", "스크롤 방향 감지", "ScrollShot 엔진", "화면 녹화 합성"]
@@ -10,8 +11,6 @@ cover: "/ios_stitching_engine_reverse_scroll_framework_ko.webp"
 coverAlt: "ScrollShot 역방향 템플릿 매칭 다이어그램: 새로운 프레임 상단에서 템플릿을 가져와 이전 프레임 하단에서 offset을 검색하는 iPhone scrolling screenshot용"
 translationKey: "ios-stitching-engine-reverse-scroll"
 ---
-
-# 사용자가 굳이 역방향으로 스크롤하며 캡처하려 해서 — 나는 한 줄로 엔진 전체 재작성을 피했다
 
 iPhone 긴 스크린샷, 또는 앱 안에서 찍는 iPhone 스크롤 스크린샷을 원하는 대부분의 사람은 사용자가 위에서 아래로 스크롤한다고 가정한다. ScrollShot의 스티칭 엔진도 원래는 그 방식으로 설계됐다 — 전체 이야기는 <a href="/ko/blog/ios-stitching-engine-v2/">"스크린샷 두 장을 잇는 게 얼마나 어렵나? 몇 번이고 뒤집어 다시 만든 iOS 긴 스크린샷 합성 엔진"</a>에 정리해 뒀다. 녹화 → 등간격 프레임 샘플링 → 프레임별 템플릿 매칭으로 offset 계산 → 최적 솔기선 탐색 → 자르고 이어붙이기. 이 파이프라인은 위→아래 경우에 이미 충분히 견고하다.
 

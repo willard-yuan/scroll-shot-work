@@ -2,6 +2,7 @@
 title: "Como Tirar Screenshot Longo (Captura Rolável) no Mac em 2026: Guia Completo"
 description: "O macOS não tem captura de tela rolável nativa. Este guia de 2026 explica o porquê, compara GoFullPage, Shottr, CleanShot X, Xnapper, screensnap e ScrollShot, e mostra como capturar qualquer janela de graça com o ScrollShot para Mac."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "Guia"
 author: "Equipe ScrollShot"
 tags: ["screenshot longo no Mac", "captura de tela rolável Mac", "screenshot rolável Mac", "ScrollShot para Mac", "ferramenta de captura macOS", "scroll and stitch"]
@@ -23,8 +24,6 @@ faq:
   - question: "Em qual formato devo salvar screenshots roláveis?"
     answer: "PNG para qualidade e transparência; JPG se o tamanho do arquivo importa e você não precisa de transparência; PDF apenas se precisar de texto pesquisável."
 ---
-
-# Como Tirar Screenshot Longo (Captura Rolável) no Mac em 2026: Guia Completo
 
 Deixa eu te poupar os 20 minutos que eu perdi na primeira vez que precisei disso.
 

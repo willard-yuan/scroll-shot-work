@@ -4,6 +4,8 @@ export type BlogLocaleCode = 'en' | 'zh' | 'zh-hant' | 'ja' | 'ko' | 'de' | 'fr'
 
 export interface BlogFrontmatter {
 	title: string;
+	/** Concise metadata title; the full title remains visible in the article. */
+	seoTitle?: string;
 	description: string;
 	date: string;
 	updated?: string;

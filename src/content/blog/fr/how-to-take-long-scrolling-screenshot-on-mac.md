@@ -2,6 +2,7 @@
 title: "Comment faire une longue capture d'écran défilante sur Mac en 2026 (Guide complet)"
 description: "macOS ne permet pas de capture d'écran défilante nativement. Ce guide 2026 explique pourquoi, compare GoFullPage, Shottr, CleanShot X, Xnapper, screensnap et ScrollShot, et montre comment capturer gratuitement n'importe quelle fenêtre avec ScrollShot pour Mac."
 date: "2026-08-05"
+updated: "2026-10-29"
 category: "Guide"
 author: "Équipe ScrollShot"
 tags: ["Capture d'écran longue Mac", "Capture défilante Mac", "Capture d'écran scroll Mac", "ScrollShot pour Mac", "Outil capture macOS", "Défilement et assemblage"]
@@ -23,8 +24,6 @@ faq:
   - question: "Dans quel format enregistrer les captures défilantes ?"
     answer: "PNG pour la qualité et la transparence ; JPG si la taille compte et que tu n'as pas besoin de transparence ; PDF uniquement si tu as besoin de texte consultable."
 ---
-
-# Comment faire une longue capture d'écran défilante sur Mac en 2026 (Guide complet)
 
 Laisse-moi t'épargner les 20 minutes que j'ai perdues la première fois.
 
