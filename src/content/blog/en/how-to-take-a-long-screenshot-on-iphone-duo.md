@@ -114,7 +114,7 @@ Avoid mixing screenshots with different text sizes, zoom levels, or display layo
 
 Zoom in around each join. Look for repeated sentences, missing message bubbles, or an image cut in half. Use ScrollShot's fine-tuning tools to adjust the stitching boundaries when needed. Its scrollbar cleanup can also remove common scrollbar traces; review the result afterward.
 
-![ScrollShot Fine Tune screen with adjustable stitching boundaries for correcting joins between screenshots](/perfect_every_stitch.webp)
+![ScrollShot Fine Tune screen with adjustable stitching boundaries for correcting joins between screenshots](/scrollshot_finetune_iphone_duo_en.webp)
 
 *The fine-tuning controls let you correct joins before sharing. This product image shows the interface on a standard iPhone.*
 
