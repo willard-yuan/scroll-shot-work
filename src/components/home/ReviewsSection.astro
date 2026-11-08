@@ -1,5 +1,6 @@
 ---
 import SectionHeading from './SectionHeading.astro';
+import type { AppStoreReviewSection } from '../../data/home/appStoreReviews';
 
 interface Review {
 	role: string;
@@ -15,9 +16,10 @@ interface Props {
 	};
 	reviews: Review[];
 	ratingLabel: string;
+	appStoreReviews?: AppStoreReviewSection;
 }
 
-const { heading, reviews, ratingLabel } = Astro.props;
+const { heading, reviews, ratingLabel, appStoreReviews } = Astro.props;
 ---
 
 <section class="section section-band reviews-section" id="reviews">
@@ -35,4 +37,55 @@ const { heading, reviews, ratingLabel } = Astro.props;
 			</article>
 		))}
 	</div>
+
+	{appStoreReviews && (
+		appStoreReviews.variant === 'editorial' ? (
+			<div class:list={['store-editorial', appStoreReviews.tone === 'site' && 'store-editorial--site']}>
+				<h3 class="store-editorial-title">{appStoreReviews.title}</h3>
+				<p class="store-editorial-subtitle">{appStoreReviews.description}</p>
+				<div class="store-editorial-list">
+					{appStoreReviews.items.map((item) => (
+						<article class="store-editorial-item">
+							<span class="store-flag" role="img" aria-label={item.flagLabel}>{item.flag}</span>
+							<div class="store-editorial-body">
+								<blockquote class="store-editorial-quote" lang={item.quoteLang}>
+									{item.quote}
+								</blockquote>
+								<div class="store-stars" aria-label={appStoreReviews.ratingLabel}>★★★★★</div>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		) : (
+			<div class="store-reviews">
+				<div class="store-reviews-head">
+					<span class="store-reviews-kicker">{appStoreReviews.kicker}</span>
+					<h3>{appStoreReviews.title}</h3>
+					<p>{appStoreReviews.description}</p>
+				</div>
+				<div class="store-review-grid">
+					{appStoreReviews.items.map((item) => (
+						<article class="store-review-card">
+							<header class="store-review-head">
+								<span class="store-flag" role="img" aria-label={item.flagLabel}>{item.flag}</span>
+								<div class="store-review-meta">
+									<h4>{item.country}</h4>
+									<span>{item.store}</span>
+								</div>
+							</header>
+							<blockquote
+								class:list={['store-quote', item.quoteLang === 'en' && 'store-quote-latin']}
+								lang={item.quoteLang}
+							>
+								{item.quote}
+							</blockquote>
+							<div class="store-stars" aria-label={appStoreReviews.ratingLabel}>★★★★★</div>
+							<footer class="store-review-foot">{item.originalLabel}</footer>
+						</article>
+					))}
+				</div>
+			</div>
+		)
+	)}
 </section>

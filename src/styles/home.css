@@ -1989,3 +1989,307 @@
 	}
 }
 
+/* -------------------------------------------------------------------------
+   Verbatim App Store reviews (below the persona review grid).
+   Keeps the reference's flag badge / italic quote / gold stars, but re-skins
+   it for the dark site instead of dropping in a bright mint gradient panel.
+   ------------------------------------------------------------------------- */
+.store-reviews {
+	margin-top: 66px;
+	padding-top: 46px;
+	border-top: 1px solid var(--line);
+}
+
+.store-reviews-head {
+	max-width: 720px;
+	margin: 0 auto 36px;
+	text-align: center;
+}
+
+.store-reviews-kicker {
+	display: inline-block;
+	color: var(--mint);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.store-reviews-head h3 {
+	margin: 14px 0 9px;
+	color: var(--ink);
+	font-family: var(--serif);
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.store-reviews-head p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+/* Uneven columns: the Chinese quote is far longer, so give it more width to
+   keep both cards at a comparable visual height. */
+.store-review-grid {
+	display: grid;
+	grid-template-columns: 1.32fr 1fr;
+	gap: 20px;
+	align-items: stretch;
+}
+
+.store-review-card {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	padding: 28px 30px 24px;
+	border: 1px solid var(--line-strong);
+	border-radius: 10px;
+	background:
+		linear-gradient(155deg, rgba(104, 217, 139, 0.06), rgba(255, 255, 255, 0.018) 46%, rgba(255, 255, 255, 0.008)),
+		rgba(255, 255, 255, 0.026);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.store-review-head {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.store-flag {
+	flex: 0 0 auto;
+	width: 42px;
+	height: 42px;
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--line-strong);
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.075);
+	font-size: 22px;
+	line-height: 1;
+}
+
+.store-review-meta {
+	min-width: 0;
+}
+
+.store-review-meta h4 {
+	margin: 0;
+	color: var(--ink);
+	font-family: var(--serif);
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.store-review-meta span {
+	display: block;
+	margin-top: 5px;
+	color: var(--muted);
+	font-size: 12px;
+	letter-spacing: 0.02em;
+}
+
+.store-quote {
+	margin: 22px 0 0;
+	padding-left: 18px;
+	border-left: 2px solid rgba(104, 217, 139, 0.4);
+	color: #ded8cd;
+	font-size: 15.5px;
+	line-height: 1.8;
+	overflow-wrap: anywhere;
+}
+
+/* Italic is for Latin quotes only — synthetic italic on CJK is unreadable. */
+.store-quote-latin {
+	font-family: var(--serif);
+	font-style: italic;
+	font-size: 18px;
+	line-height: 1.65;
+}
+
+.store-stars {
+	margin-top: 20px;
+	color: #ecda67;
+	font-size: 15px;
+	letter-spacing: 0.12em;
+	white-space: nowrap;
+}
+
+.store-review-foot {
+	margin-top: auto;
+	padding-top: 22px;
+	color: var(--muted);
+	font-size: 11.5px;
+	line-height: 1.5;
+}
+
+@media (max-width: 1080px) {
+	.store-review-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 760px) {
+	.store-reviews {
+		margin-top: 48px;
+		padding-top: 38px;
+	}
+
+	.store-reviews-head {
+		margin-bottom: 28px;
+	}
+
+	.store-reviews-head h3 {
+		font-size: 28px;
+	}
+
+	.store-review-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.store-review-card {
+		padding: 24px 22px 20px;
+	}
+
+	.store-quote {
+		font-size: 15px;
+	}
+
+	.store-quote-latin {
+		font-size: 17px;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   `editorial` variant: flat review list following the reference layout
+   (centred heading, flag column, quotes, stars beneath). Headings use the
+   page's own serif type so they match the section heading directly above;
+   the dark background and verbatim quotes are ours.
+   ------------------------------------------------------------------------- */
+.store-editorial {
+	margin-top: 76px;
+	text-align: center;
+}
+
+/* Same type system as .section-heading h2 / .section-heading p, so the
+   headline sits comfortably next to the section heading above it. */
+.store-editorial-title {
+	margin: 0;
+	color: var(--ink);
+	font-family: var(--serif);
+	font-size: clamp(36px, 4.4vw, 54px);
+	font-weight: 780;
+	line-height: 1.16;
+	letter-spacing: 0;
+	text-wrap: balance;
+}
+
+.store-editorial-subtitle {
+	margin: 14px 0 0;
+	color: var(--muted);
+	font-family: var(--article);
+	font-size: 19px;
+	line-height: 1.65;
+	text-wrap: balance;
+}
+
+.store-editorial-list {
+	max-width: 900px;
+	margin: 66px auto 0;
+	display: flex;
+	flex-direction: column;
+	gap: 54px;
+	text-align: left;
+}
+
+.store-editorial-item {
+	display: grid;
+	grid-template-columns: 52px minmax(0, 1fr);
+	gap: 22px;
+	align-items: start;
+}
+
+.store-editorial-item .store-flag {
+	width: 48px;
+	height: 48px;
+	font-size: 26px;
+}
+
+.store-editorial-body {
+	min-width: 0;
+}
+
+.store-editorial-quote {
+	margin: 0;
+	color: #eae6de;
+	font-family: var(--sans);
+	font-style: italic;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.75;
+	overflow-wrap: anywhere;
+}
+
+.store-editorial-item .store-stars {
+	margin-top: 16px;
+	font-size: 17px;
+}
+
+@media (max-width: 760px) {
+	.store-editorial {
+		margin-top: 58px;
+	}
+
+	.store-editorial-list {
+		margin-top: 44px;
+		gap: 42px;
+	}
+
+	.store-editorial-item {
+		grid-template-columns: 40px minmax(0, 1fr);
+		gap: 15px;
+	}
+
+	.store-editorial-item .store-flag {
+		width: 38px;
+		height: 38px;
+		font-size: 21px;
+	}
+
+	.store-editorial-title {
+		font-size: 32px;
+	}
+
+	.store-editorial-subtitle {
+		font-size: 16px;
+	}
+
+	.store-editorial-quote {
+		font-size: 17px;
+		line-height: 1.72;
+	}
+}
+
+/* -------------------------------------------------------------------------
+   `site` tone (zh-CN): headings already share the page's serif type on every
+   locale, so this tone only switches quotes to upright body type (CJK reads
+   poorly in synthetic italics) and the page's quote colour.
+   ------------------------------------------------------------------------- */
+.store-editorial--site .store-editorial-quote {
+	color: #c7c1b7;
+	font-family: var(--article);
+	font-style: normal;
+	font-size: 17px;
+	line-height: 1.72;
+}
+
+@media (max-width: 760px) {
+	.store-editorial--site .store-editorial-quote {
+		font-size: 16px;
+	}
+}
+

@@ -12,6 +12,7 @@ import SiteFooter from './SiteFooter.astro';
 import WorkflowSteps from './WorkflowSteps.astro';
 import InlineCta from './InlineCta.astro';
 import { buildJsonLd, type HomeLocale } from '../../data/home';
+import { appStoreReviewsByLang } from '../../data/home/appStoreReviews';
 import { getSwitcherItems } from '../../data/languages';
 
 interface Props {
@@ -21,6 +22,10 @@ interface Props {
 const { page } = Astro.props;
 const { site, assets, meta, sections } = page;
 const appStoreUrl = page.appStoreUrl;
+// Verbatim App Store reviews are enabled per locale; other languages keep the
+// original persona-only grid until their copy is reviewed.
+const appStoreReviews =
+	page.lang === 'en' || page.lang === 'zh-CN' ? appStoreReviewsByLang[page.lang] : undefined;
 const languageSwitcher = getSwitcherItems(page.url, page.alternateLinks);
 const switcherLabels = {
 	triggerAria: page.footer.languageSwitcherAria ?? 'Change language',
@@ -78,7 +83,12 @@ const conversionPage = page as ConversionPage;
 			{conversionPage.workflow && <WorkflowSteps content={conversionPage.workflow} />}
 			<FeatureSection heading={sections.features} intro={page.featureIntro} cards={page.featureCards} />
 			{conversionPage.featureCta && <InlineCta content={conversionPage.featureCta} />}
-			<ReviewsSection heading={sections.reviews} reviews={page.reviews} ratingLabel={page.ratingLabel} />
+			<ReviewsSection
+				heading={sections.reviews}
+				reviews={page.reviews}
+				ratingLabel={page.ratingLabel}
+				appStoreReviews={appStoreReviews}
+			/>
 			<ScenariosSection heading={sections.scenarios} scenarios={page.scenarios} />
 			{conversionPage.scenarioCta && <InlineCta content={conversionPage.scenarioCta} />}
 			<PricingSection
