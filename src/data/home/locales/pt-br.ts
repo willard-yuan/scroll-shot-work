@@ -211,7 +211,7 @@ export const ptBrHomeLocale = {
 			featured: true,
 			button: {
 				label: 'Baixar na App Store',
-				href: appStoreUrls.ptBr,
+				href: appStoreUrls['pt-br'],
 				style: 'light',
 			},
 		},

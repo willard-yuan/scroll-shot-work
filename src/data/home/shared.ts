@@ -1,21 +1,26 @@
 import { appStoreRatings } from '../appStoreRating';
 
+// Localized App Store listings. Locales without their own localized listing
+// fall back to the US storefront (per product decision, 2026-11-15).
+// NOTE: the numeric app id is what resolves the product; the slug is cosmetic.
+const US_APP_STORE_URL = 'https://apps.apple.com/us/app/scrollshot-long-screenshots/id6760192003';
+
 export const appStoreUrls = {
-	en: 'https://apps.apple.com/us/app/scrollshot-long-screenshot/id6760192003',
-	zh: 'https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003',
-	'zh-hant': 'https://apps.apple.com/tw/app/scrollshot-long-screenshot/id6760192003',
-	ja: 'https://apps.apple.com/jp/app/scrollshot-long-screenshot/id6760192003',
-	ko: 'https://apps.apple.com/kr/app/scrollshot-long-screenshot/id6760192003',
-	de: 'https://apps.apple.com/de/app/scrollshot-long-screenshot/id6760192003',
-	fr: 'https://apps.apple.com/fr/app/scrollshot-long-screenshot/id6760192003',
-	es: 'https://apps.apple.com/es/app/scrollshot-long-screenshot/id6760192003',
-	'pt-br': 'https://apps.apple.com/br/app/scrollshot-long-screenshot/id6760192003',
-	it: 'https://apps.apple.com/it/app/scrollshot-long-screenshot/id6760192003',
-	vi: 'https://apps.apple.com/vn/app/scrollshot-long-screenshot/id6760192003',
-	nl: 'https://apps.apple.com/nl/app/scrollshot-long-screenshot/id6760192003',
-	ar: 'https://apps.apple.com/ae/app/scrollshot-long-screenshot/id6760192003',
-	pl: 'https://apps.apple.com/pl/app/scrollshot-long-screenshot/id6760192003',
-	th: 'https://apps.apple.com/th/app/scrollshot-long-screenshot/id6760192003',
+	en: US_APP_STORE_URL,
+	zh: 'https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E9%95%BF%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003',
+	'zh-hant': 'https://apps.apple.com/tw/app/scrollshot-%E6%BB%BE%E5%8B%95%E9%95%B7%E6%88%AA%E5%9C%96-%E6%8B%BC%E6%8E%A5%E9%95%B7%E5%9C%96/id6760192003',
+	ja: 'https://apps.apple.com/jp/app/scrollshot-%E3%82%B9%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AB%E7%94%BB%E9%9D%A2%E9%8C%B2%E7%94%BB-%E9%95%B7%E7%94%BB%E5%83%8F%E7%B5%90%E5%90%88/id6760192003',
+	ko: 'https://apps.apple.com/kr/app/scrollshot-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%BA%A1%EC%B2%98-%EA%B8%B8%EA%B2%8C-%EC%BA%A1%EC%B2%98/id6760192003',
+	fr: 'https://apps.apple.com/fr/app/scrollshot-capture-d%C3%A9cran/id6760192003',
+	es: 'https://apps.apple.com/es/app/scrollshot-captura-pantalla/id6760192003',
+	de: US_APP_STORE_URL,
+	'pt-br': US_APP_STORE_URL,
+	it: US_APP_STORE_URL,
+	vi: US_APP_STORE_URL,
+	nl: US_APP_STORE_URL,
+	ar: US_APP_STORE_URL,
+	pl: US_APP_STORE_URL,
+	th: US_APP_STORE_URL,
 };
 
 export const site = {
