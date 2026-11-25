@@ -845,6 +845,23 @@
 	object-fit: contain;
 }
 
+/* Inline article images: keep tall tutorial screenshots inside the prose column */
+.blog-prose img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.blog-prose .blog-demo img {
+	width: 100%;
+	border-radius: 6px;
+}
+
+.blog-prose .blog-demo img + img {
+	margin-top: 14px;
+}
+
 .blog-prose .blog-demo p,
 .blog-prose .blog-callout p {
 	margin: 14px 4px 2px;
