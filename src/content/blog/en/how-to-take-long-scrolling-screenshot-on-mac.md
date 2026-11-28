@@ -2,7 +2,7 @@
 title: "How to Take a Long Scrolling Screenshot on Mac in 2026 (Complete Guide)"
 description: "macOS has no built-in scrolling screenshot. This 2026 guide explains why, compares GoFullPage, Shottr, CleanShot X, Xnapper, screensnap and ScrollShot, and shows how to capture any window for free with ScrollShot for Mac."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "How-To Guide"
 author: "ScrollShot Team"
 tags: ["Mac scrolling screenshot", "long screenshot on Mac", "scrolling screenshot Mac", "ScrollShot for Mac", "macOS screenshot tool", "scroll and stitch"]
@@ -29,7 +29,9 @@ Let me save you the 20 minutes I wasted the first time I needed this.
 
 I had a 4,000-pixel Slack thread to send to a developer. I pressed `Cmd + Shift + 4`, dragged a box, and got… one screen. The rest of the conversation was below the fold, and macOS happily ignored it. There is **no native way to take a scrolling screenshot on Mac** — not in `Cmd + Shift + 4`, not in the Screenshot app, not in Preview. If you came here hoping for a hidden Apple shortcut, I'll tell you straight: it doesn't exist. Windows has it in Snipping Tool. iPhone has it. Android has it. macOS, in 2026, still doesn't ship it.
 
-The good news: it's completely solvable, and you have more options than most "top 8 list" blog posts admit. This guide goes past the surface. I'll explain *why* Mac can't do it natively, what actually happens when an app "scrolls and stitches," and which tool fits which job — including the one I now use daily, **[ScrollShot for Mac](/blog/why-choose-scrollshot-ios-seamless-long-screenshots/)** (free, and the only option that does the whole job in one app).
+The good news: it's completely solvable, and you have more options than most "top 8 list" blog posts admit. This guide goes past the surface. I'll explain *why* Mac can't do it natively, what actually happens when an app "scrolls and stitches," and which tool fits which job — including the one I now use daily, **ScrollShot for Mac**. You can jump straight to the [Mac capture walkthrough](#step-by-step-take-a-long-screenshot-with-scrollshot-for-mac) if you already know which tool you want.
+
+If the chat you want to save is on your phone, follow our [WhatsApp long screenshot guide for iPhone](/blog/ios-shortcuts-vs-scrollshot-long-screenshot/). It compares a free Apple Shortcuts setup with ScrollShot's screen-recording workflow; the steps below are for macOS.
 
 ![Before vs After: a regular Mac screenshot (one screen) next to a ScrollShot 765 × 4091 px scrolling capture](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ When ScrollShot (or Shottr, or CleanShot) takes a long screenshot, the scroll-an
 4. **Matches overlapping pixels** between the two frames to find the seam.
 5. Stitches them, then repeats until you stop.
 
-The matching step is where tools live or die in any scroll-and-stitch workflow. ScrollShot's [stitching engine](/blog/ios-stitching-engine-v2/) uses Apple's Vision framework for frame matching, which is why it handles variable scroll speeds and minor layout shifts better than naive pixel-diff approaches. Three things still break any stitcher:
+The matching step is where tools live or die in any scroll-and-stitch workflow. For an implementation-level explanation, our [iOS screenshot stitching engine deep dive](/blog/ios-stitching-engine-v2/) covers frame selection, overlap matching, and seam placement. That article describes the phone engine, but the problems caused by repeated or changing content also help explain these common capture issues:
 
 - **Sticky headers/footers** that don't move while content does → duplicate bars. (Close chat widgets and cookie banners first.)
 - **Lazy-loaded content** that only appears after you scroll → blank gaps. (Scroll through once, then capture.)
@@ -185,7 +187,7 @@ No. `Cmd + Shift + 4` and the Screenshot app only capture the visible screen. Yo
 For web pages only: GoFullPage (under 30 seconds). For anything outside a browser (Slack, PDFs, apps): ScrollShot for Mac or Shottr — both free, both work on any scrollable area.
 
 **Is there a free scrolling screenshot tool that also translates and redacts?**  
-Yes — [ScrollShot for Mac](/blog/why-choose-scrollshot-ios-seamless-long-screenshots/). It's free, and uniquely combines scroll capture with OCR, 30+ language translation, 19+ annotation tools, and automatic PII/face redaction in one app.
+Yes — ScrollShot for Mac. It's free, and uniquely combines scroll capture with OCR, 30+ language translation, 19+ annotation tools, and automatic PII/face redaction in one app. The [capture and editing walkthrough](#step-by-step-take-a-long-screenshot-with-scrollshot-for-mac) shows the steps.
 
 **Do scrolling screenshots work for PDFs and documents?**  
 Yes, if you use a native scroll-capture app (ScrollShot, Shottr, CleanShot X) on the PDF open in Preview or a reader. The built-in "Save as PDF" gives you a document, not an image.

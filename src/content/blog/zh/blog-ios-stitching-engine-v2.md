@@ -2,7 +2,7 @@
 title: "两张截图拼起来有多难？一个让我反复推翻重来的 iOS 长截图拼接引擎"
 description: "深入了解 ScrollShot 的 iOS 长截图拼接引擎：如何从 1800 帧录屏中筛选 30 帧，利用反向模板匹配、多模板投票与金字塔 NCC 搜索对齐画面。文章拆解三层降级策略、接缝选择、滚动条消除和超长图片内存管理，并解释全景拼接为何不适合聊天截图，分享性能数据与失败后的交互兜底，为开发同类工具提供工程参考。"
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "技术深潜"
 author: "ScrollShot 团队"
 tags: ["iOS 长截图", "截图拼接算法", "模板匹配", "NCC", "ScrollShot 引擎", "录屏拼接"]
@@ -34,7 +34,7 @@ translationKey: "ios-stitching-engine-v2"
 
 ![ScrollShot 拼接引擎流水线](/scrollshot_video_to_long_screenshot_workflow.webp)
 
-引擎也支持 Apple Vision Framework 做匹配（快但粗糙），不过下文重点聊自研的模板匹配——这才是真正扛活的部分。想了解这套算法最终如何转化为<a href="/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/">录屏一次即得长图</a>的完整体验，可以参看产品功能介绍。
+引擎也支持 Apple Vision Framework 做匹配（快但粗糙），不过下文重点聊自研的模板匹配——这才是真正扛活的部分。如果想先直观看看为什么需要识别重叠内容，可以读[快捷指令拼图与 ScrollShot 录屏拼接的对比](/zh/blog/ios-shortcuts-vs-scrollshot-long-screenshot/)，里面用聊天记录解释了直接把图片接起来会遇到什么问题。
 
 ---
 
@@ -69,6 +69,8 @@ displacementThreshold = dsHeight × 0.60 × presetScale
 - **自适应步长**：位移大的时候大步跳帧（`nativeFPS / 6`，约每 10 帧看一次），位移小的时候切回逐帧扫描（`nativeFPS / 30`）。当剩余距离不到阈值的 25% 时，强制切回最小步长——不然真的会刚好跨过去、漏掉一帧
 - **场景突变**：相邻帧的 SAD per pixel 超过 40.0？大概率用户切换了 App，立即切一帧
 - **回弹截断**：用 Vision 的光流检测运动方向，如果累计位移低于 -50px（用户在往回滚），说明已经到顶了，后面的帧全部丢弃。但这个阈值不能设太小——我最初设的是 -10，结果手指轻微抖动就触发截断，录屏直接少了一半
+
+这里处理的是滚动结束时的回弹。如果用户从一开始就往回翻着录屏，则需要先判断整段录屏的方向，再调整帧序。这部分后来单独写成了[反向滚动如何复用现有拼接引擎](/zh/blog/blog-ios-stitching-engine-reverse-scroll/)。
 
 **第二遍（Pass 1.5）—— 清晰度精修**。对每个候选帧，在前后 ±2 帧的小窗口里找最清晰的那帧。
 

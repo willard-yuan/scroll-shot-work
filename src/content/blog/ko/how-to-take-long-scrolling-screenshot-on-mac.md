@@ -2,7 +2,7 @@
 title: "Mac에서 긴 스크린샷(스크롤 캡처) 찍는 방법: 2026년 완전 가이드"
 description: "macOS에는 기본 스크롤 캡처(긴 스크린샷) 기능이 없습니다. 이 2026년 가이드에서는 그 이유를 설명하고, GoFullPage·Shottr·CleanShot X·Xnapper·screensnap·ScrollShot을 비교합니다. 또한 ScrollShot for Mac을 쓰면 모든 창을 무료로 긴 스크린샷으로 담을 수 있음을 보여줍니다."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "사용 방법 가이드"
 author: "ScrollShot 팀"
 tags: ["Mac 긴 스크린샷", "Mac 스크롤 캡처", "Mac 전체 화면 캡처", "ScrollShot for Mac", "Mac 스크린샷 도구", "스크롤 스티칭"]
@@ -16,7 +16,7 @@ faq:
   - question: "Mac에서 스크롤 캡처하는 가장 빠른 무료 방법은?"
     answer: "웹페이지라면: GoFullPage(30초 이내). 브라우저 밖(Slack, PDF, 앱)이라면: ScrollShot for Mac이나 Shottr — 둘 다 무료이고 모든 스크롤 가능한 영역에서 동작합니다."
   - question: "번역과 가리기(모자이크)도 되는 무료 스크롤 캡처 도구가 있나요?"
-    answer: "네 — [ScrollShot for Mac](/ko/blog/wae-scrollshot-ios-gin-screenshot/). 무료이며, 스크롤 캡처와 OCR, 30개 언어 이상 번역, 19종 이상 주석 도구, 이메일/전화번호/API 키/얼굴 자동 가림을 한 앱에 유일하게 갖췄습니다."
+    answer: "네 — ScrollShot for Mac. 무료이며, 스크롤 캡처와 OCR, 30개 언어 이상 번역, 19종 이상 주석 도구, 이메일/전화번호/API 키/얼굴 자동 가림을 한 앱에 유일하게 갖췄습니다."
   - question: "스크롤 캡처는 PDF나 문서에도 통하나요?"
     answer: "네. 미리보기나 리더에서 연 PDF에 대해 ScrollShot·Shottr·CleanShot X 같은 네이티브 스크롤 캡처 앱을 쓸 경우입니다. 기본 'PDF로 저장'이 내놓는 건 문서이지 이미지가 아닙니다."
   - question: "왜 스크롤 캡처에 헤더가 중복되나요?"
@@ -29,7 +29,9 @@ faq:
 
 개발자에게 보낼 4,000픽셀짜리 Slack 스레드가 있었다. 나는 `Cmd + Shift + 4`를 누르고 영역을 드래그했는데… 나온 건 화면 한 장뿐이었다. 나머지 대화는 화면 아래쪽에 있었고, macOS는 아무 일도 없다는 듯 무시했다. **Mac에는 긴 스크린샷(스크롤 캡처)을 기본으로 찍는 방법이 없다.** `Cmd + Shift + 4`에도, 스크린샷 앱에도, 미리보기에도. 숨겨진 Apple 단축키를 기대하고 여기까지 왔다면, 솔직히 말하겠다. 그런 건 없다. Windows에는 Snipping Tool이 있다. iPhone에도 있다. Android에도 있다. 하지만 macOS는 2026년이 된 지금도 기본 제공하지 않는다.
 
-좋은 소식이 있다. 완전히 해결할 수 있고, '베스트 8' 같은 블로그 글들이 인정하는 것보다 선택지가 더 많다. 이 가이드는 겉핥기만 하지 않는다. Mac이 왜 기본으로 안 되는지, 앱이 '스크롤해서 합치기(scroll and stitch)'를 할 때 실제로 무슨 일이 일어나는지, 그리고 어떤 도구가 어떤 용도에 맞는지까지 짚어준다. 내가 매일 쓰는 선택인 **[ScrollShot for Mac](/ko/blog/wae-scrollshot-ios-gin-screenshot/)**(무료이며, 모든 과정을 한 앱에서 해결하는 유일한 선택지)도 포함한다.
+좋은 소식이 있다. 완전히 해결할 수 있고, '베스트 8' 같은 블로그 글들이 인정하는 것보다 선택지가 더 많다. 이 가이드는 겉핥기만 하지 않는다. Mac이 왜 기본으로 안 되는지, 앱이 '스크롤해서 합치기(scroll and stitch)'를 할 때 실제로 무슨 일이 일어나는지, 그리고 어떤 도구가 어떤 용도에 맞는지까지 짚어준다. 내가 매일 쓰는 선택인 **[ScrollShot for Mac](#단계별-scrollshot-for-mac으로-긴-스크린샷-찍기)**(무료이며, 모든 과정을 한 앱에서 해결하는 유일한 선택지)도 포함한다.
+
+저장할 대화가 iPhone에 있다면 [iOS용 ScrollShot 기능 소개](/ko/blog/wae-scrollshot-ios-gin-screenshot/)에서 화면 녹화와 이미지 합성 과정을 확인할 수 있다. 아래 내용은 Mac에서의 캡처 방법이다.
 
 ![일반 Mac 스크린샷(화면 한 장)과 ScrollShot으로 같은 내용을 765×4091px로 스크롤 캡처한 이미지 비교](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ ScrollShot(또는 Shottr, CleanShot)이 긴 스크린샷을 찍을 때, 스크�
 4. 두 프레임 사이에서 **겹치는 픽셀을 대조**해 이음새를 찾는다.
 5. 합치고, 당신이 멈출 때까지 반복한다.
 
-이 대조 단계야말로 모든 스크롤 스티칭에서 도구의 우열이 갈리는 지점이다. ScrollShot의 [합성 엔진](/ko/blog/ios-stitching-engine-v2/)은 프레임 대조에 Apple의 Vision 프레임워크를 사용한다. 그래서 단순한 픽셀 차이 방식보다 스크롤 속도의 편차나 미세한 레이아웃 어긋남에 강하다. 그래도 모든 합성 도구가 세 가지 요인에서 깨진다:
+결과를 좌우하는 것은 겹치는 영역을 얼마나 정확하게 맞추느냐다. [iOS 합성 엔진 기술 해설](/ko/blog/ios-stitching-engine-v2/)에서는 iPhone 버전의 프레임 선택, 매칭, 이음새 결정 과정을 설명한다. 반복되거나 변하는 콘텐츠를 다룰 때의 어려움은 데스크톱 캡처에서 생기는 다음 문제를 이해하는 데도 도움이 된다:
 
 - **움직이지 않는 고정 헤더/푸터**(콘텐츠는 움직이는데 그것만 고정) → 막대가 중복된다. (채팅 위젯이나 쿠키 배너는 먼저 닫자.)
 - **지연 로딩되는 콘텐츠**(스크롤 후에야 나타남) → 빈 칸이 생긴다. (한 번 스크롤한 뒤 위에서부터 캡처하자.)
@@ -185,7 +187,7 @@ ScrollShot(또는 Shottr, CleanShot)이 긴 스크린샷을 찍을 때, 스크�
 웹페이지라면: GoFullPage(30초 이내). 브라우저 밖(Slack, PDF, 앱)이라면: ScrollShot for Mac이나 Shottr — 둘 다 무료이고 모든 스크롤 가능한 영역에서 동작합니다.
 
 **번역과 가리기(모자이크)도 되는 무료 스크롤 캡처 도구가 있나요?**
-네 — [ScrollShot for Mac](/ko/blog/wae-scrollshot-ios-gin-screenshot/). 무료이며, 스크롤 캡처와 OCR, 30개 언어 이상 번역, 19종 이상 주석 도구, 이메일/전화번호/API 키/얼굴 자동 가림을 한 앱에 유일하게 갖췄습니다.
+네 — [ScrollShot for Mac](#단계별-scrollshot-for-mac으로-긴-스크린샷-찍기). 무료이며, 스크롤 캡처와 OCR, 30개 언어 이상 번역, 19종 이상 주석 도구, 이메일/전화번호/API 키/얼굴 자동 가림을 한 앱에 유일하게 갖췄습니다.
 
 **스크롤 캡처는 PDF나 문서에도 통하나요?**
 네. 미리보기나 리더에서 연 PDF에 대해 ScrollShot·Shottr·CleanShot X 같은 네이티브 스크롤 캡처 앱을 쓸 경우입니다. 기본 'PDF로 저장'이 내놓는 건 문서이지 이미지가 아닙니다.

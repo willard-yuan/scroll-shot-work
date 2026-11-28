@@ -2,7 +2,7 @@
 title: "Cómo hacer una captura de pantalla larga y de desplazamiento en Mac en 2026 (Guía completa)"
 description: "macOS no tiene captura de pantalla de desplazamiento nativa. Esta guía 2026 explica por qué, compara GoFullPage, Shottr, CleanShot X, Xnapper, screensnap y ScrollShot, y muestra cómo capturar cualquier ventana gratis con ScrollShot para Mac."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Guía"
 author: "Equipo de ScrollShot"
 tags: ["Captura de pantalla larga Mac", "Captura de desplazamiento Mac", "Captura de scroll Mac", "ScrollShot para Mac", "Herramienta de captura macOS", "Desplazar y unir"]
@@ -29,7 +29,9 @@ Déjame ahorrarte los 20 minutos que yo perdí la primera vez.
 
 Tenía un hilo de Slack de 4.000 píxeles que enviar a un desarrollador. Pulsé `Cmd + Shift + 4`, arrastré un cuadro y obtuve… una pantalla. El resto de la conversación quedaba debajo, y macOS lo ignoró alegremente. **No existe forma nativa de hacer una captura de pantalla de desplazamiento en Mac** — ni en `Cmd + Shift + 4`, ni en la app de Captura, ni en Vista previa. Si viniste buscando un atajo oculto de Apple, te lo digo claro: no existe. Windows lo tiene en la Herramienta de recorte. iPhone lo tiene. Android lo tiene. macOS, en 2026, todavía no lo trae.
 
-La buena noticia: se resuelve por completo, y tienes más opciones de las que admiten la mayoría de blogs de « Top 8 ». Esta guía va más allá de la superficie. Te explico *por qué* el Mac no puede hacerlo de forma nativa, qué ocurre realmente cuando una app « desplaza y une », y qué herramienta encaja en qué tarea — incluida la que uso a diario, **[ScrollShot para Mac](/es/blog/por-que-elegir-scrollshot-capturas-largas-ios/)** (gratis y la única opción que hace todo el trabajo en una sola app).
+La buena noticia: se resuelve por completo, y tienes más opciones de las que admiten la mayoría de blogs de « Top 8 ». Esta guía va más allá de la superficie. Te explico *por qué* el Mac no puede hacerlo de forma nativa, qué ocurre realmente cuando una app « desplaza y une », y qué herramienta encaja en qué tarea — incluida la que uso a diario, **[ScrollShot para Mac](#paso-a-paso-hacer-una-captura-larga-con-scrollshot-para-mac)** (gratis y la única opción que hace todo el trabajo en una sola app).
+
+Si la conversación que quieres guardar está en el iPhone, consulta la [guía de ScrollShot para iOS](/es/blog/por-que-elegir-scrollshot-capturas-largas-ios/), que explica la grabación y la unión de capturas en el móvil. Los pasos de este artículo son para Mac.
 
 ![Antes/Después: una captura Mac normal (una pantalla) junto a una captura ScrollShot de 765 × 4091 px del mismo contenido](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Cuando ScrollShot (o Shottr, o CleanShot) hace una captura larga, el proceso de 
 4. **Empareja los píxeles que se solapan** entre los dos fotogramas para encontrar la costura.
 5. Los une y repite hasta que paras.
 
-El paso de emparejamiento es donde las herramientas viven o mueren en cualquier flujo de desplazar y unir. El [motor de unión](/es/blog/ios-stitching-engine-v2/) de ScrollShot usa el framework Vision de Apple para emparejar fotogramas, por eso maneja mejor velocidades de desplazamiento variables y pequeños cambios de diseño que los enfoques ingenuos de diferencia de píxeles. Tres cosas siguen rompiendo cualquier unidor:
+El resultado depende de cómo se alinean las zonas solapadas. Nuestro [análisis del motor de unión para iOS](/es/blog/ios-stitching-engine-v2/) explica la selección de fotogramas, la búsqueda de coincidencias y la elección del punto de unión en la versión para iPhone. Los problemas con contenido repetido o cambiante también ayudan a entender estos fallos habituales al capturar en el ordenador:
 
 - **Cabeceras/pies fijos** que no se mueven mientras el contenido sí → barras duplicadas. (Cierra primero los widgets de chat y los banners de cookies.)
 - **Contenido cargado perezosamente** que solo aparece tras desplazar → huecos en blanco. (Desplázate una vez, luego captura.)
@@ -185,7 +187,7 @@ No. `Cmd + Shift + 4` y la app de Captura solo capturan la pantalla visible. Nec
 Solo para páginas web: GoFullPage (menos de 30 segundos). Para todo lo que esté fuera del navegador (Slack, PDF, apps): ScrollShot para Mac o Shottr — ambos gratis, ambos funcionan en cualquier zona desplazable.
 
 **¿Existe una herramienta de captura de desplazamiento gratuita que también traduzca y oculte?**  
-Sí — [ScrollShot para Mac](/es/blog/por-que-elegir-scrollshot-capturas-largas-ios/). Es gratis y combina de forma única la captura de desplazamiento con OCR, traducción a 30+ idiomas, más de 19 herramientas de anotación y el ocultado automático de datos personales/rostros en una sola app.
+Sí — [ScrollShot para Mac](#paso-a-paso-hacer-una-captura-larga-con-scrollshot-para-mac). Es gratis y combina de forma única la captura de desplazamiento con OCR, traducción a 30+ idiomas, más de 19 herramientas de anotación y el ocultado automático de datos personales/rostros en una sola app.
 
 **¿Funcionan las capturas de desplazamiento para PDF y documentos?**  
 Sí, si usas una app de captura nativa (ScrollShot, Shottr, CleanShot X) sobre el PDF abierto en Vista previa o un lector. El « Guardar como PDF » integrado da un documento, no una imagen.

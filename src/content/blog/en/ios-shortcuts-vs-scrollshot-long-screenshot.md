@@ -94,13 +94,17 @@ Here's the workflow using an ordinary iPhone screen recording:
 
 You still control where the capture starts and ends. ScrollShot doesn't scroll WhatsApp for you or retrieve messages you haven't shown on screen. You save time by capturing the whole section in one pass, without taking and cropping each screenshot separately.
 
-If you've already taken the screenshots, there's no need to record the chat again. ScrollShot's manual stitching, preview, and save features are free. Select your existing captures in reading order and check the joins before saving.
+If you've already taken the screenshots, there's no need to record the chat again. ScrollShot's [manual stitching, preview, and save features](/blog/why-choose-scrollshot-ios-seamless-long-screenshots/#manual-stitch-free-controlled-and-useful-for-existing-screenshots) are free. Select your existing captures in reading order and check the joins before saving.
+
+For screenshots of the app's recording, import, and editing controls, see the [ScrollShot walkthrough in our iPhone Duo guide](/blog/how-to-take-a-long-screenshot-on-iphone-duo/#method-2-create-a-long-screenshot-with-scrollshot).
 
 ## If the stitched image looks wrong
 
 Start by checking the recording. Slow down enough for the text to stay readable, and avoid flinging the chat several screens ahead at once. If a photo hasn't loaded yet, pause before moving past it. Stitching can't recover a message or picture that never appeared clearly in the video.
 
 Keep the phone in the same orientation throughout. Rotating it changes the layout and can make text wrap differently, leaving neighboring frames harder to match.
+
+If you're starting at the newest message and scrolling toward older ones, the frame order needs different handling. Our [reverse-scroll stitching article](/blog/ios-stitching-engine-reverse-scroll/) explains how ScrollShot detects that direction and puts the frames back in reading order.
 
 Large blank areas, nearly identical messages, and moving images can also confuse the matching. A stretch of repeated “OK” replies offers fewer useful clues than a distinctive paragraph or photo. Auto stitching can get a join wrong, which is why the preview and manual adjustments matter.
 
@@ -126,6 +130,8 @@ The stitching itself runs on your iPhone. ScrollShot doesn't upload your screens
 If you're saving a short exchange once a month, a few minutes of cropping probably won't bother you. Keep using the shortcut if it's doing the job.
 
 For longer chats you save regularly, the recording approach is worth a look. You'll still spend time scrolling and checking the result, but you can skip much of the individual screenshot cleanup. The [free and Pro feature comparison](/#pricing) lists what's included; check the App Store for current purchase options.
+
+If the conversation or document is already open on your computer, our [Mac scrolling screenshot guide](/blog/how-to-take-long-scrolling-screenshot-on-mac/) covers browser capture and desktop app workflows.
 
 ## Frequently asked questions
 

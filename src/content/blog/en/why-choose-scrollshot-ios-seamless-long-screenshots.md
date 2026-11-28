@@ -2,7 +2,7 @@
 title: "Why Choose ScrollShot? The Ultimate Solution for Seamless Long Screenshots on iOS"
 description: "A product story about how ScrollShot turns screen recordings and screenshots into clean, private, high-quality long images on iPhone."
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "Product Story"
 author: "ScrollShot Team"
 tags: ["ScrollShot", "iOS long screenshot", "screen recording", "product story"]
@@ -38,6 +38,8 @@ To solve this problem properly, I spent four months refining ScrollShot. It is m
 
 Start an iOS screen recording, scroll through the content, and stop when you reach the end. ScrollShot identifies useful frames, matches the overlapping regions, and generates one complete long screenshot.
 
+The [iPhone Duo capture guide](/blog/how-to-take-a-long-screenshot-on-iphone-duo/#method-2-create-a-long-screenshot-with-scrollshot) walks through recording, importing a video, and checking the result, with screenshots of the app's controls. For the implementation behind frame selection and alignment, see our [iOS screenshot stitching engine deep dive](/blog/ios-stitching-engine-v2/).
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Auto-Stitch demo: record once, scroll once, and let ScrollShot generate the long screenshot.</p>
@@ -50,6 +52,8 @@ This works well for long webpages, articles, chat threads, order details, app se
 If you already have multiple screenshots, ScrollShot also supports manual ordered stitching. Select the images in the order you want, and the first image becomes the top of the final long screenshot.
 
 Manual stitching is useful for transaction records, partially overlapping pages, screenshots collected over time, and any flow where exact ordering matters.
+
+For a few images, Apple's Shortcuts app may also be enough. Our [Shortcuts vs. ScrollShot comparison](/blog/ios-shortcuts-vs-scrollshot-long-screenshot/) uses a WhatsApp conversation to show where simple image stacking works and where overlap detection saves you time.
 
 ## Why it can be your best choice
 
@@ -81,6 +85,8 @@ ScrollShot is not limited to webpages.
 - **Web resources**: Capture articles, tutorials, product docs, and research pages for later reference.
 - **AI conversations**: Save long insights from ChatGPT, Gemini, Claude, and other AI tools.
 - **Any content worth keeping**: When a scrolling page matters, ScrollShot helps turn it into something easy to save and share.
+
+For content on your computer, see the separate [guide to scrolling screenshots on Mac](/blog/how-to-take-long-scrolling-screenshot-on-mac/), which covers desktop capture tools and their workflows.
 
 ## Built with independent craftsmanship
 

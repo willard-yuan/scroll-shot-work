@@ -2,7 +2,7 @@
 title: "Cách Chụp Ảnh Màn Hình Dài (Cuộn) Trên Mac Năm 2026: Hướng Dẫn Đầy Đủ"
 description: "macOS không có tính năng chụp ảnh màn hình cuộn tích hợp. Hướng dẫn 2026 này giải thích lý do, so sánh GoFullPage, Shottr, CleanShot X, Xnapper, screensnap và ScrollShot, đồng thời hướng dẫn cách chụp bất kỳ cửa sổ nào miễn phí với ScrollShot cho Mac."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Hướng dẫn"
 author: "Đội ngũ ScrollShot"
 tags: ["ảnh màn hình dài trên Mac", "ảnh chụp màn hình cuộn Mac", "chụp màn hình cuộn Mac", "ScrollShot cho Mac", "công cụ chụp màn hình macOS", "scroll and stitch"]
@@ -29,7 +29,9 @@ faq:
 
 Tôi có một chuỗi tin nhắn Slack dài 4.000 pixel cần gửi cho một lập trình viên. Tôi nhấn `Cmd + Shift + 4`, kéo một khung và... nhận được đúng một màn hình. Phần còn lại của cuộc hội thoại nằm bên dưới, và macOS vui vẻ bỏ qua nó. **Không có cách gốc nào để chụp ảnh màn hình cuộn trên Mac** — không trong `Cmd + Shift + 4`, không trong ứng dụng Ảnh chụp màn hình, không trong Xem trước. Nếu bạn đến đây hy vọng có một phím tắt ẩn của Apple, tôi nói thẳng: nó không tồn tại. Windows có trong Công cụ Cắt. iPhone có. Android có. macOS, tính đến 2026, vẫn chưa tích hợp sẵn.
 
-Tin tốt: hoàn toàn có thể giải quyết, và bạn có nhiều lựa chọn hơn hầu hết các blog "danh sách 8 công cụ hàng đầu" thừa nhận. Hướng dẫn này đi sâu hơn bề mặt. Tôi sẽ giải thích *tại sao* Mac không làm được việc này một cách gốc, chuyện gì thực sự xảy ra khi một ứng dụng "cuộn và ghép", và công cụ nào phù hợp với việc nào — bao gồm công cụ tôi dùng hàng ngày, **[ScrollShot cho Mac](/vi/blog/vi-sao-chon-scrollshot-anh-chup-man-hinh-dai-ios/)** (miễn phí, và là lựa chọn duy nhất làm trọn vẹn mọi việc trong một ứng dụng).
+Tin tốt: hoàn toàn có thể giải quyết, và bạn có nhiều lựa chọn hơn hầu hết các blog "danh sách 8 công cụ hàng đầu" thừa nhận. Hướng dẫn này đi sâu hơn bề mặt. Tôi sẽ giải thích *tại sao* Mac không làm được việc này một cách gốc, chuyện gì thực sự xảy ra khi một ứng dụng "cuộn và ghép", và công cụ nào phù hợp với việc nào — bao gồm công cụ tôi dùng hàng ngày, **[ScrollShot cho Mac](#từng-bước-chụp-ảnh-màn-hình-dài-với-scrollshot-cho-mac)** (miễn phí, và là lựa chọn duy nhất làm trọn vẹn mọi việc trong một ứng dụng).
+
+Nếu cuộc trò chuyện cần lưu nằm trên iPhone, [bài giới thiệu ScrollShot cho iOS](/vi/blog/vi-sao-chon-scrollshot-anh-chup-man-hinh-dai-ios/) giải thích quy trình ghi màn hình và ghép ảnh trên điện thoại. Các bước bên dưới dành cho Mac.
 
 ![Trước và Sau: một ảnh chụp màn hình thông thường một màn hình của Mac bên cạnh ảnh chụp cuộn ScrollShot 765 × 4091 px của cùng nội dung](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Khi ScrollShot (hay Shottr, hay CleanShot) chụp một ảnh dài, quy trình c
 4. **Khớp các pixel chồng lấp** giữa hai khung để tìm đường nối.
 5. Ghép lại và lặp lại cho đến khi bạn dừng.
 
-Bước khớp là nơi các công cụ sống hoặc chết trong mọi quy trình cuộn-và-ghép. [Công cụ ghép](/vi/blog/ios-stitching-engine-v2/) của ScrollShot dùng khung Vision của Apple để khớp khung hình, và đó là lý do nó xử lý tốc độ cuộn thay đổi và dịch chuyển bố cục nhỏ tốt hơn các cách tiếp cận sai khác pixel ngây thơ. Ba thứ vẫn phá hỏng mọi bộ ghép:
+Kết quả phụ thuộc vào việc căn chỉnh các vùng chồng lấp. [Bài phân tích bộ máy ghép ảnh trên iOS](/vi/blog/ios-stitching-engine-v2/) trình bày cách chọn khung hình, tìm vùng khớp và đặt đường nối trong phiên bản iPhone. Những khó khăn với nội dung lặp lại hoặc thay đổi cũng giúp giải thích các lỗi thường gặp khi chụp trên máy tính:
 
 - **Tiêu đề/chân trang cố định** không di chuyển khi nội dung cuộn → thanh trùng lặp. (Hãy đóng tiện ích chat và biểu ngữ cookie trước.)
 - **Nội dung tải theo yêu cầu** chỉ xuất hiện sau khi bạn cuộn → khoảng trống. (Cuộn một lượt, rồi bắt từ đầu.)
@@ -185,7 +187,7 @@ Không. `Cmd + Shift + 4` và ứng dụng Ảnh chụp màn hình chỉ bắt m
 Chỉ cho trang web: GoFullPage (dưới 30 giây). Cho mọi thứ ngoài trình duyệt (Slack, PDF, ứng dụng): ScrollShot cho Mac hoặc Shottr — cả hai đều miễn phí, cả hai đều hoạt động trên mọi vùng cuộn.
 
 **Có công cụ chụp màn hình cuộn miễn phí nào vừa dịch vừa che giấu dữ liệu không?**  
-Có — [ScrollShot cho Mac](/vi/blog/vi-sao-chon-scrollshot-anh-chup-man-hinh-dai-ios/). Nó miễn phí và kết hợp một cách độc nhất việc chụp cuộn với OCR, dịch hơn 30 ngôn ngữ, hơn 19 công cụ chú thích và tự động che giấu thông tin cá nhân/khuôn mặt trong một ứng dụng.
+Có — [ScrollShot cho Mac](#từng-bước-chụp-ảnh-màn-hình-dài-với-scrollshot-cho-mac). Nó miễn phí và kết hợp một cách độc nhất việc chụp cuộn với OCR, dịch hơn 30 ngôn ngữ, hơn 19 công cụ chú thích và tự động che giấu thông tin cá nhân/khuôn mặt trong một ứng dụng.
 
 **Ảnh màn hình cuộn có hoạt động với PDF và tài liệu không?**  
 Có, nếu bạn dùng ứng dụng chụp cuộn gốc (ScrollShot, Shottr, CleanShot X) trên PDF mở trong Xem trước hoặc trình đọc. Tính năng "Lưu thành PDF" tích hợp cho ra tài liệu, không phải ảnh.

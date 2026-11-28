@@ -2,7 +2,7 @@
 title: "Người dùng cứ khăng khăng lật ngược cuộn để chụp — và tôi đã né được việc viết lại toàn bộ engine chỉ với một dòng"
 description: "Khi người dùng muốn chụp một ảnh màn hình dài iPhone bằng cách cuộn ngược lên, bản năng đầu tiên của tôi là xây một « engine đi lên » riêng. Cuối cùng, chỉ một dòng code là đủ. Bài viết này bóc tách thiết kế ghép ảnh cuộn ngược của ScrollShot, kỹ thuật đằng sau một ảnh chụp màn hình cuộn mượt mà trong các app như Messages và WhatsApp, và chỉ ra cách chúng tôi phát hiện hướng cuộn, đảo ngược thứ tự frame và tái sử dụng pipeline đi xuống hiện có. Bạn sẽ thấy tại sao phát hiện hướng cuộn gần như miễn phí, tại sao chúng tôi đảo ngược thứ tự frame thay vì thêm cờ isReversed, và cách trả quyết định lại cho người dùng khi độ tự tin thấp, để chụp mà engine không đoán sai."
 date: "2026-07-12"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Kỹ thuật chuyên sâu"
 author: "Đội ngũ ScrollShot"
 tags: ["Ảnh chụp màn hình dài iPhone", "Ảnh chụp màn hình cuộn iPhone", "Ảnh chụp màn hình dài iOS", "Thuật toán ghép ảnh chụp", "Cuộn ngược", "Phát hiện hướng cuộn", "Engine ScrollShot", "Ghép bản ghi màn hình"]
@@ -17,6 +17,8 @@ Hầu hết những ai muốn một ảnh chụp màn hình dài iPhone — hay 
 Nhưng thế giới thực thích phản bác. Người dùng muốn chụp một ảnh chụp màn hình cuộn iPhone của một cuộc trò chuyện — Messages, WhatsApp hay WeChat — hoặc lưu phần trang web họ cuộn ngược lên để xem, đúng trường hợp « ảnh chụp toàn trang trong app iPhone » mà mọi người cứ hỏi — và khi ghi hình, ngón tay họ trượt lên. Nội dung chảy ngược trong bản ghi: bắt đầu ở đáy trang và 「kết thúc」 thực ra là nội dung cũ hơn. Đưa thẳng vào engine trên xuống sẽ cho ra một ảnh bị lộn ngược: đỉnh ảnh là nội dung cũ ở cuối bản ghi, và đáy là đầu.
 
 Bài viết này nói về cách ScrollShot hỗ trợ ghép từ dưới lên. Điểm không phải ở thuật toán sâu — mà là một sự đánh đổi thiết kế cực độ về lượng code ít tới mức nào.
+
+Nếu bạn muốn bắt đầu từ thao tác trong ứng dụng, [bài giới thiệu ScrollShot cho iPhone](/vi/blog/vi-sao-chon-scrollshot-anh-chup-man-hinh-dai-ios/) có phần ghi màn hình và ghép ảnh thủ công. Phần dưới đây tập trung vào cách xử lý các khung hình được ghi theo thứ tự ngược.
 
 Đầu tiên, một demo ghép cuộn chuẩn trên xuống — ghép ngược mà chúng ta sẽ bàn được xây thẳng trên nó:
 

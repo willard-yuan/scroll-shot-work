@@ -2,7 +2,7 @@
 title: "Como Tirar Screenshot Longo (Captura Rolável) no Mac em 2026: Guia Completo"
 description: "O macOS não tem captura de tela rolável nativa. Este guia de 2026 explica o porquê, compara GoFullPage, Shottr, CleanShot X, Xnapper, screensnap e ScrollShot, e mostra como capturar qualquer janela de graça com o ScrollShot para Mac."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Guia"
 author: "Equipe ScrollShot"
 tags: ["screenshot longo no Mac", "captura de tela rolável Mac", "screenshot rolável Mac", "ScrollShot para Mac", "ferramenta de captura macOS", "scroll and stitch"]
@@ -29,7 +29,9 @@ Deixa eu te poupar os 20 minutos que eu perdi na primeira vez que precisei disso
 
 Eu tinha um thread de 4.000 pixels no Slack para enviar a um desenvolvedor. Apertei `Cmd + Shift + 4`, arrastei uma caixa e... peguei uma tela só. O resto da conversa estava abaixo da dobra, e o macOS ignorou feliz. **Não existe forma nativa de tirar um screenshot rolável no Mac** — nem no `Cmd + Shift + 4`, nem no app Screenshot, nem no Preview. Se você veio aqui esperando um atalho escondido da Apple, vou ser direto: ele não existe. O Windows tem no Snipping Tool. O iPhone tem. O Android tem. O macOS, em 2026, ainda não traz isso de fábrica.
 
-A boa notícia: é totalmente solucionável, e você tem mais opções do que a maioria dos blogs "lista dos 8 melhores" admite. Este guia vai além da superfície. Vou explicar *por que* o Mac não consegue fazer isso nativamente, o que acontece de verdade quando um app "rola e costura", e qual ferramenta serve para qual tarefa — incluindo a que eu uso todo dia, o **[ScrollShot para Mac](/pt-br/blog/por-que-escolher-scrollshot-prints-longos-ios/)** (grátis, e a única opção que faz o trabalho inteiro em um só app).
+A boa notícia: é totalmente solucionável, e você tem mais opções do que a maioria dos blogs "lista dos 8 melhores" admite. Este guia vai além da superfície. Vou explicar *por que* o Mac não consegue fazer isso nativamente, o que acontece de verdade quando um app "rola e costura", e qual ferramenta serve para qual tarefa — incluindo a que eu uso todo dia, o **[ScrollShot para Mac](#passo-a-passo-tirar-um-screenshot-longo-com-o-scrollshot-para-mac)** (grátis, e a única opção que faz o trabalho inteiro em um só app).
+
+Se a conversa que você quer salvar está no iPhone, a [apresentação do ScrollShot para iOS](/pt-br/blog/por-que-escolher-scrollshot-prints-longos-ios/) explica a gravação e a montagem de prints no celular. Os passos abaixo são para o Mac.
 
 ![Antes vs Depois: uma captura comum de uma tela do Mac ao lado de uma captura rolável do ScrollShot de 765 × 4091 px do mesmo conteúdo](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Quando o ScrollShot (ou Shottr, ou CleanShot) tira um screenshot longo, o proces
 4. **Combina os pixels sobrepostos** entre os dois quadros para achar a costura.
 5. Costura tudo e repete até você parar.
 
-A etapa de combinação é onde as ferramentas vivem ou morrem em qualquer fluxo de rolar e costurar. O [motor de costura](/pt-br/blog/ios-stitching-engine-v2/) do ScrollShot usa o framework Vision da Apple para combinar quadros, e é por isso que lida melhor com velocidades de rolagem variáveis e pequenas mudanças de layout do que abordagens ingênuas de diferença de pixels. Três coisas ainda quebram qualquer costurador:
+O resultado depende do alinhamento das áreas sobrepostas. Nossa [análise do motor de montagem para iOS](/pt-br/blog/ios-stitching-engine-v2/) detalha a seleção de frames, a comparação das imagens e a escolha dos pontos de união na versão para iPhone. Os problemas com conteúdo repetido ou em movimento também ajudam a entender estas falhas comuns nas capturas no computador:
 
 - **Cabeçalhos/rodapés fixos** que não se movem enquanto o conteúdo rola → barras duplicadas. (Feche widgets de chat e banners de cookies antes.)
 - **Conteúdo carregado sob demanda** que só aparece depois de rolar → lacunas em branco. (Role uma vez, depois capture.)
@@ -185,7 +187,7 @@ Não. `Cmd + Shift + 4` e o app Screenshot capturam apenas a tela visível. Voc�
 Só para páginas web: GoFullPage (em menos de 30 segundos). Para qualquer coisa fora do navegador (Slack, PDFs, apps): ScrollShot para Mac ou Shottr — ambos grátis, ambos funcionam em qualquer área rolável.
 
 **Existe uma ferramenta de screenshot rolável grátis que também traduz e oculta dados?**  
-Sim — [ScrollShot para Mac](/pt-br/blog/por-que-escolher-scrollshot-prints-longos-ios/). É grátis e combina, de forma única, a captura por rolagem com OCR, tradução para 30+ idiomas, mais de 19 ferramentas de anotação e ocultação automática de dados pessoais/rostos em um único app.
+Sim — [ScrollShot para Mac](#passo-a-passo-tirar-um-screenshot-longo-com-o-scrollshot-para-mac). É grátis e combina, de forma única, a captura por rolagem com OCR, tradução para 30+ idiomas, mais de 19 ferramentas de anotação e ocultação automática de dados pessoais/rostos em um único app.
 
 **Screenshots roláveis funcionam para PDFs e documentos?**  
 Sim, se você usar um app nativo de captura por rolagem (ScrollShot, Shottr, CleanShot X) no PDF aberto no Preview ou em um leitor. O "Salvar como PDF" nativo gera um documento, não uma imagem.

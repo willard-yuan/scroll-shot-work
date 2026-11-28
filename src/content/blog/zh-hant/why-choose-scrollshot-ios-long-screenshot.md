@@ -2,7 +2,7 @@
 title: "為什麼選擇 ScrollShot？iOS 無縫長截圖的完整解決方案"
 description: "從保存長表格與工作報告的真實需求出發，了解 ScrollShot 如何簡化 iPhone 長截圖流程。本文介紹錄影自動拼接、免費手動拼接、隱私保護與高畫質保存，說明如何將聊天紀錄、網頁資料及 AI 對話整理成一張連續長圖，並分享開發初衷、日常使用情境，以及從錄影、生成、檢查到保存的步驟，減少反覆截圖、排序與裁切的麻煩。"
 date: "2026-05-11"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "產品故事"
 author: "ScrollShot 團隊"
 tags: ["ScrollShot", "iOS 長截圖", "錄影拼接", "產品故事"]
@@ -38,12 +38,16 @@ translationKey: "why-choose-scrollshot"
 
 你只需要開啟 iOS 系統錄影，順著內容滑到底。ScrollShot 會自動辨識關鍵畫面、比對首尾重疊區域，並拼成一張完整長截圖。
 
+想知道關鍵畫面怎麼挑、重疊內容怎麼對齊，可以看這篇 [iOS 長截圖拼接引擎的技術解析](/zh-hant/blog/ios-stitching-engine-v2/)。
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_Cn_0509.mp4" poster="/ScrollShot_Preview_Cn_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>自動拼接示範：錄影一次，滾動一次，ScrollShot 自動生成長圖。</p>
 </div>
 
 這很適合長網頁、文章、聊天紀錄、訂單詳情、App 設定頁，以及任何你想完整保存的滾動內容。
+
+如果習慣從最新訊息往回翻，錄影裡的先後順序就會和閱讀順序相反。[反向捲動拼接的實作](/zh-hant/blog/ios-stitching-engine-reverse-scroll/)介紹了 ScrollShot 如何判斷方向，再把畫面排回正確順序。
 
 ### Manual Stitch：免費、可控，也適合既有截圖
 
@@ -79,6 +83,8 @@ ScrollShot 不只適合網頁。
 - **網頁資料**：截取文章、教學、產品文件和研究頁面，方便保存與分享。
 - **AI 對話**：把 ChatGPT、Gemini、Claude 等長對話整理成一張圖。
 - **任何值得保存的內容**：只要是需要滾動的頁面，ScrollShot 都能幫你變成容易保存與分享的長圖。
+
+在電腦上整理網頁、文件或工作聊天時，可以接著看 [Mac 長截圖教學](/zh-hant/blog/how-to-take-long-scrolling-screenshot-on-mac/)，裡面有桌面工具比較和逐步操作說明。
 
 ## 以獨立開發者的節奏持續打磨
 

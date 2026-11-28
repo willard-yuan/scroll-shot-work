@@ -3,7 +3,7 @@ title: "How to Take a Long Screenshot on iPhone Duo"
 seoTitle: "How to Take a Long Screenshot on iPhone Duo"
 description: "Learn how to take a long screenshot on iPhone Duo with Safari Full Page or ScrollShot. Capture webpages, stitch chats, and save images or PDFs."
 date: "2026-11-03"
-updated: "2026-11-03"
+updated: "2026-11-28"
 category: "How-To Guide"
 author: "ScrollShot Team"
 tags: ["iPhone Duo", "long screenshot", "scrolling screenshot", "Safari full-page screenshot", "ScrollShot"]
@@ -96,6 +96,8 @@ You still control the scrolling. ScrollShot analyzes the captured frames, finds 
 
 For a shorter conversation or screenshots you have already taken, Manual Stitch gives you direct control over the sequence.
 
+You can also combine a few images with Apple's Shortcuts app. Our [guide to combining WhatsApp screenshots with Shortcuts](/blog/ios-shortcuts-vs-scrollshot-long-screenshot/#combine-whatsapp-screenshots-with-apple-shortcuts) includes the free setup and explains when manual cropping becomes more work than using a stitching app.
+
 ![ScrollShot Manual Stitch album browser on iPhone Duo with a grid of images and the Recents album selector](/scrollshot_images_iphone_duo_en.webp)
 
 *Browse your album in Manual Stitch, then select overlapping screenshots in reading order. The example shows the album browser before selection.*
@@ -141,6 +143,8 @@ Under **Theme Color**, choose an app palette you enjoy using. Options include Vi
 **Capture one readable section at a time.** A single image containing an entire lengthy conversation can become inconvenient to read or send. Separate it at natural topic breaks if necessary.
 
 **Check the source before repeating the stitch.** Missing content usually needs a better recording or another screenshot. Fine-tuning cannot restore text that was never captured. If a join looks wrong, first check for a gap between the source images.
+
+For more on why repeated messages and changing content can confuse alignment, see our [explanation of screenshot overlap matching](/blog/ios-stitching-engine-v2/).
 
 **Review the shared copy.** Some messaging services shrink large images. Open what you sent and check the text; use a file attachment or PDF if that better preserves readability for the recipient.
 

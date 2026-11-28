@@ -3,7 +3,7 @@ title: "How Hard Is It to Stitch Two Screenshots Together? An iOS Long-Screensho
 seoTitle: "Inside an iOS Screenshot Stitching Engine"
 description: "A deep dive into ScrollShot's stitching engine: picking 30 keyframes from 1,800 frames, reverse template matching, pyramid NCC search, a three-tier fallback strategy, and the engineering tricks no textbook will teach you."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Deep Dive"
 author: "ScrollShot Team"
 tags: ["iOS long screenshot", "screenshot stitching algorithm", "template matching", "NCC", "ScrollShot engine", "screen recording stitching"]
@@ -35,7 +35,7 @@ The overall pipeline looks like this:
 
 ![ScrollShot stitching engine pipeline](/scrollshot_video_to_long_screenshot_workflow_en.webp)
 
-The engine also supports Apple Vision Framework for matching (fast but coarse), but the rest of this post focuses on the in-house template matching — that's where the real work happens. If you want to see how this algorithm ultimately translates into a <a href="/blog/why-choose-scrollshot-ios-seamless-long-screenshots/">record-once, get-a-long-screenshot</a> experience, check out the product feature overview.
+The engine also supports Apple Vision Framework for matching (fast but coarse), but the rest of this post focuses on the in-house template matching — that's where the real work happens. For a practical example of why overlap detection matters, our [Shortcuts vs. ScrollShot comparison](/blog/ios-shortcuts-vs-scrollshot-long-screenshot/) follows a WhatsApp chat through both simple image stacking and recording-based stitching.
 
 ---
 
@@ -255,3 +255,4 @@ Solving these problems doesn't come from more elegant math. It comes from one "l
 ## Further Reading
 
 - <a href="/blog/why-choose-scrollshot-ios-seamless-long-screenshots/">Why Choose ScrollShot? The Ultimate Solution for Seamless Long Screenshots on iOS</a> — A product-level look at how ScrollShot addresses iOS long-screenshot pain points, including auto stitching, manual stitching, privacy, and high-quality export.
+- [How reverse-scroll stitching reuses this engine](/blog/ios-stitching-engine-reverse-scroll/) — Detecting scroll direction and reversing the frame sequence so bottom-to-top recordings can use the same matching pipeline.

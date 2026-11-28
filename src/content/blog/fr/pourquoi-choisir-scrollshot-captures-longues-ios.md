@@ -2,7 +2,7 @@
 title: "Pourquoi choisir ScrollShot ? La solution iOS pour des captures longues nettes"
 description: "L’histoire produit de ScrollShot : transformer les enregistrements d’écran et les captures iPhone en images longues propres, privées et de haute qualité."
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "Histoire produit"
 author: "Équipe ScrollShot"
 tags: ["ScrollShot", "capture d’écran longue iOS", "enregistrement d’écran", "histoire produit"]
@@ -38,12 +38,16 @@ Pour répondre correctement à ce besoin, j’ai passé quatre mois à affiner S
 
 Lancez un enregistrement d’écran iOS, faites défiler le contenu, puis arrêtez-vous à la fin. ScrollShot identifie les images utiles, détecte les recouvrements et génère une capture longue complète.
 
+Pour comprendre comment les images sont sélectionnées et leurs zones communes alignées, consultez notre [analyse technique du moteur d’assemblage iOS](/fr/blog/ios-stitching-engine-v2/).
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Démo Auto Stitch : enregistrez une fois, faites défiler une fois, puis laissez ScrollShot générer la capture longue.</p>
 </div>
 
 Ce flux fonctionne très bien pour les longues pages web, articles, conversations, détails de commande, réglages d’app et tout contenu qui défile et que vous souhaitez conserver en entier.
+
+Lorsque vous remontez une conversation des messages récents vers les plus anciens, l’enregistrement suit l’ordre inverse de la lecture. Notre article sur [l’assemblage lors d’un défilement vers le haut](/fr/blog/ios-stitching-engine-reverse-scroll/) explique comment ScrollShot remet les images dans le bon ordre.
 
 ### Manual Stitch : gratuit, contrôlé et utile pour vos captures existantes
 
@@ -81,6 +85,8 @@ ScrollShot ne se limite pas aux pages web.
 - **Ressources web** : capturez articles, tutoriels, documentations produit et pages de recherche pour les relire plus tard.
 - **Conversations IA** : conservez les échanges longs avec ChatGPT, Gemini, Claude et d’autres outils.
 - **Tout contenu qui mérite d’être gardé** : lorsqu’une page qui défile compte, ScrollShot vous aide à la transformer en un élément facile à enregistrer et à partager.
+
+Pour enregistrer des pages ou des documents sur votre ordinateur, notre [guide des captures longues sur Mac](/fr/blog/how-to-take-long-scrolling-screenshot-on-mac/) compare les outils disponibles et détaille les étapes de capture.
 
 ## Un outil développé avec soin, en indépendant
 

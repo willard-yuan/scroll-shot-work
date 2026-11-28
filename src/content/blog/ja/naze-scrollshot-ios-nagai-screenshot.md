@@ -2,7 +2,7 @@
 title: "なぜScrollShotを選ぶのか？iOSで長いスクリーンショットをきれいに残すための解決策"
 description: "iPhoneで長いチャットやWebページを保存する手間を、ScrollShotはどう減らすのか。開発のきっかけとなった仕事の課題から、画面収録の自動合成、無料の手動結合、プライバシーに配慮した設計、高画質保存まで紹介します。資料やAIとの会話を読みやすい一枚にまとめる活用例と、録画から確認・保存までの流れを解説します。"
 date: "2026-05-11"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "プロダクトストーリー"
 author: "ScrollShotチーム"
 tags: ["ScrollShot", "iOS 長いスクリーンショット", "画面収録", "プロダクトストーリー"]
@@ -38,12 +38,16 @@ translationKey: "why-choose-scrollshot"
 
 iOSの画面収録を開始し、保存したい内容を最後までスクロールします。ScrollShotは使えるフレームを見つけ、重なっている部分を合わせ、1枚の長いスクリーンショットを生成します。
 
+フレームの選び方や重複部分を合わせる仕組みは、[iOS向けスクリーンショット結合エンジンの技術解説](/ja/blog/ios-stitching-engine-v2/)で詳しく紹介しています。
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Auto Stitchのデモ。一度録画して一度スクロールするだけで、ScrollShotが長いスクリーンショットを生成します。</p>
 </div>
 
 長いWebページ、記事、チャット、注文内容、アプリの設定画面など、最後まできれいに残したいスクロール内容に向いています。
+
+チャットを最新のメッセージから過去へさかのぼると、録画内の順序は読む順序と逆になります。[逆方向スクロールの結合処理](/ja/blog/ios-stitching-engine-reverse-scroll/)では、ScrollShotがフレームを並べ直す仕組みを説明しています。
 
 ### Manual Stitch：すでにあるスクショも、順番どおりに結合
 
@@ -81,6 +85,8 @@ ScrollShotはWebページだけのためのツールではありません。
 - **Web資料**：記事、チュートリアル、製品ドキュメント、リサーチページをあとで見返せる形に。
 - **AIとの会話**：ChatGPT、Gemini、Claudeなどとの長い会話や重要な回答を1枚に整理。
 - **残しておきたいあらゆる内容**：スクロールするページを、保存しやすく共有しやすい形に変えます。
+
+パソコン上のWebページや資料を保存する場合は、[Macで長いスクリーンショットを撮る方法](/ja/blog/how-to-take-long-scrolling-screenshot-on-mac/)をご覧ください。デスクトップ向けツールの比較と撮影手順を紹介しています。
 
 ## 個人開発だからこそ、丁寧に磨く
 

@@ -2,7 +2,7 @@
 title: "Warum ScrollShot? Die bessere Lösung für nahtlose lange Screenshots auf iOS"
 description: "Eine Produktgeschichte darüber, wie ScrollShot Bildschirmaufnahmen und Screenshots auf dem iPhone in saubere, private und hochauflösende lange Bilder verwandelt."
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "Produktgeschichte"
 author: "ScrollShot Team"
 tags: ["ScrollShot", "iOS langer Screenshot", "Bildschirmaufnahme", "Produktgeschichte"]
@@ -38,12 +38,16 @@ Um dieses Problem sauber zu lösen, habe ich vier Monate lang an ScrollShot gefe
 
 Starte eine iOS-Bildschirmaufnahme, scrolle durch den Inhalt und stoppe, wenn du am Ende angekommen bist. ScrollShot erkennt die brauchbaren Frames, findet überlappende Bereiche und erzeugt daraus einen vollständigen langen Screenshot.
 
+Wie die App passende Frames auswählt und Überlappungen erkennt, erklärt unser [technischer Einblick in die iOS-Stitching-Engine](/de/blog/ios-stitching-engine-v2/).
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Auto-Stitch-Demo: einmal aufnehmen, einmal scrollen und ScrollShot den langen Screenshot erstellen lassen.</p>
 </div>
 
 Das funktioniert gut für lange Webseiten, Artikel, Chatverläufe, Bestelldetails, App-Einstellungen und alle scrollenden Inhalte, die du vollständig sichern möchtest.
+
+Wenn du einen Chat von den neuesten zu den älteren Nachrichten durchgehst, läuft auch die Aufnahme in umgekehrter Reihenfolge. Im Beitrag zum [Stitching beim Rückwärtsscrollen](/de/blog/ios-stitching-engine-reverse-scroll/) zeigen wir, wie ScrollShot die Frames wieder in Lesereihenfolge bringt.
 
 ### Manual Stitch: kostenlos, kontrolliert und nützlich für vorhandene Screenshots
 
@@ -81,6 +85,8 @@ ScrollShot ist nicht auf Webseiten beschränkt.
 - **Webinhalte**: Artikel, Tutorials, Produktdokumentationen und Recherche-Seiten für später sichern.
 - **KI-Konversationen**: Lange Antworten und Gedankengänge aus ChatGPT, Gemini, Claude und anderen KI-Tools speichern.
 - **Alles, was vollständig erhalten bleiben soll**: Wenn eine scrollende Seite wichtig ist, hilft ScrollShot dabei, sie als gut teilbares Ergebnis zu sichern.
+
+Für Webseiten und Dokumente auf dem Computer findest du in unserer [Anleitung für lange Screenshots auf dem Mac](/de/blog/how-to-take-long-scrolling-screenshot-on-mac/) einen Werkzeugvergleich und die einzelnen Aufnahmeschritte.
 
 ## Mit unabhängigem Anspruch gebaut
 

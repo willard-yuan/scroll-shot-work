@@ -3,7 +3,7 @@ title: "Come Fare uno Screenshot Lungo (a Scorrimento) su Mac nel 2026: Guida Co
 seoTitle: "Screenshot lungo su Mac: guida 2026"
 description: "macOS non ha uno screenshot a scorrimento nativo. Questa guida 2026 spiega il perché, confronta GoFullPage, Shottr, CleanShot X, Xnapper, screensnap e ScrollShot, e mostra come catturare qualsiasi finestra gratis con ScrollShot per Mac."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Guida"
 author: "Team ScrollShot"
 tags: ["screenshot lungo su Mac", "screenshot a scorrimento Mac", "cattura schermo scorrevole Mac", "ScrollShot per Mac", "strumento screenshot macOS", "scroll and stitch"]
@@ -30,7 +30,9 @@ Lasciami risparmiare i 20 minuti che ho perso la prima volta che mi è servito.
 
 Avevo un thread Slack di 4.000 pixel da mandare a uno sviluppatore. Ho premuto `Cmd + Shift + 4`, trascinato un rettangolo e... ho ottenuto una sola schermata. Il resto della conversazione era sotto la piega, e macOS l'ha ignorato volentieri. **Non esiste un modo nativo per fare uno screenshot a scorrimento su Mac** — non con `Cmd + Shift + 4`, non con l'app Screenshot, non con Anteprima. Se sei qui sperando in una scorciatoia nascosta di Apple, te lo dico chiaro: non esiste. Windows ce l'ha in Strumento di ritaglio. iPhone ce l'ha. Android ce l'ha. macOS, nel 2026, non lo include ancora di fabbrica.
 
-La buona notizia: è completamente risolvibile, e hai più opzioni di quante ammettano la maggior parte dei blog "classifica dei 10 migliori". Questa guida va oltre la superficie. Spiego *perché* il Mac non può farlo in modo nativo, cosa succede davvero quando un'app "scorre e cucisce", e quale strumento è adatto a quale lavoro — incluso quello che uso ogni giorno, **[ScrollShot per Mac](/it/blog/perche-scegliere-scrollshot-screenshot-lunghi-ios/)** (gratuito, e l'unica opzione che fa tutto il lavoro in un'unica app).
+La buona notizia: è completamente risolvibile, e hai più opzioni di quante ammettano la maggior parte dei blog "classifica dei 10 migliori". Questa guida va oltre la superficie. Spiego *perché* il Mac non può farlo in modo nativo, cosa succede davvero quando un'app "scorre e cucisce", e quale strumento è adatto a quale lavoro — incluso quello che uso ogni giorno, **[ScrollShot per Mac](#passo-dopo-passo-fai-uno-screenshot-lungo-con-scrollshot-per-mac)** (gratuito, e l'unica opzione che fa tutto il lavoro in un'unica app).
+
+Se la conversazione da salvare è sull’iPhone, consulta la [panoramica di ScrollShot per iOS](/it/blog/perche-scegliere-scrollshot-screenshot-lunghi-ios/), che descrive la registrazione e l’unione delle schermate sul telefono. I passaggi qui sotto riguardano il Mac.
 
 ![Prima vs Dopo: una normale schermata del Mac accanto a una cattura a scorrimento ScrollShot di 765 × 4091 px dello stesso contenuto](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -117,7 +119,7 @@ Quando ScrollShot (o Shottr, o CleanShot) fa uno screenshot lungo, il processo d
 4. **Abbina i pixel sovrapposti** tra i due fotogrammi per trovare la cucitura.
 5. Cuce il tutto e ripete finché non ti fermi.
 
-La fase di abbinamento è dove gli strumenti vivono o muoiono in qualsiasi flusso di scorri-e-cuci. Il [motore di cucitura](/it/blog/ios-stitching-engine-v2/) di ScrollShot usa il framework Vision di Apple per abbinare i fotogrammi, ed è per questo che gestisce meglio velocità di scorrimento variabili e piccoli cambiamenti di layout rispetto agli approcci ingenui di differenza pixel. Tre cose rompono comunque qualsiasi cucitore:
+Il risultato dipende dall’allineamento delle aree sovrapposte. Il nostro [approfondimento sul motore di unione per iOS](/it/blog/ios-stitching-engine-v2/) illustra la selezione dei fotogrammi, il confronto delle immagini e la scelta dei punti di giunzione nella versione iPhone. I problemi legati a contenuti ripetuti o in movimento aiutano anche a capire questi errori comuni nelle acquisizioni su computer:
 
 - **Intestazioni/piè di pagina fissi** che non si muovono mentre il contenuto scorre → barre duplicate. (Chiudi widget di chat e banner dei cookie prima.)
 - **Contenuto caricato su richiesta** che appare solo dopo aver scrollato → spazi vuoti. (Scorri una volta, poi cattura.)
@@ -186,7 +188,7 @@ No. `Cmd + Shift + 4` e l'app Screenshot catturano solo lo schermo visibile. Ti 
 Solo per le pagine web: GoFullPage (meno di 30 secondi). Per tutto ciò che è fuori dal browser (Slack, PDF, app): ScrollShot per Mac o Shottr — entrambi gratuiti, entrambi funzionano su qualsiasi area scorrevole.
 
 **Esiste uno strumento di screenshot a scorrimento gratuito che traduca e oscuri anche i dati?**  
-Sì — [ScrollShot per Mac](/it/blog/perche-scegliere-scrollshot-screenshot-lunghi-ios/). È gratuito e unisce in modo unico la cattura a scorrimento con OCR, traduzione in oltre 30 lingue, oltre 19 strumenti di annotazione e oscuramento automatico di dati personali/volti in un'unica app.
+Sì — [ScrollShot per Mac](#passo-dopo-passo-fai-uno-screenshot-lungo-con-scrollshot-per-mac). È gratuito e unisce in modo unico la cattura a scorrimento con OCR, traduzione in oltre 30 lingue, oltre 19 strumenti di annotazione e oscuramento automatico di dati personali/volti in un'unica app.
 
 **Gli screenshot a scorrimento funzionano con PDF e documenti?**  
 Sì, se usi un'app di cattura a scorrimento nativa (ScrollShot, Shottr, CleanShot X) sul PDF aperto in Anteprima o in un lettore. Il "Salva come PDF" integrato produce un documento, non un'immagine.

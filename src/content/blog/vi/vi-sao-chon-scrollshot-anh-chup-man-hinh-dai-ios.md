@@ -2,7 +2,7 @@
 title: "Vì sao nên chọn ScrollShot? Giải pháp tối ưu cho ảnh chụp màn hình dài liền mạch trên iOS"
 description: "Câu chuyện sản phẩm về cách ScrollShot biến bản ghi màn hình và ảnh chụp thành ảnh dài sạch, riêng tư và chất lượng cao trên iPhone."
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "Câu chuyện sản phẩm"
 author: "Đội ngũ ScrollShot"
 tags: ["ScrollShot", "chụp màn hình dài trên iOS", "ghi màn hình", "câu chuyện sản phẩm"]
@@ -38,12 +38,16 @@ Một công cụ chụp màn hình dài tốt không nên chỉ dừng ở việ
 
 Bắt đầu ghi màn hình iOS, cuộn qua nội dung rồi dừng lại khi đến cuối. ScrollShot nhận diện các khung hình hữu ích, khớp những vùng chồng lấp và tạo ra một ảnh chụp màn hình dài hoàn chỉnh.
 
+Nếu muốn tìm hiểu cách chọn khung hình và căn chỉnh vùng chồng lấp, bạn có thể đọc [bài phân tích kỹ thuật về bộ máy ghép ảnh trên iOS](/vi/blog/ios-stitching-engine-v2/).
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Demo Auto Stitch: ghi một lần, cuộn một lần và để ScrollShot tạo ảnh chụp màn hình dài.</p>
 </div>
 
 Tính năng này hoạt động tốt với trang web dài, bài viết, chuỗi chat, chi tiết đơn hàng, phần cài đặt ứng dụng và bất kỳ nội dung cuộn nào bạn muốn lưu lại trọn vẹn.
+
+Khi xem lại cuộc trò chuyện từ tin nhắn mới nhất về các tin cũ, thứ tự trong bản ghi sẽ ngược với thứ tự đọc. Bài viết về [ghép ảnh khi cuộn từ dưới lên](/vi/blog/ios-stitching-engine-reverse-scroll/) giải thích cách ScrollShot sắp xếp lại các khung hình.
 
 ### Manual Stitch: miễn phí, dễ kiểm soát và hữu ích với ảnh đã có
 
@@ -81,6 +85,8 @@ ScrollShot không chỉ dành cho trang web.
 - **Tài nguyên web**: chụp bài viết, hướng dẫn, tài liệu sản phẩm và trang nghiên cứu để xem lại sau.
 - **Cuộc trò chuyện AI**: lưu các câu trả lời dài từ ChatGPT, Gemini, Claude và những công cụ AI khác.
 - **Bất kỳ nội dung nào đáng lưu**: khi một trang cuộn có giá trị, ScrollShot giúp biến nó thành thứ dễ lưu và dễ chia sẻ.
+
+Để lưu trang web hoặc tài liệu đang mở trên máy tính, hãy xem [hướng dẫn chụp màn hình dài trên Mac](/vi/blog/how-to-take-long-scrolling-screenshot-on-mac/), gồm phần so sánh công cụ và các bước chụp cụ thể.
 
 ## Được xây dựng bằng sự chỉn chu của một nhà phát triển độc lập
 

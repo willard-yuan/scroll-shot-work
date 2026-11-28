@@ -2,7 +2,7 @@
 title: "Os usuários insistiram em rolar para cima para capturar — e eu evitei reescrever todo o motor com uma única linha"
 description: "Quando os usuários querem capturar um long screenshot iPhone rolando para cima, meu primeiro instinto foi construir um « motor ascendente » separado. No fim, uma única linha de código foi suficiente. Este post detalha o design de stitching com rolagem reversa do ScrollShot, a técnica por trás de uma captura de tela que rola perfeitamente em apps como Messages e WhatsApp, e mostra como detectamos a direção da rolagem, invertemos a ordem dos frames e reutilizamos o pipeline descendente existente. Você verá por que a detecção de direção é quase de graça, por que invertemos a ordem dos frames em vez de adicionar uma flag isReversed, e como devolvemos a decisão ao usuário quando a confiança é baixa, para capturar sem o motor errar."
 date: "2026-07-12"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Técnica"
 author: "Equipe ScrollShot"
 tags: ["Captura longa iPhone", "Captura de rolagem iPhone", "Captura longa iOS", "Algoritmo de costura de capturas", "Rolagem inversa", "Detecção de direção de rolagem", "Motor ScrollShot", "Costura de gravação de tela"]
@@ -17,6 +17,8 @@ A maioria de quem quer um long screenshot iPhone — ou qualquer captura de rola
 Mas o mundo real adora contestar. Os usuários querem capturar uma captura de rolagem iPhone de um chat — Messages, WhatsApp ou WeChat — ou salvar a parte de uma página web que rolaram para cima para ver, exatamente o caso de « captura de página inteira em app iPhone » que todo mundo pergunta — e ao gravar, o dedo desliza para cima. O conteúdo flui de trás para frente na gravação: começa no final da página e o « fim » é na verdade o conteúdo mais antigo. Jogue isso direto no motor de cima para baixo e você obtém uma imagem de cabeça para baixo: o topo visual é o conteúdo antigo do fim da gravação, e a base é o começo.
 
 Este post é sobre como o ScrollShot suporta a costura de baixo para cima. O ponto não é um algoritmo profundo — é um trade-off de design extremo na pouca quantidade de código necessária.
+
+Se você quer começar pelo uso do app, a [apresentação do ScrollShot para iPhone](/pt-br/blog/por-que-escolher-scrollshot-prints-longos-ios/) mostra a gravação de tela e a montagem manual. Aqui, o foco é o processamento dos frames que chegam em ordem inversa.
 
 Primeiro, uma demo padrão de stitching de cima para baixo — o stitching reverso que vamos discutir se constrói diretamente sobre ela:
 

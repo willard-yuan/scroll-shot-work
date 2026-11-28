@@ -2,7 +2,7 @@
 title: "왜 ScrollShot인가? 아이폰 긴 스크린샷을 깔끔하게 저장하는 방법"
 description: "ScrollShot이 한국 iPhone 사용자를 위해 화면 녹화 기반 자동 합성, 수동 이어붙이기, 개인정보 보호, 고화질 긴 스크린샷 저장을 어떻게 해결하는지 소개합니다."
 date: "2026-05-11"
-updated: "2026-05-15"
+updated: "2026-11-28"
 category: "제품 이야기"
 author: "ScrollShot 팀"
 tags: ["ScrollShot", "아이폰 긴 스크린샷", "스크롤 캡처", "화면 녹화", "제품 이야기"]
@@ -38,12 +38,16 @@ translationKey: "why-choose-scrollshot"
 
 iOS 화면 녹화를 시작한 뒤 저장하고 싶은 내용을 끝까지 스크롤합니다. ScrollShot은 사용할 수 있는 프레임을 찾고, 겹치는 부분을 맞춘 뒤, 하나의 긴 스크린샷을 생성합니다.
 
+프레임을 고르고 겹치는 영역을 맞추는 원리가 궁금하다면 [iOS 스크린샷 합성 엔진 기술 해설](/ko/blog/ios-stitching-engine-v2/)에서 자세한 내용을 확인할 수 있습니다.
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Auto Stitch 데모. 한 번 녹화하고 한 번 스크롤하면 ScrollShot이 긴 스크린샷을 만들어 줍니다.</p>
 </div>
 
 긴 웹페이지, 글, 채팅 기록, 주문 내역, 앱 설정 화면처럼 끝까지 깔끔하게 남기고 싶은 스크롤 콘텐츠에 잘 맞습니다.
+
+최신 메시지에서 이전 메시지로 거슬러 올라가며 녹화하면 프레임 순서가 읽는 순서와 반대가 됩니다. [역방향 스크롤 합성 글](/ko/blog/ios-stitching-engine-reverse-scroll/)에서는 ScrollShot이 이 순서를 다시 정렬하는 방법을 설명합니다.
 
 ### Manual Stitch: 이미 있는 스크린샷도 순서대로 결합
 
@@ -81,6 +85,8 @@ ScrollShot은 웹페이지에만 쓰는 도구가 아닙니다.
 - **웹 자료**: 글, 튜토리얼, 제품 문서, 리서치 페이지를 나중에 다시 볼 수 있게 남깁니다.
 - **AI와의 대화**: ChatGPT, Gemini, Claude 등과 나눈 긴 대화나 중요한 답변을 한 장으로 정리합니다.
 - **보관할 가치가 있는 모든 스크롤 콘텐츠**: 스크롤되는 페이지를 저장하고 공유하기 쉬운 형태로 바꿉니다.
+
+컴퓨터에 열린 웹페이지나 문서를 저장하려면 [Mac 긴 스크린샷 가이드](/ko/blog/how-to-take-long-scrolling-screenshot-on-mac/)를 참고하세요. 데스크톱 도구 비교와 캡처 절차를 정리했습니다.
 
 ## 독립 개발자의 손으로 계속 다듬고 있습니다
 

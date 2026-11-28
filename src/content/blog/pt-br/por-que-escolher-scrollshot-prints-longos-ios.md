@@ -2,7 +2,7 @@
 title: "Por que escolher o ScrollShot? A solução definitiva para prints longos no iOS"
 description: "Uma visão de produto sobre como o ScrollShot transforma gravações de tela e screenshots em imagens longas, limpas, privadas e em alta qualidade no iPhone."
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "História do produto"
 author: "Equipe ScrollShot"
 tags: ["ScrollShot", "print longo no iOS", "gravação de tela", "história do produto"]
@@ -38,12 +38,16 @@ Para resolver esse problema direito, passei quatro meses refinando o ScrollShot.
 
 Inicie uma gravação de tela no iOS, role pelo conteúdo e pare quando chegar ao fim. O ScrollShot identifica os frames úteis, encontra as áreas sobrepostas e gera um print longo completo.
 
+Para entender como os frames são escolhidos e as áreas sobrepostas são alinhadas, veja nossa [análise técnica do motor de montagem para iOS](/pt-br/blog/ios-stitching-engine-v2/).
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Demonstração do Auto Stitch: grave uma vez, role uma vez e deixe o ScrollShot gerar o print longo.</p>
 </div>
 
 Isso funciona bem para páginas web longas, artigos, conversas, detalhes de pedido, telas de configuração de apps e qualquer conteúdo rolável que você queira salvar por inteiro.
+
+Ao voltar das mensagens mais recentes para as antigas, a gravação fica na ordem inversa à de leitura. O artigo sobre [montagem com rolagem de baixo para cima](/pt-br/blog/ios-stitching-engine-reverse-scroll/) explica como o ScrollShot reorganiza os frames.
 
 ### Manual Stitch: gratuito, controlado e útil para screenshots existentes
 
@@ -81,6 +85,8 @@ O ScrollShot não se limita a páginas web.
 - **Recursos da web**: capture artigos, tutoriais, documentações de produto e páginas de pesquisa para consultar depois.
 - **Conversas com IA**: salve respostas longas do ChatGPT, Gemini, Claude e outras ferramentas de IA.
 - **Qualquer conteúdo que vale guardar**: quando uma página rolável é importante, o ScrollShot ajuda a transformá-la em algo fácil de salvar e compartilhar.
+
+Para salvar páginas e documentos no computador, o [guia de prints longos no Mac](/pt-br/blog/how-to-take-long-scrolling-screenshot-on-mac/) compara as ferramentas disponíveis e mostra o passo a passo da captura.
 
 ## Criado com cuidado independente
 

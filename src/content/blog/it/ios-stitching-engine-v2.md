@@ -2,7 +2,7 @@
 title: "Quanto è difficile unire due screenshot? Un motore di stitching iOS che mi ha fatto ricominciare — ancora e ancora"
 description: "Smontiamo il motore di stitching di ScrollShot: selezionare 30 frame chiave da 1.800, template matching inverso, ricerca piramidale NCC, strategia di fallback a tre livelli e i trucchi di ingegneria che nessun manuale insegna."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Tecnica"
 author: "Team ScrollShot"
 tags: ["screenshot lunghi iOS", "algoritmo di stitching", "template matching", "NCC", "motore ScrollShot", "stitching registrazione schermo"]
@@ -69,6 +69,8 @@ C'è anche un filtro del rumore facile da trascurare: **uno spostamento singolo 
 - **Passo adattivo**: quando lo spostamento è grande, salti grandi (`nativeFPS / 6`, circa ogni 10 frame). Quando è piccolo, scansione frame per frame (`nativeFPS / 30`). Quando la distanza rimanente scende sotto il 25 % della soglia, passo minimo forzato — altrimenti salti letteralmente un frame
 - **Rilevamento cambio scena**: il SAD per pixel tra frame adiacenti supera 40,0? Probabilmente l'utente ha cambiato app. Cattura immediatamente
 - **Troncamento da rimbalzo**: usa il flusso ottico di Vision per rilevare la direzione del movimento. Se lo spostamento cumulativo scende sotto -50 px (l'utente sta scrollando verso l'alto), ha raggiunto la cima — scarta tutti i frame successivi. Ma questa soglia non può essere troppo stretta: inizialmente ho messo -10, e lievi tremori del dito attivavano il troncamento, tagliando la registrazione a metà
+
+Il breve rimbalzo a fine pagina è un caso diverso da una registrazione che scorre verso l’alto fin dall’inizio. Nell’articolo sull’[unione con scorrimento inverso](/it/blog/ios-stitching-engine-reverse-scroll/) spieghiamo come riordinare i fotogrammi per riutilizzare questo motore.
 
 **Passata 1,5 — raffinamento della nitidezza.** Per ogni frame candidato, cercare il più nitido in una finestra di ±2 frame intorno.
 

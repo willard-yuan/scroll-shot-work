@@ -2,7 +2,7 @@
 title: "Perché scegliere ScrollShot? La soluzione definitiva per screenshot lunghi e fluidi su iOS"
 description: "Una storia di prodotto su come ScrollShot trasforma registrazioni schermo e screenshot in immagini lunghe, pulite, private e di alta qualità su iPhone."
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "Storia del prodotto"
 author: "Team ScrollShot"
 tags: ["ScrollShot", "screenshot lunghi su iOS", "registrazione schermo", "storia del prodotto"]
@@ -38,12 +38,16 @@ Per risolvere bene questo problema, ho dedicato quattro mesi a rifinire ScrollSh
 
 Avvia una registrazione schermo di iOS, scorri il contenuto e fermati quando arrivi alla fine. ScrollShot identifica i fotogrammi utili, allinea le aree sovrapposte e genera uno screenshot lungo completo.
 
+Per capire come vengono scelti i fotogrammi e allineate le aree sovrapposte, leggi il nostro [approfondimento sul motore di unione per iOS](/it/blog/ios-stitching-engine-v2/).
+
 <div class="blog-demo">
 	<video src="/ScrollShot_Preview_En_0509.mp4" poster="/ScrollShot_Preview_En_0509_cover.jpg" controls playsinline preload="metadata"></video>
 	<p>Demo di Auto Stitch: registra una volta, scorri una volta e lascia che ScrollShot generi lo screenshot lungo.</p>
 </div>
 
 Funziona bene con pagine web lunghe, articoli, conversazioni, dettagli d’ordine, impostazioni di app e qualsiasi contenuto a scorrimento che vuoi conservare per intero.
+
+Quando risali una chat dai messaggi recenti a quelli più vecchi, la registrazione segue l’ordine inverso rispetto alla lettura. L’articolo sullo [scorrimento dal basso verso l’alto](/it/blog/ios-stitching-engine-reverse-scroll/) spiega come ScrollShot rimette i fotogrammi nell’ordine corretto.
 
 ### Manual Stitch: gratuito, controllabile e utile per screenshot già esistenti
 
@@ -81,6 +85,8 @@ ScrollShot non è limitato alle pagine web.
 - **Risorse web**: cattura articoli, tutorial, documentazione di prodotto e pagine di ricerca per consultarli più tardi.
 - **Conversazioni AI**: salva risposte lunghe da ChatGPT, Gemini, Claude e altri strumenti AI.
 - **Qualsiasi contenuto che vale la pena conservare**: quando una pagina a scorrimento è importante, ScrollShot la rende facile da salvare e condividere.
+
+Per salvare pagine e documenti sul computer, la [guida agli screenshot lunghi su Mac](/it/blog/how-to-take-long-scrolling-screenshot-on-mac/) confronta gli strumenti disponibili e illustra i passaggi di acquisizione.
 
 ## Creato con cura indipendente
 

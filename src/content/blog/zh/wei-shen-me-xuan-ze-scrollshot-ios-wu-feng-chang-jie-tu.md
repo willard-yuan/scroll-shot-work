@@ -2,7 +2,7 @@
 title: "为什么选择 ScrollShot？iOS 无缝长截图的终极解决方案"
 description: "从真实工作需求出发，看看 ScrollShot 如何用录屏自动拼接、手动拼接、隐私保护和高清导出解决 iPhone 长截图难题。"
 date: "2026-05-11"
-updated: "2026-05-11"
+updated: "2026-11-28"
 category: "产品故事"
 author: "ScrollShot 团队"
 tags: ["ScrollShot", "iOS 长截图", "录屏拼接", "产品故事"]
@@ -45,11 +45,15 @@ translationKey: "why-choose-scrollshot"
 
 这适合长网页、文章、聊天记录、订单详情、App 设置页，以及任何你想完整保存的滚动内容。
 
+翻聊天记录时，也有人习惯从最新消息往回找。我们在[反向滚动拼接这篇文章](/zh/blog/blog-ios-stitching-engine-reverse-scroll/)里介绍了如何检测滚动方向，再把画面排回正常的阅读顺序。
+
 ### Manual Stitch：免费、可控、适合已有截图
 
 如果你已经有多张截图，ScrollShot 也支持手动按序拼接。选择图片后，第一张会成为长图顶部；如果结果需要调整，还可以在保存前进行微调。
 
 手动拼接适合更复杂的场景，比如交易记录、局部重叠页面、分多次保存的素材，或者你希望完全掌控顺序的截图集合。
+
+如果只是偶尔拼两三张图，系统的快捷指令也值得试试。[快捷指令和 ScrollShot 的对比](/zh/blog/ios-shortcuts-vs-scrollshot-long-screenshot/)用聊天记录举例，说明了简单拼图与重叠内容对齐的区别，方便你按实际需要选择。
 
 ## 为什么它值得成为首选？
 
@@ -79,6 +83,8 @@ ScrollShot 适合的不只是网页。
 - **网页资料**：截取网页、文章、产品文档和教程，方便保存与分享。
 - **AI 对话**：把 ChatGPT、Gemini、Claude 等长对话整理成一张图。
 - **任意灵感内容**：只要你觉得某段内容值得保存，都可以用 ScrollShot 快速留档。
+
+在电脑上整理网页、长表格或工作聊天时，操作方式会有所不同，可以接着看[Mac 滚动截图指南](/zh/blog/how-to-take-long-scrolling-screenshot-on-mac/)里的桌面工具对比和分步教程。
 
 ## 独立开发者的持续打磨
 

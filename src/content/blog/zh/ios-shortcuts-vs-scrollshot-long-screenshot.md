@@ -3,7 +3,7 @@ title: "iPhone 拼长图，快捷指令够用吗？聊聊它和 ScrollShot 的�
 seoTitle: "快捷指令长截图 vs ScrollShot：怎么选？"
 description: "几张图片拼成长图，快捷指令就够用；换成十几屏聊天记录，截图、裁切和对齐才是麻烦所在。聊聊快捷指令与 ScrollShot 录屏拼接的区别，以及各自适合的使用场景。"
 date: "2026-11-12"
-updated: "2026-11-25"
+updated: "2026-11-28"
 category: "对比评测"
 author: "ScrollShot 团队"
 tags: ["iOS 长截图", "快捷指令", "滚动截屏", "截图拼接", "ScrollShot"]
@@ -67,9 +67,11 @@ ScrollShot 的做法是先开系统录屏，再手动滚动页面，把要保存
 
 录制时，尽量保持平稳滚动，让前后画面有重叠。遇到还没加载出来的图片，等它显示完整再继续；一口气快速甩到底，可能让中间内容来不及清楚地出现在录屏里。没有录到的内容，拼接时也补不回来。
 
+如果你习惯从最新消息往回翻，录屏里的先后顺序就和最终长图相反了。ScrollShot 如何处理这种情况，可以看[反向滚动拼接的实现](/zh/blog/blog-ios-stitching-engine-reverse-scroll/)。
+
 ![从滚动录屏到长图的流程](/scrollshot_video_to_long_screenshot_workflow.webp)
 
-拼好后可以放大预览，接缝不合适的地方再手动调整，也能清理部分滚动条痕迹，最后保存图片或导出 PDF。已有截图同样可以手动按选择顺序拼接，这部分的预览和保存是免费的。
+拼好后可以放大预览，接缝不合适的地方再手动调整，也能清理部分滚动条痕迹，最后保存图片或导出 PDF。已有截图同样可以用[免费的手动拼接功能](/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/#manual-stitch免费可控适合已有截图)按选择顺序整理，在预览里调整好再保存。
 
 ## 自动拼接之后，还是要看一眼
 
@@ -91,5 +93,7 @@ ScrollShot 的做法是先开系统录屏，再手动滚动页面，把要保存
 | 已有顺手的快捷指令，使用频率也不高 | 继续用现有流程就好 |
 
 快捷指令免费，ScrollShot 的录屏自动拼接则需要 Pro，订阅或买断选项以 App Store 实际展示为准。是否值得付费，可以看自己究竟多久需要整理一次长内容。
+
+如果聊天或文档已经在电脑上打开，可以直接参考[Mac 长截图教程](/zh/blog/how-to-take-long-scrolling-screenshot-on-mac/)，里面分别介绍了浏览器页面和桌面应用的截取方式。
 
 如果一个月只拼几张图，花点时间处理并不麻烦。要是经常截到一半就忘了上一张停在哪里，录屏拼接会更值得尝试。可以先<a href="https://apps.apple.com/cn/app/scrollshot-%E6%BB%9A%E5%8A%A8%E6%88%AA%E5%9B%BE-%E6%8B%BC%E6%8E%A5%E9%95%BF%E5%9B%BE/id6760192003">下载 ScrollShot</a>，用手头的截图试试免费手动拼接；需要录屏自动拼接时，再查看<a href="/zh/#pricing">免费与 Pro 的功能区别</a>。

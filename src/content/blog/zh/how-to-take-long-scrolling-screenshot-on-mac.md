@@ -2,7 +2,7 @@
 title: "Mac 长截图怎么截？2026 滚动截图完全指南"
 description: "macOS 没有自带的滚动截图功能。这篇 2026 完全指南讲清原因，横向对比 GoFullPage、Shottr、CleanShot X、Xnapper、screensnap 与 ScrollShot，并教你用免费的 ScrollShot for Mac 截取任意窗口的长图。"
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "使用教程"
 author: "ScrollShot 团队"
 tags: ["Mac 长截图", "Mac 滚动截图", "macOS 截图工具", "ScrollShot for Mac", "滚动拼接", "长图截取"]
@@ -16,7 +16,7 @@ faq:
   - question: "Mac 上截长图，最快的免费方法是什么？"
     answer: "只截网页：用 GoFullPage（30 秒内搞定）。网页之外的内容（Slack、PDF、各类 App）：ScrollShot for Mac 或 Shottr 都免费，且能截任意可滚动区域。"
   - question: "有没有既能截长图、又能翻译和脱敏的免费工具？"
-    answer: "有——[ScrollShot for Mac](/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/)。它免费，并且独一家把滚动截取与文字识别、30+ 语言翻译、19+ 标注工具、自动脱敏（邮箱/手机号/API Key/人脸）集成在同一个 App 里。"
+    answer: "有——ScrollShot for Mac。它免费，并且独一家把滚动截取与文字识别、30+ 语言翻译、19+ 标注工具、自动脱敏（邮箱/手机号/API Key/人脸）集成在同一个 App 里。"
   - question: "长截图能用于 PDF 和文档吗？"
     answer: "可以，前提是用原生滚动截取工具（ScrollShot、Shottr、CleanShot X）去截在「预览」或阅读器里打开的 PDF。系统自带的「导出为 PDF」得到的是文档，不是图片。"
   - question: "为什么我的长图出现了重复的标题栏？"
@@ -29,7 +29,9 @@ faq:
 
 我那会儿要给对方一个开发同事发一条 4000 像素高的 Slack 对话。我按下 `Cmd + Shift + 4`，拖了个框，结果只截到一屏。剩下的聊天记录全在下方，macOS 当作没看见。**Mac 上根本就没有原生长截图功能**——`Cmd + Shift + 4` 没有，系统截屏 App 没有，「预览」也没有。如果你是冲着一个隐藏的苹果快捷键来的，我直说：它不存在。Windows 的截图工具里有，iPhone 有，安卓有。可到了 2026 年的 macOS，苹果还是没给。
 
-好消息是：这事儿完全能解决，而且可选的方案比大多数「TOP 8 盘点」文章愿意承认的要多。这篇指南不浮于表面。我会讲清楚 *为什么* Mac 原生做不到，一个工具「滚动拼接」时到底发生了什么，以及不同工具分别适合什么场景——包括我现在天天在用的那一个：**[ScrollShot for Mac](/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/)**（免费，而且是唯一一个能在同一个 App 里把整件事干完的方案）。
+好消息是：这事儿完全能解决，而且可选的方案比大多数「TOP 8 盘点」文章愿意承认的要多。这篇指南不浮于表面。我会讲清楚 *为什么* Mac 原生做不到，一个工具「滚动拼接」时到底发生了什么，以及不同工具分别适合什么场景——包括我现在天天在用的 **ScrollShot for Mac**。如果已经选好了工具，可以直接跳到[Mac 截长图的分步教程](#分步教程用-scrollshot-for-mac-截长图)。
+
+如果你要保存的是 iPhone 上的聊天记录，可以先看[快捷指令拼长图与 ScrollShot 的对比](/zh/blog/ios-shortcuts-vs-scrollshot-long-screenshot/)。那篇介绍手机上的截图拼接和录屏流程，下面则聚焦 Mac。
 
 ![普通截图与长图对比：一张单屏 Mac 截图，旁边是同一内容用 ScrollShot 截出的 765 × 4091 像素长图](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Mac 上每一个「长截图」工具，底层干的都是第 2 种（或仅对�
 4. **匹配两段之间重叠的像素**，找到接缝位置。
 5. 拼接起来，然后重复，直到你停下。
 
-这第 4 步的匹配，决定了任何滚动拼接工具的好坏。ScrollShot 的[拼接引擎](/zh/blog/blog-ios-stitching-engine-v2/)借助 Apple 的 Vision 框架做帧匹配，所以比朴素的像素差分更能扛住变速滚动和轻微布局偏移。不过有三样东西仍能让任何拼接工具翻车：
+这第 4 步的匹配，决定了滚动拼接的效果。想了解抽帧、重叠匹配和接缝选择的具体实现，可以参考 [iOS 拼接引擎技术解析](/zh/blog/blog-ios-stitching-engine-v2/)。那篇讲的是手机端引擎，其中对重复内容和画面变化的分析，也有助于理解桌面截图时常见的几类问题：
 
 - **吸顶/固定的标题栏**在内容滚动时不动 → 出现重复的横条。（截取前先关掉聊天挂件和 Cookie 横幅。）
 - **懒加载内容**滚动后才出现 → 出现空白断层。（先滚一遍到底，再从头截。）
@@ -185,7 +187,9 @@ Mac 上每一个「长截图」工具，底层干的都是第 2 种（或仅对�
 只截网页：用 GoFullPage（30 秒内搞定）。网页之外的内容（Slack、PDF、各类 App）：ScrollShot for Mac 或 Shottr——都免费，都能截任意可滚动区域。
 
 **有没有既能截长图、又能翻译和脱敏的免费工具？**
-有——[ScrollShot for Mac](/zh/blog/wei-shen-me-xuan-ze-scrollshot-ios-wu-feng-chang-jie-tu/)。它免费，并且独一家把滚动截取与文字识别、30+ 语言翻译、19+ 标注工具、自动脱敏（邮箱/手机号/API Key/人脸）集成在同一个 App 里。
+有——ScrollShot for Mac。它免费，并且独一家把滚动截取与文字识别、30+ 语言翻译、19+ 标注工具、自动脱敏（邮箱/手机号/API Key/人脸）集成在同一个 App 里。
+
+具体操作见前面的[截取与编辑步骤](#分步教程用-scrollshot-for-mac-截长图)。
 
 **长截图能用于 PDF 和文档吗？**
 可以，前提是用原生滚动截取工具（ScrollShot、Shottr、CleanShot X）去截在「预览」或阅读器里打开的 PDF。系统自带的「导出为 PDF」得到的是文档，不是图片。

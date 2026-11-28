@@ -2,7 +2,7 @@
 title: "Mac 長截圖怎麼截？2026 滾動截圖完全指南"
 description: "macOS 沒有內建的滾動截圖功能。這篇 2026 指南說明原因，比較 GoFullPage、Shottr、CleanShot X、Xnapper、screensnap 與 ScrollShot，並示範如何用 ScrollShot for Mac 免費截取任何視窗。"
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "使用教學"
 author: "ScrollShot 團隊"
 tags: ["Mac 長截圖", "Mac 滾動截圖", "Mac 截圖工具", "ScrollShot for Mac", "macOS 截圖", "滾動拼接"]
@@ -29,7 +29,9 @@ faq:
 
 我有一條 4,000 像素長的 Slack 對話要傳給工程師。我按下 `Cmd + Shift + 4`、拉了一個框，結果只截到……一屏。剩下的對話都在摺疊線以下，macOS 很樂意地忽略了它。Mac 上**沒有原生方式能截長截圖（滾動截圖）**——`Cmd + Shift + 4` 不行、截圖 App 不行、預覽程式也不行。如果你是想來找 Apple 的隱藏快捷鍵，我直接告訴你：不存在。Windows 的剪取工具就有；iPhone 有；Android 有；而 macOS 到了 2026 年，依然沒內建。
 
-好消息是：這完全可以解決，而且你的選擇比多數「Top 8 清單」部落格承認的還多。這篇指南不只講表面。我會解釋 *為什麼* Mac 原生做不到、當 App「滾動拼接」時實際發生了什麼，以及哪個工具適合哪種場景——包括我現在每天在用的那一個，**[ScrollShot for Mac](/zh-hant/blog/why-choose-scrollshot-ios-long-screenshot/)**（免費，也是唯一能在單一 App 內完成整個流程的選擇）。
+好消息是：這完全可以解決，而且你的選擇比多數「Top 8 清單」部落格承認的還多。這篇指南不只講表面。我會解釋 *為什麼* Mac 原生做不到、當 App「滾動拼接」時實際發生了什麼，以及哪個工具適合哪種場景——包括我現在每天在用的那一個，**[ScrollShot for Mac](#逐步操作用-scrollshot-for-mac-截一張長圖)**（免費，也是唯一能在單一 App 內完成整個流程的選擇）。
+
+如果要保存的是 iPhone 上的聊天紀錄，可以先看 [iOS 版 ScrollShot 的功能介紹](/zh-hant/blog/why-choose-scrollshot-ios-long-screenshot/)，了解手機上的錄影與拼接流程。以下步驟則適用於 Mac。
 
 ![Before vs After：一般 Mac 截圖（一屏）與 ScrollShot 765 × 4091 px 滾動擷取同一內容的對比](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Mac 上每個「滾動截圖」工具底層做的都是第 2 種（或是第 1 �
 4. **比對兩幀之間重疊的像素**以找出接縫。
 5. 拼接起來，然後重複直到你停止。
 
-比對這一步，決定了任何滾動拼接流程中工具的成敗。ScrollShot 的[拼接引擎](/zh-hant/blog/ios-stitching-engine-v2/)使用 Apple 的 Vision 框架進行幀比對，這也是為什麼它比天真的像素差異法更能應對變動的滾動速度與輕微的版面偏移。不過仍有三件事會讓任何拼接器失敗：
+拼接效果取決於重疊區域能否準確對齊。[iOS 拼接引擎的技術解析](/zh-hant/blog/ios-stitching-engine-v2/)介紹了 iPhone 版的抽幀、畫面比對和接縫選擇。那篇講的是手機端實作，但對重複內容與畫面變化的分析，也有助於理解桌面擷取常見的幾類問題：
 
 - **固定不動的頁首/頁尾**——內容滾動時它不動 → 重複的長條。（先關掉聊天小工具與 Cookie 橫幅。）
 - **懶加載內容**——滾動後才出現 → 空白缺口。（先滾動一圈，再從頂端擷取。）
@@ -185,7 +187,7 @@ Mac 上每個「滾動截圖」工具底層做的都是第 2 種（或是第 1 �
 僅限網頁：GoFullPage（30 秒內）。瀏覽器以外的任何內容（Slack、PDF、App）：ScrollShot for Mac 或 Shottr——兩者都免費，都能用於任何可滾動區域。
 
 **有免費的滾動截圖工具還能翻譯和遮罩嗎？**  
-有——[ScrollShot for Mac](/zh-hant/blog/why-choose-scrollshot-ios-long-screenshot/)。它免費，且獨特地將滾動擷取與 OCR、30+ 語言翻譯、19+ 註解工具，以及自動遮罩個人資料/人臉整合進同一個 App。
+有——[ScrollShot for Mac](#逐步操作用-scrollshot-for-mac-截一張長圖)。它免費，且獨特地將滾動擷取與 OCR、30+ 語言翻譯、19+ 註解工具，以及自動遮罩個人資料/人臉整合進同一個 App。
 
 **滾動截圖能用於 PDF 和文件嗎？**  
 可以，只要你對在預覽或閱讀器中開啟的 PDF 使用原生滾動擷取 App（ScrollShot、Shottr、CleanShot X）。內建的「儲存為 PDF」給你的是文件，不是圖片。

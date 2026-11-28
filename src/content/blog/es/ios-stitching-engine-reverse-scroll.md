@@ -2,7 +2,7 @@
 title: "Los usuarios insistieron en desplazar hacia arriba para capturar — y esquivé reescribir todo el motor con una sola línea"
 description: "Cuando los usuarios quieren capturar un long screenshot iPhone desplazando hacia arriba, mi primer instinto fue construir un « motor ascendente » separado. Al final, bastó una sola línea de código. Este artículo desglosa el diseño de stitching con desplazamiento inverso de ScrollShot, la técnica tras una captura de pantalla que se desplaza sin costuras en apps como Messages y WhatsApp, y muestra cómo detectamos la dirección del desplazamiento, invertimos el orden de los frames y reutilizamos la tubería descendente existente. Verás por qué la detección de dirección es casi gratuita, por qué invertimos el orden de los frames en lugar de añadir una bandera isReversed, y cómo devolvemos la decisión al usuario cuando la confianza es baja, para capturar sin que el motor se equivoque."
 date: "2026-07-12"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Técnica"
 author: "Equipo de ScrollShot"
 tags: ["Captura larga iPhone", "Captura de desplazamiento iPhone", "Captura larga iOS", "Algoritmo de unión de capturas", "Desplazamiento inverso", "Detección de dirección de desplazamiento", "Motor ScrollShot", "Ensamblaje de grabación de pantalla"]
@@ -17,6 +17,8 @@ La mayoría de los que quieren un long screenshot iPhone — o cualquier captura
 Pero el mundo real ama contradecir. Los usuarios quieren capturar una captura de desplazamiento iPhone de un chat — Messages, WhatsApp o WeChat — o guardar la parte de una página web que desplazaron hacia arriba para ver, exactamente el caso de « captura de página completa en app iPhone » que todos preguntan — y al grabar, su dedo se desliza hacia arriba. El contenido fluye hacia atrás en la grabación: empieza en la parte inferior de la página y el « final » es en realidad el contenido anterior. Pásalo directo al motor de arriba abajo y obtienes una imagen invertida: la parte superior visual es el contenido antiguo del final de la grabación, y la inferior es el principio.
 
 Este artículo trata sobre cómo ScrollShot admite el ensamblado de abajo arriba. El punto no es un algoritmo profundo, sino un compromiso de diseño extremo en la poca cantidad de código que se necesita.
+
+Si buscas cómo hacer la captura desde la app, la [guía de funciones de ScrollShot para iPhone](/es/blog/por-que-elegir-scrollshot-capturas-largas-ios/) presenta la grabación y la unión manual. Aquí nos centramos en cómo procesar los fotogramas cuando llegan en orden inverso.
 
 Primero, una demo estándar de stitching de arriba abajo — el stitching inverso que discutiremos se construye directamente sobre ella:
 

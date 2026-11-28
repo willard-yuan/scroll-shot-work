@@ -2,7 +2,7 @@
 title: "À quel point est-ce difficile d'assembler deux captures d'écran ? Un moteur de stitching iOS qui m'a fait tout recommencer — encore et encore"
 description: "Plongée dans le moteur d'assemblage de ScrollShot : sélectionner 30 images clés parmi 1 800, template matching inversé, recherche pyramidale NCC, stratégie de fallback à trois niveaux, et les astuces d'ingénierie qu'aucun manuel n'enseigne."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Technique"
 author: "Équipe ScrollShot"
 tags: ["capture d'écran longue iOS", "algorithme d'assemblage", "template matching", "NCC", "moteur ScrollShot", "assemblage enregistrement écran"]
@@ -69,6 +69,8 @@ Il y a aussi un filtre de bruit facile à négliger : **un déplacement unitaire
 - **Pas adaptatif** : quand le déplacement est grand, grands sauts (`nativeFPS / 6`, environ toutes les 10 images). Quand il est petit, retour au scan frame par frame (`nativeFPS / 30`). Quand la distance restante passe sous 25 % du seuil, pas minimum forcé — sinon on enjambe littéralement un frame
 - **Détection de changement de scène** : le SAD par pixel entre images adjacentes dépasse 40,0 ? L'utilisateur a probablement changé d'app. Capturer immédiatement
 - **Troncature par rebond** : utiliser le flux optique de Vision pour détecter la direction du mouvement. Si le déplacement cumulé tombe sous -50 px (l'utilisateur remonte), il a atteint le haut — jeter tous les frames suivants. Mais ce seuil ne peut pas être trop serré : j'avais mis -10 au départ, et de légers tremblements de doigt déclenchaient la troncature, coupant l'enregistrement en deux
+
+Le léger rebond en fin de page est un cas différent d’un enregistrement qui remonte dès le départ. L’article sur [l’assemblage en défilement inverse](/fr/blog/ios-stitching-engine-reverse-scroll/) explique comment réordonner les images pour réutiliser ce moteur.
 
 **Passe 1,5 — raffinement de netteté.** Pour chaque frame candidat, chercher le plus net dans une fenêtre de ±2 images autour.
 

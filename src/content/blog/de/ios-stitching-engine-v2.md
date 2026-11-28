@@ -2,7 +2,7 @@
 title: "Wie schwer kann es sein, zwei Screenshots zusammenzufügen? Eine iOS-Stitching-Engine, die mich immer wieder von vorne anfangen ließ"
 description: "Ein tiefer Blick in die Stitching-Engine von ScrollShot: 30 Frames aus 1.800 auswählen, Reverse Template Matching, Pyramid-NCC-Suche, dreistufige Fallback-Strategie und Engineering-Tricks, die in keinem Lehrbuch stehen."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Technik"
 author: "ScrollShot Team"
 tags: ["iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Template Matching", "NCC", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]
@@ -69,6 +69,8 @@ Dazu kommt ein leicht übersehbarer Rauschfilter: **Eine einzelne Verschiebung m
 - **Adaptive Schrittweite**: Bei großer Verschiebung große Sprünge (`nativeFPS / 6`, etwa alle 10 Frames), bei kleiner Verschiebung zurück zu Frame-für-Frame-Scan (`nativeFPS / 30`). Wenn die Restdistanz unter 25 % des Schwellenwerts fällt, wird der kleinste Schritt erzwungen — sonst überspringt man buchstäblich einen Frame
 - **Szenenwechsel-Erkennung**: SAD pro Pixel zwischen benachbarten Frames über 40,0? Wahrscheinlich hat der Nutzer die App gewechselt. Sofort einen Frame erfassen
 - **Rücksprung-Erkennung**: Mit Visions optischem Fluss die Bewegungsrichtung erkennen. Fällt die kumulierte Verschiebung unter -50 px (der Nutzer scrollt zurück), ist das Ende erreicht — alle folgenden Frames verwerfen. Dieser Schwellenwert darf aber nicht zu eng sein: Ich hatte zuerst -10 eingestellt, und leichtes Fingerzittern löste die Erkennung aus, wodurch die halbe Aufnahme fehlte
+
+Das kurze Zurückfedern am Seitenende ist ein anderer Fall als eine Aufnahme, die von Anfang an nach oben läuft. Wie sich dafür die Frame-Reihenfolge normalisieren lässt, beschreibt der Beitrag zum [Stitching beim Rückwärtsscrollen](/de/blog/ios-stitching-engine-reverse-scroll/).
 
 **Durchlauf 1,5 — Schärfe-Verfeinerung.** Für jeden Kandidaten-Frame im ±2-Frame-Fenster drumherum den schärfsten Frame suchen.
 

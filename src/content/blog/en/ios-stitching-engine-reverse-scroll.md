@@ -2,7 +2,7 @@
 title: "Users Insisted on Scrolling Backward to Capture — and I Dodged Rewriting the Whole Engine with One Line"
 description: "When users want to capture a long screenshot by scrolling up on their iPhone, my first instinct was to build a separate 'upward engine'. In the end, a single line of code was enough. This post breaks down ScrollShot's reverse-scroll stitching design, the technique behind a seamless iPhone scrolling screenshot in apps like Messages and WhatsApp, and shows how we detect the scroll direction, reverse the frame order, and reuse the existing downward pipeline. You'll see how direction detection is nearly free, why we reverse the frame order instead of adding an isReversed flag, and how we hand the decision back to the user when confidence is low, so you can take a scrolling screenshot in iPhone apps without the engine guessing wrong."
 date: "2026-07-12"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Deep Dive"
 author: "ScrollShot Team"
 tags: ["iPhone long screenshot", "iPhone scrolling screenshot", "iOS long screenshot", "screenshot stitching algorithm", "reverse scrolling", "scroll direction detection", "ScrollShot engine", "screen recording stitching"]
@@ -17,6 +17,8 @@ Most people who want an iPhone long screenshot — or any iPhone scrolling scree
 But the real world loves to argue. Users want to capture an iPhone scrolling screenshot of a chat — Messages, WhatsApp, or WeChat — or save the part of a web page they scrolled up to see, exactly the iphone screenshot full page in app scenario people keep asking about — and when recording, their finger slides upward. The content flows backward through the recording: it starts at the bottom of the page and the "end" is actually the earlier content. Feed that straight into the top-to-bottom engine and you get an upside-down image: the visual top is the old content from the end of the recording, and the bottom is the beginning.
 
 This post is about how ScrollShot supports bottom-to-top stitching. The point isn't a deep algorithm — it's an extreme design trade-off in how little code it takes.
+
+If you're looking for capture instructions, start with our [WhatsApp long screenshot guide: Shortcuts vs. ScrollShot](/blog/ios-shortcuts-vs-scrollshot-long-screenshot/). It covers preparing screenshots, recording a chat, and checking the joins; this post focuses on how the engine handles recordings that run in the opposite direction.
 
 First, here's a standard top-to-bottom stitching demo — the reverse stitching we'll discuss builds directly on top of it:
 

@@ -2,7 +2,7 @@
 title: "Nutzer bestanden auf Rückwärts-Scrollen — und ich rettete mich mit einer einzigen Zeile vor dem Umschreiben der ganzen Engine"
 description: "Wenn Nutzer auf dem iPhone einen langen Screenshot machen wollen, indem sie nach oben scrollen, war mein erster Instinkt, eine separate „Aufwärts-Engine” zu bauen. Am Ende reichte eine einzige Codezeile. Dieser Artikel zerlegt ScrollShots Reverse-Scroll-Stitching-Design, die Technik hinter einem nahtlosen iPhone long screenshot in Apps wie Messages und WhatsApp, und zeigt, wie wir die Scrollrichtung erkennen, die Frame-Reihenfolge umkehren und die bestehende Abwärts-Pipeline wiederverwenden — damit du take scrolling screenshot in iPhone problemlos hinbekommst, inklusive iPhone scrolling screenshot in Chats."
 date: "2026-07-12"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Technik"
 author: "ScrollShot Team"
 tags: ["iPhone langer Screenshot", "iPhone Scroll-Screenshot", "iOS langer Screenshot", "Screenshot-Stitching-Algorithmus", "Rückwärtsscrollen", "Scroll-Richtungserkennung", "ScrollShot Engine", "Bildschirmaufnahme Stitching"]
@@ -17,6 +17,8 @@ Die meisten, die einen iPhone langer Screenshot wollen — oder irgendeinen iPho
 Aber die echte Welt widerspricht gern. Nutzer wollen einen iPhone Scroll-Screenshot eines Chats festhalten — Messages, WhatsApp oder WeChat — oder den Teil einer Webseite sichern, zu dem sie zum Anschauen nach oben gescrollt sind, genau das iphone screenshot full page in app-Szenario, nach dem alle immer wieder fragen — und beim Aufnehmen gleitet der Finger nach oben. Der Inhalt fließt rückwärts durch die Aufnahme: Er beginnt am unteren Seitenrand, und das „Ende” ist eigentlich der frühere Inhalt. Speist man das direkt in die Engine von oben nach unten, bekommt man ein kopfstehendes Bild: Oben im Bild ist der alte Inhalt vom Ende der Aufnahme, unten der Anfang.
 
 Dieser Artikel handelt davon, wie ScrollShot das Stitching von unten nach oben unterstützt. Es geht nicht um einen tiefen Algorithmus — sondern um einen extremen Design-Trade-off: wie wenig Code das überhaupt braucht.
+
+Wenn du zunächst wissen möchtest, wie du die Aufnahme in der App erstellst, findest du den Ablauf in der [Übersicht zu Auto Stitch und manuellem Zusammenfügen](/de/blog/warum-scrollshot-ios-lange-screenshots/). Hier geht es um die Verarbeitung der umgekehrten Frame-Reihenfolge.
 
 Zuerst hier eine Standard-Demo für Stitching von oben nach unten — das umgekehrte Stitching, das wir besprechen, baut direkt darauf auf:
 

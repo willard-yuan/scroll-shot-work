@@ -2,7 +2,7 @@
 title: "Comment faire une longue capture d'écran défilante sur Mac en 2026 (Guide complet)"
 description: "macOS ne permet pas de capture d'écran défilante nativement. Ce guide 2026 explique pourquoi, compare GoFullPage, Shottr, CleanShot X, Xnapper, screensnap et ScrollShot, et montre comment capturer gratuitement n'importe quelle fenêtre avec ScrollShot pour Mac."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Guide"
 author: "Équipe ScrollShot"
 tags: ["Capture d'écran longue Mac", "Capture défilante Mac", "Capture d'écran scroll Mac", "ScrollShot pour Mac", "Outil capture macOS", "Défilement et assemblage"]
@@ -29,7 +29,9 @@ Laisse-moi t'épargner les 20 minutes que j'ai perdues la première fois.
 
 J'avais un fil Slack de 4 000 pixels à envoyer à un développeur. J'ai appuyé sur `Cmd + Shift + 4`, tracé une zone — et j'ai obtenu… un écran. Le reste de la conversation était en dessous, et macOS l'a gentiment ignoré. Il **n'existe aucun moyen natif de faire une capture d'écran défilante sur Mac** — ni dans `Cmd + Shift + 4`, ni dans l'app Capture, ni dans Aperçu. Si tu es venu chercher un raccourci Apple caché, je te le dis tout net : il n'existe pas. Windows l'a dans l'Outil Recapture. L'iPhone l'a. Android l'a. macOS, en 2026, ne l'intègre toujours pas.
 
-La bonne nouvelle : c'est tout à fait résolvable, et tu as plus d'options que la plupart des blogs « Top 8 » ne l'avouent. Ce guide va au-delà de la surface. Je t'explique *pourquoi* le Mac ne peut pas le faire nativement, ce qui se passe réellement quand une app « fait défiler et assemble », et quel outil convient à quel usage — y compris celui que j'utilise tous les jours, **[ScrollShot pour Mac](/fr/blog/pourquoi-choisir-scrollshot-captures-longues-ios/)** (gratuit, et la seule option qui fait tout le travail dans une seule app).
+La bonne nouvelle : c'est tout à fait résolvable, et tu as plus d'options que la plupart des blogs « Top 8 » ne l'avouent. Ce guide va au-delà de la surface. Je t'explique *pourquoi* le Mac ne peut pas le faire nativement, ce qui se passe réellement quand une app « fait défiler et assemble », et quel outil convient à quel usage — y compris celui que j'utilise tous les jours, **[ScrollShot pour Mac](#étape-par-étape--faire-une-longue-capture-avec-scrollshot-pour-mac)** (gratuit, et la seule option qui fait tout le travail dans une seule app).
+
+Si la conversation à conserver se trouve sur ton iPhone, la [présentation de ScrollShot pour iOS](/fr/blog/pourquoi-choisir-scrollshot-captures-longues-ios/) explique l’enregistrement et l’assemblage sur mobile. Les étapes ci-dessous concernent le Mac.
 
 ![Avant/Après : une capture Mac classique (un écran) à côté d'une capture ScrollShot de 765 × 4091 px du même contenu](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Quand ScrollShot (ou Shottr, ou CleanShot) fait une longue capture, le processus
 4. **Met en correspondance les pixels qui se chevauchent** entre les deux images pour trouver la couture.
 5. Les assemble, puis répète jusqu'à ce que tu arrêtes.
 
-L'étape de correspondance est là où les outils vivent ou meurent dans tout workflow de défilement et assemblage. Le [moteur d'assemblage](/fr/blog/ios-stitching-engine-v2/) de ScrollShot utilise le framework Vision d'Apple pour la correspondance des images, c'est pourquoi il gère mieux les vitesses de défilement variables et les légers décalages de mise en page que les approches naïves de différence de pixels. Trois choses cassent quand même n'importe quel assembleur :
+La qualité du résultat dépend de l’alignement des zones communes. Notre [analyse du moteur d’assemblage iOS](/fr/blog/ios-stitching-engine-v2/) détaille la sélection des images, leur mise en correspondance et le choix des raccords dans la version iPhone. Les difficultés liées aux contenus répétés ou changeants permettent aussi de comprendre ces problèmes courants sur ordinateur :
 
 - **En-têtes/pieds de page collants** qui ne bougent pas alors que le contenu défile → doubles barres. (Ferme d'abord les widgets de chat et les bannières de cookies.)
 - **Contenu chargé en lazy** qui n'apparaît qu'après le défilement → trous vides. (Fais défiler une fois, puis capture.)
@@ -185,7 +187,7 @@ Non. `Cmd + Shift + 4` et l'app Capture ne captent que l'écran visible. Tu as b
 Pour les pages web uniquement : GoFullPage (moins de 30 secondes). Pour tout ce qui est hors navigateur (Slack, PDF, apps) : ScrollShot pour Mac ou Shottr — tous deux gratuits, tous deux fonctionnent sur toute zone défilante.
 
 **Existe-t-il un outil de capture défilante gratuit qui traduit et masque aussi ?**  
-Oui — [ScrollShot pour Mac](/fr/blog/pourquoi-choisir-scrollshot-captures-longues-ios/). Il est gratuit et combine de façon unique la capture défilante avec OCR, traduction en 30+ langues, plus de 19 outils d'annotation et le masquage automatique des données personnelles/visages dans une seule app.
+Oui — [ScrollShot pour Mac](#étape-par-étape--faire-une-longue-capture-avec-scrollshot-pour-mac). Il est gratuit et combine de façon unique la capture défilante avec OCR, traduction en 30+ langues, plus de 19 outils d'annotation et le masquage automatique des données personnelles/visages dans une seule app.
 
 **Les captures défilantes fonctionnent-elles pour les PDF et documents ?**  
 Oui, si tu utilises une app de capture native (ScrollShot, Shottr, CleanShot X) sur le PDF ouvert dans Aperçu ou un lecteur. L'« Enregistrer en PDF » intégré donne un document, pas une image.

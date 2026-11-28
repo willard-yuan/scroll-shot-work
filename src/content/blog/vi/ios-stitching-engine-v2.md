@@ -2,7 +2,7 @@
 title: "Ghép hai ảnh chụp màn hình khó đến mức nào? Một engine stitching iOS khiến tôi phải làm lại từ đầu — hết lần này đến lần khác"
 description: "Mổ xẻ engine stitching của ScrollShot: chọn 30 khung hình quan trọng từ 1.800 khung, template matching ngược, tìm kiếm kim tự tháp NCC, chiến lược fallback ba tầng và những thủ thuật kỹ thuật mà không sách giáo khoa nào dạy."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Kỹ thuật chuyên sâu"
 author: "Đội ngũ ScrollShot"
 tags: ["ảnh chụp màn hình dài iOS", "thuật toán ghép ảnh", "template matching", "NCC", "engine ScrollShot", "ghép quay màn hình"]
@@ -69,6 +69,8 @@ Còn một bộ lọc nhiễu dễ bị bỏ qua: **dịch chuyển đơn lẻ p
 - **Bước thích ứng**: khi dịch chuyển lớn, bước nhảy lớn (`nativeFPS / 6`, khoảng mỗi 10 khung). Khi dịch chuyển nhỏ, quay lại quét từng khung (`nativeFPS / 30`). Khi khoảng cách còn lại dưới 25 % ngưỡng, bắt buộc chuyển sang bước nhỏ nhất — nếu không sẽ bước qua đúng một khung hình
 - **Phát hiện đổi cảnh**: SAD per pixel giữa các khung liền kề vượt 40,0? Khả năng cao người dùng chuyển app. Trích xuất ngay
 - **Cắt ngược**: dùng optical flow của Vision phát hiện hướng chuyển động. Nếu dịch chuyển tích lũy xuống dưới -50 px (người dùng cuộn ngược lên), đã đến đầu — loại bỏ toàn bộ khung phía sau. Nhưng ngưỡng này không được quá hẹp: ban đầu tôi đặt -10, kết quả là rung tay nhẹ đã kích hoạt cắt, bản ghi mất một nửa
+
+Chuyển động nảy nhẹ ở cuối trang khác với một bản ghi cuộn lên ngay từ đầu. Bài viết về [ghép ảnh khi cuộn ngược](/vi/blog/ios-stitching-engine-reverse-scroll/) trình bày cách sắp xếp lại khung hình để dùng lại bộ máy ghép hiện có.
 
 **Lượt 1,5 — tinh chỉnh độ nét.** Với mỗi khung hình ứng viên, tìm khung nét nhất trong cửa sổ ±2 khung xung quanh.
 

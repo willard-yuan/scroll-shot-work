@@ -2,7 +2,7 @@
 title: "Quão difícil é juntar duas capturas de tela? Um motor de stitching para iOS que me fez recomeçar — de novo e de novo"
 description: "Desmontamos o motor de stitching do ScrollShot: selecionar 30 frames-chave de 1.800, template matching reverso, busca piramidal NCC, estratégia de fallback em três níveis e os truques de engenharia que nenhum livro ensina."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Técnica"
 author: "Equipe ScrollShot"
 tags: ["print longo iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de gravação de tela"]
@@ -69,6 +69,8 @@ Tem também um filtro de ruído fácil de ignorar: **um deslocamento individual 
 - **Passo adaptativo**: quando o deslocamento é grande, saltos grandes (`nativeFPS / 6`, a cada ~10 frames). Quando é pequeno, volta para scan frame a frame (`nativeFPS / 30`). Quando a distância restante cai abaixo de 25 % do limiar, passo mínimo forçado — senão você literalmente pula um frame
 - **Detecção de mudança de cena**: SAD por pixel entre frames adjacentes acima de 40,0? Provavelmente o usuário trocou de app. Captura imediatamente
 - **Truncamento por rebote**: usa o fluxo óptico do Vision para detectar direção do movimento. Se o deslocamento acumulado cai abaixo de -50 px (o usuário está voltando para cima), chegou ao topo — descarta todos os frames seguintes. Mas esse limiar não pode ser muito apertado: inicialmente coloquei -10, e tremores leves do dedo disparavam o truncamento, cortando a gravação pela metade
+
+O pequeno movimento de retorno no fim da página é diferente de uma gravação que sobe desde o início. No artigo sobre [montagem com rolagem inversa](/pt-br/blog/ios-stitching-engine-reverse-scroll/), explicamos como reorganizar os frames para reutilizar este motor.
 
 **Passada 1,5 — refinamento de nitidez.** Para cada frame candidato, buscar o mais nítido numa janela de ±2 frames ao redor.
 

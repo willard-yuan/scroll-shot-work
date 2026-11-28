@@ -2,7 +2,7 @@
 title: "Lange Bildschirmfotos auf dem Mac aufnehmen: Die komplette 2026-Anleitung für Scroll-Screenshots"
 description: "macOS kann keine scrollenden Bildschirmfotos nativ. Diese 2026-Anleitung erklärt warum, vergleicht GoFullPage, Shottr, CleanShot X, Xnapper, screensnap und ScrollShot und zeigt, wie du mit ScrollShot für Mac jedes Fenster kostenlos einfängst."
 date: "2026-08-05"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Anleitung"
 author: "ScrollShot Team"
 tags: ["Langes Bildschirmfoto Mac", "Scroll-Screenshot Mac", "Bildschirmfoto scrollen Mac", "ScrollShot für Mac", "macOS Screenshot-Tool", "Scrollen und Zusammensetzen"]
@@ -29,7 +29,9 @@ Lass mich dir die 20 Minuten ersparen, die ich beim ersten Mal vergeudet habe.
 
 Ich hatte einen 4.000 Pixel langen Slack-Thread, den ich an einen Entwickler senden wollte. Ich drückte `Cmd + Shift + 4`, zog ein Rechteck auf — und bekam … einen Bildschirm. Der Rest der Unterhaltung war unterhalb des sichtbaren Bereichs, und macOS hat ihn fröhlich ignoriert. Es gibt **keine native Möglichkeit, auf dem Mac ein scrollendes Bildschirmfoto zu machen** — weder in `Cmd + Shift + 4`, noch in der Screenshot-App, noch in der Vorschau. Wenn du hier hoffst, einen versteckten Apple-Shortcut zu finden: ich sage es dir direkt — es gibt ihn nicht. Windows hat ihn im Snipping Tool. iPhone hat ihn. Android hat ihn. macOS, im Jahr 2026, bringt ihn immer noch nicht mit.
 
-Die gute Nachricht: Es lässt sich vollständig lösen, und du hast mehr Optionen, als die meisten „Top-8-Listen"-Blogs zugeben. Dieser Leitfaden geht über die Oberfläche hinaus. Ich erkläre dir, *warum* der Mac das nativ nicht kann, was tatsächlich passiert, wenn eine App „scrollt und zusammensetzt", und welches Werkzeug für welchen Job passt — inklusive dem, das ich jetzt täglich nutze, **[ScrollShot für Mac](/de/blog/warum-scrollshot-ios-lange-screenshots/)** (kostenlos und die einzige Option, die den ganzen Job in einer App erledigt).
+Die gute Nachricht: Es lässt sich vollständig lösen, und du hast mehr Optionen, als die meisten „Top-8-Listen"-Blogs zugeben. Dieser Leitfaden geht über die Oberfläche hinaus. Ich erkläre dir, *warum* der Mac das nativ nicht kann, was tatsächlich passiert, wenn eine App „scrollt und zusammensetzt", und welches Werkzeug für welchen Job passt — inklusive dem, das ich jetzt täglich nutze, **[ScrollShot für Mac](#schritt-für-schritt-ein-langes-bildschirmfoto-mit-scrollshot-für-mac-machen)** (kostenlos und die einzige Option, die den ganzen Job in einer App erledigt).
+
+Möchtest du stattdessen einen Chat auf dem iPhone sichern, beschreibt unsere [ScrollShot-Übersicht für iOS](/de/blog/warum-scrollshot-ios-lange-screenshots/) die Aufnahme und das Zusammenfügen auf dem Handy. Die folgenden Schritte gelten für den Mac.
 
 ![Vorher/Nachher: ein normales Mac-Bildschirmfoto (ein Bildschirm) neben einer ScrollShot-Aufnahme (765 × 4091 px) desselben Inhalts](/how-to-take-long-scrolling-screenshot-on-mac-2026/hero-long-screenshot-mac-before-after.webp)
 
@@ -116,7 +118,7 @@ Wenn ScrollShot (oder Shottr oder CleanShot) ein langes Bildschirmfoto macht, l�
 4. **Gleicht überlappende Pixel** zwischen den beiden Frames ab, um die Naht zu finden.
 5. Setzt sie zusammen und wiederholt das, bis du stoppst.
 
-Der Abgleichschritt ist das, woran Tools in jedem Scroll-und-Zusammensetzen-Workflow scheitern oder bestehen. ScrollShots [Zusammenfüge-Engine](/de/blog/ios-stitching-engine-v2/) nutzt Apples Vision-Framework für den Frame-Abgleich — deshalb kommt sie mit variablen Scroll-Geschwindigkeiten und kleinen Layout-Verschiebungen besser zurecht als naive Pixel-Diff-Ansätze. Drei Dinge bringen trotzdem jeden Zusammensetzer zum Scheitern:
+Entscheidend ist, wie die überlappenden Bildbereiche zusammenpassen. Unser [technischer Einblick in die iOS-Stitching-Engine](/de/blog/ios-stitching-engine-v2/) erklärt Frame-Auswahl, Abgleich und Nahtplatzierung am Beispiel der iPhone-Version. Die dort beschriebenen Probleme mit wiederholten oder wechselnden Inhalten helfen auch, typische Fehler bei Desktop-Aufnahmen zu verstehen:
 
 - **Sticky-Header/Footer**, die sich nicht bewegen, während sich der Inhalt bewegt → doppelte Leisten. (Schließe Chat-Widgets und Cookie-Banner zuerst.)
 - **Lazy-Loaded Inhalte**, die erst nach dem Scrollen erscheinen → leere Lücken. (Scrolle einmal durch, dann erfasse.)
@@ -185,7 +187,7 @@ Nein. `Cmd + Shift + 4` und die Screenshot-App erfassen nur den sichtbaren Bilds
 Nur für Webseiten: GoFullPage (unter 30 Sekunden). Für alles außerhalb eines Browsers (Slack, PDFs, Apps): ScrollShot für Mac oder Shottr — beide kostenlos, beide auf jedem scrollbaren Bereich.
 
 **Gibt es ein kostenloses Scroll-Screenshot-Tool, das auch übersetzt und schwärzt?**  
-Ja — [ScrollShot für Mac](/de/blog/warum-scrollshot-ios-lange-screenshots/). Es ist kostenlos und kombiniert einzigartig Bildlauf-Erfassung mit OCR, Übersetzung in über 30 Sprachen, mehr als 19 Annotationswerkzeugen und automatischer Schwärzung von personenbezogenen Daten/Gesichtern in einer App.
+Ja — [ScrollShot für Mac](#schritt-für-schritt-ein-langes-bildschirmfoto-mit-scrollshot-für-mac-machen). Es ist kostenlos und kombiniert einzigartig Bildlauf-Erfassung mit OCR, Übersetzung in über 30 Sprachen, mehr als 19 Annotationswerkzeugen und automatischer Schwärzung von personenbezogenen Daten/Gesichtern in einer App.
 
 **Funktionieren scrollende Bildschirmfotos auch für PDFs und Dokumente?**  
 Ja, wenn du eine native Scroll-Erfassungs-App (ScrollShot, Shottr, CleanShot X) auf dem in der Vorschau oder einem Reader geöffneten PDF verwendest. Das eingebaute „Als PDF sichern" liefert ein Dokument, kein Bild.

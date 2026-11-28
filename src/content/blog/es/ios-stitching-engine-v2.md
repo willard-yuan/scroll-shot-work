@@ -2,7 +2,7 @@
 title: "¿Qué tan difícil es unir dos capturas de pantalla? Un motor de stitching para iOS que me hizo empezar de cero — una y otra vez"
 description: "Desmontamos el motor de stitching de ScrollShot: seleccionar 30 fotogramas clave de entre 1.800, template matching inverso, búsqueda piramidal NCC, estrategia de fallback de tres niveles y los trucos de ingeniería que ningún libro enseña."
 date: "2026-06-10"
-updated: "2026-10-29"
+updated: "2026-11-28"
 category: "Técnica"
 author: "Equipo de ScrollShot"
 tags: ["captura larga iOS", "algoritmo de stitching", "template matching", "NCC", "motor ScrollShot", "stitching de grabación de pantalla"]
@@ -69,6 +69,8 @@ También hay un filtro de ruido fácil de pasar por alto: **un desplazamiento in
 - **Paso adaptativo**: cuando el desplazamiento es grande, saltos grandes (`nativeFPS / 6`, cada ~10 fotogramas). Cuando es pequeño, escaneo fotograma a fotograma (`nativeFPS / 30`). Cuando la distancia restante baja del 25 % del umbral, paso mínimo forzado — de lo contrario te saltas literalmente un fotograma
 - **Detección de cambio de escena**: ¿el SAD por píxel entre fotogramas adyacentes supera 40,0? Probablemente el usuario cambió de app. Capturar inmediatamente
 - **Truncamiento por rebote**: usar el flujo óptico de Vision para detectar la dirección del movimiento. Si el desplazamiento acumulado cae por debajo de -50 px (el usuario vuelve hacia arriba), llegó al tope — descartar todos los fotogramas posteriores. Pero este umbral no puede ser muy ajustado: inicialmente puse -10, y un leve temblor del dedo disparaba el truncamiento, cortando la grabación a la mitad
+
+El pequeño rebote al llegar al final de una página es distinto de una grabación que avanza hacia arriba desde el principio. En el artículo sobre [unión de capturas con desplazamiento inverso](/es/blog/ios-stitching-engine-reverse-scroll/) explicamos cómo reordenar los fotogramas para reutilizar este motor.
 
 **Pasada 1,5 — refinamiento de nitidez.** Para cada fotograma candidato, buscar el más nítido en una ventana de ±2 fotogramas alrededor.
 
